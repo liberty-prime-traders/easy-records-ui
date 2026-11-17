@@ -4,10 +4,10 @@ import {EntityId} from '@ngrx/signals/entities'
 import {TableModule} from 'primeng/table'
 import {
   OpeningBalanceRevisionService
-} from '../../../api/organization-level/opening-balance/opening-balance-revision.service'
-import {AutoStretchDirective} from '../../reusable/auto-stretch.directive'
-import {EmptyRowComponent} from '../../reusable/empty-row/empty-row.component'
-import {MoneyComponent} from '../../reusable/money.component'
+} from '../../../../api/organization-level/core/opening-balance/opening-balance-revision.service'
+import {AutoStretchDirective} from '../../../reusable/auto-stretch.directive'
+import {EmptyRowComponent} from '../../../reusable/empty-row/empty-row.component'
+import {MoneyComponent} from '../../../reusable/money.component'
 
 @Component({
   selector: 'rts-opening-balance-history',

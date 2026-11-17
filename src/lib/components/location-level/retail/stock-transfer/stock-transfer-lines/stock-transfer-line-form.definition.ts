@@ -1,5 +1,5 @@
-import {ReconciledTransferLine} from '../../../../api/location-level/stock-transfer/reconciled-transfer-line.model'
-import {StockTransferLineUpdateRequest} from '../../../../api/location-level/stock-transfer/stock-transfer-requests.model'
+import {ReconciledTransferLine} from '../../../../../api/location-level/retail/stock-transfer/reconciled-transfer-line.model'
+import {StockTransferLineUpdateRequest} from '../../../../../api/location-level/retail/stock-transfer/stock-transfer-requests.model'
 
 export namespace StockTransferLineFormDefinition {
   export interface StockTransferLineFormModel extends ReconciledTransferLine {

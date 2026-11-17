@@ -4,13 +4,13 @@ import {ButtonDirective} from 'primeng/button'
 import {TableModule} from 'primeng/table'
 import {
   StockMovementReasonService
-} from '../../../api/organization-level/stock-movement-reason/stock-movement-reason.service'
-import {BooleanToTextPipe} from '../../../utils/pipes/boolean-to-text.pipe'
-import {JoinEnumPipe} from '../../../utils/pipes/join-enum.pipe'
-import {NullSafePipe} from '../../../utils/pipes/null-safe.pipe'
-import {EmptyRowComponent} from '../../reusable/empty-row/empty-row.component'
-import {GridFilterComponent} from '../../reusable/grid-filter/grid-filter.component'
-import {GridWithAddButtonComponent} from '../../reusable/grid-with-add-button.component'
+} from '../../../../api/organization-level/retail/stock-movement-reason/stock-movement-reason.service'
+import {BooleanToTextPipe} from '../../../../utils/pipes/boolean-to-text.pipe'
+import {JoinEnumPipe} from '../../../../utils/pipes/join-enum.pipe'
+import {NullSafePipe} from '../../../../utils/pipes/null-safe.pipe'
+import {EmptyRowComponent} from '../../../reusable/empty-row/empty-row.component'
+import {GridFilterComponent} from '../../../reusable/grid-filter/grid-filter.component'
+import {GridWithAddButtonComponent} from '../../../reusable/grid-with-add-button.component'
 import {StockMovementReasonFormComponent} from './stock-movement-reason-form/stock-movement-reason-form.component'
 
 @Component({

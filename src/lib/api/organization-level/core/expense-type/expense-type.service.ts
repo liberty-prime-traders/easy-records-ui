@@ -1,7 +1,7 @@
 import {computed, Injectable} from '@angular/core'
-import {ExpenseSourceType} from '../../cross-tier/expense/expense-source-type.enum'
-import {ApiCallbacks} from '../../util/base-api/api-callbacks'
-import {BaseService} from '../../util/base-api/base.service'
+import {ExpenseSourceType} from '../../../cross-tier/core/expense/expense-source-type.enum'
+import {ApiCallbacks} from '../../../util/base-api/api-callbacks'
+import {BaseService} from '../../../util/base-api/base.service'
 import {ExpenseType} from './expense-type.model'
 import {ExpenseTypeStore} from './expense-type.store'
 

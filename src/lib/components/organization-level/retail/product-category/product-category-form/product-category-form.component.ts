@@ -2,11 +2,11 @@ import {NgClass} from '@angular/common'
 import {Component, computed, inject, input, output} from '@angular/core'
 import {FormBuilder, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms'
 import {InputText} from 'primeng/inputtext'
-import {ProductCategory} from '../../../../api/organization-level/product-category/product-category.model'
-import {ProductCategoryService} from '../../../../api/organization-level/product-category/product-category.service'
-import {BaseFormComponent} from '../../../reusable/base-form.component'
-import {FormButtonsComponent} from '../../../reusable/form-buttons/form-buttons.component'
-import {FormFieldComponent} from '../../../reusable/form-field/form-field.component'
+import {ProductCategory} from '../../../../../api/organization-level/retail/product-category/product-category.model'
+import {ProductCategoryService} from '../../../../../api/organization-level/retail/product-category/product-category.service'
+import {BaseFormComponent} from '../../../../reusable/base-form.component'
+import {FormButtonsComponent} from '../../../../reusable/form-buttons/form-buttons.component'
+import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
 
 
 @Component({

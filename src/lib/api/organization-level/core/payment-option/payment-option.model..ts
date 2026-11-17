@@ -1,4 +1,4 @@
-import {BaseModel} from '../../util/base-api/base.model'
+import {BaseModel} from '../../../util/base-api/base.model'
 
 export interface PaymentOption extends BaseModel{
   createdBy?: string

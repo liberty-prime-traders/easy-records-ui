@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core'
-import {RtsTreeNode} from '../../../utils/types/rts-tree-node'
-import {TaxRecoveryType} from '../../platform-level/tax-type/tax-recovery-type.enum'
-import {BaseStore, createBaseStore} from '../../util/base-api/base.store'
+import {RtsTreeNode} from '../../../../utils/types/rts-tree-node'
+import {TaxRecoveryType} from '../../../platform-level/tax-type/tax-recovery-type.enum'
+import {BaseStore, createBaseStore} from '../../../util/base-api/base.store'
 
 @Injectable({providedIn: 'root'})
 export class AvailableTaxTypesStore

@@ -2,7 +2,7 @@ import {HttpParams} from '@angular/common/http'
 import {computed, Injectable} from '@angular/core'
 import {EntityId} from '@ngrx/signals/entities'
 import {SyncStatus} from './sync-status.enum'
-import {BaseService} from '../../util/base-api/base.service'
+import {BaseService} from '../../../util/base-api/base.service'
 import {SyncLog, SyncMode, SyncRequest, TableName} from './sync.model'
 import {SyncStore} from './sync.store'
 

@@ -1,7 +1,7 @@
 import {disabled, min, required, schema} from '@angular/forms/signals'
-import {StockAdjustmentCategory} from '../../../../api/location-level/stock-adjustment/stock-adjustment-category.enum'
-import {StockAdjustmentDirection} from '../../../../api/location-level/stock-adjustment/stock-adjustment-direction.enum'
-import {StockAdjustment} from '../../../../api/location-level/stock-adjustment/stock-adjustment.model'
+import {StockAdjustmentCategory} from '../../../../../api/location-level/retail/stock-adjustment/stock-adjustment-category.enum'
+import {StockAdjustmentDirection} from '../../../../../api/location-level/retail/stock-adjustment/stock-adjustment-direction.enum'
+import {StockAdjustment} from '../../../../../api/location-level/retail/stock-adjustment/stock-adjustment.model'
 
 export namespace StockAdjustmentFormDefinition {
   export interface StockAdjustmentFormModel {

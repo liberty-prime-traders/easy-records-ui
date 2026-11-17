@@ -2,11 +2,11 @@ import {Component, computed, inject, model, OnInit, output, signal} from '@angul
 import {FormsModule} from '@angular/forms'
 import {ButtonDirective} from 'primeng/button'
 import {Select} from 'primeng/select'
-import {OrganizationFeature} from '../../../../api/organization-level/org-feature/org-feature.model'
-import {OrgFeatureService} from '../../../../api/organization-level/org-feature/org-feature.service'
-import {Feature} from '../../../../api/platform-level/platform-feature/feature.enum'
-import {PrettifyEnumPipe} from '../../../../utils/pipes/prettify-enum.pipe'
-import {LoadingContainerComponent} from '../../../reusable/loading-container/loading-container.component'
+import {OrganizationFeature} from '../../../../../api/organization-level/core/org-feature/org-feature.model'
+import {OrgFeatureService} from '../../../../../api/organization-level/core/org-feature/org-feature.service'
+import {Feature} from '../../../../../api/platform-level/platform-feature/feature.enum'
+import {PrettifyEnumPipe} from '../../../../../utils/pipes/prettify-enum.pipe'
+import {LoadingContainerComponent} from '../../../../reusable/loading-container/loading-container.component'
 
 @Component({
   selector: 'rts-org-feature-add-form',

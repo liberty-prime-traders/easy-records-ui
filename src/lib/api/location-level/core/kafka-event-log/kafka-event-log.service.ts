@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core'
 import {EntityId} from '@ngrx/signals/entities'
-import {ApiCallbacks} from '../../util/base-api/api-callbacks'
-import {MultimapBaseService} from '../../util/base-api/multimap-base.service'
+import {ApiCallbacks} from '../../../util/base-api/api-callbacks'
+import {MultimapBaseService} from '../../../util/base-api/multimap-base.service'
 import {KafkaEventLog} from './kafka-event-log.model'
 import {KafkaEventLogStore} from './kafka-event-log.store'
 

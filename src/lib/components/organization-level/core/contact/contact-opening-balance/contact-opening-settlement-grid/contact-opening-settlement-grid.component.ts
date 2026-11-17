@@ -5,15 +5,15 @@ import {Panel} from 'primeng/panel'
 import {TableModule} from 'primeng/table'
 import {
   ContactSubledgerDirectionLabelPipe
-} from '../../../../../api/organization-level/contact-opening-balance/contact-subledger-direction-label.pipe'
+} from '../../../../../../api/organization-level/core/contact-opening-balance/contact-subledger-direction-label.pipe'
 import {
   ContactOpeningSettlementFigures,
   ContactOpeningSettlementService
-} from '../../../../../api/organization-level/contact-opening-settlement/contact-opening-settlement.service'
-import {Contact} from '../../../../../api/organization-level/contact/contact.model'
-import {ContactService} from '../../../../../api/organization-level/contact/contact.service'
-import {NullSafePipe} from '../../../../../utils/pipes/null-safe.pipe'
-import {EmptyRowComponent} from '../../../../reusable/empty-row/empty-row.component'
+} from '../../../../../../api/organization-level/core/contact-opening-settlement/contact-opening-settlement.service'
+import {Contact} from '../../../../../../api/organization-level/core/contact/contact.model'
+import {ContactService} from '../../../../../../api/organization-level/core/contact/contact.service'
+import {NullSafePipe} from '../../../../../../utils/pipes/null-safe.pipe'
+import {EmptyRowComponent} from '../../../../../reusable/empty-row/empty-row.component'
 import {ContactOpeningSettlementFormComponent} from '../contact-opening-settlement-form/contact-opening-settlement-form.component'
 import {
   ContactOpeningSettlementVoidFormComponent

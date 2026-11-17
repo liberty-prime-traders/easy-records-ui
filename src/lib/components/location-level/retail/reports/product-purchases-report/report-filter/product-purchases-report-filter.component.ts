@@ -6,7 +6,7 @@ import {DatePicker} from 'primeng/datepicker'
 import {Fieldset} from 'primeng/fieldset'
 import {Select} from 'primeng/select'
 import {PurchaseProductLookupComponent} from '../../../location-product-lookup/purchase-product-lookup/purchase-product-lookup.component'
-import {FormFieldLayout} from '../../../../reusable/form-field/form-field-layout'
+import {FormFieldLayout} from '../../../../../reusable/form-field/form-field-layout'
 import {ProductPurchasesReportFilterState} from './product-purchases-report-filter.state'
 
 @Component({

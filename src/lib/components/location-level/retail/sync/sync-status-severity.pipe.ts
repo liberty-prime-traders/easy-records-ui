@@ -1,6 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core'
-import {SyncStatus} from '../../../api/location-level/sync/sync-status.enum'
-import {RtsSeverity} from '../../../utils/types/severity'
+import {SyncStatus} from '../../../../api/location-level/retail/sync/sync-status.enum'
+import {RtsSeverity} from '../../../../utils/types/severity'
 
 @Pipe({
   name: 'syncStatusSeverity',

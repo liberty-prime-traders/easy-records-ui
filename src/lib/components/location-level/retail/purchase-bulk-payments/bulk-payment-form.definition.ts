@@ -2,9 +2,9 @@ import {min, required, schema} from '@angular/forms/signals'
 import {
   PurchaseBulkPaymentCreateRequest,
   PurchaseBulkPaymentSearchRequest
-} from '../../../api/location-level/purchase-bulk-payment/purchase-bulk-payment.model'
-import {getToday} from '../../../utils/dates'
-import {ZonedDatesService} from '../../../utils/services/zoned-dates.service'
+} from '../../../../api/location-level/retail/purchase-bulk-payment/purchase-bulk-payment.model'
+import {getToday} from '../../../../utils/dates'
+import {ZonedDatesService} from '../../../../utils/services/zoned-dates.service'
 
 export namespace BulkPaymentFormDefinition {
   export interface BulkPaymentFormModel {

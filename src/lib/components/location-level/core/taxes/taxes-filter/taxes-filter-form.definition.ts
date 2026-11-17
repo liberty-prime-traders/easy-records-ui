@@ -1,6 +1,6 @@
 import {schema} from '@angular/forms/signals'
-import {TaxEntrySearchParameters} from '../../../../api/location-level/tax-entry/tax-entry-search-parameters.model'
-import {TaxSourceType} from '../../../../api/location-level/tax-entry/tax-source-type.enum'
+import {TaxEntrySearchParameters} from '../../../../../api/location-level/core/tax-entry/tax-entry-search-parameters.model'
+import {TaxSourceType} from '../../../../../api/location-level/core/tax-entry/tax-source-type.enum'
 
 export namespace TaxesFilterFormDefinition {
   export interface TaxesFilterFormModel {

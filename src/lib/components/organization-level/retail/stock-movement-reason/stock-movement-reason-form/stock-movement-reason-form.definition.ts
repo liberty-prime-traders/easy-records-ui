@@ -1,6 +1,6 @@
 import {minLength, required, schema} from '@angular/forms/signals'
-import {MovementType} from '../../../../api/organization-level/stock-movement-reason/movement-type.enum'
-import {StockMovementReason} from '../../../../api/organization-level/stock-movement-reason/stock-movement-reason.model'
+import {MovementType} from '../../../../../api/organization-level/retail/stock-movement-reason/movement-type.enum'
+import {StockMovementReason} from '../../../../../api/organization-level/retail/stock-movement-reason/stock-movement-reason.model'
 
 export namespace StockMovementReasonFormDefinition {
   export interface StockMovementReasonFormModel {

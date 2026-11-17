@@ -1,6 +1,6 @@
 import {inject, Injectable} from '@angular/core'
-import {ProductService} from '../../cross-tier/product/product.service'
-import {ApiRequestContext} from '../../util/base-api/api-request-config'
+import {ProductService} from '../../../cross-tier/retail/product/product.service'
+import {ApiRequestContext} from '../../../util/base-api/api-request-config'
 import {OrganizationProductSearchService} from './organization-product-search.service'
 import {OrganizationProduct} from './organization-product.model'
 import {OrganizationProductStore} from './organization-product.store'

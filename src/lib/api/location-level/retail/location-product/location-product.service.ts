@@ -1,6 +1,6 @@
 import {inject, Injectable} from '@angular/core'
-import {ProductService} from '../../cross-tier/product/product.service'
-import {ApiRequestContext} from '../../util/base-api/api-request-config'
+import {ProductService} from '../../../cross-tier/retail/product/product.service'
+import {ApiRequestContext} from '../../../util/base-api/api-request-config'
 import {LocationProductPaginatedSearchService} from './location-product-paginated-search.service'
 import {LocationProduct} from './location-product.model'
 import {LocationProductStore} from './location-product.store'

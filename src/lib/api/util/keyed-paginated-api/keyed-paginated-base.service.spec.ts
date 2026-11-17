@@ -2,8 +2,8 @@ import {provideHttpClient} from '@angular/common/http'
 import {HttpTestingController, provideHttpClientTesting} from '@angular/common/http/testing'
 import {signal} from '@angular/core'
 import {TestBed} from '@angular/core/testing'
-import {ContactLedgerEntry} from '../../organization-level/contact-ledger/contact-ledger-entry.model'
-import {ContactLedgerService} from '../../organization-level/contact-ledger/contact-ledger.service'
+import {ContactLedgerEntry} from '../../organization-level/core/contact-ledger/contact-ledger-entry.model'
+import {ContactLedgerService} from '../../organization-level/core/contact-ledger/contact-ledger.service'
 import {PageResponse} from '../paginated-api/page-response.model'
 
 describe('KeyedPaginatedBaseService', () => {

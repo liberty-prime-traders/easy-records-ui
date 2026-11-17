@@ -1,4 +1,4 @@
-import {BaseModel} from '../../util/base-api/base.model'
+import {BaseModel} from '../../../util/base-api/base.model'
 import {PeriodStatus} from './period-status.enum'
 
 export interface SummaryAccountAmount {

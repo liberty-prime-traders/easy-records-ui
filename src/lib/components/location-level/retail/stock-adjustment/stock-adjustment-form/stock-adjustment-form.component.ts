@@ -3,21 +3,21 @@ import {form, FormField} from '@angular/forms/signals'
 import {InputNumber} from 'primeng/inputnumber'
 import {InputText} from 'primeng/inputtext'
 import {Select} from 'primeng/select'
-import {ProductForPurchase} from '../../../../api/location-level/product-lookup/product-for-purchase.model'
+import {ProductForPurchase} from '../../../../../api/location-level/retail/product-lookup/product-for-purchase.model'
 import {
   StockAdjustmentCategoryDescriptorService
-} from '../../../../api/location-level/stock-adjustment/stock-adjustment-category-descriptor.service'
-import {StockAdjustmentService} from '../../../../api/location-level/stock-adjustment/stock-adjustment.service'
+} from '../../../../../api/location-level/retail/stock-adjustment/stock-adjustment-category-descriptor.service'
+import {StockAdjustmentService} from '../../../../../api/location-level/retail/stock-adjustment/stock-adjustment.service'
 import {
   AlternativeUnitsFinderPipe
-} from '../../../../api/organization-level/unit-conversion/pipes/alternative-units-finder.pipe'
-import {ProductLabelPipe} from '../../../../utils/pipes/product-label.pipe'
-import {PrettifyEnumPipe} from '../../../../utils/pipes/prettify-enum.pipe'
-import {toSelectItems} from '../../../../utils/types/select-item.type'
-import {BaseFormComponent} from '../../../reusable/base-form.component'
-import {FormButtonsComponent} from '../../../reusable/form-buttons/form-buttons.component'
-import {FormFieldComponent} from '../../../reusable/form-field/form-field.component'
-import {LoadingContainerComponent} from '../../../reusable/loading-container/loading-container.component'
+} from '../../../../../api/organization-level/retail/unit-conversion/pipes/alternative-units-finder.pipe'
+import {ProductLabelPipe} from '../../../../../utils/pipes/product-label.pipe'
+import {PrettifyEnumPipe} from '../../../../../utils/pipes/prettify-enum.pipe'
+import {toSelectItems} from '../../../../../utils/types/select-item.type'
+import {BaseFormComponent} from '../../../../reusable/base-form.component'
+import {FormButtonsComponent} from '../../../../reusable/form-buttons/form-buttons.component'
+import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
+import {LoadingContainerComponent} from '../../../../reusable/loading-container/loading-container.component'
 import {
   PurchaseProductLookupComponent
 } from '../../location-product-lookup/purchase-product-lookup/purchase-product-lookup.component'

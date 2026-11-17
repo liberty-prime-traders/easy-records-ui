@@ -7,12 +7,12 @@ import {Tab, TabList, TabPanel, TabPanels, Tabs} from 'primeng/tabs'
 import {Tag} from 'primeng/tag'
 import {
   DeliveryLineRevisionPreview
-} from '../../../../api/location-level/delivery-revision/delivery-line-revision-preview.model'
-import {RevisionPreviewSeverity} from '../../../../api/location-level/delivery-revision/revision-preview-severity.enum'
-import {PurchaseDeliveryLine} from '../../../../api/location-level/delivery/purchase-delivery.model'
-import {ProductLabelPipe} from '../../../../utils/pipes/product-label.pipe'
-import {EmptyRowComponent} from '../../../reusable/empty-row/empty-row.component'
-import {MoneyComponent} from '../../../reusable/money.component'
+} from '../../../../../api/location-level/retail/delivery-revision/delivery-line-revision-preview.model'
+import {RevisionPreviewSeverity} from '../../../../../api/location-level/retail/delivery-revision/revision-preview-severity.enum'
+import {PurchaseDeliveryLine} from '../../../../../api/location-level/retail/delivery/purchase-delivery.model'
+import {ProductLabelPipe} from '../../../../../utils/pipes/product-label.pipe'
+import {EmptyRowComponent} from '../../../../reusable/empty-row/empty-row.component'
+import {MoneyComponent} from '../../../../reusable/money.component'
 
 interface SeverityDisplay {
   label: string

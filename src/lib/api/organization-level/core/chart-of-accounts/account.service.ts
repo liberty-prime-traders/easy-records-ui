@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core'
 import {EntityId} from '@ngrx/signals/entities'
-import {ApiCallbacks} from '../../util/base-api/api-callbacks'
-import {BaseService} from '../../util/base-api/base.service'
+import {ApiCallbacks} from '../../../util/base-api/api-callbacks'
+import {BaseService} from '../../../util/base-api/base.service'
 import {Account} from './account.model'
 import {AccountStore} from './account.store'
 

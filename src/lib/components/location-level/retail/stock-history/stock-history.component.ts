@@ -2,11 +2,11 @@ import {DatePipe} from '@angular/common'
 import {Component, effect, inject, input, untracked} from '@angular/core'
 import {EntityId} from '@ngrx/signals/entities'
 import {TableModule} from 'primeng/table'
-import {StockHistoryService} from '../../../api/location-level/stock-history/stock-history.service'
-import {NullSafePipe} from '../../../utils/pipes/null-safe.pipe'
-import {PrettifyEnumPipe} from '../../../utils/pipes/prettify-enum.pipe'
-import {AutoStretchDirective} from '../../reusable/auto-stretch.directive'
-import {EmptyRowComponent} from '../../reusable/empty-row/empty-row.component'
+import {StockHistoryService} from '../../../../api/location-level/retail/stock-history/stock-history.service'
+import {NullSafePipe} from '../../../../utils/pipes/null-safe.pipe'
+import {PrettifyEnumPipe} from '../../../../utils/pipes/prettify-enum.pipe'
+import {AutoStretchDirective} from '../../../reusable/auto-stretch.directive'
+import {EmptyRowComponent} from '../../../reusable/empty-row/empty-row.component'
 
 @Component({
   selector: 'rts-stock-history',

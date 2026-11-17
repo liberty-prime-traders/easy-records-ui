@@ -1,47 +1,47 @@
 import {Routes} from '@angular/router'
-import {ContactComponent} from '../../lib/components/organization-level/contact/contact.component'
-import {JobTitleComponent} from '../../lib/components/organization-level/job-title/job-title.component'
-import {ProductCategoryComponent} from '../../lib/components/organization-level/product-category/product-category.component'
+import {ContactComponent} from '../../lib/components/organization-level/core/contact/contact.component'
+import {JobTitleComponent} from '../../lib/components/organization-level/core/job-title/job-title.component'
+import {ProductCategoryComponent} from '../../lib/components/organization-level/retail/product-category/product-category.component'
 import {
   EndUserJoinRequestComponent
-} from '../../lib/components/organization-level/end-user-join-request/end-user-join-request.component'
-import {LocationsComponent} from '../../lib/components/organization-level/locations/locations.component'
+} from '../../lib/components/organization-level/core/end-user-join-request/end-user-join-request.component'
+import {LocationsComponent} from '../../lib/components/organization-level/core/locations/locations.component'
 import {
   OrganizationAdminComponent
-} from '../../lib/components/organization-level/organization-admin/organization-admin.component'
+} from '../../lib/components/organization-level/core/organization-admin/organization-admin.component'
 import {
   OrganizationProfileComponent
-} from '../../lib/components/organization-level/organization-profile/organization-profile.component'
+} from '../../lib/components/organization-level/core/organization-profile/organization-profile.component'
 import {
   OrganizationSummaryComponent
-} from '../../lib/components/organization-level/organization-summary/organization-summary.component'
+} from '../../lib/components/organization-level/core/organization-summary/organization-summary.component'
 import {
   OrganizationUserComponent
-} from '../../lib/components/organization-level/organization-user/organization-user.component'
-import {PaymentOptionComponent} from '../../lib/components/organization-level/payment-option/payment-option.component'
-import {ProductGroupComponent} from '../../lib/components/organization-level/product-group/product-group.component'
+} from '../../lib/components/organization-level/core/organization-user/organization-user.component'
+import {PaymentOptionComponent} from '../../lib/components/organization-level/core/payment-option/payment-option.component'
+import {ProductGroupComponent} from '../../lib/components/organization-level/retail/product-group/product-group.component'
 import {
   OrganizationProductComponent
-} from '../../lib/components/organization-level/products/organization-product.component'
-import {TagComponent} from '../../lib/components/organization-level/tag/tag.component'
-import {UnitTreeComponent} from '../../lib/components/organization-level/units/unit-tree.component'
+} from '../../lib/components/organization-level/retail/products/organization-product.component'
+import {TagComponent} from '../../lib/components/organization-level/core/tag/tag.component'
+import {UnitTreeComponent} from '../../lib/components/organization-level/retail/units/unit-tree.component'
 import {
   OrgTaxTypeComponent
-} from '../../lib/components/organization-level/org-tax-type/org-tax-type.component'
-import {TaxRateComponent} from '../../lib/components/organization-level/tax-rate/tax-rate.component'
-import {OrgFeatureComponent} from '../../lib/components/organization-level/org-feature/org-feature.component'
-import {ChartOfAccountsComponent} from '../../lib/components/organization-level/chart-of-accounts/chart-of-accounts.component'
-import {ExpenseTypeComponent} from '../../lib/components/organization-level/expense-type/expense-type.component'
+} from '../../lib/components/organization-level/core/org-tax-type/org-tax-type.component'
+import {TaxRateComponent} from '../../lib/components/organization-level/core/tax-rate/tax-rate.component'
+import {OrgFeatureComponent} from '../../lib/components/organization-level/core/org-feature/org-feature.component'
+import {ChartOfAccountsComponent} from '../../lib/components/organization-level/core/chart-of-accounts/chart-of-accounts.component'
+import {ExpenseTypeComponent} from '../../lib/components/organization-level/core/expense-type/expense-type.component'
 import {
   StockMovementReasonComponent
-} from '../../lib/components/organization-level/stock-movement-reason/stock-movement-reason.component'
-import {FundTransferComponent} from '../../lib/components/organization-level/fund-transfer/fund-transfer.component'
-import {JournalCorrectionsComponent} from '../../lib/components/organization-level/journal-corrections/journal-corrections.component'
-import {LoanComponent} from '../../lib/components/organization-level/loan/loan.component'
+} from '../../lib/components/organization-level/retail/stock-movement-reason/stock-movement-reason.component'
+import {FundTransferComponent} from '../../lib/components/organization-level/core/fund-transfer/fund-transfer.component'
+import {JournalCorrectionsComponent} from '../../lib/components/organization-level/core/journal-corrections/journal-corrections.component'
+import {LoanComponent} from '../../lib/components/organization-level/core/loan/loan.component'
 import {
   DailyBusinessSummaryComponent
-} from '../../lib/components/cross-tier/daily-business-summary/daily-business-summary.component'
-import {FiscalPeriodsComponent} from '../../lib/components/organization-level/fiscal-periods/fiscal-periods.component'
+} from '../../lib/components/cross-tier/retail/daily-business-summary/daily-business-summary.component'
+import {FiscalPeriodsComponent} from '../../lib/components/organization-level/core/fiscal-periods/fiscal-periods.component'
 
 export const orgManagementRoutes: Routes = [
   {path: 'summary', component: OrganizationSummaryComponent},

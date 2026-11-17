@@ -2,8 +2,8 @@ import {HttpClient} from '@angular/common/http'
 import {inject, Injectable} from '@angular/core'
 import {Subscription, throwError} from 'rxjs'
 import {catchError, first, tap} from 'rxjs/operators'
-import {SchemaLevel} from '../../platform-level/table-registry/schema-level.enum'
-import {ApiCallbacks} from '../../util/base-api/api-callbacks'
+import {SchemaLevel} from '../../../platform-level/table-registry/schema-level.enum'
+import {ApiCallbacks} from '../../../util/base-api/api-callbacks'
 import {AuthorityAssignmentRequest} from './authority.model'
 
 @Injectable({ providedIn: 'root' })

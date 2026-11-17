@@ -5,18 +5,18 @@ import {MessageService} from 'primeng/api'
 import {ButtonDirective} from 'primeng/button'
 import {TableModule} from 'primeng/table'
 import {TagModule} from 'primeng/tag'
-import {EndUserJoinRequest} from '../../../api/organization-level/end-user-join-request/end-user-join-request.model'
+import {EndUserJoinRequest} from '../../../../api/organization-level/core/end-user-join-request/end-user-join-request.model'
 import {
   EndUserJoinRequestService
-} from '../../../api/organization-level/end-user-join-request/end-user-join-request.service'
-import {OrgMembershipUserService} from '../../../api/organization-level/membership/org-membership-user.service'
-import {JoinRequestStatus} from '../../../api/util/join-request/join-request-status.enum'
-import {JoinRequestStatusSeverityPipe} from '../../../utils/pipes/join-request-status-severity.pipe'
-import {NullSafePipe} from '../../../utils/pipes/null-safe.pipe'
-import {PrettifyEnumPipe} from '../../../utils/pipes/prettify-enum.pipe'
-import {ProcessingStatus} from '../../../utils/types/processing-status.enum'
-import {EmptyRowComponent} from '../../reusable/empty-row/empty-row.component'
-import {GridFilterComponent} from '../../reusable/grid-filter/grid-filter.component'
+} from '../../../../api/organization-level/core/end-user-join-request/end-user-join-request.service'
+import {OrgMembershipUserService} from '../../../../api/organization-level/core/membership/org-membership-user.service'
+import {JoinRequestStatus} from '../../../../api/util/join-request/join-request-status.enum'
+import {JoinRequestStatusSeverityPipe} from '../../../../utils/pipes/join-request-status-severity.pipe'
+import {NullSafePipe} from '../../../../utils/pipes/null-safe.pipe'
+import {PrettifyEnumPipe} from '../../../../utils/pipes/prettify-enum.pipe'
+import {ProcessingStatus} from '../../../../utils/types/processing-status.enum'
+import {EmptyRowComponent} from '../../../reusable/empty-row/empty-row.component'
+import {GridFilterComponent} from '../../../reusable/grid-filter/grid-filter.component'
 
 @Component({
   selector: 'rts-end-user-join-request',

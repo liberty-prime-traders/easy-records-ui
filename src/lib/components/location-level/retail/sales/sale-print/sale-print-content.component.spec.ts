@@ -1,14 +1,14 @@
 import {Component, signal} from '@angular/core'
 import {TestBed} from '@angular/core/testing'
-import {SaleStatus} from '../../../../api/location-level/sale-summary/sale-status.enum'
-import {defaultSaleSession} from '../../../../api/location-level/sale_session/sale-session-default.value'
-import {SaleSession} from '../../../../api/location-level/sale_session/sale-session.model'
+import {SaleStatus} from '../../../../../api/location-level/retail/sale-summary/sale-status.enum'
+import {defaultSaleSession} from '../../../../../api/location-level/retail/sale_session/sale-session-default.value'
+import {SaleSession} from '../../../../../api/location-level/retail/sale_session/sale-session.model'
 import {
   UnitConversionGraphService
-} from '../../../../api/organization-level/unit-conversion/unit-conversion-graph.service'
-import {PrintDocumentComponent} from '../../../reusable/print'
-import {PrintPaperPreset} from '../../../reusable/print'
-import {createPresetPrintLayout} from '../../../reusable/print'
+} from '../../../../../api/organization-level/retail/unit-conversion/unit-conversion-graph.service'
+import {PrintDocumentComponent} from '../../../../reusable/print'
+import {PrintPaperPreset} from '../../../../reusable/print'
+import {createPresetPrintLayout} from '../../../../reusable/print'
 import {SalePrintContentComponent} from './sale-print-content.component'
 
 const LONG_NAME = 'Extra-strength weatherproof exterior masonry paint, brilliant white, 20 litre tub (Supercalifragilistic)'

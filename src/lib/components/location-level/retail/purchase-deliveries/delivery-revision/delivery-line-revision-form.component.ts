@@ -5,28 +5,28 @@ import {ButtonDirective} from 'primeng/button'
 import {InputNumber} from 'primeng/inputnumber'
 import {InputText} from 'primeng/inputtext'
 import {Select} from 'primeng/select'
-import {PurchaseDeliveryLine} from '../../../../api/location-level/delivery/purchase-delivery.model'
+import {PurchaseDeliveryLine} from '../../../../../api/location-level/retail/delivery/purchase-delivery.model'
 import {
   DeliveryLineRevisionPreview
-} from '../../../../api/location-level/delivery-revision/delivery-line-revision-preview.model'
-import {DeliveryLineRevisionService} from '../../../../api/location-level/delivery-revision/delivery-line-revision.service'
-import {PurchaseService} from '../../../../api/location-level/purchase/purchase.service'
+} from '../../../../../api/location-level/retail/delivery-revision/delivery-line-revision-preview.model'
+import {DeliveryLineRevisionService} from '../../../../../api/location-level/retail/delivery-revision/delivery-line-revision.service'
+import {PurchaseService} from '../../../../../api/location-level/retail/purchase/purchase.service'
 import {
   DeliveryLineRevisionPreviewService
-} from '../../../../api/location-level/delivery-revision/delivery-line-revision-preview.service'
+} from '../../../../../api/location-level/retail/delivery-revision/delivery-line-revision-preview.service'
 import {
   UnitDescriptionPipe
-} from '../../../../api/organization-level/unit-conversion/pipes/unit-description.pipe'
+} from '../../../../../api/organization-level/retail/unit-conversion/pipes/unit-description.pipe'
 import {
   AlternativeUnitsFinderPipe
-} from '../../../../api/organization-level/unit-conversion/pipes/alternative-units-finder.pipe'
-import {ProductLabelPipe} from '../../../../utils/pipes/product-label.pipe'
-import {BaseFormComponent} from '../../../reusable/base-form.component'
-import {ErrorSummaryComponent} from '../../../reusable/error-summary/error-summary.component'
+} from '../../../../../api/organization-level/retail/unit-conversion/pipes/alternative-units-finder.pipe'
+import {ProductLabelPipe} from '../../../../../utils/pipes/product-label.pipe'
+import {BaseFormComponent} from '../../../../reusable/base-form.component'
+import {ErrorSummaryComponent} from '../../../../reusable/error-summary/error-summary.component'
 import {PurchaseFormContext} from '../../purchases/purchase-form/form-utils/purchase-form-context'
-import {FormFieldLayout} from '../../../reusable/form-field/form-field-layout'
-import {FormFieldComponent} from '../../../reusable/form-field/form-field.component'
-import {LoadingContainerComponent} from '../../../reusable/loading-container/loading-container.component'
+import {FormFieldLayout} from '../../../../reusable/form-field/form-field-layout'
+import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
+import {LoadingContainerComponent} from '../../../../reusable/loading-container/loading-container.component'
 import {DeliveryLineRevisionFormDefinition} from './delivery-line-revision-form.definition'
 import {RevisionPreviewDialogComponent} from './revision-preview-dialog.component'
 

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core'
 import {Subscription} from 'rxjs'
-import {MultimapBaseService} from '../../util/base-api/multimap-base.service'
+import {MultimapBaseService} from '../../../util/base-api/multimap-base.service'
 import {ProductPurchasesReportParameters} from './product-purchases-report-parameters.model'
 import {ProductPurchasesReportRow} from './product-purchases-report-row.model'
 import {ProductPurchasesReportStore} from './product-purchases-report.store'

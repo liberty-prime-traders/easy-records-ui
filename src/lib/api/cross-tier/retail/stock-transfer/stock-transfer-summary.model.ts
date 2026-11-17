@@ -1,4 +1,4 @@
-import {BaseModel} from '../../util/base-api/base.model'
+import {BaseModel} from '../../../util/base-api/base.model'
 import {StockTransferStatus} from './stock-transfer-status.enum'
 
 export interface StockTransferSummary extends BaseModel {

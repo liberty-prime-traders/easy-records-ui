@@ -1,5 +1,5 @@
-import {BalanceEffect} from '../../organization-level/chart-of-accounts/balance-effect.enum'
-import {PaginatedModel} from '../../util/paginated-api/paginated.model'
+import {BalanceEffect} from '../../../organization-level/core/chart-of-accounts/balance-effect.enum'
+import {PaginatedModel} from '../../../util/paginated-api/paginated.model'
 import {PaymentType} from './payment-type.enum'
 
 export interface PaymentRow extends PaginatedModel {

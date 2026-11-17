@@ -1,5 +1,5 @@
 import {required, schema} from '@angular/forms/signals'
-import {FiscalPeriod} from '../../../../api/organization-level/fiscal-period/fiscal-period.model'
+import {FiscalPeriod} from '../../../../../api/organization-level/core/fiscal-period/fiscal-period.model'
 
 export namespace FiscalPeriodFormDefinition {
   export interface FormModel {

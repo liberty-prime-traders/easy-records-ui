@@ -2,10 +2,10 @@ import {ComponentFixture, TestBed} from '@angular/core/testing'
 import {NoopAnimationsModule} from '@angular/platform-browser/animations'
 import {
   DeliveryLineRevisionPreview
-} from '../../../../api/location-level/delivery-revision/delivery-line-revision-preview.model'
-import {RevisionPreviewSeverity} from '../../../../api/location-level/delivery-revision/revision-preview-severity.enum'
-import {PurchaseDeliveryLine} from '../../../../api/location-level/delivery/purchase-delivery.model'
-import {BalanceEffect} from '../../../../api/organization-level/chart-of-accounts/balance-effect.enum'
+} from '../../../../../api/location-level/retail/delivery-revision/delivery-line-revision-preview.model'
+import {RevisionPreviewSeverity} from '../../../../../api/location-level/retail/delivery-revision/revision-preview-severity.enum'
+import {PurchaseDeliveryLine} from '../../../../../api/location-level/retail/delivery/purchase-delivery.model'
+import {BalanceEffect} from '../../../../../api/organization-level/core/chart-of-accounts/balance-effect.enum'
 import {RevisionPreviewDialogComponent} from './revision-preview-dialog.component'
 
 describe('RevisionPreviewDialogComponent', () => {

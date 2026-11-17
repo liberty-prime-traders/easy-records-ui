@@ -4,11 +4,11 @@ import {EntityId} from '@ngrx/signals/entities'
 import {MessageService} from 'primeng/api'
 import {ButtonDirective} from 'primeng/button'
 import {TableModule} from 'primeng/table'
-import {EventProcessingLogStatus} from '../../../api/location-level/kafka-event-log/kafka-event-log.model'
-import {KafkaEventLogService} from '../../../api/location-level/kafka-event-log/kafka-event-log.service'
-import {NullSafePipe} from '../../../utils/pipes/null-safe.pipe'
-import {PrettifyEnumPipe} from '../../../utils/pipes/prettify-enum.pipe'
-import {EmptyRowComponent} from '../../reusable/empty-row/empty-row.component'
+import {EventProcessingLogStatus} from '../../../../api/location-level/core/kafka-event-log/kafka-event-log.model'
+import {KafkaEventLogService} from '../../../../api/location-level/core/kafka-event-log/kafka-event-log.service'
+import {NullSafePipe} from '../../../../utils/pipes/null-safe.pipe'
+import {PrettifyEnumPipe} from '../../../../utils/pipes/prettify-enum.pipe'
+import {EmptyRowComponent} from '../../../reusable/empty-row/empty-row.component'
 
 @Component({
   selector: 'rts-kafka-event-log',

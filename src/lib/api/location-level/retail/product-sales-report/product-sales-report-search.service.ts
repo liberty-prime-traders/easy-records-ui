@@ -1,5 +1,5 @@
 import {computed, Injectable} from '@angular/core'
-import {PaginatedBaseService} from '../../util/paginated-api/paginated-base.service'
+import {PaginatedBaseService} from '../../../util/paginated-api/paginated-base.service'
 import {ProductSalesReportSearchMetadata} from './product-sales-report-search-metadata.model'
 import {ProductSalesReportSearchParameters} from './product-sales-report-search-parameters.model'
 import {ProductSalesReportSearchStore} from './product-sales-report-search.store'

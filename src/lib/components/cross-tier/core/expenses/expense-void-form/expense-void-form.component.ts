@@ -1,12 +1,12 @@
 import {Component, inject, input, output, signal} from '@angular/core'
 import {form, FormField, required} from '@angular/forms/signals'
 import {InputText} from 'primeng/inputtext'
-import {Expense, ExpenseVoidRequest} from '../../../../api/cross-tier/expense/expense.model'
-import {EXPENSE_ACTIONS, ExpenseActions} from '../../../../api/cross-tier/expense/expense-actions'
-import {BaseFormComponent} from '../../../reusable/base-form.component'
-import {FormButtonsComponent} from '../../../reusable/form-buttons/form-buttons.component'
-import {FormFieldLayout} from '../../../reusable/form-field/form-field-layout'
-import {FormFieldComponent} from '../../../reusable/form-field/form-field.component'
+import {Expense, ExpenseVoidRequest} from '../../../../../api/cross-tier/core/expense/expense.model'
+import {EXPENSE_ACTIONS, ExpenseActions} from '../../../../../api/cross-tier/core/expense/expense-actions'
+import {BaseFormComponent} from '../../../../reusable/base-form.component'
+import {FormButtonsComponent} from '../../../../reusable/form-buttons/form-buttons.component'
+import {FormFieldLayout} from '../../../../reusable/form-field/form-field-layout'
+import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
 
 @Component({
   selector: 'rts-expense-void-form',

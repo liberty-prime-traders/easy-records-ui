@@ -1,12 +1,12 @@
 import {Component, inject, input, output, signal} from '@angular/core'
 import {form, FormField, required, schema} from '@angular/forms/signals'
 import {InputText} from 'primeng/inputtext'
-import {ManualJournal} from '../../../../api/organization-level/manual-journal/manual-journal.model'
-import {ManualJournalService} from '../../../../api/organization-level/manual-journal/manual-journal.service'
-import {BaseFormComponent} from '../../../reusable/base-form.component'
-import {FormButtonsComponent} from '../../../reusable/form-buttons/form-buttons.component'
-import {FormFieldLayout} from '../../../reusable/form-field/form-field-layout'
-import {FormFieldComponent} from '../../../reusable/form-field/form-field.component'
+import {ManualJournal} from '../../../../../api/organization-level/core/manual-journal/manual-journal.model'
+import {ManualJournalService} from '../../../../../api/organization-level/core/manual-journal/manual-journal.service'
+import {BaseFormComponent} from '../../../../reusable/base-form.component'
+import {FormButtonsComponent} from '../../../../reusable/form-buttons/form-buttons.component'
+import {FormFieldLayout} from '../../../../reusable/form-field/form-field-layout'
+import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
 
 interface ReversalFormModel {
   reason: string

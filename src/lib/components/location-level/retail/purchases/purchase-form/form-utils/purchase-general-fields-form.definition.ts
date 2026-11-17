@@ -1,8 +1,8 @@
 import {disabled, required, schema} from '@angular/forms/signals'
-import {PaymentStatus} from '../../../../../api/location-level/purchase/payment-status.enum'
-import {PurchaseStatus} from '../../../../../api/location-level/purchase/purchase-status.enum'
-import {Purchase} from '../../../../../api/location-level/purchase/purchase.model'
-import {ZonedDatesService} from '../../../../../utils/services/zoned-dates.service'
+import {PaymentStatus} from '../../../../../../api/location-level/retail/purchase/payment-status.enum'
+import {PurchaseStatus} from '../../../../../../api/location-level/retail/purchase/purchase-status.enum'
+import {Purchase} from '../../../../../../api/location-level/retail/purchase/purchase.model'
+import {ZonedDatesService} from '../../../../../../utils/services/zoned-dates.service'
 
 export namespace PurchaseGeneralFieldsFormDefinition {
   export interface PurchaseGeneralFieldsModel {

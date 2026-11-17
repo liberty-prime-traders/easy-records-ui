@@ -1,7 +1,7 @@
 import {computed, Injectable, signal, Signal} from '@angular/core'
 import {isEqual} from 'lodash-es'
 import {Subscription} from 'rxjs'
-import {BaseService} from '../../util/base-api/base.service'
+import {BaseService} from '../../../util/base-api/base.service'
 import {PurchaseSearchParameters} from './purchase-search-parameters.model'
 import {PurchaseSearchSummary} from './purchase-search-summary.model'
 import {PurchaseSearchSummaryStore} from './purchase-search-summary.store'

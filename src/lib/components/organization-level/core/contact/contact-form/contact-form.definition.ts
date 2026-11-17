@@ -1,8 +1,8 @@
 import {minLength, pattern, required, schema} from '@angular/forms/signals'
-import {ContactStatus} from '../../../../api/organization-level/contact/contact-status.enum'
-import {ContactType} from '../../../../api/organization-level/contact/contact-type.enum'
-import {Contact} from '../../../../api/organization-level/contact/contact.model'
-import {IdentityType} from '../../../../api/organization-level/contact/identity-type.enum'
+import {ContactStatus} from '../../../../../api/organization-level/core/contact/contact-status.enum'
+import {ContactType} from '../../../../../api/organization-level/core/contact/contact-type.enum'
+import {Contact} from '../../../../../api/organization-level/core/contact/contact.model'
+import {IdentityType} from '../../../../../api/organization-level/core/contact/identity-type.enum'
 
 export namespace ContactFormDefinition {
   export interface ContactFormModel {

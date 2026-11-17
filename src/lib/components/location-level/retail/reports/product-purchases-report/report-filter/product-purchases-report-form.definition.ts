@@ -1,8 +1,8 @@
 import {schema} from '@angular/forms/signals'
-import {ProductPurchasesDeliveryLinesParameters} from '../../../../../api/location-level/product-purchases-report/product-purchases-delivery-lines-parameters.model'
-import {ProductPurchasesReportParameters} from '../../../../../api/location-level/product-purchases-report/product-purchases-report-parameters.model'
-import {getToday, getTomorrow} from '../../../../../utils/dates'
-import {ZonedDatesService} from '../../../../../utils/services/zoned-dates.service'
+import {ProductPurchasesDeliveryLinesParameters} from '../../../../../../api/location-level/retail/product-purchases-report/product-purchases-delivery-lines-parameters.model'
+import {ProductPurchasesReportParameters} from '../../../../../../api/location-level/retail/product-purchases-report/product-purchases-report-parameters.model'
+import {getToday, getTomorrow} from '../../../../../../utils/dates'
+import {ZonedDatesService} from '../../../../../../utils/services/zoned-dates.service'
 
 export namespace ProductPurchasesReportFormDefinition {
   export interface ProductPurchasesReportFormModel {

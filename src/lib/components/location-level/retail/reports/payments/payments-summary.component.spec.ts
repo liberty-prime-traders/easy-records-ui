@@ -1,9 +1,9 @@
 import {signal} from '@angular/core'
 import {ComponentFixture, TestBed} from '@angular/core/testing'
-import {PaymentTypeSummary, PaymentSummary} from '../../../../api/location-level/payment/payment-summary.model'
-import {PaymentSummaryService} from '../../../../api/location-level/payment/payment-summary.service'
-import {PaymentType} from '../../../../api/location-level/payment/payment-type.enum'
-import {BalanceEffect} from '../../../../api/organization-level/chart-of-accounts/balance-effect.enum'
+import {PaymentTypeSummary, PaymentSummary} from '../../../../../api/location-level/retail/payment/payment-summary.model'
+import {PaymentSummaryService} from '../../../../../api/location-level/retail/payment/payment-summary.service'
+import {PaymentType} from '../../../../../api/location-level/retail/payment/payment-type.enum'
+import {BalanceEffect} from '../../../../../api/organization-level/core/chart-of-accounts/balance-effect.enum'
 import {PaymentsSummaryComponent} from './payments-summary.component'
 import {buildSummaryGridRows} from './summary-grid-row'
 

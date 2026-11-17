@@ -1,5 +1,5 @@
 import {pattern, required, schema} from '@angular/forms/signals'
-import {Patterns} from '../../../../utils/patterns'
+import {Patterns} from '../../../../../utils/patterns'
 
 export namespace SalePaymentFormDefinition {
 

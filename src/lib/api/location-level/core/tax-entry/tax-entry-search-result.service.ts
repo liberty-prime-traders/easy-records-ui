@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core'
-import {PaginatedBaseService} from '../../util/paginated-api/paginated-base.service'
+import {PaginatedBaseService} from '../../../util/paginated-api/paginated-base.service'
 import {TaxEntrySearchParameters} from './tax-entry-search-parameters.model'
 import {TaxEntrySearchResult} from './tax-entry-search-result.model'
 import {TaxEntrySearchResultStore} from './tax-entry-search-result.store'

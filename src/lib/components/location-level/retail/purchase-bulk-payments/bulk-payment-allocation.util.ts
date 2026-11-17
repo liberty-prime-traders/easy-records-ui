@@ -1,4 +1,4 @@
-import {PurchaseBulkPaymentLine} from '../../../api/location-level/purchase-bulk-payment/purchase-bulk-payment.model'
+import {PurchaseBulkPaymentLine} from '../../../../api/location-level/retail/purchase-bulk-payment/purchase-bulk-payment.model'
 
 export interface BulkPaymentRow {
   line: PurchaseBulkPaymentLine

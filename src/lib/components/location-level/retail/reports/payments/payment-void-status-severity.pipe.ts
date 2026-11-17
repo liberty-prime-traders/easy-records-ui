@@ -1,6 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core'
-import {PaymentVoidStatus} from '../../../../api/location-level/payment/payment-void-status.enum'
-import {RtsSeverity} from '../../../../utils/types/severity'
+import {PaymentVoidStatus} from '../../../../../api/location-level/retail/payment/payment-void-status.enum'
+import {RtsSeverity} from '../../../../../utils/types/severity'
 
 @Pipe({name: 'paymentVoidStatusSeverity', standalone: true})
 export class PaymentVoidStatusSeverityPipe implements PipeTransform {

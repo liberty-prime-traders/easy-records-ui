@@ -1,5 +1,5 @@
-import {Purchase} from '../../../../../api/location-level/purchase/purchase.model'
-import {ZonedDatesService} from '../../../../../utils/services/zoned-dates.service'
+import {Purchase} from '../../../../../../api/location-level/retail/purchase/purchase.model'
+import {ZonedDatesService} from '../../../../../../utils/services/zoned-dates.service'
 import {PurchaseGeneralFieldsFormDefinition} from './purchase-general-fields-form.definition'
 import {PurchaseLineFormDefinition} from './purchase-line-form.definition'
 

@@ -1,11 +1,11 @@
 import {computed, effect, inject, Injectable, signal, untracked} from '@angular/core'
 import {form} from '@angular/forms/signals'
-import {ProductCategoryService} from '../../../../../api/organization-level/product-category/product-category.service'
-import {ContactService} from '../../../../../api/organization-level/contact/contact.service'
-import {ProductPurchasesReportService} from '../../../../../api/location-level/product-purchases-report/product-purchases-report.service'
-import {ProductCore} from '../../../../../api/cross-tier/product/product-core.model'
-import {ZonedDatesService} from '../../../../../utils/services/zoned-dates.service'
-import {debouncedSignal} from '../../../../../utils/signals'
+import {ProductCategoryService} from '../../../../../../api/organization-level/retail/product-category/product-category.service'
+import {ContactService} from '../../../../../../api/organization-level/core/contact/contact.service'
+import {ProductPurchasesReportService} from '../../../../../../api/location-level/retail/product-purchases-report/product-purchases-report.service'
+import {ProductCore} from '../../../../../../api/cross-tier/retail/product/product-core.model'
+import {ZonedDatesService} from '../../../../../../utils/services/zoned-dates.service'
+import {debouncedSignal} from '../../../../../../utils/signals'
 import {ProductPurchasesReportFormDefinition} from './product-purchases-report-form.definition'
 
 const FILTER_DEBOUNCE_IN_MS = 500

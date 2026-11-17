@@ -17,11 +17,11 @@ import {MessageService} from 'primeng/api'
 import {ButtonDirective} from 'primeng/button'
 import {Dialog} from 'primeng/dialog'
 import {Select} from 'primeng/select'
-import {SaleSession} from '../../../../api/location-level/sale_session/sale-session.model'
-import {LocalStorageService} from '../../../../utils/services/local-storage.service'
-import {SessionContextService} from '../../../../utils/services/session-context.service'
-import {LocalStorageKey} from '../../../../utils/types/local-storage-key.enum'
-import {NullSafePipe} from '../../../../utils/pipes/null-safe.pipe'
+import {SaleSession} from '../../../../../api/location-level/retail/sale_session/sale-session.model'
+import {LocalStorageService} from '../../../../../utils/services/local-storage.service'
+import {SessionContextService} from '../../../../../utils/services/session-context.service'
+import {LocalStorageKey} from '../../../../../utils/types/local-storage-key.enum'
+import {NullSafePipe} from '../../../../../utils/pipes/null-safe.pipe'
 import {
   findPrintLayoutById,
   PRINT_LAYOUT_PRESETS,
@@ -33,7 +33,7 @@ import {
   PrintLayoutKind,
   PrintPreviewComponent,
   PrintService
-} from '../../../reusable/print'
+} from '../../../../reusable/print'
 import {SalePrintContentComponent} from './sale-print-content.component'
 
 @Component({

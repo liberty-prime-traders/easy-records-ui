@@ -9,7 +9,7 @@ import {TableModule} from 'primeng/table'
 import {
   DailyPerformanceDay,
   DailyPerformanceFigures
-} from '../../../../api/cross-tier/daily-business-summary/daily-performance.model'
+} from '../../../../../api/cross-tier/retail/daily-business-summary/daily-performance.model'
 import {SummaryTileComponent, TileTone} from '../summary-tile/summary-tile.component'
 import {TrendChartComponent} from '../trend-chart/trend-chart.component'
 import {buildCollectedRows, buildProfitAndLossRows, hasActivity} from '../summary-view.util'

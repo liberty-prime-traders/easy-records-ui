@@ -1,5 +1,5 @@
 import {Component, inject, OnDestroy, OnInit} from '@angular/core'
-import {SaleFormVisibilityContext} from './sales/sale-form-visibility.context'
+import {SaleFormVisibilityContext} from './retail/sales/sale-form-visibility.context'
 
 @Component({
   selector: 'rts-hides-sale-button',

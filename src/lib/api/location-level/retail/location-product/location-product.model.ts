@@ -1,4 +1,4 @@
-import {ProductDetail} from '../../cross-tier/product/product-detail.model'
+import {ProductDetail} from '../../../cross-tier/retail/product/product-detail.model'
 
 export interface LocationProduct extends ProductDetail {
   baseUnitId: string

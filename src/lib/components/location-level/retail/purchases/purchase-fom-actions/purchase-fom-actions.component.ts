@@ -1,7 +1,7 @@
 import {Component, computed, inject} from '@angular/core'
 import {ButtonDirective} from 'primeng/button'
-import {Purchase} from '../../../../api/location-level/purchase/purchase.model'
-import {PurchaseService} from '../../../../api/location-level/purchase/purchase.service'
+import {Purchase} from '../../../../../api/location-level/retail/purchase/purchase.model'
+import {PurchaseService} from '../../../../../api/location-level/retail/purchase/purchase.service'
 import {PurchaseFormContext} from '../purchase-form/form-utils/purchase-form-context'
 import {PurchasesFilterState} from '../purchases-filter/purchases-filter.state'
 

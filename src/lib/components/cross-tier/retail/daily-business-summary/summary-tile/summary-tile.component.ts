@@ -1,7 +1,7 @@
 import {CurrencyPipe, NgClass} from '@angular/common'
 import {Component, computed, input} from '@angular/core'
 import {Card} from 'primeng/card'
-import {BalanceEffect} from '../../../../api/organization-level/chart-of-accounts/balance-effect.enum'
+import {BalanceEffect} from '../../../../../api/organization-level/core/chart-of-accounts/balance-effect.enum'
 import {Skeleton} from 'primeng/skeleton'
 import {AmountChangeComponent} from '../amount-change/amount-change.component'
 

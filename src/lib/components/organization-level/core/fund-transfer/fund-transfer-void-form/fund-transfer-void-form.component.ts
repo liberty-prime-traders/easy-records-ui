@@ -1,12 +1,12 @@
 import {Component, inject, input, output, signal} from '@angular/core'
 import {form, FormField} from '@angular/forms/signals'
 import {InputText} from 'primeng/inputtext'
-import {FundMovement} from '../../../../api/organization-level/fund-transfer/fund-movement.model'
-import {FundMovementService} from '../../../../api/organization-level/fund-transfer/fund-movement.service'
-import {BaseFormComponent} from '../../../reusable/base-form.component'
-import {FormButtonsComponent} from '../../../reusable/form-buttons/form-buttons.component'
-import {FormFieldLayout} from '../../../reusable/form-field/form-field-layout'
-import {FormFieldComponent} from '../../../reusable/form-field/form-field.component'
+import {FundMovement} from '../../../../../api/organization-level/core/fund-transfer/fund-movement.model'
+import {FundMovementService} from '../../../../../api/organization-level/core/fund-transfer/fund-movement.service'
+import {BaseFormComponent} from '../../../../reusable/base-form.component'
+import {FormButtonsComponent} from '../../../../reusable/form-buttons/form-buttons.component'
+import {FormFieldLayout} from '../../../../reusable/form-field/form-field-layout'
+import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
 
 @Component({
   selector: 'rts-fund-transfer-void-form',

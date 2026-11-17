@@ -1,6 +1,6 @@
 import {HttpClient} from '@angular/common/http'
 import {computed, inject, Injectable} from '@angular/core'
-import {FetchService} from '../../util/base-api/fetch-service'
+import {FetchService} from '../../../util/base-api/fetch-service'
 import {AccountsTreesForSelection} from './account-trees.model'
 import {AccountTreesStore} from './account-trees.store'
 

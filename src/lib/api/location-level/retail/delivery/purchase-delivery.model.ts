@@ -1,5 +1,5 @@
 import {EntityId} from '@ngrx/signals/entities'
-import {BaseModel} from '../../util/base-api/base.model'
+import {BaseModel} from '../../../util/base-api/base.model'
 import {LocationProduct} from '../location-product/location-product.model'
 import {PurchaseDeliveryLineStatus} from '../product-purchases-report/purchase-delivery-line-status.enum'
 

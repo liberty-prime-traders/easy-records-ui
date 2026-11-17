@@ -1,5 +1,5 @@
 import {required, schema} from '@angular/forms/signals'
-import {PaymentOption} from '../../../../api/organization-level/payment-option/payment-option.model.'
+import {PaymentOption} from '../../../../../api/organization-level/core/payment-option/payment-option.model.'
 
 export namespace PaymentOptionFormDefinition {
 

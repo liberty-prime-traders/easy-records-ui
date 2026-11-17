@@ -1,9 +1,9 @@
 import {schema} from '@angular/forms/signals'
-import {PaymentVoidStatus} from '../../../../../api/location-level/payment/payment-void-status.enum'
-import {PaymentSummaryParams} from '../../../../../api/location-level/payment/payment-summary-params.model'
-import {PaymentType} from '../../../../../api/location-level/payment/payment-type.enum'
-import {getToday, getTomorrow} from '../../../../../utils/dates'
-import {ZonedDatesService} from '../../../../../utils/services/zoned-dates.service'
+import {PaymentVoidStatus} from '../../../../../../api/location-level/retail/payment/payment-void-status.enum'
+import {PaymentSummaryParams} from '../../../../../../api/location-level/retail/payment/payment-summary-params.model'
+import {PaymentType} from '../../../../../../api/location-level/retail/payment/payment-type.enum'
+import {getToday, getTomorrow} from '../../../../../../utils/dates'
+import {ZonedDatesService} from '../../../../../../utils/services/zoned-dates.service'
 
 export namespace PaymentsFilterFormDefinition {
   export interface PaymentsFilterFormModel {

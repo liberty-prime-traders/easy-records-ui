@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core'
-import {PaginatedBaseService} from '../../util/paginated-api/paginated-base.service'
+import {PaginatedBaseService} from '../../../util/paginated-api/paginated-base.service'
 import {FundMovementSearchParameters} from './fund-movement-search-parameters.model'
 import {FundMovementSearchResult} from './fund-movement-search-result.model'
 import {FundMovementSearchResultStore} from './fund-movement-search-result.store'

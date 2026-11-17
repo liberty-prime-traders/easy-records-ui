@@ -2,10 +2,10 @@ import {Component, computed, inject, input, OnInit} from '@angular/core'
 import {FormBuilder, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms'
 import {isNil} from 'lodash-es'
 import {InputText} from 'primeng/inputtext'
-import {JobTitle} from '../../../../api/organization-level/jobtitle/jobtitle.model'
-import {JobTitleService} from '../../../../api/organization-level/jobtitle/jobtitle.service'
-import {FormButtonsComponent} from '../../../reusable/form-buttons/form-buttons.component'
-import {FormFieldComponent} from '../../../reusable/form-field/form-field.component'
+import {JobTitle} from '../../../../../api/organization-level/core/jobtitle/jobtitle.model'
+import {JobTitleService} from '../../../../../api/organization-level/core/jobtitle/jobtitle.service'
+import {FormButtonsComponent} from '../../../../reusable/form-buttons/form-buttons.component'
+import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
 
 
 @Component({

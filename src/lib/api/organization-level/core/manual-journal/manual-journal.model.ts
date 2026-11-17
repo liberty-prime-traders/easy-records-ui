@@ -1,5 +1,5 @@
 import {AccountType} from '../chart-of-accounts/account-type.enum'
-import {BaseModel} from '../../util/base-api/base.model'
+import {BaseModel} from '../../../util/base-api/base.model'
 import {ManualJournalEntryType} from './manual-journal-entry-type.enum'
 
 export interface ManualJournalLine {

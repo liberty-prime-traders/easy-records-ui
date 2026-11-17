@@ -1,4 +1,4 @@
-import {BaseModel} from '../../util/base-api/base.model'
+import {BaseModel} from '../../../util/base-api/base.model'
 
 export interface TaxRate extends BaseModel {
   orgJurisdictionTaxTypeId?: string

@@ -1,6 +1,6 @@
 import {CurrencyPipe} from '@angular/common'
 import {inject, Injectable} from '@angular/core'
-import {RoundNumbersPipe} from '../../../utils/pipes/round-numbers.pipe'
+import {RoundNumbersPipe} from '../../../../utils/pipes/round-numbers.pipe'
 import {ConversionContext} from './conversion-context.model'
 import {UnitConversionGraphService} from './unit-conversion-graph.service'
 import {UnitPluralDerivation} from './unit-plural-derivation.enum'

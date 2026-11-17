@@ -1,4 +1,4 @@
-import {PaginatedModel} from '../../util/paginated-api/paginated.model'
+import {PaginatedModel} from '../../../util/paginated-api/paginated.model'
 import {PaymentStatus} from '../purchase/payment-status.enum'
 import {SaleStatus} from './sale-status.enum'
 

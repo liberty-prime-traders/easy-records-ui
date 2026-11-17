@@ -1,4 +1,4 @@
-import {BaseModel} from '../../util/base-api/base.model'
+import {BaseModel} from '../../../util/base-api/base.model'
 import {BalanceEffect} from '../chart-of-accounts/balance-effect.enum'
 import {ContactStatus} from './contact-status.enum'
 import {ContactType} from './contact-type.enum'

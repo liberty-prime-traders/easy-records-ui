@@ -1,7 +1,7 @@
 import {computed, Injectable, signal, Signal} from '@angular/core'
 import {isEqual, sumBy} from 'lodash-es'
 import {Subscription} from 'rxjs'
-import {BaseService} from '../../util/base-api/base.service'
+import {BaseService} from '../../../util/base-api/base.service'
 import {PaymentSummaryParams} from './payment-summary-params.model'
 import {PaymentSummary} from './payment-summary.model'
 import {PaymentSummaryStore} from './payment-summary.store'

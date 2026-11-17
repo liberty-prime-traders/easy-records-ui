@@ -1,5 +1,5 @@
 import {EntityId} from '@ngrx/signals/entities'
-import {BaseModel} from '../../util/base-api/base.model'
+import {BaseModel} from '../../../util/base-api/base.model'
 
 export enum EventProcessingLogStatus {
   PENDING = 'PENDING',

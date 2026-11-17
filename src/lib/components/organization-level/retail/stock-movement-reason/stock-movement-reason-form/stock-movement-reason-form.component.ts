@@ -4,15 +4,15 @@ import {FormsModule} from '@angular/forms'
 import {form, FormField} from '@angular/forms/signals'
 import {Checkbox} from 'primeng/checkbox'
 import {InputText} from 'primeng/inputtext'
-import {MovementType} from '../../../../api/organization-level/stock-movement-reason/movement-type.enum'
-import {StockMovementReason} from '../../../../api/organization-level/stock-movement-reason/stock-movement-reason.model'
+import {MovementType} from '../../../../../api/organization-level/retail/stock-movement-reason/movement-type.enum'
+import {StockMovementReason} from '../../../../../api/organization-level/retail/stock-movement-reason/stock-movement-reason.model'
 import {
   StockMovementReasonService
-} from '../../../../api/organization-level/stock-movement-reason/stock-movement-reason.service'
-import {EnumToDropdownPipe} from '../../../../utils/pipes/enum-to-dropdown.pipe'
-import {BaseFormComponent} from '../../../reusable/base-form.component'
-import {FormButtonsComponent} from '../../../reusable/form-buttons/form-buttons.component'
-import {FormFieldComponent} from '../../../reusable/form-field/form-field.component'
+} from '../../../../../api/organization-level/retail/stock-movement-reason/stock-movement-reason.service'
+import {EnumToDropdownPipe} from '../../../../../utils/pipes/enum-to-dropdown.pipe'
+import {BaseFormComponent} from '../../../../reusable/base-form.component'
+import {FormButtonsComponent} from '../../../../reusable/form-buttons/form-buttons.component'
+import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
 import {StockMovementReasonFormDefinition} from './stock-movement-reason-form.definition'
 
 @Component({

@@ -1,5 +1,5 @@
-import {CalculationMethod} from '../../platform-level/tax-type/calculation-method.enum'
-import {PaginatedModel} from '../../util/paginated-api/paginated.model'
+import {CalculationMethod} from '../../../platform-level/tax-type/calculation-method.enum'
+import {PaginatedModel} from '../../../util/paginated-api/paginated.model'
 import {TaxDirection} from './tax-direction.enum'
 import {TaxSourceType} from './tax-source-type.enum'
 

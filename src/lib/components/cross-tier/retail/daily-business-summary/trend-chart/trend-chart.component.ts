@@ -1,12 +1,12 @@
 import {Component, computed, inject, input, output} from '@angular/core'
 import {AgCharts} from 'ag-charts-angular'
 import {AgChartOptions} from 'ag-charts-community'
-import {DailyPerformanceDay} from '../../../../api/cross-tier/daily-business-summary/daily-performance.model'
-import {PeriodStatus} from '../../../../api/cross-tier/daily-business-summary/period-status.enum'
-import {CurrencyCodeProviderService} from '../../../../utils/services/currency-code-provider.service'
+import {DailyPerformanceDay} from '../../../../../api/cross-tier/retail/daily-business-summary/daily-performance.model'
+import {PeriodStatus} from '../../../../../api/cross-tier/retail/daily-business-summary/period-status.enum'
+import {CurrencyCodeProviderService} from '../../../../../utils/services/currency-code-provider.service'
 import {abbreviateAmount} from '../abbreviate-amount.util'
 import {readThemeColor} from '../chart-theme.util'
-import {formatDayLabel, formatFullDay} from '../../../../utils/dates'
+import {formatDayLabel, formatFullDay} from '../../../../../utils/dates'
 import {TODAY_SO_FAR} from '../summary-view.util'
 
 const DIMMED_OPACITY = 0.3

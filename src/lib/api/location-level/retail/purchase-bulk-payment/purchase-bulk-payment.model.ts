@@ -1,4 +1,4 @@
-import {BaseModel} from '../../util/base-api/base.model'
+import {BaseModel} from '../../../util/base-api/base.model'
 import {PaymentStatus} from '../purchase/payment-status.enum'
 import {PurchaseStatus} from '../purchase/purchase-status.enum'
 

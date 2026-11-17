@@ -3,12 +3,12 @@ import {provideHttpClient} from '@angular/common/http'
 import {HttpTestingController, provideHttpClientTesting, TestRequest} from '@angular/common/http/testing'
 import {ComponentFixture, TestBed} from '@angular/core/testing'
 import {TIMEZONE_TOKEN} from '@global/utils/timezones.config'
-import {DailyBalances} from '../../../api/cross-tier/daily-business-summary/daily-balances.model'
+import {DailyBalances} from '../../../../api/cross-tier/retail/daily-business-summary/daily-balances.model'
 import {
   DailyPerformance,
   DailyPerformanceDay
-} from '../../../api/cross-tier/daily-business-summary/daily-performance.model'
-import {PeriodStatus} from '../../../api/cross-tier/daily-business-summary/period-status.enum'
+} from '../../../../api/cross-tier/retail/daily-business-summary/daily-performance.model'
+import {PeriodStatus} from '../../../../api/cross-tier/retail/daily-business-summary/period-status.enum'
 import {DailyBusinessSummaryComponent, SummaryTab} from './daily-business-summary.component'
 import {DateRangePreset} from './date-range-preset.enum'
 import {emptyFigures, sampleBalances} from './summary-view.util.spec'

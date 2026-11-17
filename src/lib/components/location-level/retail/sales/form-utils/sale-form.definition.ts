@@ -1,5 +1,5 @@
 import {applyEach, applyWhen, disabled, required, RootFieldContext, schema} from '@angular/forms/signals'
-import {SaleSession} from '../../../../api/location-level/sale_session/sale-session.model'
+import {SaleSession} from '../../../../../api/location-level/retail/sale_session/sale-session.model'
 import {SaleLineFormDefinition} from './sale-line-form.definition'
 
 export namespace SaleFormDefinition {

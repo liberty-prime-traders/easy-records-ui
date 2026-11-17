@@ -6,14 +6,14 @@ import {InputNumber} from 'primeng/inputnumber'
 import {Message} from 'primeng/message'
 import {
   ContactOpeningBalanceRevisionService
-} from '../../../../../api/organization-level/contact-opening-balance/contact-opening-balance-revision.service'
-import {Contact} from '../../../../../api/organization-level/contact/contact.model'
-import {ContactService} from '../../../../../api/organization-level/contact/contact.service'
-import {CurrencyCodeProviderService} from '../../../../../utils/services/currency-code-provider.service'
-import {ErrorSummaryComponent} from '../../../../reusable/error-summary/error-summary.component'
-import {FormFieldLayout} from '../../../../reusable/form-field/form-field-layout'
-import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
-import {LoadingContainerComponent} from '../../../../reusable/loading-container/loading-container.component'
+} from '../../../../../../api/organization-level/core/contact-opening-balance/contact-opening-balance-revision.service'
+import {Contact} from '../../../../../../api/organization-level/core/contact/contact.model'
+import {ContactService} from '../../../../../../api/organization-level/core/contact/contact.service'
+import {CurrencyCodeProviderService} from '../../../../../../utils/services/currency-code-provider.service'
+import {ErrorSummaryComponent} from '../../../../../reusable/error-summary/error-summary.component'
+import {FormFieldLayout} from '../../../../../reusable/form-field/form-field-layout'
+import {FormFieldComponent} from '../../../../../reusable/form-field/form-field.component'
+import {LoadingContainerComponent} from '../../../../../reusable/loading-container/loading-container.component'
 import {ContactOpeningBalanceEditDefinition} from './contact-opening-balance-edit.definition'
 
 @Component({

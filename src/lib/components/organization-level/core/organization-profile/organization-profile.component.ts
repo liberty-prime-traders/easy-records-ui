@@ -3,12 +3,12 @@ import {Component, effect, inject, OnInit} from '@angular/core'
 import {FormBuilder, ReactiveFormsModule, Validators} from '@angular/forms'
 import {Divider} from 'primeng/divider'
 import {InputTextModule} from 'primeng/inputtext'
-import {OrganizationService} from '../../../api/platform-level/organization/organization.service'
-import {SessionContextService} from '../../../utils/services/session-context.service'
-import {ProcessingStatus} from '../../../utils/types/processing-status.enum'
-import {FormButtonsComponent} from '../../reusable/form-buttons/form-buttons.component'
-import {AdminDataFixesComponent} from '../admin-data-fixes/admin-data-fixes.component'
-import {FormFieldComponent} from '../../reusable/form-field/form-field.component'
+import {OrganizationService} from '../../../../api/platform-level/organization/organization.service'
+import {SessionContextService} from '../../../../utils/services/session-context.service'
+import {ProcessingStatus} from '../../../../utils/types/processing-status.enum'
+import {FormButtonsComponent} from '../../../reusable/form-buttons/form-buttons.component'
+import {AdminDataFixesComponent} from '../../retail/admin-data-fixes/admin-data-fixes.component'
+import {FormFieldComponent} from '../../../reusable/form-field/form-field.component'
 
 @Component({
   selector: 'rts-update-organization',

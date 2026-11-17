@@ -4,11 +4,11 @@ import {isEqual} from 'lodash-es'
 import {
   PurchaseBulkPaymentCreateRequest,
   PurchaseBulkPaymentSearchRequest
-} from '../../../api/location-level/purchase-bulk-payment/purchase-bulk-payment.model'
+} from '../../../../api/location-level/retail/purchase-bulk-payment/purchase-bulk-payment.model'
 import {
   PurchaseBulkPaymentService
-} from '../../../api/location-level/purchase-bulk-payment/purchase-bulk-payment.service'
-import {ZonedDatesService} from '../../../utils/services/zoned-dates.service'
+} from '../../../../api/location-level/retail/purchase-bulk-payment/purchase-bulk-payment.service'
+import {ZonedDatesService} from '../../../../utils/services/zoned-dates.service'
 import {sumPayable} from './bulk-payment-allocation.util'
 import {BulkPaymentFormDefinition} from './bulk-payment-form.definition'
 

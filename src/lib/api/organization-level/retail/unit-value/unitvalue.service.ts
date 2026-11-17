@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core'
-import {MultimapBaseService} from '../../util/base-api/multimap-base.service'
+import {MultimapBaseService} from '../../../util/base-api/multimap-base.service'
 import {UnitValue} from './unitvalue.model'
 import {UnitValueStore} from './unitvalue.store'
 

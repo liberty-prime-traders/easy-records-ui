@@ -7,7 +7,7 @@ The api and components are split into these sections. some util and cross tier f
 
 # Forms
 I use signal forms for all forms. A good example is found at the location below:
-@src/lib/components/organization-level/product-group/product-group-form
+@src/lib/components/organization-level/retail/product-group/product-group-form
 Error message display can be generic via `<rts-error-summary/>` using the form or`regularErrorMessages`
 
 # API
@@ -44,7 +44,7 @@ However, some forms are larger and may need a full page. I choose to hide the gr
 I use `@If` to conditionally show the grid or the form. 
 This way, I can easily switch between them without navigating away from the page.
 Add forms will typically be on such a new page. An example can be found:
-@src/lib/components/organization-level/product-group/product-group-form
+@src/lib/components/organization-level/retail/product-group/product-group-form
 
 # Types
 I use types to define the shape of data and to ensure type safety throughout the application.

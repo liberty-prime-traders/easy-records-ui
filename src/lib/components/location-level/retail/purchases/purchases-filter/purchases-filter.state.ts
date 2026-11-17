@@ -1,11 +1,11 @@
 import {computed, effect, inject, Injectable, signal, untracked} from '@angular/core'
 import {form} from '@angular/forms/signals'
-import {ContactService} from '../../../../api/organization-level/contact/contact.service'
-import {PurchaseSearchResultService} from '../../../../api/location-level/purchase/purchase-search-result.service'
-import {PurchaseSearchSummaryService} from '../../../../api/location-level/purchase/purchase-search-summary.service'
-import {PrettifyEnumPipe} from '../../../../utils/pipes/prettify-enum.pipe'
-import {debouncedSignal} from '../../../../utils/signals'
-import {ZonedDatesService} from '../../../../utils/services/zoned-dates.service'
+import {ContactService} from '../../../../../api/organization-level/core/contact/contact.service'
+import {PurchaseSearchResultService} from '../../../../../api/location-level/retail/purchase/purchase-search-result.service'
+import {PurchaseSearchSummaryService} from '../../../../../api/location-level/retail/purchase/purchase-search-summary.service'
+import {PrettifyEnumPipe} from '../../../../../utils/pipes/prettify-enum.pipe'
+import {debouncedSignal} from '../../../../../utils/signals'
+import {ZonedDatesService} from '../../../../../utils/services/zoned-dates.service'
 import {PurchasesFilterFormDefinition} from './purchases-filter-form.definition'
 
 @Injectable({providedIn: 'root'})

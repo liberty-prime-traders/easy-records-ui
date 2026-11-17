@@ -1,11 +1,11 @@
 import {applyEach, min, minLength, required, schema} from '@angular/forms/signals'
 import {TreeNode} from 'primeng/api'
-import {ManualJournalEntryType} from '../../../../api/organization-level/manual-journal/manual-journal-entry-type.enum'
+import {ManualJournalEntryType} from '../../../../../api/organization-level/core/manual-journal/manual-journal-entry-type.enum'
 import {
   ManualJournalCreateRequest
-} from '../../../../api/organization-level/manual-journal/manual-journal.model'
-import {Account} from '../../../../api/organization-level/chart-of-accounts/account.model'
-import {getToday, toLocaleDateString} from '../../../../utils/dates'
+} from '../../../../../api/organization-level/core/manual-journal/manual-journal.model'
+import {Account} from '../../../../../api/organization-level/core/chart-of-accounts/account.model'
+import {getToday, toLocaleDateString} from '../../../../../utils/dates'
 
 export namespace JournalCorrectionFormDefinition {
   export interface JournalCorrectionLineModel {

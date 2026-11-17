@@ -8,29 +8,29 @@ import {ButtonDirective} from 'primeng/button'
 import {InputNumber} from 'primeng/inputnumber'
 import {Select} from 'primeng/select'
 import {TableModule} from 'primeng/table'
-import {ProductForPurchase} from '../../../../../api/location-level/product-lookup/product-for-purchase.model'
-import {PurchaseLineCancelDto} from '../../../../../api/location-level/purchase/purchase.model'
-import {PurchaseService} from '../../../../../api/location-level/purchase/purchase.service'
+import {ProductForPurchase} from '../../../../../../api/location-level/retail/product-lookup/product-for-purchase.model'
+import {PurchaseLineCancelDto} from '../../../../../../api/location-level/retail/purchase/purchase.model'
+import {PurchaseService} from '../../../../../../api/location-level/retail/purchase/purchase.service'
 import {
   AlternativeUnitsFinderPipe
-} from '../../../../../api/organization-level/unit-conversion/pipes/alternative-units-finder.pipe'
+} from '../../../../../../api/organization-level/retail/unit-conversion/pipes/alternative-units-finder.pipe'
 import {
   UnitDescriptionPipe
-} from '../../../../../api/organization-level/unit-conversion/pipes/unit-description.pipe'
+} from '../../../../../../api/organization-level/retail/unit-conversion/pipes/unit-description.pipe'
 import {
   ConversionContextPipe,
   UnitConversionDescriptorPipe,
   UnitConvertPipe,
   UnitCurrencyPipe,
   UnitFactorResolver
-} from '../../../../../api/organization-level/unit-conversion/pipes/unit-convert.pipe'
+} from '../../../../../../api/organization-level/retail/unit-conversion/pipes/unit-convert.pipe'
 import {
   UnitConversionGraphService
-} from '../../../../../api/organization-level/unit-conversion/unit-conversion-graph.service'
-import {ProductLabelPipe} from '../../../../../utils/pipes/product-label.pipe'
-import {RoundNumbersPipe} from '../../../../../utils/pipes/round-numbers.pipe'
-import {SequentialIdGenerator} from '../../../../../utils/services/sequential-id-generator'
-import {EmptyRowComponent} from '../../../../reusable/empty-row/empty-row.component'
+} from '../../../../../../api/organization-level/retail/unit-conversion/unit-conversion-graph.service'
+import {ProductLabelPipe} from '../../../../../../utils/pipes/product-label.pipe'
+import {RoundNumbersPipe} from '../../../../../../utils/pipes/round-numbers.pipe'
+import {SequentialIdGenerator} from '../../../../../../utils/services/sequential-id-generator'
+import {EmptyRowComponent} from '../../../../../reusable/empty-row/empty-row.component'
 import {PurchaseProductLookupComponent} from '../../../location-product-lookup/purchase-product-lookup/purchase-product-lookup.component'
 import {PurchaseFormContext} from '../form-utils/purchase-form-context'
 import {PurchaseLineFormDefinition} from '../form-utils/purchase-line-form.definition'

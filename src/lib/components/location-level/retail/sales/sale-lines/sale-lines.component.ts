@@ -3,8 +3,8 @@ import {FormsModule} from '@angular/forms'
 import {TableModule} from 'primeng/table'
 import {
   UnitConversionGraphService
-} from '../../../../api/organization-level/unit-conversion/unit-conversion-graph.service'
-import {LoadingContainerComponent} from '../../../reusable/loading-container/loading-container.component'
+} from '../../../../../api/organization-level/retail/unit-conversion/unit-conversion-graph.service'
+import {LoadingContainerComponent} from '../../../../reusable/loading-container/loading-container.component'
 import {SaleFormContext} from '../form-utils/sale-form-context'
 import {EditableSaleLinesComponent} from './editable-sale-lines/editable-sale-lines.component'
 import {ReadOnlySaleLinesComponent} from './read-only-sale-lines/read-only-sale-lines.component'

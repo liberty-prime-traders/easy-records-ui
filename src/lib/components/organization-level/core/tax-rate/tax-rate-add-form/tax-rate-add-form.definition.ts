@@ -1,7 +1,7 @@
 import {disabled, required, schema} from '@angular/forms/signals'
-import {CalculationMethod} from '../../../../api/platform-level/tax-type/calculation-method.enum'
-import {TaxRate} from '../../../../api/organization-level/tax-rate/tax-rate.model'
-import {toLocaleDateString} from '../../../../utils/dates'
+import {CalculationMethod} from '../../../../../api/platform-level/tax-type/calculation-method.enum'
+import {TaxRate} from '../../../../../api/organization-level/core/tax-rate/tax-rate.model'
+import {toLocaleDateString} from '../../../../../utils/dates'
 
 export namespace TaxRateAddFormDefinition {
 

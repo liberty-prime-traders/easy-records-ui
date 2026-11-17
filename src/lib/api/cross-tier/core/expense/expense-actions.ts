@@ -1,6 +1,6 @@
 import {InjectionToken} from '@angular/core'
-import {ApiCallbacks} from '../../util/base-api/api-callbacks'
-import {BaseService} from '../../util/base-api/base.service'
+import {ApiCallbacks} from '../../../util/base-api/api-callbacks'
+import {BaseService} from '../../../util/base-api/base.service'
 import {Expense, ExpensePaymentCreateRequest, ExpensePaymentVoidRequest, ExpenseVoidRequest} from './expense.model'
 
 export interface ExpenseActions extends BaseService<Expense> {

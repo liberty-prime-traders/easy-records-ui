@@ -1,7 +1,7 @@
 import {Component, computed, inject, OnInit, Signal} from '@angular/core'
 import {Router} from '@angular/router'
-import {Location} from '../../../../api/organization-level/location/location.model'
-import {LocationService} from '../../../../api/organization-level/location/location.service'
+import {Location} from '../../../../api/organization-level/core/location/location.model'
+import {LocationService} from '../../../../api/organization-level/core/location/location.service'
 import {SessionContextService} from '../../../../utils/services/session-context.service'
 import {LoadingContainerComponent} from '../../../reusable/loading-container/loading-container.component'
 

@@ -1,6 +1,6 @@
 import {FormGroup} from '@angular/forms'
-import {ProductDetail} from '../../../api/cross-tier/product/product-detail.model'
-import {ProductStatus} from '../../../api/cross-tier/product/product-status.enum'
+import {ProductDetail} from '../../../../api/cross-tier/retail/product/product-detail.model'
+import {ProductStatus} from '../../../../api/cross-tier/retail/product/product-status.enum'
 
 export class ProductFilterHelper<PRODUCT extends ProductDetail> {
   constructor(private readonly filterForm: FormGroup){}

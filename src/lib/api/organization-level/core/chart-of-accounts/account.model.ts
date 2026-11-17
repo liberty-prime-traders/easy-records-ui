@@ -1,6 +1,6 @@
 import {EntityId} from '@ngrx/signals/entities'
 import {TreeNode} from 'primeng/api'
-import {BaseModel} from '../../util/base-api/base.model'
+import {BaseModel} from '../../../util/base-api/base.model'
 import {AccountType} from './account-type.enum'
 import {BalanceEffect} from './balance-effect.enum'
 

@@ -1,6 +1,6 @@
 import {required, schema} from '@angular/forms/signals'
 import {isNil} from 'lodash-es'
-import {UnitValue} from '../../../../../api/organization-level/unit-value/unitvalue.model'
+import {UnitValue} from '../../../../../../api/organization-level/retail/unit-value/unitvalue.model'
 
 export namespace UnitValueFormDefinition {
   export interface UnitValueFormModel {

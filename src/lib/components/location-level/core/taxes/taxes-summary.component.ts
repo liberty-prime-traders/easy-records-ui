@@ -4,8 +4,8 @@ import {Panel} from 'primeng/panel'
 import {Table} from 'primeng/table'
 import {
   TaxEntrySearchSummaryService
-} from '../../../api/location-level/tax-entry/tax-entry-search-summary.service'
-import {EmptyRowComponent} from '../../reusable/empty-row/empty-row.component'
+} from '../../../../api/location-level/core/tax-entry/tax-entry-search-summary.service'
+import {EmptyRowComponent} from '../../../reusable/empty-row/empty-row.component'
 
 @Component({
   selector: 'rts-taxes-summary',

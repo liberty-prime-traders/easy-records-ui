@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core'
-import {PaymentVoidStatus} from '../../../../api/location-level/payment/payment-void-status.enum'
+import {PaymentVoidStatus} from '../../../../../api/location-level/retail/payment/payment-void-status.enum'
 
 @Pipe({name: 'voidedToVoidStatus', standalone: true})
 export class VoidedToVoidStatusPipe implements PipeTransform {

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core'
-import {ApiCallbacks} from '../../util/base-api/api-callbacks'
-import {MultimapBaseService} from '../../util/base-api/multimap-base.service'
+import {ApiCallbacks} from '../../../util/base-api/api-callbacks'
+import {MultimapBaseService} from '../../../util/base-api/multimap-base.service'
 import {SupplierPayment, SupplierPaymentVoidRequest} from './supplier-payment.model'
 import {SupplierPaymentStore} from './supplier-payment.store'
 

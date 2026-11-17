@@ -3,15 +3,15 @@ import {form, FormField} from '@angular/forms/signals'
 import {ButtonDirective} from 'primeng/button'
 import {Divider} from 'primeng/divider'
 import {InputText} from 'primeng/inputtext'
-import {UnitBulkUploadService} from '../../../../api/organization-level/unit-group/unit-bulk-upload.service'
+import {UnitBulkUploadService} from '../../../../../api/organization-level/retail/unit-group/unit-bulk-upload.service'
 import {
   UnitGroupBulkUploadRequest
-} from '../../../../api/organization-level/unit-group/unit-group-bulk-upload-request.dto'
-import {parseError} from '../../../../utils/errors'
-import {defaultJsonPayloadFormModel, JsonPayloadFormModel, jsonPayloadFieldMap, jsonPayloadSchema, parseJsonPayload} from '../../../../utils/json-payload'
-import {ErrorSummaryComponent} from '../../../reusable/error-summary/error-summary.component'
-import {FormFieldLayout} from '../../../reusable/form-field/form-field-layout'
-import {FormFieldComponent} from '../../../reusable/form-field/form-field.component'
+} from '../../../../../api/organization-level/retail/unit-group/unit-group-bulk-upload-request.dto'
+import {parseError} from '../../../../../utils/errors'
+import {defaultJsonPayloadFormModel, JsonPayloadFormModel, jsonPayloadFieldMap, jsonPayloadSchema, parseJsonPayload} from '../../../../../utils/json-payload'
+import {ErrorSummaryComponent} from '../../../../reusable/error-summary/error-summary.component'
+import {FormFieldLayout} from '../../../../reusable/form-field/form-field-layout'
+import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
 
 @Component({
   selector: 'rts-bulk-unit-import',

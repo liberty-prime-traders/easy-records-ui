@@ -1,6 +1,6 @@
 import {computed, Injectable, signal} from '@angular/core'
-import {StockTransferStatus} from '../../../../api/cross-tier/stock-transfer/stock-transfer-status.enum'
-import {StockTransferResponse} from '../../../../api/location-level/stock-transfer/stock-transfer-response.model'
+import {StockTransferStatus} from '../../../../../api/cross-tier/retail/stock-transfer/stock-transfer-status.enum'
+import {StockTransferResponse} from '../../../../../api/location-level/retail/stock-transfer/stock-transfer-response.model'
 
 @Injectable()
 export class StockTransferFormContext {

@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core'
 import {Subscription} from 'rxjs'
-import {ApiCallbacks} from '../../util/base-api/api-callbacks'
-import {BaseService} from '../../util/base-api/base.service'
+import {ApiCallbacks} from '../../../util/base-api/api-callbacks'
+import {BaseService} from '../../../util/base-api/base.service'
 import {
   PurchaseBulkPaymentCreateRequest,
   PurchaseBulkPaymentLine,

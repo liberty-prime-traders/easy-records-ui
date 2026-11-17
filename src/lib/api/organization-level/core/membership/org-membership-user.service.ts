@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core'
-import {MembershipUserService} from '../../cross-tier/authorization/membership-user.service'
+import {MembershipUserService} from '../../../cross-tier/core/authorization/membership-user.service'
 import {OrgMembershipUserStore} from './org-membership-user.store'
 
 @Injectable({ providedIn: 'root' })

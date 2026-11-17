@@ -2,15 +2,15 @@ import {NgTemplateOutlet} from '@angular/common'
 import {Component} from '@angular/core'
 import {Select} from 'primeng/select'
 import {Skeleton} from 'primeng/skeleton'
-import {ProductForPurchase} from '../../../../api/location-level/product-lookup/product-for-purchase.model'
+import {ProductForPurchase} from '../../../../../api/location-level/retail/product-lookup/product-for-purchase.model'
 import {
   PurchaseProductLookupQuickSearchService
-} from '../../../../api/location-level/product-lookup/purchase-product-lookup-quick-search.service'
+} from '../../../../../api/location-level/retail/product-lookup/purchase-product-lookup-quick-search.service'
 import {
   PurchaseProductLookupStore
-} from '../../../../api/location-level/product-lookup/purchase-product-lookup.store'
-import {PaginatedBaseService} from '../../../../api/util/paginated-api/paginated-base.service'
-import {FormFieldComponent} from '../../../reusable/form-field/form-field.component'
+} from '../../../../../api/location-level/retail/product-lookup/purchase-product-lookup.store'
+import {PaginatedBaseService} from '../../../../../api/util/paginated-api/paginated-base.service'
+import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
 import {LocationProductLookupComponent} from '../location-product-lookup.component'
 import {ProductLookupFilterService} from '../product-lookup-filter.service'
 import {PurchaseProductLookupFilterService} from './purchase-product-lookup-filter.service'

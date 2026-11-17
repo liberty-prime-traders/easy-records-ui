@@ -4,9 +4,9 @@ import {EntityId} from '@ngrx/signals/entities'
 import {MessageService} from 'primeng/api'
 import {ButtonDirective} from 'primeng/button'
 import {Select} from 'primeng/select'
-import {LocationMembershipUserService} from '../../../api/location-level/membership/location-membership-user.service'
-import {OrgMembershipUserService} from '../../../api/organization-level/membership/org-membership-user.service'
-import {parseError} from '../../../utils/errors'
+import {LocationMembershipUserService} from '../../../../api/location-level/core/membership/location-membership-user.service'
+import {OrgMembershipUserService} from '../../../../api/organization-level/core/membership/org-membership-user.service'
+import {parseError} from '../../../../utils/errors'
 
 @Component({
   selector: 'rts-pull-from-org-user',

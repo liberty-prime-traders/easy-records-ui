@@ -1,9 +1,9 @@
 import {schema} from '@angular/forms/signals'
-import {PaymentStatus} from '../../../../api/location-level/purchase/payment-status.enum'
-import {SaleSearchParameters} from '../../../../api/location-level/sale-summary/sale-search-parameters.model'
-import {SaleStatus} from '../../../../api/location-level/sale-summary/sale-status.enum'
-import {getToday, getTomorrow} from '../../../../utils/dates'
-import {ZonedDatesService} from '../../../../utils/services/zoned-dates.service'
+import {PaymentStatus} from '../../../../../api/location-level/retail/purchase/payment-status.enum'
+import {SaleSearchParameters} from '../../../../../api/location-level/retail/sale-summary/sale-search-parameters.model'
+import {SaleStatus} from '../../../../../api/location-level/retail/sale-summary/sale-status.enum'
+import {getToday, getTomorrow} from '../../../../../utils/dates'
+import {ZonedDatesService} from '../../../../../utils/services/zoned-dates.service'
 
 export namespace SalesFilterFormDefinition {
   export interface SalesFilterFormModel {

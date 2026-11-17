@@ -7,14 +7,14 @@ import {InputText} from 'primeng/inputtext'
 import {Select} from 'primeng/select'
 import {
   OrgTaxTypeService
-} from '../../../../api/organization-level/org-tax-type/org-tax-type.service'
-import {TaxRateService} from '../../../../api/organization-level/tax-rate/tax-rate.service'
-import {CalculationMethod} from '../../../../api/platform-level/tax-type/calculation-method.enum'
-import {TaxTypeService} from '../../../../api/platform-level/tax-type/tax-type.service'
-import {getToday} from '../../../../utils/dates'
-import {BaseFormComponent} from '../../../reusable/base-form.component'
-import {FormButtonsComponent} from '../../../reusable/form-buttons/form-buttons.component'
-import {FormFieldComponent} from '../../../reusable/form-field/form-field.component'
+} from '../../../../../api/organization-level/core/org-tax-type/org-tax-type.service'
+import {TaxRateService} from '../../../../../api/organization-level/core/tax-rate/tax-rate.service'
+import {CalculationMethod} from '../../../../../api/platform-level/tax-type/calculation-method.enum'
+import {TaxTypeService} from '../../../../../api/platform-level/tax-type/tax-type.service'
+import {getToday} from '../../../../../utils/dates'
+import {BaseFormComponent} from '../../../../reusable/base-form.component'
+import {FormButtonsComponent} from '../../../../reusable/form-buttons/form-buttons.component'
+import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
 import {TaxRateAddFormDefinition} from './tax-rate-add-form.definition'
 
 @Component({

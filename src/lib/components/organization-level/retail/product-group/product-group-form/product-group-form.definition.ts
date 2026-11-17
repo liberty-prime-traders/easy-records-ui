@@ -1,5 +1,5 @@
 import {required, schema} from '@angular/forms/signals'
-import {ProductGroup} from '../../../../api/organization-level/product-group/product-group.model'
+import {ProductGroup} from '../../../../../api/organization-level/retail/product-group/product-group.model'
 
 export namespace ProductGroupFormDefinition {
   export interface ProductGroupFormModel {

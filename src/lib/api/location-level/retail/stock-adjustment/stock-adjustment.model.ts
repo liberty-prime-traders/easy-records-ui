@@ -1,4 +1,4 @@
-import {BaseModel} from '../../util/base-api/base.model'
+import {BaseModel} from '../../../util/base-api/base.model'
 import {StockAdjustmentCategory} from './stock-adjustment-category.enum'
 import {StockAdjustmentDirection} from './stock-adjustment-direction.enum'
 

@@ -1,6 +1,6 @@
 import {EntityId} from '@ngrx/signals/entities'
 import {ProductForPurchase} from '../product-lookup/product-for-purchase.model'
-import {BaseModel} from '../../util/base-api/base.model'
+import {BaseModel} from '../../../util/base-api/base.model'
 import {PurchaseDelivery} from '../delivery/purchase-delivery.model'
 import {PaymentStatus} from './payment-status.enum'
 import {PurchaseStatus} from './purchase-status.enum'

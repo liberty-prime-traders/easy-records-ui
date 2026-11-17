@@ -3,9 +3,9 @@ import {Component, computed, input, signal} from '@angular/core'
 import {FormsModule} from '@angular/forms'
 import {ButtonDirective} from 'primeng/button'
 import {TableModule} from 'primeng/table'
-import {Expense} from '../../../../api/cross-tier/expense/expense.model'
-import {NullSafePipe} from '../../../../utils/pipes/null-safe.pipe'
-import {EmptyRowComponent} from '../../../reusable/empty-row/empty-row.component'
+import {Expense} from '../../../../../api/cross-tier/core/expense/expense.model'
+import {NullSafePipe} from '../../../../../utils/pipes/null-safe.pipe'
+import {EmptyRowComponent} from '../../../../reusable/empty-row/empty-row.component'
 import {
   ExpensePaymentExpandedRowComponent
 } from '../expense-payment-expanded-row/expense-payment-expanded-row.component'

@@ -1,4 +1,4 @@
-import {BaseModel} from '../../util/base-api/base.model'
+import {BaseModel} from '../../../util/base-api/base.model'
 import {ContactSubledgerDirection} from '../contact-opening-balance/contact-subledger-direction.enum'
 
 export interface ContactOpeningSettlementVoid {

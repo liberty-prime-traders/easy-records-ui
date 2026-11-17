@@ -1,14 +1,14 @@
 import {applyEach, min, required, schema, SchemaPathTree} from '@angular/forms/signals'
 import {SelectItem} from 'primeng/api'
-import {ExpenseSourceType} from '../../../../api/cross-tier/expense/expense-source-type.enum'
+import {ExpenseSourceType} from '../../../../../api/cross-tier/core/expense/expense-source-type.enum'
 import {
   PaymentInstruction,
   StandaloneExpenseBatchRequest,
   StandaloneExpenseRowRequest,
   WageExpenseBatchRequest,
   WageExpenseRowRequest
-} from '../../../../api/cross-tier/expense/expense.model'
-import {getToday, getTodayStr, toLocaleDateString} from '../../../../utils/dates'
+} from '../../../../../api/cross-tier/core/expense/expense.model'
+import {getToday, getTodayStr, toLocaleDateString} from '../../../../../utils/dates'
 
 export namespace ExpenseBatchFormDefinition {
   export type BatchType = ExpenseSourceType.ADHOC | ExpenseSourceType.WAGES

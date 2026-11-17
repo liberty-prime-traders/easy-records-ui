@@ -5,14 +5,14 @@ import {CardModule} from 'primeng/card'
 import {Divider} from 'primeng/divider'
 import {
   LastPurchaseCostBackfillService
-} from '../../../api/organization-level/admin-data-fixes/last-purchase-cost-backfill.service'
+} from '../../../../api/organization-level/retail/admin-data-fixes/last-purchase-cost-backfill.service'
 import {
   PurchaseMovementContextBackfillService
-} from '../../../api/organization-level/admin-data-fixes/purchase-movement-context-backfill.service'
-import {SaleLineCogsBackfillService} from '../../../api/organization-level/admin-data-fixes/sale-line-cogs-backfill.service'
-import {StockAdjustmentBackfillService} from '../../../api/organization-level/admin-data-fixes/stock-adjustment-backfill.service'
-import {SeedDataApplierService} from '../../../api/organization-level/admin-data-fixes/seed-data-applier.service'
-import {LoadingContainerComponent} from '../../reusable/loading-container/loading-container.component'
+} from '../../../../api/organization-level/retail/admin-data-fixes/purchase-movement-context-backfill.service'
+import {SaleLineCogsBackfillService} from '../../../../api/organization-level/retail/admin-data-fixes/sale-line-cogs-backfill.service'
+import {StockAdjustmentBackfillService} from '../../../../api/organization-level/retail/admin-data-fixes/stock-adjustment-backfill.service'
+import {SeedDataApplierService} from '../../../../api/organization-level/retail/admin-data-fixes/seed-data-applier.service'
+import {LoadingContainerComponent} from '../../../reusable/loading-container/loading-container.component'
 import {AdminDataFix, AdminDataFixItem} from './admin-data-fix-item.model'
 
 @Component({

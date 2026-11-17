@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core'
-import {ProductSearchParameters} from '../../cross-tier/product/product-search-parameters.model'
+import {ProductSearchParameters} from '../../../cross-tier/retail/product/product-search-parameters.model'
 import {ProductForPurchase} from './product-for-purchase.model'
-import {PaginatedBaseService} from '../../util/paginated-api/paginated-base.service'
+import {PaginatedBaseService} from '../../../util/paginated-api/paginated-base.service'
 import {PurchaseProductLookupStore} from './purchase-product-lookup.store'
 
 @Injectable()

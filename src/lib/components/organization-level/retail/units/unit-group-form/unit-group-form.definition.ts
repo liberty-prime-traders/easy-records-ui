@@ -3,7 +3,7 @@ import {
   UnitGroup,
   UnitGroupCreateRequest,
   UnitGroupUpdateRequest
-} from '../../../../api/organization-level/unit-group/unitgroup.model'
+} from '../../../../../api/organization-level/retail/unit-group/unitgroup.model'
 
 export namespace UnitGroupFormDefinition {
   export const DEFAULT_BASE_UNIT_NAME = 'Piece'

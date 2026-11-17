@@ -4,17 +4,17 @@ import {form, FormField, required} from '@angular/forms/signals'
 import {ButtonDirective} from 'primeng/button'
 import {InputText} from 'primeng/inputtext'
 import {Tab, TabList, TabPanel, TabPanels, Tabs} from 'primeng/tabs'
-import {PurchaseService} from '../../../../api/location-level/purchase/purchase.service'
+import {PurchaseService} from '../../../../../api/location-level/retail/purchase/purchase.service'
 import {
   SupplierPayment,
   SupplierPaymentVoidRequest
-} from '../../../../api/location-level/supplier-payment/supplier-payment.model'
-import {SupplierPaymentService} from '../../../../api/location-level/supplier-payment/supplier-payment.service'
-import {BaseFormComponent} from '../../../reusable/base-form.component'
-import {FormButtonsComponent} from '../../../reusable/form-buttons/form-buttons.component'
-import {FormFieldLayout} from '../../../reusable/form-field/form-field-layout'
-import {FormFieldComponent} from '../../../reusable/form-field/form-field.component'
-import {KafkaEventLogComponent} from '../../kafka-event-log/kafka-event-log.component'
+} from '../../../../../api/location-level/retail/supplier-payment/supplier-payment.model'
+import {SupplierPaymentService} from '../../../../../api/location-level/retail/supplier-payment/supplier-payment.service'
+import {BaseFormComponent} from '../../../../reusable/base-form.component'
+import {FormButtonsComponent} from '../../../../reusable/form-buttons/form-buttons.component'
+import {FormFieldLayout} from '../../../../reusable/form-field/form-field-layout'
+import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
+import {KafkaEventLogComponent} from '../../../core/kafka-event-log/kafka-event-log.component'
 
 @Component({
   selector: 'rts-supplier-payment-expanded-row',

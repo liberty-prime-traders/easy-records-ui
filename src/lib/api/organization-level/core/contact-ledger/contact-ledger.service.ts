@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core'
-import {KeyedPaginatedBaseService} from '../../util/keyed-paginated-api/keyed-paginated-base.service'
+import {KeyedPaginatedBaseService} from '../../../util/keyed-paginated-api/keyed-paginated-base.service'
 import {ContactLedgerEntry} from './contact-ledger-entry.model'
 import {ContactLedgerSearchParameters} from './contact-ledger-search-parameters.model'
 import {ContactLedgerStore} from './contact-ledger.store'

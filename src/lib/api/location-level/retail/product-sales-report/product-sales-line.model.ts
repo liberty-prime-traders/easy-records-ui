@@ -1,4 +1,4 @@
-import {PaginatedModel} from '../../util/paginated-api/paginated.model'
+import {PaginatedModel} from '../../../util/paginated-api/paginated.model'
 import {AdjustmentDirection} from '../sale_session/sale-session.model'
 
 export interface ProductSalesLineAdjustment {

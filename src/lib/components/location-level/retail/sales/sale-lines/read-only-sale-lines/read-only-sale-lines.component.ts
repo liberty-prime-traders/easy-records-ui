@@ -5,9 +5,9 @@ import {
   ConversionContextPipe,
   UnitConvertPipe,
   UnitCurrencyPipe
-} from '../../../../../api/organization-level/unit-conversion/pipes/unit-convert.pipe'
-import {UnitDescriptionPipe} from '../../../../../api/organization-level/unit-conversion/pipes/unit-description.pipe'
-import {AutoStretchDirective} from '../../../../reusable/auto-stretch.directive'
+} from '../../../../../../api/organization-level/retail/unit-conversion/pipes/unit-convert.pipe'
+import {UnitDescriptionPipe} from '../../../../../../api/organization-level/retail/unit-conversion/pipes/unit-description.pipe'
+import {AutoStretchDirective} from '../../../../../reusable/auto-stretch.directive'
 import {SaleLineFormDefinition} from '../../form-utils/sale-line-form.definition'
 
 @Component({

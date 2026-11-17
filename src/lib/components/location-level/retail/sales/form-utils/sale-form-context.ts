@@ -1,13 +1,13 @@
 import {computed, inject, Injectable, signal} from '@angular/core'
 import {form} from '@angular/forms/signals'
-import {ProductWithAvailability} from '../../../../api/location-level/product-lookup/product-with-availability.model'
-import {defaultSaleSession} from '../../../../api/location-level/sale_session/sale-session-default.value'
+import {ProductWithAvailability} from '../../../../../api/location-level/retail/product-lookup/product-with-availability.model'
+import {defaultSaleSession} from '../../../../../api/location-level/retail/sale_session/sale-session-default.value'
 import {
   SaleSessionLineAddRequest,
   SaleSessionLineUpdateRequest
-} from '../../../../api/location-level/sale_session/sale-session-requests.model'
-import {SaleSession} from '../../../../api/location-level/sale_session/sale-session.model'
-import {SaleSessionService} from '../../../../api/location-level/sale_session/sale-session.service'
+} from '../../../../../api/location-level/retail/sale_session/sale-session-requests.model'
+import {SaleSession} from '../../../../../api/location-level/retail/sale_session/sale-session.model'
+import {SaleSessionService} from '../../../../../api/location-level/retail/sale_session/sale-session.service'
 import {SaleFormDefinition} from './sale-form.definition'
 import {SaleLineFormDefinition} from './sale-line-form.definition'
 

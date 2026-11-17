@@ -1,4 +1,4 @@
-import {PaymentStatus} from '../../location-level/purchase/payment-status.enum'
+import {PaymentStatus} from '../../../location-level/retail/purchase/payment-status.enum'
 
 export interface ExpenseSearchParameters {
   createdFrom?: string

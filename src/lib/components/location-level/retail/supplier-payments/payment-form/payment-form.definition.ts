@@ -1,6 +1,6 @@
 import {max, min, required, schema} from '@angular/forms/signals'
-import {SupplierPaymentCreateRequest} from '../../../../api/location-level/supplier-payment/supplier-payment.model'
-import {ZonedDatesService} from '../../../../utils/services/zoned-dates.service'
+import {SupplierPaymentCreateRequest} from '../../../../../api/location-level/retail/supplier-payment/supplier-payment.model'
+import {ZonedDatesService} from '../../../../../utils/services/zoned-dates.service'
 
 export namespace PaymentFormDefinition {
   export interface PaymentFormModel {

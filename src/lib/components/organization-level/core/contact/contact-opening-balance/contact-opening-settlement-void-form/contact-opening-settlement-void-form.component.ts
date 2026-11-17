@@ -3,14 +3,14 @@ import {form, FormField} from '@angular/forms/signals'
 import {InputText} from 'primeng/inputtext'
 import {
   ContactOpeningSettlement
-} from '../../../../../api/organization-level/contact-opening-settlement/contact-opening-settlement.model'
+} from '../../../../../../api/organization-level/core/contact-opening-settlement/contact-opening-settlement.model'
 import {
   ContactOpeningSettlementService
-} from '../../../../../api/organization-level/contact-opening-settlement/contact-opening-settlement.service'
-import {BaseFormComponent} from '../../../../reusable/base-form.component'
-import {FormButtonsComponent} from '../../../../reusable/form-buttons/form-buttons.component'
-import {FormFieldLayout} from '../../../../reusable/form-field/form-field-layout'
-import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
+} from '../../../../../../api/organization-level/core/contact-opening-settlement/contact-opening-settlement.service'
+import {BaseFormComponent} from '../../../../../reusable/base-form.component'
+import {FormButtonsComponent} from '../../../../../reusable/form-buttons/form-buttons.component'
+import {FormFieldLayout} from '../../../../../reusable/form-field/form-field-layout'
+import {FormFieldComponent} from '../../../../../reusable/form-field/form-field.component'
 
 @Component({
   selector: 'rts-contact-opening-settlement-void-form',

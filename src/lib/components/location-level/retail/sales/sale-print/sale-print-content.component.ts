@@ -1,11 +1,11 @@
 import {CurrencyPipe, DatePipe} from '@angular/common'
 import {Component, computed, input} from '@angular/core'
-import {SaleStatus} from '../../../../api/location-level/sale-summary/sale-status.enum'
-import {SaleSession} from '../../../../api/location-level/sale_session/sale-session.model'
-import {UnitDescriptionPipe} from '../../../../api/organization-level/unit-conversion/pipes/unit-description.pipe'
-import {NullSafePipe} from '../../../../utils/pipes/null-safe.pipe'
-import {PrettifyEnumPipe} from '../../../../utils/pipes/prettify-enum.pipe'
-import {PrintKeepTogetherDirective, PrintLayout, PrintLayoutKind, printableWidthMm} from '../../../reusable/print'
+import {SaleStatus} from '../../../../../api/location-level/retail/sale-summary/sale-status.enum'
+import {SaleSession} from '../../../../../api/location-level/retail/sale_session/sale-session.model'
+import {UnitDescriptionPipe} from '../../../../../api/organization-level/retail/unit-conversion/pipes/unit-description.pipe'
+import {NullSafePipe} from '../../../../../utils/pipes/null-safe.pipe'
+import {PrettifyEnumPipe} from '../../../../../utils/pipes/prettify-enum.pipe'
+import {PrintKeepTogetherDirective, PrintLayout, PrintLayoutKind, printableWidthMm} from '../../../../reusable/print'
 
 /** Receipts with less printable width than this (the 58 mm roll) stack amounts under their labels when tight. */
 const COMPACT_RECEIPT_MAX_WIDTH_MM = 60

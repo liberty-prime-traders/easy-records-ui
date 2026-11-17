@@ -1,8 +1,8 @@
 import {inject, Injectable} from '@angular/core'
-import {ProductForPurchase} from '../../../../api/location-level/product-lookup/product-for-purchase.model'
+import {ProductForPurchase} from '../../../../../api/location-level/retail/product-lookup/product-for-purchase.model'
 import {
   PurchaseProductLookupQuickSearchService
-} from '../../../../api/location-level/product-lookup/purchase-product-lookup-quick-search.service'
+} from '../../../../../api/location-level/retail/product-lookup/purchase-product-lookup-quick-search.service'
 import {ProductLookupFilterService} from '../product-lookup-filter.service'
 
 @Injectable()

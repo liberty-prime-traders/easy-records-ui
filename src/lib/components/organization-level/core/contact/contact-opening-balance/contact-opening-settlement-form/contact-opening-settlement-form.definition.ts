@@ -1,11 +1,11 @@
 import {max, maxDate, min, required, schema} from '@angular/forms/signals'
 import {
   ContactSubledgerDirection
-} from '../../../../../api/organization-level/contact-opening-balance/contact-subledger-direction.enum'
+} from '../../../../../../api/organization-level/core/contact-opening-balance/contact-subledger-direction.enum'
 import {
   ContactOpeningSettlementCreateRequest
-} from '../../../../../api/organization-level/contact-opening-settlement/contact-opening-settlement.model'
-import {getToday, toLocaleDateString} from '../../../../../utils/dates'
+} from '../../../../../../api/organization-level/core/contact-opening-settlement/contact-opening-settlement.model'
+import {getToday, toLocaleDateString} from '../../../../../../utils/dates'
 
 export namespace ContactOpeningSettlementFormDefinition {
   export interface FormModel {

@@ -6,16 +6,16 @@ import {Tag} from 'primeng/tag'
 import {TableLazyLoadEvent} from 'primeng/types/table'
 import {
   ProductPurchasesDeliveryLinesParameters
-} from '../../../../../api/location-level/product-purchases-report/product-purchases-delivery-lines-parameters.model'
+} from '../../../../../../api/location-level/retail/product-purchases-report/product-purchases-delivery-lines-parameters.model'
 import {
   ProductPurchasesDeliveryLinesService
-} from '../../../../../api/location-level/product-purchases-report/product-purchases-delivery-lines.service'
+} from '../../../../../../api/location-level/retail/product-purchases-report/product-purchases-delivery-lines.service'
 import {
   PurchaseDeliveryLineStatus
-} from '../../../../../api/location-level/product-purchases-report/purchase-delivery-line-status.enum'
-import {loadNextForKeyOnLazyLoad} from '../../../../../api/util/keyed-paginated-api/keyed-paginated-lazy-load.util'
-import {PrettifyEnumPipe} from '../../../../../utils/pipes/prettify-enum.pipe'
-import {EmptyRowComponent} from '../../../../reusable/empty-row/empty-row.component'
+} from '../../../../../../api/location-level/retail/product-purchases-report/purchase-delivery-line-status.enum'
+import {loadNextForKeyOnLazyLoad} from '../../../../../../api/util/keyed-paginated-api/keyed-paginated-lazy-load.util'
+import {PrettifyEnumPipe} from '../../../../../../utils/pipes/prettify-enum.pipe'
+import {EmptyRowComponent} from '../../../../../reusable/empty-row/empty-row.component'
 
 @Component({
   selector: 'rts-product-purchases-delivery-lines-grid',

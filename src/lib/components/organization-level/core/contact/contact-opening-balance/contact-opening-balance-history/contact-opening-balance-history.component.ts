@@ -4,12 +4,12 @@ import {EntityId} from '@ngrx/signals/entities'
 import {TableModule} from 'primeng/table'
 import {
   ContactOpeningBalanceRevisionService
-} from '../../../../../api/organization-level/contact-opening-balance/contact-opening-balance-revision.service'
+} from '../../../../../../api/organization-level/core/contact-opening-balance/contact-opening-balance-revision.service'
 import {
   ContactSubledgerDirectionLabelPipe
-} from '../../../../../api/organization-level/contact-opening-balance/contact-subledger-direction-label.pipe'
-import {EmptyRowComponent} from '../../../../reusable/empty-row/empty-row.component'
-import {MoneyComponent} from '../../../../reusable/money.component'
+} from '../../../../../../api/organization-level/core/contact-opening-balance/contact-subledger-direction-label.pipe'
+import {EmptyRowComponent} from '../../../../../reusable/empty-row/empty-row.component'
+import {MoneyComponent} from '../../../../../reusable/money.component'
 
 @Component({
   selector: 'rts-contact-opening-balance-history',

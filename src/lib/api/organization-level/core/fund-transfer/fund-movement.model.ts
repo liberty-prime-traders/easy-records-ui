@@ -1,4 +1,4 @@
-import {BaseModel} from '../../util/base-api/base.model'
+import {BaseModel} from '../../../util/base-api/base.model'
 import {FundMovementType} from './fund-movement-type.enum'
 
 export interface FundMovementAccount {

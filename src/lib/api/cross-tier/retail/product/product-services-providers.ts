@@ -1,16 +1,16 @@
 import {Provider} from '@angular/core'
-import {ProductFilterService} from '../../../components/cross-tier/product/product-filter.service'
+import {ProductFilterService} from '../../../../components/cross-tier/retail/product/product-filter.service'
 import {
   LocationProductFilterService
-} from '../../../components/location-level/location-products/location-product-filter.service'
+} from '../../../../components/location-level/retail/location-products/location-product-filter.service'
 import {
   OrganizationProductFilterService
-} from '../../../components/organization-level/products/organization-product-filter.service'
+} from '../../../../components/organization-level/retail/products/organization-product-filter.service'
 import {
   LocationProductPaginatedSearchService
-} from '../../location-level/location-product/location-product-paginated-search.service'
-import {OrganizationProductSearchService} from '../../organization-level/product/organization-product-search.service'
-import {PaginatedBaseService} from '../../util/paginated-api/paginated-base.service'
+} from '../../../location-level/retail/location-product/location-product-paginated-search.service'
+import {OrganizationProductSearchService} from '../../../organization-level/retail/product/organization-product-search.service'
+import {PaginatedBaseService} from '../../../util/paginated-api/paginated-base.service'
 
 export const provideLocationServices = (): Provider[] => [
   {provide: PaginatedBaseService, useExisting: LocationProductPaginatedSearchService},

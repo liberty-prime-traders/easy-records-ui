@@ -1,8 +1,8 @@
-import {ProductCore} from '../../../api/cross-tier/product/product-core.model'
-import {ProductSearchParameters} from '../../../api/cross-tier/product/product-search-parameters.model'
-import {PaginatedBaseService} from '../../../api/util/paginated-api/paginated-base.service'
-import {PaginatedModel} from '../../../api/util/paginated-api/paginated.model'
-import {BaseFilterService} from '../../../utils/services/base-filter.service'
+import {ProductCore} from '../../../../api/cross-tier/retail/product/product-core.model'
+import {ProductSearchParameters} from '../../../../api/cross-tier/retail/product/product-search-parameters.model'
+import {PaginatedBaseService} from '../../../../api/util/paginated-api/paginated-base.service'
+import {PaginatedModel} from '../../../../api/util/paginated-api/paginated.model'
+import {BaseFilterService} from '../../../../utils/services/base-filter.service'
 
 export abstract class ProductLookupFilterService<LOOKUP extends ProductCore & PaginatedModel>
   extends BaseFilterService<LOOKUP, ProductSearchParameters> {

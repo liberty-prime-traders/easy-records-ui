@@ -1,6 +1,6 @@
 import {EntityId} from '@ngrx/signals/entities'
-import {PurchaseDelivery} from '../../../../api/location-level/delivery/purchase-delivery.model'
-import {ZonedDatesService} from '../../../../utils/services/zoned-dates.service'
+import {PurchaseDelivery} from '../../../../../api/location-level/retail/delivery/purchase-delivery.model'
+import {ZonedDatesService} from '../../../../../utils/services/zoned-dates.service'
 import {PurchaseLineFormDefinition} from '../../purchases/purchase-form/form-utils/purchase-line-form.definition'
 
 export namespace PurchaseDeliveryFormDefinition {

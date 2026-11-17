@@ -1,8 +1,8 @@
 import {Component, inject, input, signal} from '@angular/core'
 import {ButtonDirective} from 'primeng/button'
-import {AuthorityAssignmentRequest} from '../../../api/cross-tier/authorization/authority.model'
-import {UserAccessDetailService} from '../../../api/cross-tier/authorization/user-access-detail.service'
-import {SchemaLevel} from '../../../api/platform-level/table-registry/schema-level.enum'
+import {AuthorityAssignmentRequest} from '../../../../api/cross-tier/core/authorization/authority.model'
+import {UserAccessDetailService} from '../../../../api/cross-tier/core/authorization/user-access-detail.service'
+import {SchemaLevel} from '../../../../api/platform-level/table-registry/schema-level.enum'
 import {AuthorityAssignmentComponent} from '../authority-assignment/authority-assignment.component'
 import {MembershipComponent} from '../membership/membership.component'
 

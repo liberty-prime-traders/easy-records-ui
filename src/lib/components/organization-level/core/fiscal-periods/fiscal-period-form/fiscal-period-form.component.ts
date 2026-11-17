@@ -1,11 +1,11 @@
 import {Component, inject, Input, signal} from '@angular/core'
 import {form, FormField} from '@angular/forms/signals'
 import {InputText} from 'primeng/inputtext'
-import {FiscalPeriod} from '../../../../api/organization-level/fiscal-period/fiscal-period.model'
-import {FiscalPeriodService} from '../../../../api/organization-level/fiscal-period/fiscal-period.service'
-import {BaseFormComponent} from '../../../reusable/base-form.component'
-import {FormButtonsComponent} from '../../../reusable/form-buttons/form-buttons.component'
-import {FormFieldComponent} from '../../../reusable/form-field/form-field.component'
+import {FiscalPeriod} from '../../../../../api/organization-level/core/fiscal-period/fiscal-period.model'
+import {FiscalPeriodService} from '../../../../../api/organization-level/core/fiscal-period/fiscal-period.service'
+import {BaseFormComponent} from '../../../../reusable/base-form.component'
+import {FormButtonsComponent} from '../../../../reusable/form-buttons/form-buttons.component'
+import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
 import {FiscalPeriodFormDefinition} from './fiscal-period-form.definition'
 
 @Component({

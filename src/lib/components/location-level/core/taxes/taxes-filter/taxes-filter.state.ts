@@ -1,10 +1,10 @@
 import {computed, effect, inject, Injectable, signal, untracked} from '@angular/core'
 import {form} from '@angular/forms/signals'
-import {TaxEntrySearchSummaryService} from '../../../../api/location-level/tax-entry/tax-entry-search-summary.service'
-import {FiscalPeriodService} from '../../../../api/organization-level/fiscal-period/fiscal-period.service'
-import {OrgTaxTypeService} from '../../../../api/organization-level/org-tax-type/org-tax-type.service'
-import {PrettifyEnumPipe} from '../../../../utils/pipes/prettify-enum.pipe'
-import {debouncedSignal} from '../../../../utils/signals'
+import {TaxEntrySearchSummaryService} from '../../../../../api/location-level/core/tax-entry/tax-entry-search-summary.service'
+import {FiscalPeriodService} from '../../../../../api/organization-level/core/fiscal-period/fiscal-period.service'
+import {OrgTaxTypeService} from '../../../../../api/organization-level/core/org-tax-type/org-tax-type.service'
+import {PrettifyEnumPipe} from '../../../../../utils/pipes/prettify-enum.pipe'
+import {debouncedSignal} from '../../../../../utils/signals'
 import {TaxesFilterFormDefinition} from './taxes-filter-form.definition'
 
 @Injectable({providedIn: 'root'})

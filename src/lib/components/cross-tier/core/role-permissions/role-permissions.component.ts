@@ -4,11 +4,11 @@ import {ButtonDirective} from 'primeng/button'
 import {Chip} from 'primeng/chip'
 import {Divider} from 'primeng/divider'
 import {Tag} from 'primeng/tag'
-import {GrantedRole} from '../../../api/cross-tier/authorization/authority.model'
-import {UserRole} from '../../../api/cross-tier/authorization/user-role.enum'
-import {StandalonePermissionService} from '../../../api/cross-tier/authorization/standalone-permission/standalone-permission.service'
-import {PrettifyEnumPipe} from '../../../utils/pipes/prettify-enum.pipe'
-import {LoadingContainerComponent} from '../../reusable/loading-container/loading-container.component'
+import {GrantedRole} from '../../../../api/cross-tier/core/authorization/authority.model'
+import {UserRole} from '../../../../api/cross-tier/core/authorization/user-role.enum'
+import {StandalonePermissionService} from '../../../../api/cross-tier/core/authorization/standalone-permission/standalone-permission.service'
+import {PrettifyEnumPipe} from '../../../../utils/pipes/prettify-enum.pipe'
+import {LoadingContainerComponent} from '../../../reusable/loading-container/loading-container.component'
 
 @Component({
   selector: 'rts-role-permissions',

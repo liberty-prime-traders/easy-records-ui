@@ -1,4 +1,4 @@
-import {PaginatedModel} from '../../util/paginated-api/paginated.model'
+import {PaginatedModel} from '../../../util/paginated-api/paginated.model'
 import {ProductCore} from './product-core.model'
 import {ProductStatus} from './product-status.enum'
 

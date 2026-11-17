@@ -1,6 +1,6 @@
 import {EntityId} from '@ngrx/signals/entities'
-import {SchemaLevel} from '../../platform-level/table-registry/schema-level.enum'
-import {BaseModel} from '../../util/base-api/base.model'
+import {SchemaLevel} from '../../../platform-level/table-registry/schema-level.enum'
+import {BaseModel} from '../../../util/base-api/base.model'
 import {UserPermission} from './user-permission.enum'
 import {UserRole} from './user-role.enum'
 

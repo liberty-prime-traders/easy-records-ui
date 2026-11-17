@@ -1,7 +1,7 @@
-import {BalanceEffect, effectOfSignedAmount} from '../../../api/organization-level/chart-of-accounts/balance-effect.enum'
-import {AccountBalanceLine, BalanceSection, BalanceSections} from '../../../api/cross-tier/daily-business-summary/daily-balances.model'
-import {DailyPerformanceFigures} from '../../../api/cross-tier/daily-business-summary/daily-performance.model'
-import {SystemAccountCode} from '../../../api/cross-tier/daily-business-summary/system-account-code.enum'
+import {BalanceEffect, effectOfSignedAmount} from '../../../../api/organization-level/core/chart-of-accounts/balance-effect.enum'
+import {AccountBalanceLine, BalanceSection, BalanceSections} from '../../../../api/cross-tier/retail/daily-business-summary/daily-balances.model'
+import {DailyPerformanceFigures} from '../../../../api/cross-tier/retail/daily-business-summary/daily-performance.model'
+import {SystemAccountCode} from '../../../../api/cross-tier/retail/daily-business-summary/system-account-code.enum'
 
 export const TODAY_SO_FAR = 'Today, so far'
 

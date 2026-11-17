@@ -1,6 +1,6 @@
 import {disabled, required, schema} from '@angular/forms/signals'
-import {TaxRate} from '../../../../api/organization-level/tax-rate/tax-rate.model'
-import {toLocaleDate, toLocaleDateString} from '../../../../utils/dates'
+import {TaxRate} from '../../../../../api/organization-level/core/tax-rate/tax-rate.model'
+import {toLocaleDate, toLocaleDateString} from '../../../../../utils/dates'
 
 export namespace TaxRateEditFormDefinition {
 

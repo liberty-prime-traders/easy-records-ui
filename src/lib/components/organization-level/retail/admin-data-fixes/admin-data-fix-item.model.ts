@@ -1,5 +1,5 @@
 import {Signal} from '@angular/core'
-import {AdminDataFixRequestService} from '../../../api/organization-level/admin-data-fixes/admin-data-fix-request.service'
+import {AdminDataFixRequestService} from '../../../../api/organization-level/retail/admin-data-fixes/admin-data-fix-request.service'
 
 export enum AdminDataFix {
   SEED_DEFAULTS = 'SEED_DEFAULTS',

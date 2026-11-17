@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core'
-import {createPaginatedBaseStore, PaginatedBaseStore} from '../../util/paginated-api/paginated-base.store'
+import {createPaginatedBaseStore, PaginatedBaseStore} from '../../../util/paginated-api/paginated-base.store'
 import {PurchaseSearchParameters} from './purchase-search-parameters.model'
 import {PurchaseSearchResult} from './purchase-search-result.model'
 

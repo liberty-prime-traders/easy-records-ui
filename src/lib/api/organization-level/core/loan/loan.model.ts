@@ -1,4 +1,4 @@
-import {BaseModel} from '../../util/base-api/base.model'
+import {BaseModel} from '../../../util/base-api/base.model'
 import {LoanStatus} from './loan-status.enum'
 
 export interface LoanAccount {

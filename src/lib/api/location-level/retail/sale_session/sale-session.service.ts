@@ -1,7 +1,7 @@
 import {computed, inject, Injectable, signal} from '@angular/core'
-import {ProcessingStatus} from '../../../utils/types/processing-status.enum'
-import {ApiCallbacks} from '../../util/base-api/api-callbacks'
-import {BaseService} from '../../util/base-api/base.service'
+import {ProcessingStatus} from '../../../../utils/types/processing-status.enum'
+import {ApiCallbacks} from '../../../util/base-api/api-callbacks'
+import {BaseService} from '../../../util/base-api/base.service'
 import {UnsavedCartsSummaryService} from '../unsaved-carts-summary/unsaved-carts-summary.service'
 import {
   SaleConsolidationRequest,

@@ -1,11 +1,11 @@
 import {HttpErrorResponse} from '@angular/common/http'
 import {computed, inject, Injectable, signal} from '@angular/core'
 import {MessageService} from 'primeng/api'
-import {LocationProductPaginatedSearchService} from '../../../../api/location-level/location-product/location-product-paginated-search.service'
-import {LocationProduct} from '../../../../api/location-level/location-product/location-product.model'
-import {OpeningStockBulkLine, OpeningStockLine} from '../../../../api/location-level/opening-stock/opening-stock.model'
-import {OpeningStockService} from '../../../../api/location-level/opening-stock/opening-stock.service'
-import {parseError} from '../../../../utils/errors'
+import {LocationProductPaginatedSearchService} from '../../../../../api/location-level/retail/location-product/location-product-paginated-search.service'
+import {LocationProduct} from '../../../../../api/location-level/retail/location-product/location-product.model'
+import {OpeningStockBulkLine, OpeningStockLine} from '../../../../../api/location-level/retail/opening-stock/opening-stock.model'
+import {OpeningStockService} from '../../../../../api/location-level/retail/opening-stock/opening-stock.service'
+import {parseError} from '../../../../../utils/errors'
 import {OpeningStockDraftLine} from './opening-stock-draft-line.model'
 
 @Injectable({providedIn: 'root'})

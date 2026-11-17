@@ -1,6 +1,6 @@
 import {required, schema} from '@angular/forms/signals'
-import {OrgTaxType} from '../../../../api/organization-level/org-tax-type/org-tax-type.model'
-import {TaxRecoveryType} from '../../../../api/platform-level/tax-type/tax-recovery-type.enum'
+import {OrgTaxType} from '../../../../../api/organization-level/core/org-tax-type/org-tax-type.model'
+import {TaxRecoveryType} from '../../../../../api/platform-level/tax-type/tax-recovery-type.enum'
 
 export namespace OrgTaxTypeAddFormDefinition {
 

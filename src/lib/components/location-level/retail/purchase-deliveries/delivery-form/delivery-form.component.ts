@@ -7,26 +7,26 @@ import {InputNumber} from 'primeng/inputnumber'
 import {InputText} from 'primeng/inputtext'
 import {Select} from 'primeng/select'
 import {TableModule} from 'primeng/table'
-import {PurchaseDeliveryService} from '../../../../api/location-level/delivery/purchase-delivery.service'
-import {PurchaseService} from '../../../../api/location-level/purchase/purchase.service'
+import {PurchaseDeliveryService} from '../../../../../api/location-level/retail/delivery/purchase-delivery.service'
+import {PurchaseService} from '../../../../../api/location-level/retail/purchase/purchase.service'
 import {
   AlternativeUnitsFinderPipe
-} from '../../../../api/organization-level/unit-conversion/pipes/alternative-units-finder.pipe'
+} from '../../../../../api/organization-level/retail/unit-conversion/pipes/alternative-units-finder.pipe'
 import {
   ConversionContextPipe,
   UnitConversionDescriptorPipe,
   UnitConvertPipe,
   UnitCurrencyPipe,
   UnitFactorResolver
-} from '../../../../api/organization-level/unit-conversion/pipes/unit-convert.pipe'
-import {getTomorrow} from '../../../../utils/dates'
-import {ProductLabelPipe} from '../../../../utils/pipes/product-label.pipe'
-import {ZonedDatesService} from '../../../../utils/services/zoned-dates.service'
-import {BaseFormComponent} from '../../../reusable/base-form.component'
-import {ErrorSummaryComponent} from '../../../reusable/error-summary/error-summary.component'
-import {FormFieldLayout} from '../../../reusable/form-field/form-field-layout'
-import {FormFieldComponent} from '../../../reusable/form-field/form-field.component'
-import {LoadingContainerComponent} from '../../../reusable/loading-container/loading-container.component'
+} from '../../../../../api/organization-level/retail/unit-conversion/pipes/unit-convert.pipe'
+import {getTomorrow} from '../../../../../utils/dates'
+import {ProductLabelPipe} from '../../../../../utils/pipes/product-label.pipe'
+import {ZonedDatesService} from '../../../../../utils/services/zoned-dates.service'
+import {BaseFormComponent} from '../../../../reusable/base-form.component'
+import {ErrorSummaryComponent} from '../../../../reusable/error-summary/error-summary.component'
+import {FormFieldLayout} from '../../../../reusable/form-field/form-field-layout'
+import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
+import {LoadingContainerComponent} from '../../../../reusable/loading-container/loading-container.component'
 import {PurchaseDeliveryFormDefinition} from './purchase-delivery-form.definition'
 import {PurchaseFormContext} from '../../purchases/purchase-form/form-utils/purchase-form-context'
 

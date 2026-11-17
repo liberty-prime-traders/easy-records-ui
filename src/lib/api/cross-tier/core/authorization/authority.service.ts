@@ -1,7 +1,7 @@
 import {HttpParams} from '@angular/common/http'
 import {Injectable} from '@angular/core'
-import {SchemaLevel} from '../../platform-level/table-registry/schema-level.enum'
-import {MultimapBaseService} from '../../util/base-api/multimap-base.service'
+import {SchemaLevel} from '../../../platform-level/table-registry/schema-level.enum'
+import {MultimapBaseService} from '../../../util/base-api/multimap-base.service'
 import {Authority} from './authority.model'
 import {AuthorityStore} from './authority.store'
 

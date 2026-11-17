@@ -7,23 +7,23 @@ import {Chip} from 'primeng/chip'
 import {InputNumber} from 'primeng/inputnumber'
 import {Select} from 'primeng/select'
 import {TableModule} from 'primeng/table'
-import {StockTransferStatus} from '../../../../api/cross-tier/stock-transfer/stock-transfer-status.enum'
-import {ProductWithAvailability} from '../../../../api/location-level/product-lookup/product-with-availability.model'
-import {StockTransferPerspective} from '../../../../api/location-level/stock-transfer/stock-transfer-perspective.enum'
+import {StockTransferStatus} from '../../../../../api/cross-tier/retail/stock-transfer/stock-transfer-status.enum'
+import {ProductWithAvailability} from '../../../../../api/location-level/retail/product-lookup/product-with-availability.model'
+import {StockTransferPerspective} from '../../../../../api/location-level/retail/stock-transfer/stock-transfer-perspective.enum'
 import {
   StockTransferLineAddRequest,
   StockTransferLineUpdateRequest
-} from '../../../../api/location-level/stock-transfer/stock-transfer-requests.model'
-import {StockTransferService} from '../../../../api/location-level/stock-transfer/stock-transfer.service'
+} from '../../../../../api/location-level/retail/stock-transfer/stock-transfer-requests.model'
+import {StockTransferService} from '../../../../../api/location-level/retail/stock-transfer/stock-transfer.service'
 import {
   AlternativeUnitsFinderPipe
-} from '../../../../api/organization-level/unit-conversion/pipes/alternative-units-finder.pipe'
-import {UnitDescriptionPipe} from '../../../../api/organization-level/unit-conversion/pipes/unit-description.pipe'
+} from '../../../../../api/organization-level/retail/unit-conversion/pipes/alternative-units-finder.pipe'
+import {UnitDescriptionPipe} from '../../../../../api/organization-level/retail/unit-conversion/pipes/unit-description.pipe'
 import {
   UnitConversionGraphService
-} from '../../../../api/organization-level/unit-conversion/unit-conversion-graph.service'
-import {NullSafePipe} from '../../../../utils/pipes/null-safe.pipe'
-import {EmptyRowComponent} from '../../../reusable/empty-row/empty-row.component'
+} from '../../../../../api/organization-level/retail/unit-conversion/unit-conversion-graph.service'
+import {NullSafePipe} from '../../../../../utils/pipes/null-safe.pipe'
+import {EmptyRowComponent} from '../../../../reusable/empty-row/empty-row.component'
 import {
   AvailableProductLookupComponent
 } from '../../location-product-lookup/available-product-lookup/available-product-lookup.component'

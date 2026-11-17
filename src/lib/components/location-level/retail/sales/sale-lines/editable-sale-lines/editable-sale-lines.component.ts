@@ -11,19 +11,19 @@ import {InputGroupAddon} from 'primeng/inputgroupaddon'
 import {InputNumber} from 'primeng/inputnumber'
 import {Select} from 'primeng/select'
 import {Tooltip} from 'primeng/tooltip'
-import {SaleSessionKind} from '../../../../../api/location-level/sale_session/sale-session.model'
-import {SaleSessionService} from '../../../../../api/location-level/sale_session/sale-session.service'
+import {SaleSessionKind} from '../../../../../../api/location-level/retail/sale_session/sale-session.model'
+import {SaleSessionService} from '../../../../../../api/location-level/retail/sale_session/sale-session.service'
 import {
   AlternativeUnitsFinderPipe
-} from '../../../../../api/organization-level/unit-conversion/pipes/alternative-units-finder.pipe'
+} from '../../../../../../api/organization-level/retail/unit-conversion/pipes/alternative-units-finder.pipe'
 import {
   ConversionContextPipe,
   UnitConversionDescriptorPipe,
   UnitConvertPipe,
   UnitCurrencyPipe,
   UnitLabelPipe
-} from '../../../../../api/organization-level/unit-conversion/pipes/unit-convert.pipe'
-import {AutoStretchDirective} from '../../../../reusable/auto-stretch.directive'
+} from '../../../../../../api/organization-level/retail/unit-conversion/pipes/unit-convert.pipe'
+import {AutoStretchDirective} from '../../../../../reusable/auto-stretch.directive'
 import {SaleFormContext} from '../../form-utils/sale-form-context'
 import {SaleLineFormDefinition} from '../../form-utils/sale-line-form.definition'
 import {SaleLineHasChangedPipe} from '../sale-line-has-changed.pipe'

@@ -1,10 +1,10 @@
 import {signal} from '@angular/core'
 import {ComponentFixture, TestBed} from '@angular/core/testing'
 import {TIMEZONE_TOKEN} from '@global/utils/timezones.config'
-import {PaymentRow} from '../../../../api/location-level/payment/payment-search-result.model'
-import {PaymentSearchResultService} from '../../../../api/location-level/payment/payment-search-result.service'
-import {PaymentType} from '../../../../api/location-level/payment/payment-type.enum'
-import {BalanceEffect} from '../../../../api/organization-level/chart-of-accounts/balance-effect.enum'
+import {PaymentRow} from '../../../../../api/location-level/retail/payment/payment-search-result.model'
+import {PaymentSearchResultService} from '../../../../../api/location-level/retail/payment/payment-search-result.service'
+import {PaymentType} from '../../../../../api/location-level/retail/payment/payment-type.enum'
+import {BalanceEffect} from '../../../../../api/organization-level/core/chart-of-accounts/balance-effect.enum'
 import {PaymentsGridComponent} from './payments-grid.component'
 
 describe('PaymentsGridComponent', () => {

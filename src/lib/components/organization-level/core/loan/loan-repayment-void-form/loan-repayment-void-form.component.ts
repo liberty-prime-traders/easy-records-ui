@@ -1,12 +1,12 @@
 import {Component, inject, input, output, signal} from '@angular/core'
 import {form, FormField} from '@angular/forms/signals'
 import {InputText} from 'primeng/inputtext'
-import {LoanRepayment} from '../../../../api/organization-level/loan/loan.model'
-import {LoanService} from '../../../../api/organization-level/loan/loan.service'
-import {BaseFormComponent} from '../../../reusable/base-form.component'
-import {FormButtonsComponent} from '../../../reusable/form-buttons/form-buttons.component'
-import {FormFieldLayout} from '../../../reusable/form-field/form-field-layout'
-import {FormFieldComponent} from '../../../reusable/form-field/form-field.component'
+import {LoanRepayment} from '../../../../../api/organization-level/core/loan/loan.model'
+import {LoanService} from '../../../../../api/organization-level/core/loan/loan.service'
+import {BaseFormComponent} from '../../../../reusable/base-form.component'
+import {FormButtonsComponent} from '../../../../reusable/form-buttons/form-buttons.component'
+import {FormFieldLayout} from '../../../../reusable/form-field/form-field-layout'
+import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
 
 @Component({
   selector: 'rts-loan-repayment-void-form',

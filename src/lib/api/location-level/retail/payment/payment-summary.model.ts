@@ -1,5 +1,5 @@
-import {BalanceEffect} from '../../organization-level/chart-of-accounts/balance-effect.enum'
-import {BaseModel} from '../../util/base-api/base.model'
+import {BalanceEffect} from '../../../organization-level/core/chart-of-accounts/balance-effect.enum'
+import {BaseModel} from '../../../util/base-api/base.model'
 import {PaymentType} from './payment-type.enum'
 
 export interface PaymentMethodSummary {

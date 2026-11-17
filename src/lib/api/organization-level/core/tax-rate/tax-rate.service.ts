@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core'
-import {BaseService} from '../../util/base-api/base.service'
+import {BaseService} from '../../../util/base-api/base.service'
 import {TaxRate} from './tax-rate.model'
 import {TaxRateStore} from './tax-rate.store'
 

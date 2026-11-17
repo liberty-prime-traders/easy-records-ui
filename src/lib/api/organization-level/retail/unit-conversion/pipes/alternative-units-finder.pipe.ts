@@ -1,5 +1,5 @@
 import {inject, Pipe, PipeTransform} from '@angular/core'
-import {SelectItem, toSelectItems} from '../../../../utils/types/select-item.type'
+import {SelectItem, toSelectItems} from '../../../../../utils/types/select-item.type'
 import {UnitConversionGraphService} from '../unit-conversion-graph.service'
 import {UnitPluralDerivation} from '../unit-plural-derivation.enum'
 

@@ -1,7 +1,7 @@
 import {HttpParams} from '@angular/common/http'
 import {Injectable} from '@angular/core'
-import {ApiCallbacks} from '../../util/base-api/api-callbacks'
-import {MultimapBaseService} from '../../util/base-api/multimap-base.service'
+import {ApiCallbacks} from '../../../util/base-api/api-callbacks'
+import {MultimapBaseService} from '../../../util/base-api/multimap-base.service'
 import {
   Expense,
   ExpenseBySourceRequest,

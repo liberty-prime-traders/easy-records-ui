@@ -1,9 +1,9 @@
 import {schema} from '@angular/forms/signals'
-import {PaymentStatus} from '../../../../api/location-level/purchase/payment-status.enum'
-import {PurchaseSearchParameters} from '../../../../api/location-level/purchase/purchase-search-parameters.model'
-import {PurchaseStatus} from '../../../../api/location-level/purchase/purchase-status.enum'
-import {getToday, getTomorrow} from '../../../../utils/dates'
-import {ZonedDatesService} from '../../../../utils/services/zoned-dates.service'
+import {PaymentStatus} from '../../../../../api/location-level/retail/purchase/payment-status.enum'
+import {PurchaseSearchParameters} from '../../../../../api/location-level/retail/purchase/purchase-search-parameters.model'
+import {PurchaseStatus} from '../../../../../api/location-level/retail/purchase/purchase-status.enum'
+import {getToday, getTomorrow} from '../../../../../utils/dates'
+import {ZonedDatesService} from '../../../../../utils/services/zoned-dates.service'
 
 export namespace PurchasesFilterFormDefinition {
   export interface PurchasesFilterFormModel {

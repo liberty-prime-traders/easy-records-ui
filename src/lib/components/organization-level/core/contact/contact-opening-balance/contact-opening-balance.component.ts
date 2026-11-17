@@ -5,10 +5,10 @@ import {Dialog} from 'primeng/dialog'
 import {Panel} from 'primeng/panel'
 import {
   ContactOpeningSettlementService
-} from '../../../../api/organization-level/contact-opening-settlement/contact-opening-settlement.service'
-import {Contact} from '../../../../api/organization-level/contact/contact.model'
-import {FormFieldComponent} from '../../../reusable/form-field/form-field.component'
-import {MoneyComponent} from '../../../reusable/money.component'
+} from '../../../../../api/organization-level/core/contact-opening-settlement/contact-opening-settlement.service'
+import {Contact} from '../../../../../api/organization-level/core/contact/contact.model'
+import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
+import {MoneyComponent} from '../../../../reusable/money.component'
 import {
   ContactOpeningBalanceEditComponent
 } from './contact-opening-balance-edit/contact-opening-balance-edit.component'

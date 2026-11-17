@@ -1,6 +1,6 @@
 import {TestBed} from '@angular/core/testing'
-import {defaultSaleSession} from '../../../../api/location-level/sale_session/sale-session-default.value'
-import {SaleSessionService} from '../../../../api/location-level/sale_session/sale-session.service'
+import {defaultSaleSession} from '../../../../../api/location-level/retail/sale_session/sale-session-default.value'
+import {SaleSessionService} from '../../../../../api/location-level/retail/sale_session/sale-session.service'
 import {SaleFormContext} from './sale-form-context'
 
 describe('SaleFormContext auto print', () => {

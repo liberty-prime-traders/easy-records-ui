@@ -2,7 +2,7 @@ import {HttpClient} from '@angular/common/http'
 import {inject, signal} from '@angular/core'
 import {finalize, Subscription, throwError} from 'rxjs'
 import {catchError, tap} from 'rxjs/operators'
-import {ApiCallbacks} from '../../util/base-api/api-callbacks'
+import {ApiCallbacks} from '../../../util/base-api/api-callbacks'
 
 export abstract class AdminDataFixRequestService {
   private readonly httpClient = inject(HttpClient)

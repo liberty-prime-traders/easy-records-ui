@@ -1,9 +1,9 @@
 import {schema} from '@angular/forms/signals'
-import {ExpenseSearchParameters} from '../../../../api/cross-tier/expense/expense-search-parameters.model'
-import {ExpenseVoidedState} from '../../../../api/cross-tier/expense/expense-voided-state.enum'
-import {PaymentStatus} from '../../../../api/location-level/purchase/payment-status.enum'
-import {getToday, getTomorrow, toLocaleDateString} from '../../../../utils/dates'
-import {ZonedDatesService} from '../../../../utils/services/zoned-dates.service'
+import {ExpenseSearchParameters} from '../../../../../api/cross-tier/core/expense/expense-search-parameters.model'
+import {ExpenseVoidedState} from '../../../../../api/cross-tier/core/expense/expense-voided-state.enum'
+import {PaymentStatus} from '../../../../../api/location-level/retail/purchase/payment-status.enum'
+import {getToday, getTomorrow, toLocaleDateString} from '../../../../../utils/dates'
+import {ZonedDatesService} from '../../../../../utils/services/zoned-dates.service'
 
 export namespace ExpensesFilterFormDefinition {
   export interface ExpensesFilterFormModel {

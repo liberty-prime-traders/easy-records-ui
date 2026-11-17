@@ -1,5 +1,5 @@
-import {BaseModel} from '../../util/base-api/base.model'
-import {PaymentStatus} from '../../location-level/purchase/payment-status.enum'
+import {BaseModel} from '../../../util/base-api/base.model'
+import {PaymentStatus} from '../../../location-level/retail/purchase/payment-status.enum'
 import {ExpenseSourceType} from './expense-source-type.enum'
 
 export interface ExpensePayment {

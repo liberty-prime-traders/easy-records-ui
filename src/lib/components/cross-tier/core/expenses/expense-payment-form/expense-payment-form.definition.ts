@@ -1,6 +1,6 @@
 import {min, required, schema} from '@angular/forms/signals'
-import {ExpensePaymentCreateRequest} from '../../../../api/cross-tier/expense/expense.model'
-import {getToday, toLocaleDateString} from '../../../../utils/dates'
+import {ExpensePaymentCreateRequest} from '../../../../../api/cross-tier/core/expense/expense.model'
+import {getToday, toLocaleDateString} from '../../../../../utils/dates'
 
 export namespace ExpensePaymentFormDefinition {
   export interface PaymentRowModel {

@@ -4,15 +4,15 @@ import {ButtonDirective} from 'primeng/button'
 import {Tab, TabList, TabPanel, TabPanels, Tabs} from 'primeng/tabs'
 import {TableModule} from 'primeng/table'
 import {Tag} from 'primeng/tag'
-import {PurchaseDelivery, PurchaseDeliveryLine} from '../../../../api/location-level/delivery/purchase-delivery.model'
+import {PurchaseDelivery, PurchaseDeliveryLine} from '../../../../../api/location-level/retail/delivery/purchase-delivery.model'
 import {
   PurchaseDeliveryLineStatus
-} from '../../../../api/location-level/product-purchases-report/purchase-delivery-line-status.enum'
+} from '../../../../../api/location-level/retail/product-purchases-report/purchase-delivery-line-status.enum'
 import {
   UnitDescriptionPipe
-} from '../../../../api/organization-level/unit-conversion/pipes/unit-description.pipe'
-import {ProductLabelPipe} from '../../../../utils/pipes/product-label.pipe'
-import {KafkaEventLogComponent} from '../../kafka-event-log/kafka-event-log.component'
+} from '../../../../../api/organization-level/retail/unit-conversion/pipes/unit-description.pipe'
+import {ProductLabelPipe} from '../../../../../utils/pipes/product-label.pipe'
+import {KafkaEventLogComponent} from '../../../core/kafka-event-log/kafka-event-log.component'
 import {DeliveryLineRevisionFormComponent} from '../delivery-revision/delivery-line-revision-form.component'
 
 @Component({

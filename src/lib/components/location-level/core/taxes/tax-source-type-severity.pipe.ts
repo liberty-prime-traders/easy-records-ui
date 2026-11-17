@@ -1,6 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core'
-import {TaxSourceType} from '../../../api/location-level/tax-entry/tax-source-type.enum'
-import {RtsSeverity} from '../../../utils/types/severity'
+import {TaxSourceType} from '../../../../api/location-level/core/tax-entry/tax-source-type.enum'
+import {RtsSeverity} from '../../../../utils/types/severity'
 
 @Pipe({name: 'taxSourceTypeSeverity', standalone: true})
 export class TaxSourceTypeSeverityPipe implements PipeTransform {

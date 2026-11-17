@@ -4,16 +4,16 @@ import {MessageService} from 'primeng/api'
 import {ButtonDirective} from 'primeng/button'
 import {Dialog} from 'primeng/dialog'
 import {Textarea} from 'primeng/textarea'
-import {OpeningStockBulkLine} from '../../../../api/location-level/opening-stock/opening-stock.model'
+import {OpeningStockBulkLine} from '../../../../../api/location-level/retail/opening-stock/opening-stock.model'
 import {
   defaultJsonPayloadFormModel,
   JsonPayloadFormModel,
   jsonNonEmptyArrayPayloadSchema,
   jsonPayloadFieldMap,
   parseJsonPayload
-} from '../../../../utils/json-payload'
-import {ErrorSummaryComponent} from '../../../reusable/error-summary/error-summary.component'
-import {LoadingContainerComponent} from '../../../reusable/loading-container/loading-container.component'
+} from '../../../../../utils/json-payload'
+import {ErrorSummaryComponent} from '../../../../reusable/error-summary/error-summary.component'
+import {LoadingContainerComponent} from '../../../../reusable/loading-container/loading-container.component'
 import {OpeningStockDeclarationService} from './opening-stock-declaration.service'
 
 @Component({

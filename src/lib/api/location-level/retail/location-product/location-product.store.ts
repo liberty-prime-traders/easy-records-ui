@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core'
-import {ProductSearchParameters} from '../../cross-tier/product/product-search-parameters.model'
-import {createPaginatedBaseStore, PaginatedBaseStore} from '../../util/paginated-api/paginated-base.store'
+import {ProductSearchParameters} from '../../../cross-tier/retail/product/product-search-parameters.model'
+import {createPaginatedBaseStore, PaginatedBaseStore} from '../../../util/paginated-api/paginated-base.store'
 import {LocationProduct} from './location-product.model'
 
 @Injectable({providedIn: 'root'})

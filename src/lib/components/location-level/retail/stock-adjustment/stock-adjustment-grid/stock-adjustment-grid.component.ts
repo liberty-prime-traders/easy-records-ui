@@ -1,11 +1,11 @@
 import {CurrencyPipe, DatePipe} from '@angular/common'
 import {Component, inject, OnInit} from '@angular/core'
 import {TableModule} from 'primeng/table'
-import {StockAdjustmentService} from '../../../../api/location-level/stock-adjustment/stock-adjustment.service'
-import {NullSafePipe} from '../../../../utils/pipes/null-safe.pipe'
-import {PrettifyEnumPipe} from '../../../../utils/pipes/prettify-enum.pipe'
-import {AutoStretchDirective} from '../../../reusable/auto-stretch.directive'
-import {EmptyRowComponent} from '../../../reusable/empty-row/empty-row.component'
+import {StockAdjustmentService} from '../../../../../api/location-level/retail/stock-adjustment/stock-adjustment.service'
+import {NullSafePipe} from '../../../../../utils/pipes/null-safe.pipe'
+import {PrettifyEnumPipe} from '../../../../../utils/pipes/prettify-enum.pipe'
+import {AutoStretchDirective} from '../../../../reusable/auto-stretch.directive'
+import {EmptyRowComponent} from '../../../../reusable/empty-row/empty-row.component'
 
 @Component({
   selector: 'rts-location-stock-adjustment-grid',

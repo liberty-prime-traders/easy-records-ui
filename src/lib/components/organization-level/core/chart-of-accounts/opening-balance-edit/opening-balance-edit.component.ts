@@ -5,14 +5,14 @@ import {ButtonDirective} from 'primeng/button'
 import {InputNumber} from 'primeng/inputnumber'
 import {Message} from 'primeng/message'
 import {Nullable} from 'primeng/ts-helpers'
-import {Account} from '../../../../api/organization-level/chart-of-accounts/account.model'
+import {Account} from '../../../../../api/organization-level/core/chart-of-accounts/account.model'
 import {
   OpeningBalanceRevisionService
-} from '../../../../api/organization-level/opening-balance/opening-balance-revision.service'
-import {CurrencyCodeProviderService} from '../../../../utils/services/currency-code-provider.service'
-import {ErrorSummaryComponent} from '../../../reusable/error-summary/error-summary.component'
-import {FormFieldComponent} from '../../../reusable/form-field/form-field.component'
-import {LoadingContainerComponent} from '../../../reusable/loading-container/loading-container.component'
+} from '../../../../../api/organization-level/core/opening-balance/opening-balance-revision.service'
+import {CurrencyCodeProviderService} from '../../../../../utils/services/currency-code-provider.service'
+import {ErrorSummaryComponent} from '../../../../reusable/error-summary/error-summary.component'
+import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
+import {LoadingContainerComponent} from '../../../../reusable/loading-container/loading-container.component'
 
 @Component({
   selector: 'rts-opening-balance-edit',

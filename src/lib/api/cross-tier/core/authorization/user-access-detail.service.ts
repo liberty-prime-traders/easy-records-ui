@@ -1,5 +1,5 @@
-import {BaseStore} from '../../util/base-api/base.store'
-import {MultimapBaseService} from '../../util/base-api/multimap-base.service'
+import {BaseStore} from '../../../util/base-api/base.store'
+import {MultimapBaseService} from '../../../util/base-api/multimap-base.service'
 import {UserAccessDetail} from './authority.model'
 
 export abstract class UserAccessDetailService extends MultimapBaseService<UserAccessDetail> {

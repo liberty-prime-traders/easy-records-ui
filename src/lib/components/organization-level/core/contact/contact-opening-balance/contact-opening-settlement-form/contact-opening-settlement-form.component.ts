@@ -7,17 +7,17 @@ import {Select} from 'primeng/select'
 import {SelectButton} from 'primeng/selectbutton'
 import {
   ContactSubledgerDirection
-} from '../../../../../api/organization-level/contact-opening-balance/contact-subledger-direction.enum'
+} from '../../../../../../api/organization-level/core/contact-opening-balance/contact-subledger-direction.enum'
 import {
   ContactOpeningSettlementService
-} from '../../../../../api/organization-level/contact-opening-settlement/contact-opening-settlement.service'
-import {Contact} from '../../../../../api/organization-level/contact/contact.model'
-import {PaymentOptionService} from '../../../../../api/organization-level/payment-option/payment-option.service'
-import {getToday} from '../../../../../utils/dates'
-import {CurrencyCodeProviderService} from '../../../../../utils/services/currency-code-provider.service'
-import {BaseFormComponent} from '../../../../reusable/base-form.component'
-import {FormButtonsComponent} from '../../../../reusable/form-buttons/form-buttons.component'
-import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
+} from '../../../../../../api/organization-level/core/contact-opening-settlement/contact-opening-settlement.service'
+import {Contact} from '../../../../../../api/organization-level/core/contact/contact.model'
+import {PaymentOptionService} from '../../../../../../api/organization-level/core/payment-option/payment-option.service'
+import {getToday} from '../../../../../../utils/dates'
+import {CurrencyCodeProviderService} from '../../../../../../utils/services/currency-code-provider.service'
+import {BaseFormComponent} from '../../../../../reusable/base-form.component'
+import {FormButtonsComponent} from '../../../../../reusable/form-buttons/form-buttons.component'
+import {FormFieldComponent} from '../../../../../reusable/form-field/form-field.component'
 import {ContactOpeningSettlementFormDefinition} from './contact-opening-settlement-form.definition'
 
 @Component({

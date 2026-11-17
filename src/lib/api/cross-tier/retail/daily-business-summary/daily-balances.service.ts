@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core'
 import {Subscription} from 'rxjs'
-import {BaseService} from '../../util/base-api/base.service'
+import {BaseService} from '../../../util/base-api/base.service'
 import {DailyBalances} from './daily-balances.model'
 import {DailyBalancesStore} from './daily-balances.store'
 import {DailyBusinessSummaryParameters} from './daily-business-summary-parameters.model'

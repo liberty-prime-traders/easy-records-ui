@@ -1,5 +1,5 @@
 import {Component, inject} from '@angular/core'
-import {StockTransferResponse} from '../../../../api/location-level/stock-transfer/stock-transfer-response.model'
+import {StockTransferResponse} from '../../../../../api/location-level/retail/stock-transfer/stock-transfer-response.model'
 import {StockTransferCreateFormComponent} from './stock-transfer-create-form.component'
 import {StockTransferDetailComponent} from './stock-transfer-detail.component'
 import {StockTransferFormContext} from './stock-transfer-form-context'

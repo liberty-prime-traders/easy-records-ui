@@ -2,8 +2,8 @@ import {min, required, schema} from '@angular/forms/signals'
 import {
   PurchaseExpenseBatchRequest,
   PurchaseExpenseRowRequest
-} from '../../../../api/cross-tier/expense/expense.model'
-import {getToday, getTodayStr, toLocaleDateString} from '../../../../utils/dates'
+} from '../../../../../api/cross-tier/core/expense/expense.model'
+import {getToday, getTodayStr, toLocaleDateString} from '../../../../../utils/dates'
 
 export namespace ExpenseFormDefinition {
   export interface ExpenseRowModel {

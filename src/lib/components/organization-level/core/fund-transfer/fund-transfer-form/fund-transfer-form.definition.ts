@@ -3,9 +3,9 @@ import {
   FundMovementCapitalRequest,
   FundMovementDrawRequest,
   FundMovementTransferRequest
-} from '../../../../api/organization-level/fund-transfer/fund-movement.model'
-import {FundMovementType} from '../../../../api/organization-level/fund-transfer/fund-movement-type.enum'
-import {getToday, toLocaleDateString} from '../../../../utils/dates'
+} from '../../../../../api/organization-level/core/fund-transfer/fund-movement.model'
+import {FundMovementType} from '../../../../../api/organization-level/core/fund-transfer/fund-movement-type.enum'
+import {getToday, toLocaleDateString} from '../../../../../utils/dates'
 
 export namespace FundTransferFormDefinition {
   export interface FundTransferFormModel {

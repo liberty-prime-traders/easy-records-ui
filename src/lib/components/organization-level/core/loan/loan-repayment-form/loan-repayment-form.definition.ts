@@ -1,6 +1,6 @@
 import {min, required, schema, validate} from '@angular/forms/signals'
-import {LoanRepaymentCreateRequest} from '../../../../api/organization-level/loan/loan.model'
-import {getToday, toLocaleDateString} from '../../../../utils/dates'
+import {LoanRepaymentCreateRequest} from '../../../../../api/organization-level/core/loan/loan.model'
+import {getToday, toLocaleDateString} from '../../../../../utils/dates'
 
 export namespace LoanRepaymentFormDefinition {
   export interface LoanRepaymentFormModel {

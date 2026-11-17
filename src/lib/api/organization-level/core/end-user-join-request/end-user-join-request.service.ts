@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core'
 import {EntityId} from '@ngrx/signals/entities'
-import {BaseService} from '../../util/base-api/base.service'
+import {BaseService} from '../../../util/base-api/base.service'
 import {EndUserJoinRequest} from './end-user-join-request.model'
 import {EndUserJoinRequestStore} from './end-user-join-request.store'
 

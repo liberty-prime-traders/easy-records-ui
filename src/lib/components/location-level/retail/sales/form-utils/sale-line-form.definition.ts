@@ -1,5 +1,5 @@
 import {max, schema, validateTree} from '@angular/forms/signals'
-import {SaleLine} from '../../../../api/location-level/sale_session/sale-session.model'
+import {SaleLine} from '../../../../../api/location-level/retail/sale_session/sale-session.model'
 
 export namespace SaleLineFormDefinition {
 

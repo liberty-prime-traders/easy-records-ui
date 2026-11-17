@@ -1,6 +1,6 @@
-import {PaymentSummary} from '../../../../api/location-level/payment/payment-summary.model'
-import {BalanceEffect} from '../../../../api/organization-level/chart-of-accounts/balance-effect.enum'
-import {PrettifyEnumPipe} from '../../../../utils/pipes/prettify-enum.pipe'
+import {PaymentSummary} from '../../../../../api/location-level/retail/payment/payment-summary.model'
+import {BalanceEffect} from '../../../../../api/organization-level/core/chart-of-accounts/balance-effect.enum'
+import {PrettifyEnumPipe} from '../../../../../utils/pipes/prettify-enum.pipe'
 
 export interface SummaryGridRow {
   kind: 'method' | 'total'

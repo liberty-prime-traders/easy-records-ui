@@ -4,12 +4,12 @@ import {EntityId} from '@ngrx/signals/entities'
 import {isNil} from 'lodash-es'
 import {InputText} from 'primeng/inputtext'
 import {Select} from 'primeng/select'
-import {LocationType} from '../../../../api/organization-level/location/location-type.enum'
-import {Location} from '../../../../api/organization-level/location/location.model'
-import {LocationService} from '../../../../api/organization-level/location/location.service'
-import {EnumToDropdownPipe} from '../../../../utils/pipes/enum-to-dropdown.pipe'
-import {FormButtonsComponent} from '../../../reusable/form-buttons/form-buttons.component'
-import {FormFieldComponent} from '../../../reusable/form-field/form-field.component'
+import {LocationType} from '../../../../../api/organization-level/core/location/location-type.enum'
+import {Location} from '../../../../../api/organization-level/core/location/location.model'
+import {LocationService} from '../../../../../api/organization-level/core/location/location.service'
+import {EnumToDropdownPipe} from '../../../../../utils/pipes/enum-to-dropdown.pipe'
+import {FormButtonsComponent} from '../../../../reusable/form-buttons/form-buttons.component'
+import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
 
 @Component({
   selector: 'rts-location-form',

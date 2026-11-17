@@ -1,6 +1,6 @@
 import {disabled, required, schema} from '@angular/forms/signals'
-import {AccountType} from '../../../../api/organization-level/chart-of-accounts/account-type.enum'
-import {Account} from '../../../../api/organization-level/chart-of-accounts/account.model'
+import {AccountType} from '../../../../../api/organization-level/core/chart-of-accounts/account-type.enum'
+import {Account} from '../../../../../api/organization-level/core/chart-of-accounts/account.model'
 
 export namespace AccountFormDefinition {
   export interface AccountFormModel {

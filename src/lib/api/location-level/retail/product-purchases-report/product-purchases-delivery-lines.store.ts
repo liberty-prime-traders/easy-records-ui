@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core'
-import {BaseStore, createBaseStore} from '../../util/base-api/base.store'
+import {BaseStore, createBaseStore} from '../../../util/base-api/base.store'
 import {ProductPurchasesDeliveryLine} from './product-purchases-delivery-line.model'
 
 @Injectable({providedIn: 'root'})

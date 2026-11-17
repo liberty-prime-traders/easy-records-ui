@@ -1,12 +1,12 @@
 import {computed, inject, Injectable, Signal, signal} from '@angular/core'
 import {tap} from 'rxjs/operators'
-import {UserPermission} from '../../../api/cross-tier/authorization/user-permission.enum'
+import {UserPermission} from '../../../api/cross-tier/core/authorization/user-permission.enum'
 import {AuthenticationService} from '../../../api/platform-level/authentication/authentication.service'
 import {
   OrganizationAdminService
 } from '../../../api/platform-level/organization/organization-admin/organization-admin.service'
-import {LibertyAccessService} from '../../../api/organization-level/liberty-access/liberty-access.service'
-import {UserRole} from '../../../api/cross-tier/authorization/user-role.enum'
+import {LibertyAccessService} from '../../../api/organization-level/core/liberty-access/liberty-access.service'
+import {UserRole} from '../../../api/cross-tier/core/authorization/user-role.enum'
 import {RtsGoogleAuthService} from './rts-google-auth.service'
 
 @Injectable({ providedIn: 'root' })

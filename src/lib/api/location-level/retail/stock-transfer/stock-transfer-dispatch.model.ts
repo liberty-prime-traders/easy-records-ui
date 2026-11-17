@@ -1,4 +1,4 @@
-import {StockTransferStatus} from '../../cross-tier/stock-transfer/stock-transfer-status.enum'
+import {StockTransferStatus} from '../../../cross-tier/retail/stock-transfer/stock-transfer-status.enum'
 import {ReconciledTransferLine} from './reconciled-transfer-line.model'
 
 export interface StockTransferDispatch {

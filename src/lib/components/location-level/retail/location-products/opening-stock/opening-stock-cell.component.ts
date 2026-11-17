@@ -2,11 +2,11 @@ import {Component, computed, inject, input} from '@angular/core'
 import {FormsModule} from '@angular/forms'
 import {InputNumber} from 'primeng/inputnumber'
 import {Select} from 'primeng/select'
-import {LocationProduct} from '../../../../api/location-level/location-product/location-product.model'
+import {LocationProduct} from '../../../../../api/location-level/retail/location-product/location-product.model'
 import {
   AlternativeUnitsFinderPipe
-} from '../../../../api/organization-level/unit-conversion/pipes/alternative-units-finder.pipe'
-import {NullishToZeroPipe} from '../../../../utils/pipes/nullish-to-zero.pipe'
+} from '../../../../../api/organization-level/retail/unit-conversion/pipes/alternative-units-finder.pipe'
+import {NullishToZeroPipe} from '../../../../../utils/pipes/nullish-to-zero.pipe'
 import {OpeningStockDeclarationService} from './opening-stock-declaration.service'
 
 @Component({

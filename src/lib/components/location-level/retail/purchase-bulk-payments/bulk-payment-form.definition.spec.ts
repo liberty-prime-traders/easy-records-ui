@@ -1,4 +1,4 @@
-import {ZonedDatesService} from '../../../utils/services/zoned-dates.service'
+import {ZonedDatesService} from '../../../../utils/services/zoned-dates.service'
 import {BulkPaymentFormDefinition} from './bulk-payment-form.definition'
 
 describe('BulkPaymentFormDefinition', () => {

@@ -1,4 +1,4 @@
-import {PaginatedModel} from '../../util/paginated-api/paginated.model'
+import {PaginatedModel} from '../../../util/paginated-api/paginated.model'
 import {PurchaseDeliveryLineStatus} from './purchase-delivery-line-status.enum'
 
 export interface ProductPurchasesDeliveryLine extends PaginatedModel {

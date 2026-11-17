@@ -3,9 +3,9 @@ import {Component, computed, inject} from '@angular/core'
 import {Panel} from 'primeng/panel'
 import {Table} from 'primeng/table'
 import {Tag} from 'primeng/tag'
-import {SaleSearchSummaryService} from '../../../api/location-level/sale-summary/sale-search-summary.service'
-import {PrettifyEnumPipe} from '../../../utils/pipes/prettify-enum.pipe'
-import {EmptyRowComponent} from '../../reusable/empty-row/empty-row.component'
+import {SaleSearchSummaryService} from '../../../../api/location-level/retail/sale-summary/sale-search-summary.service'
+import {PrettifyEnumPipe} from '../../../../utils/pipes/prettify-enum.pipe'
+import {EmptyRowComponent} from '../../../reusable/empty-row/empty-row.component'
 import {SaleStatusSeverityPipe} from './sale-status-severity.pipe'
 
 @Component({

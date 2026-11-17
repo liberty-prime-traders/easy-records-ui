@@ -1,11 +1,11 @@
 import {Component, computed, inject, input, signal} from '@angular/core'
 import {ButtonDirective} from 'primeng/button'
 import {Message} from 'primeng/message'
-import {FiscalPeriod} from '../../../../api/organization-level/fiscal-period/fiscal-period.model'
-import {FiscalPeriodService} from '../../../../api/organization-level/fiscal-period/fiscal-period.service'
-import {ProcessingStatus} from '../../../../utils/types/processing-status.enum'
-import {BaseFormComponent} from '../../../reusable/base-form.component'
-import {ErrorSummaryComponent} from '../../../reusable/error-summary/error-summary.component'
+import {FiscalPeriod} from '../../../../../api/organization-level/core/fiscal-period/fiscal-period.model'
+import {FiscalPeriodService} from '../../../../../api/organization-level/core/fiscal-period/fiscal-period.service'
+import {ProcessingStatus} from '../../../../../utils/types/processing-status.enum'
+import {BaseFormComponent} from '../../../../reusable/base-form.component'
+import {ErrorSummaryComponent} from '../../../../reusable/error-summary/error-summary.component'
 
 @Component({
   selector: 'rts-fiscal-period-close',

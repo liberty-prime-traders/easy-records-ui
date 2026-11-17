@@ -1,6 +1,6 @@
 import {NgClass} from '@angular/common'
 import {Component, computed, input} from '@angular/core'
-import {Tag} from '../../../../api/organization-level/tag/tag.model'
+import {Tag} from '../../../../../api/organization-level/core/tag/tag.model'
 import {OrganizationProductFormDefinition} from './organization-product-form.definition'
 
 @Component({

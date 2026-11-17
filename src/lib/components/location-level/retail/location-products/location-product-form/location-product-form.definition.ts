@@ -1,5 +1,5 @@
 import {required, schema} from '@angular/forms/signals'
-import {LocationProduct} from '../../../../api/location-level/location-product/location-product.model'
+import {LocationProduct} from '../../../../../api/location-level/retail/location-product/location-product.model'
 
 export namespace LocationProductFormDefinition {
   export interface LocationProductFormModel {

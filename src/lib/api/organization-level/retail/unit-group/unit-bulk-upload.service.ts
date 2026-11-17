@@ -1,6 +1,6 @@
 import {inject, Injectable} from '@angular/core'
-import {ApiCallbacks} from '../../util/base-api/api-callbacks'
-import {BaseService} from '../../util/base-api/base.service'
+import {ApiCallbacks} from '../../../util/base-api/api-callbacks'
+import {BaseService} from '../../../util/base-api/base.service'
 import {UnitValueService} from '../unit-value/unitvalue.service'
 import {UnitGroupBulkUploadRequest} from './unit-group-bulk-upload-request.dto'
 import {UnitGroup} from './unitgroup.model'

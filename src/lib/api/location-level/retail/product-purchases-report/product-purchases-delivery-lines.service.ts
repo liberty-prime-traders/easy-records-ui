@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core'
-import {KeyedPaginatedBaseService} from '../../util/keyed-paginated-api/keyed-paginated-base.service'
+import {KeyedPaginatedBaseService} from '../../../util/keyed-paginated-api/keyed-paginated-base.service'
 import {ProductPurchasesDeliveryLine} from './product-purchases-delivery-line.model'
 import {ProductPurchasesDeliveryLinesParameters} from './product-purchases-delivery-lines-parameters.model'
 import {ProductPurchasesDeliveryLinesStore} from './product-purchases-delivery-lines.store'

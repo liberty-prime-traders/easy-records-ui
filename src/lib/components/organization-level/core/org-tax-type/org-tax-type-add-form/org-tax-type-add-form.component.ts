@@ -4,15 +4,15 @@ import {applyEach, form} from '@angular/forms/signals'
 import {TreeNode} from 'primeng/api'
 import {ButtonDirective} from 'primeng/button'
 import {TreeSelect} from 'primeng/treeselect'
-import {AccountTreesService} from '../../../../api/organization-level/account-trees/account-trees.service'
+import {AccountTreesService} from '../../../../../api/organization-level/core/account-trees/account-trees.service'
 import {
   AvailableTaxTypesService
-} from '../../../../api/organization-level/available-tax-types/available-tax-types.service'
-import {OrgFeatureService} from '../../../../api/organization-level/org-feature/org-feature.service'
-import {OrgTaxTypeService} from '../../../../api/organization-level/org-tax-type/org-tax-type.service'
-import {TaxRecoveryType} from '../../../../api/platform-level/tax-type/tax-recovery-type.enum'
-import {RtsTreeNode} from '../../../../utils/types/rts-tree-node'
-import {LoadingContainerComponent} from '../../../reusable/loading-container/loading-container.component'
+} from '../../../../../api/organization-level/core/available-tax-types/available-tax-types.service'
+import {OrgFeatureService} from '../../../../../api/organization-level/core/org-feature/org-feature.service'
+import {OrgTaxTypeService} from '../../../../../api/organization-level/core/org-tax-type/org-tax-type.service'
+import {TaxRecoveryType} from '../../../../../api/platform-level/tax-type/tax-recovery-type.enum'
+import {RtsTreeNode} from '../../../../../utils/types/rts-tree-node'
+import {LoadingContainerComponent} from '../../../../reusable/loading-container/loading-container.component'
 import {OrgTaxTypeAddFormDefinition} from './org-tax-type-add-form.definition'
 
 @Component({

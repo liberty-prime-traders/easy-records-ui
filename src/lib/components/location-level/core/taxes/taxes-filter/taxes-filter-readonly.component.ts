@@ -2,7 +2,7 @@ import {DecimalPipe} from '@angular/common'
 import {Component, inject, output} from '@angular/core'
 import {ButtonDirective} from 'primeng/button'
 import {Fieldset} from 'primeng/fieldset'
-import {TruncatedListComponent} from '../../../reusable/truncated-list/truncated-list.component'
+import {TruncatedListComponent} from '../../../../reusable/truncated-list/truncated-list.component'
 import {TaxesFilterState} from './taxes-filter.state'
 
 @Component({

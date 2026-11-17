@@ -1,5 +1,5 @@
 import {SyncStatus} from './sync-status.enum'
-import {BaseModel} from '../../util/base-api/base.model'
+import {BaseModel} from '../../../util/base-api/base.model'
 
 export enum TableName {
   PRODUCT = 'PRODUCT'

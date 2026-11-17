@@ -1,7 +1,7 @@
 import {minLength, required, schema} from '@angular/forms/signals'
-import {ExpenseSourceType} from '../../../../api/cross-tier/expense/expense-source-type.enum'
-import {ContactType} from '../../../../api/organization-level/contact/contact-type.enum'
-import {ExpenseType} from '../../../../api/organization-level/expense-type/expense-type.model'
+import {ExpenseSourceType} from '../../../../../api/cross-tier/core/expense/expense-source-type.enum'
+import {ContactType} from '../../../../../api/organization-level/core/contact/contact-type.enum'
+import {ExpenseType} from '../../../../../api/organization-level/core/expense-type/expense-type.model'
 
 export namespace ExpenseTypeFormDefinition {
   export interface ExpenseTypeFormModel {

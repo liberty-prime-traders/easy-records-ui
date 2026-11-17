@@ -1,6 +1,6 @@
 import {CurrencyPipe, DecimalPipe} from '@angular/common'
 import {inject, Pipe, PipeTransform} from '@angular/core'
-import {CalculationMethod} from '../../../api/platform-level/tax-type/calculation-method.enum'
+import {CalculationMethod} from '../../../../api/platform-level/tax-type/calculation-method.enum'
 
 @Pipe({name: 'taxRate', standalone: true})
 export class TaxRatePipe implements PipeTransform {

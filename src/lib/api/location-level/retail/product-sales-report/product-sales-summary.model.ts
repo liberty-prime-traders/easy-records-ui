@@ -1,4 +1,4 @@
-import {PaginatedModel} from '../../util/paginated-api/paginated.model'
+import {PaginatedModel} from '../../../util/paginated-api/paginated.model'
 
 // The API sends no id; the summary store keys each row on locationProductId.
 export interface ProductSalesSummary extends PaginatedModel {

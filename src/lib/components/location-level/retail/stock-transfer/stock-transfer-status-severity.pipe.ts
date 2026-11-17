@@ -1,6 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core'
-import {StockTransferStatus} from '../../../api/cross-tier/stock-transfer/stock-transfer-status.enum'
-import {RtsSeverity} from '../../../utils/types/severity'
+import {StockTransferStatus} from '../../../../api/cross-tier/retail/stock-transfer/stock-transfer-status.enum'
+import {RtsSeverity} from '../../../../utils/types/severity'
 
 @Pipe({name: 'stockTransferStatusSeverity', standalone: true})
 export class StockTransferStatusSeverityPipe implements PipeTransform {

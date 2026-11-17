@@ -1,6 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core'
-import {PurchaseStatus} from '../../../api/location-level/purchase/purchase-status.enum'
-import {RtsSeverity} from '../../../utils/types/severity'
+import {PurchaseStatus} from '../../../../api/location-level/retail/purchase/purchase-status.enum'
+import {RtsSeverity} from '../../../../utils/types/severity'
 
 @Pipe({name: 'purchaseStatusSeverity', standalone: true})
 export class PurchaseStatusSeverityPipe implements PipeTransform {

@@ -1,6 +1,6 @@
-import {PaymentStatus} from '../../../api/location-level/purchase/payment-status.enum'
-import {PurchaseStatus} from '../../../api/location-level/purchase/purchase-status.enum'
-import {PurchaseBulkPaymentLine} from '../../../api/location-level/purchase-bulk-payment/purchase-bulk-payment.model'
+import {PaymentStatus} from '../../../../api/location-level/retail/purchase/payment-status.enum'
+import {PurchaseStatus} from '../../../../api/location-level/retail/purchase/purchase-status.enum'
+import {PurchaseBulkPaymentLine} from '../../../../api/location-level/retail/purchase-bulk-payment/purchase-bulk-payment.model'
 import {buildBulkPaymentRows, sumPayable} from './bulk-payment-allocation.util'
 
 describe('bulk payment allocation', () => {

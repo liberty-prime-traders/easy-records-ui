@@ -1,8 +1,8 @@
 import {computed, effect, inject, Injectable, signal, untracked} from '@angular/core'
 import {apply, form} from '@angular/forms/signals'
-import {PurchaseStatus} from '../../../../../api/location-level/purchase/purchase-status.enum'
-import {Purchase} from '../../../../../api/location-level/purchase/purchase.model'
-import {ZonedDatesService} from '../../../../../utils/services/zoned-dates.service'
+import {PurchaseStatus} from '../../../../../../api/location-level/retail/purchase/purchase-status.enum'
+import {Purchase} from '../../../../../../api/location-level/retail/purchase/purchase.model'
+import {ZonedDatesService} from '../../../../../../utils/services/zoned-dates.service'
 import {PurchaseFormDefinition} from './purchase-form.definition'
 import {PurchaseGeneralFieldsFormDefinition} from './purchase-general-fields-form.definition'
 

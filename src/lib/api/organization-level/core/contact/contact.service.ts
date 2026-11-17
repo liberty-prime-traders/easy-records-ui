@@ -1,6 +1,6 @@
 import {computed, Injectable} from '@angular/core'
 import {ContactType} from './contact-type.enum'
-import {BaseService} from '../../util/base-api/base.service'
+import {BaseService} from '../../../util/base-api/base.service'
 import {Contact} from './contact.model'
 import {ContactStore} from './contact.store'
 

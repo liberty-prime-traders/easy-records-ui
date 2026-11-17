@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core'
-import {PaymentStatus} from '../location-level/purchase/payment-status.enum'
+import {PaymentStatus} from '../location-level/retail/purchase/payment-status.enum'
 import {RtsSeverity} from '../../utils/types/severity'
 
 @Pipe({name: 'paymentStatusSeverity', standalone: true})

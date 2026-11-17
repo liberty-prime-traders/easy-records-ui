@@ -1,5 +1,5 @@
-import {ProductForPurchase} from '../../../../../api/location-level/product-lookup/product-for-purchase.model'
-import {PurchaseLine} from '../../../../../api/location-level/purchase/purchase.model'
+import {ProductForPurchase} from '../../../../../../api/location-level/retail/product-lookup/product-for-purchase.model'
+import {PurchaseLine} from '../../../../../../api/location-level/retail/purchase/purchase.model'
 
 export namespace PurchaseLineFormDefinition {
 

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core'
-import {MultimapBaseService} from '../../util/base-api/multimap-base.service'
+import {MultimapBaseService} from '../../../util/base-api/multimap-base.service'
 import {StockHistory} from './stock-history.model'
 import {StockHistoryStore} from './stock-history.store'
 

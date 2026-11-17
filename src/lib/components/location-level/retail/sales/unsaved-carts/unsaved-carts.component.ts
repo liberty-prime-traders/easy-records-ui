@@ -5,11 +5,11 @@ import {TableModule} from 'primeng/table'
 import {Tag} from 'primeng/tag'
 import {
   UnsavedCartsSummaryService
-} from '../../../../api/location-level/unsaved-carts-summary/unsaved-carts-summary.service'
-import {SaleSessionKind} from '../../../../api/location-level/sale_session/sale-session.model'
-import {SaleSessionService} from '../../../../api/location-level/sale_session/sale-session.service'
-import {NullSafePipe} from '../../../../utils/pipes/null-safe.pipe'
-import {ErrorSummaryComponent} from '../../../reusable/error-summary/error-summary.component'
+} from '../../../../../api/location-level/retail/unsaved-carts-summary/unsaved-carts-summary.service'
+import {SaleSessionKind} from '../../../../../api/location-level/retail/sale_session/sale-session.model'
+import {SaleSessionService} from '../../../../../api/location-level/retail/sale_session/sale-session.service'
+import {NullSafePipe} from '../../../../../utils/pipes/null-safe.pipe'
+import {ErrorSummaryComponent} from '../../../../reusable/error-summary/error-summary.component'
 import {SaleFormNavigator} from '../form-utils/sale-form-navigator'
 
 @Component({

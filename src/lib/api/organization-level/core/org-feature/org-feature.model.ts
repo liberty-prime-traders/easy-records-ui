@@ -1,5 +1,5 @@
-import {BaseModel} from '../../util/base-api/base.model'
-import {Feature} from '../../platform-level/platform-feature/feature.enum'
+import {BaseModel} from '../../../util/base-api/base.model'
+import {Feature} from '../../../platform-level/platform-feature/feature.enum'
 import {OrganizationFeatureStatus} from './org-feature-status.enum'
 
 export interface OrganizationFeature extends BaseModel {

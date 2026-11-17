@@ -3,8 +3,8 @@ import {computed, DestroyRef, inject, Injectable, NgZone, signal} from '@angular
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop'
 import {fromEvent, interval, merge, Observable, of} from 'rxjs'
 import {catchError, map, tap, throttleTime} from 'rxjs/operators'
-import {SessionContextService} from '../../../utils/services/session-context.service'
-import {UserPermission} from '../../cross-tier/authorization/user-permission.enum'
+import {SessionContextService} from '../../../../utils/services/session-context.service'
+import {UserPermission} from '../../../cross-tier/core/authorization/user-permission.enum'
 
 const REFRESH_INTERVAL_MILLIS = 10 * 60 * 1000
 const ACTIVITY_THROTTLE_MILLIS = 1000

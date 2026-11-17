@@ -1,8 +1,8 @@
 import {min, required, schema} from '@angular/forms/signals'
-import {PurchaseDeliveryLine} from '../../../../api/location-level/delivery/purchase-delivery.model'
+import {PurchaseDeliveryLine} from '../../../../../api/location-level/retail/delivery/purchase-delivery.model'
 import {
   DeliveryLineRevisionRequest
-} from '../../../../api/location-level/delivery-revision/delivery-line-revision-request.model'
+} from '../../../../../api/location-level/retail/delivery-revision/delivery-line-revision-request.model'
 
 export namespace DeliveryLineRevisionFormDefinition {
 

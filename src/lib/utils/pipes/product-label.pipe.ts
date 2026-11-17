@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core'
-import {ProductCore} from '../../api/cross-tier/product/product-core.model'
+import {ProductCore} from '../../api/cross-tier/retail/product/product-core.model'
 
 @Pipe({
   name: 'productLabel',

@@ -3,9 +3,9 @@ import {FormField} from '@angular/forms/signals'
 import {DatePicker} from 'primeng/datepicker'
 import {Message} from 'primeng/message'
 import {Select} from 'primeng/select'
-import {ContactService} from '../../../api/organization-level/contact/contact.service'
-import {FormFieldLayout} from '../../reusable/form-field/form-field-layout'
-import {FormFieldComponent} from '../../reusable/form-field/form-field.component'
+import {ContactService} from '../../../../api/organization-level/core/contact/contact.service'
+import {FormFieldLayout} from '../../../reusable/form-field/form-field-layout'
+import {FormFieldComponent} from '../../../reusable/form-field/form-field.component'
 import {BulkPaymentFormContext} from './bulk-payment-form-context'
 
 @Component({

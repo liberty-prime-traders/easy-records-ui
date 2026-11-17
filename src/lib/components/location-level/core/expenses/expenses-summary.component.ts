@@ -2,9 +2,9 @@ import {CurrencyPipe} from '@angular/common'
 import {Component, computed, inject} from '@angular/core'
 import {Panel} from 'primeng/panel'
 import {Table} from 'primeng/table'
-import {ExpenseSearchSummaryService} from '../../../api/cross-tier/expense/expense-search-summary.service'
-import {PrettifyEnumPipe} from '../../../utils/pipes/prettify-enum.pipe'
-import {EmptyRowComponent} from '../../reusable/empty-row/empty-row.component'
+import {ExpenseSearchSummaryService} from '../../../../api/cross-tier/core/expense/expense-search-summary.service'
+import {PrettifyEnumPipe} from '../../../../utils/pipes/prettify-enum.pipe'
+import {EmptyRowComponent} from '../../../reusable/empty-row/empty-row.component'
 
 @Component({
   selector: 'rts-expenses-summary',
