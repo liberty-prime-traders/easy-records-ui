@@ -17,7 +17,7 @@ interface NetWorthDatum {
 }
 
 @Component({
-  selector: 'rts-net-worth-chart',
+  selector: 'esr-net-worth-chart',
   templateUrl: 'net-worth-chart.component.html',
   styleUrl: 'net-worth-chart.component.scss',
   imports: [AgCharts]

@@ -7,7 +7,7 @@ import {NullSafePipe} from '../../../utils/pipes/null-safe.pipe'
 import {EmptyRowComponent} from '../../reusable/empty-row/empty-row.component'
 
 @Component({
-  selector: 'rts-authority-holder',
+  selector: 'esr-authority-holder',
   templateUrl: 'authority-holder.component.html',
   imports: [
     TableModule,

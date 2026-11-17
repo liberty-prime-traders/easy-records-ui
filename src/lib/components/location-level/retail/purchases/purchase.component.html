@@ -9,7 +9,7 @@
   </div>
 
   @if (formIsVisible()) {
-    <rts-purchase-form-actions/>
+    <esr-purchase-form-actions/>
   } @else {
     <button pButton (click)="startNewPurchase()">
       <i class="pi pi-plus"></i>
@@ -19,14 +19,14 @@
 </div>
 
 @if (formIsVisible()) {
-  <rts-purchase-form/>
+  <esr-purchase-form/>
 } @else {
-  <rts-loading-container [loading]="loading()">
+  <esr-loading-container [loading]="loading()">
     <div class="flex" id="purchases-report" rtsAutoStretch="purchases-report">
       @if (selectedTab() === 'purchases') {
-        <rts-purchases-filter-readonly class="col-2" (editFilters)="selectedTab.set('summary')"/>
+        <esr-purchases-filter-readonly class="col-2" (editFilters)="selectedTab.set('summary')"/>
       } @else {
-        <rts-purchases-filter class="col-3"/>
+        <esr-purchases-filter class="col-3"/>
       }
 
       <p-divider layout="vertical"/>
@@ -43,15 +43,15 @@
 
           <p-tabpanels>
             <p-tabpanel value="summary">
-              <rts-purchases-summary/>
+              <esr-purchases-summary/>
             </p-tabpanel>
 
             <p-tabpanel value="purchases">
-              <rts-purchase-grid/>
+              <esr-purchase-grid/>
             </p-tabpanel>
           </p-tabpanels>
         </p-tabs>
       </div>
     </div>
-  </rts-loading-container>
+  </esr-loading-container>
 }

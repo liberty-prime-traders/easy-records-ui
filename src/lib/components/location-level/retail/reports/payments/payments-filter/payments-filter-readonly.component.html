@@ -2,7 +2,7 @@
 
   @if (state.typeLabels().length > 0) {
     <p-fieldset legend="Type">
-      <rts-truncated-list [items]="state.typeLabels()"/>
+      <esr-truncated-list [items]="state.typeLabels()"/>
     </p-fieldset>
   }
 
@@ -46,19 +46,19 @@
 
   @if (state.contactNames().length > 0) {
     <p-fieldset legend="Contacts">
-      <rts-truncated-list [items]="state.contactNames()"/>
+      <esr-truncated-list [items]="state.contactNames()"/>
     </p-fieldset>
   }
 
   @if (state.paymentMethodNames().length > 0) {
     <p-fieldset legend="Payment method">
-      <rts-truncated-list [items]="state.paymentMethodNames()"/>
+      <esr-truncated-list [items]="state.paymentMethodNames()"/>
     </p-fieldset>
   }
 
   @if (state.statusLabels().length > 0) {
     <p-fieldset legend="Status">
-      <rts-truncated-list [items]="state.statusLabels()"/>
+      <esr-truncated-list [items]="state.statusLabels()"/>
     </p-fieldset>
   }
 
@@ -75,7 +75,7 @@
   @for (type of state.types; track type) {
     @if (state.filterFormValue().referenceNumbersByType[type].length > 0) {
       <p-fieldset [legend]="(type | prettifyEnum) + ' references'">
-        <rts-truncated-list [items]="state.filterFormValue().referenceNumbersByType[type]"/>
+        <esr-truncated-list [items]="state.filterFormValue().referenceNumbersByType[type]"/>
       </p-fieldset>
     }
   }

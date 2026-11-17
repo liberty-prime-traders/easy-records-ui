@@ -16,7 +16,7 @@ import {KafkaEventLogComponent} from '../../../core/kafka-event-log/kafka-event-
 import {DeliveryLineRevisionFormComponent} from '../delivery-revision/delivery-line-revision-form.component'
 
 @Component({
-  selector: 'rts-delivery-subgrid',
+  selector: 'esr-delivery-subgrid',
   templateUrl: 'delivery-subgrid.component.html',
   imports: [
     Tabs,

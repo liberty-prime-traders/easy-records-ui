@@ -15,7 +15,7 @@ import {GridFilterComponent} from '../../../reusable/grid-filter/grid-filter.com
 import {UserAccessDetailComponent} from '../user-access-detail/user-access-detail.component'
 
 @Component({
-  selector: 'rts-membership',
+  selector: 'esr-membership',
   templateUrl: 'membership.component.html',
   imports: [
     TableModule,

@@ -11,7 +11,7 @@ import {PrettifyEnumPipe} from '../../../../utils/pipes/prettify-enum.pipe'
 import {EmptyRowComponent} from '../../../reusable/empty-row/empty-row.component'
 
 @Component({
-  selector: 'rts-kafka-event-log',
+  selector: 'esr-kafka-event-log',
   templateUrl: 'kafka-event-log.component.html',
   imports: [
     TableModule,

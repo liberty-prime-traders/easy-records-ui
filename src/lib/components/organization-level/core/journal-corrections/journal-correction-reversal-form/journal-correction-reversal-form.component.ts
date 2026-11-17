@@ -13,7 +13,7 @@ interface ReversalFormModel {
 }
 
 @Component({
-  selector: 'rts-journal-correction-reversal-form',
+  selector: 'esr-journal-correction-reversal-form',
   templateUrl: 'journal-correction-reversal-form.component.html',
   imports: [FormButtonsComponent, FormFieldComponent, FormField, InputText]
 })

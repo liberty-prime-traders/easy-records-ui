@@ -13,12 +13,12 @@
 
   @if (formIsVisible()) {
     <p-divider class="m-0"/>
-    <rts-location-stock-transfer-form/>
+    <esr-location-stock-transfer-form/>
   } @else {
     <div class="pt-3">
-      <rts-location-stock-transfer-grid/>
+      <esr-location-stock-transfer-grid/>
     </div>
   }
 
-  <rts-error-summary class="floating bottom left" [regularErrorMessages]="failureMessages()"/>
+  <esr-error-summary class="floating bottom left" [regularErrorMessages]="failureMessages()"/>
 </div>

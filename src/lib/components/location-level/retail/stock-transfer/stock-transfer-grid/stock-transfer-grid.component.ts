@@ -13,7 +13,7 @@ import {StockTransferFormContext} from '../stock-transfer-form/stock-transfer-fo
 import {StockTransferStatusSeverityPipe} from '../stock-transfer-status-severity.pipe'
 
 @Component({
-  selector: 'rts-location-stock-transfer-grid',
+  selector: 'esr-location-stock-transfer-grid',
   templateUrl: 'stock-transfer-grid.component.html',
   imports: [
     AutoStretchDirective,

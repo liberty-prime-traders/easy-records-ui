@@ -13,7 +13,7 @@ import {UnitGroupFormComponent} from './unit-group-form/unit-group-form.componen
 import {UnitValueComponent} from './unit-value/unit-value.component'
 
 @Component({
-  selector: 'rts-unit-tree',
+  selector: 'esr-unit-tree',
   templateUrl: 'unit-tree.component.html',
   imports: [
     ButtonDirective,

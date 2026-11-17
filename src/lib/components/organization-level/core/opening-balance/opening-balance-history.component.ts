@@ -10,7 +10,7 @@ import {EmptyRowComponent} from '../../../reusable/empty-row/empty-row.component
 import {MoneyComponent} from '../../../reusable/money.component'
 
 @Component({
-  selector: 'rts-opening-balance-history',
+  selector: 'esr-opening-balance-history',
   templateUrl: 'opening-balance-history.component.html',
   imports: [
     TableModule,

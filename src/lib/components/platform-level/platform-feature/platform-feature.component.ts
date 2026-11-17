@@ -12,7 +12,7 @@ import {GridFilterComponent} from '../../reusable/grid-filter/grid-filter.compon
 import {PlatformFeatureFormComponent} from './platform-feature-form/platform-feature-form.component'
 
 @Component({
-  selector: 'rts-platform-feature',
+  selector: 'esr-platform-feature',
   templateUrl: 'platform-feature.component.html',
   imports: [
     TableModule,

@@ -16,7 +16,7 @@ import {FormFieldComponent} from '../../../../../reusable/form-field/form-field.
 import {PaymentsFilterState} from './payments-filter.state'
 
 @Component({
-  selector: 'rts-payments-filter',
+  selector: 'esr-payments-filter',
   templateUrl: 'payments-filter.component.html',
   imports: [
     FormFieldComponent,

@@ -17,7 +17,7 @@ import {LoadingContainerComponent} from '../../../../reusable/loading-container/
 import {OpeningStockDeclarationService} from './opening-stock-declaration.service'
 
 @Component({
-  selector: 'rts-opening-stock-bulk-upload',
+  selector: 'esr-opening-stock-bulk-upload',
   templateUrl: 'opening-stock-bulk-upload.component.html',
   imports: [ButtonDirective, Dialog, FormField, Textarea, ErrorSummaryComponent, LoadingContainerComponent]
 })

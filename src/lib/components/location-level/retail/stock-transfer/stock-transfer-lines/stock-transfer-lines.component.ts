@@ -33,7 +33,7 @@ import {StockTransferLineHasChangedPipe} from './stock-transfer-line-has-changed
 import StockTransferLineFormModel = StockTransferLineFormDefinition.StockTransferLineFormModel
 
 @Component({
-  selector: 'rts-location-stock-transfer-lines',
+  selector: 'esr-location-stock-transfer-lines',
   templateUrl: 'stock-transfer-lines.component.html',
   imports: [
     TableModule,

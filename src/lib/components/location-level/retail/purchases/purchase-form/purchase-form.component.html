@@ -1,9 +1,9 @@
-<rts-loading-container [loading]="isLoading()" loadingText="Saving...">
+<esr-loading-container [loading]="isLoading()" loadingText="Saving...">
   <p-divider/>
 
   <form class="flex flex-column" id="purchaseForm" rtsAutoStretch="purchaseForm">
 
-    <rts-purchase-form-general-fields/>
+    <esr-purchase-form-general-fields/>
 
     <p-tabs value="items">
       <p-tablist>
@@ -18,28 +18,28 @@
 
       <p-tabpanels>
         <p-tabpanel value="items">
-          <rts-purchase-lines/>
+          <esr-purchase-lines/>
         </p-tabpanel>
 
         @if (!isDraftOrNew()) {
           <p-tabpanel value="deliveries">
-            <rts-purchase-deliveries/>
+            <esr-purchase-deliveries/>
           </p-tabpanel>
 
           <p-tabpanel value="payments">
-            <rts-supplier-payment-grid [purchaseId]="purchaseId()"
+            <esr-supplier-payment-grid [purchaseId]="purchaseId()"
                                        [canAddPayment]="canAddPayments()"
                                        (paymentChanged)="reloadFormFromStore()">
-            </rts-supplier-payment-grid>
+            </esr-supplier-payment-grid>
           </p-tabpanel>
 
           <p-tabpanel value="expenses">
-            <rts-contextual-expense-grid
+            <esr-contextual-expense-grid
               [sourceReference]="purchaseReference()"
               [defaultPayeeContactId]="supplierId()"
               [sourceType]="ExpenseSourceType.PURCHASE"
               [canAddExpense]="true">
-            </rts-contextual-expense-grid>
+            </esr-contextual-expense-grid>
           </p-tabpanel>
         }
       </p-tabpanels>
@@ -47,4 +47,4 @@
 
     <div style="height: 100px"></div>
   </form>
-</rts-loading-container>
+</esr-loading-container>

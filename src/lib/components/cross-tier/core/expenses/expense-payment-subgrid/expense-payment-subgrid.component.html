@@ -1,13 +1,13 @@
 @if (showPaymentForm()) {
-  <rts-expense-payment-form [expense]="expense()"
+  <esr-expense-payment-form [expense]="expense()"
                             (paymentsSaved)="showPaymentForm.set(false)"
                             (cancelled)="showPaymentForm.set(false)">
-  </rts-expense-payment-form>
+  </esr-expense-payment-form>
 } @else if (showVoidForm()) {
-  <rts-expense-void-form [expense]="expense()"
+  <esr-expense-void-form [expense]="expense()"
                          (voided)="showVoidForm.set(false)"
                          (cancelled)="showVoidForm.set(false)">
-  </rts-expense-void-form>
+  </esr-expense-void-form>
 } @else {
   <div class="flex flex-column gap-2">
     <div class="flex justify-content-end gap-2">
@@ -58,13 +58,13 @@
       <ng-template #expandedrow let-payment>
         <tr>
           <td colspan="6" class="expanded-sub-row p-4">
-            <rts-expense-payment-expanded-row [payment]="payment" />
+            <esr-expense-payment-expanded-row [payment]="payment" />
           </td>
         </tr>
       </ng-template>
 
       <ng-template #emptymessage>
-        <tr [colspan]="6" rts-empty-row message="No payments recorded yet"></tr>
+        <tr [colspan]="6" esr-empty-row message="No payments recorded yet"></tr>
       </ng-template>
     </p-table>
   </div>

@@ -1,6 +1,6 @@
-<rts-loading-container [loading]="loading()" loadingText="Creating...">
+<esr-loading-container [loading]="loading()" loadingText="Creating...">
   <form class="flex flex-column">
-    <rts-form-field [required]="true" label="Destination" for="destinationLocationId">
+    <esr-form-field [required]="true" label="Destination" for="destinationLocationId">
       <p-select id="destinationLocationId"
                 class="flex-grow-1"
                 [filter]="true"
@@ -10,9 +10,9 @@
                 [formField]="stockTransferCreateForm.destinationLocationId"
                 placeholder="Select a destination location">
       </p-select>
-    </rts-form-field>
+    </esr-form-field>
 
-    <rts-form-field label="Notes" for="notes">
+    <esr-form-field label="Notes" for="notes">
       <textarea id="notes"
                 pInputText
                 class="flex-grow-1 w-full"
@@ -20,13 +20,13 @@
                 rows="4"
                 placeholder="Notes">
       </textarea>
-    </rts-form-field>
+    </esr-form-field>
 
 
     <div class="flex justify-content-around">
-      <rts-error-summary [signalFormErrors]="stockTransferCreateForm().errorSummary()"
+      <esr-error-summary [signalFormErrors]="stockTransferCreateForm().errorSummary()"
                          [fieldMap]="fieldMap">
-      </rts-error-summary>
+      </esr-error-summary>
 
       <button pButton
               class="h-fit"
@@ -37,4 +37,4 @@
       </button>
     </div>
   </form>
-</rts-loading-container>
+</esr-loading-container>

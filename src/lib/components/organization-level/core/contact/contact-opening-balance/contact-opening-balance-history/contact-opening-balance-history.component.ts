@@ -12,7 +12,7 @@ import {EmptyRowComponent} from '../../../../../reusable/empty-row/empty-row.com
 import {MoneyComponent} from '../../../../../reusable/money.component'
 
 @Component({
-  selector: 'rts-contact-opening-balance-history',
+  selector: 'esr-contact-opening-balance-history',
   templateUrl: 'contact-opening-balance-history.component.html',
   imports: [
     TableModule,

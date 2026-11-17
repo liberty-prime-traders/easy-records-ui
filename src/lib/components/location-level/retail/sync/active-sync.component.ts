@@ -15,7 +15,7 @@ import {HasSubscriptionComponent} from '../../../reusable/has-subscription.compo
 import {SyncStatusSeverityPipe} from './sync-status-severity.pipe'
 
 @Component({
-  selector: 'rts-active-sync',
+  selector: 'esr-active-sync',
   templateUrl: 'active-sync.component.html',
   imports: [
     ButtonDirective,

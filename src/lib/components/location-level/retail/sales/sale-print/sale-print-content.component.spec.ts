@@ -80,9 +80,9 @@ const buildSale = (): SaleSession => {
 @Component({
   imports: [PrintDocumentComponent, SalePrintContentComponent],
   template: `
-    <rts-print-document [layout]="layout()">
-      <rts-sale-print-content [sale]="sale()" [layout]="layout()" />
-    </rts-print-document>
+    <esr-print-document [layout]="layout()">
+      <esr-sale-print-content [sale]="sale()" [layout]="layout()" />
+    </esr-print-document>
   `
 })
 class HostComponent {
@@ -170,7 +170,7 @@ describe('SalePrintContentComponent', () => {
   for (const preset of [PrintPaperPreset.RECEIPT_58MM, PrintPaperPreset.RECEIPT_80MM]) {
     it(`does not overflow horizontally on ${preset} with a long item name and large amounts`, () => {
       render(preset)
-      const surface = root.querySelector('rts-print-document') as HTMLElement
+      const surface = root.querySelector('esr-print-document') as HTMLElement
       expect(surface.scrollWidth).withContext('document').toBeLessThanOrEqual(surface.clientWidth + 1)
 
       root.querySelectorAll<HTMLElement>('.receipt .money').forEach(money => {

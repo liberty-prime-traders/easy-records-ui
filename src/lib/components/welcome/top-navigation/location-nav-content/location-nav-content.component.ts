@@ -6,7 +6,7 @@ import {SessionContextService} from '../../../../utils/services/session-context.
 import {LoadingContainerComponent} from '../../../reusable/loading-container/loading-container.component'
 
 @Component({
-  selector: 'rts-location-nav-content',
+  selector: 'esr-location-nav-content',
   templateUrl: 'location-nav-content.component.html',
   imports: [
     LoadingContainerComponent

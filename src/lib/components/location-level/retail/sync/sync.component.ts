@@ -12,7 +12,7 @@ import {ActiveSyncComponent} from './active-sync.component'
 import {SyncGridComponent} from './sync-grid.component'
 
 @Component({
-  selector: 'rts-sync',
+  selector: 'esr-sync',
   templateUrl: 'sync.component.html',
   imports: [
     ButtonDirective,

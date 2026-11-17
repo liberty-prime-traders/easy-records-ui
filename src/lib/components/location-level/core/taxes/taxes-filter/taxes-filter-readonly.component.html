@@ -2,19 +2,19 @@
 
   @if (state.fiscalPeriodNames().length > 0) {
     <p-fieldset legend="Fiscal Periods">
-      <rts-truncated-list [items]="state.fiscalPeriodNames()"/>
+      <esr-truncated-list [items]="state.fiscalPeriodNames()"/>
     </p-fieldset>
   }
 
   @if (state.taxTypeNames().length > 0) {
     <p-fieldset legend="Tax Types">
-      <rts-truncated-list [items]="state.taxTypeNames()"/>
+      <esr-truncated-list [items]="state.taxTypeNames()"/>
     </p-fieldset>
   }
 
   @if (state.sourceTypeLabels().length > 0) {
     <p-fieldset legend="Source Type">
-      <rts-truncated-list [items]="state.sourceTypeLabels()"/>
+      <esr-truncated-list [items]="state.sourceTypeLabels()"/>
     </p-fieldset>
   }
 
@@ -30,7 +30,7 @@
 
   @if (state.filterFormValue().sourceReferenceNumbers.length > 0) {
     <p-fieldset legend="Source references">
-      <rts-truncated-list [items]="state.filterFormValue().sourceReferenceNumbers"/>
+      <esr-truncated-list [items]="state.filterFormValue().sourceReferenceNumbers"/>
     </p-fieldset>
   }
 

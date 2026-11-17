@@ -12,7 +12,7 @@ import {FormFieldComponent} from '../../../../../reusable/form-field/form-field.
 import {UnitValueFormDefinition} from './unit-value-form.definition'
 
 @Component({
-  selector: 'rts-unit-value-form',
+  selector: 'esr-unit-value-form',
   templateUrl: 'unit-value-form.component.html',
   imports: [
     InputText,

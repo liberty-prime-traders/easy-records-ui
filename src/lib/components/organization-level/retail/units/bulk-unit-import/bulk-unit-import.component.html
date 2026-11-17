@@ -1,5 +1,5 @@
 <div class="flex gap-4">
-  <rts-form-field
+  <esr-form-field
     label="Provide the generated JSON payload"
     for="input-payload"
     class="flex-grow-1"
@@ -16,7 +16,7 @@
               rows="20">
     </textarea>
     @if (payloadForm.payload().dirty()) {
-      <rts-error-summary [signalFormErrors]="payloadForm().errorSummary()" [fieldMap]="payloadFieldMap"/>
+      <esr-error-summary [signalFormErrors]="payloadForm().errorSummary()" [fieldMap]="payloadFieldMap"/>
     }
 
       <button pButton
@@ -28,13 +28,13 @@
         Execute Upload
       </button>
     </div>
-  </rts-form-field>
+  </esr-form-field>
 
   @if (errorsFound()) {
     <p-divider layout="vertical"/>
 
     <div class="flex flex-column">
-      <rts-error-summary [regularErrorMessages]="errorDetails()"/>
+      <esr-error-summary [regularErrorMessages]="errorDetails()"/>
     </div>
   }
 </div>

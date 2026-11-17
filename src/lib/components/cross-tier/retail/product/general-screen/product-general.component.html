@@ -8,7 +8,7 @@
             <i class="pi pi-times"></i> Hide Advanced Filter
           </button>
         </div>
-        <rts-product-filter [schemaLevel]="schemaLevel()"/>
+        <esr-product-filter [schemaLevel]="schemaLevel()"/>
       </div>
 
       <p-divider layout="vertical" />
@@ -19,18 +19,18 @@
         <button pButton (click)="toggleBulkImport()" severity="info" class="w-fit">
           <i class="pi pi-times"></i> Cancel
         </button>
-        <rts-bulk-product-import (successfulUpload)="finishBulkImport()"/>
+        <esr-bulk-product-import (successfulUpload)="finishBulkImport()"/>
       }
       @else if (addingNewProductIsActive()) {
         <button pButton (click)="hideScreenThatAddsNewProduct()" severity="info" class="w-fit">
           <i class="pi pi-times"></i> Cancel
         </button>
-        <rts-organization-product-form (productCreated)="hideScreenThatAddsNewProduct()"/>
+        <esr-organization-product-form (productCreated)="hideScreenThatAddsNewProduct()"/>
       }
       @else if (openingStockEditMode()) {
-        <rts-opening-stock-grid class="flex-grow-1" (exitEditMode)="toggleOpeningStockEditMode()">
+        <esr-opening-stock-grid class="flex-grow-1" (exitEditMode)="toggleOpeningStockEditMode()">
           <ng-container ngProjectAs="[gridSearch]" *ngTemplateOutlet="searchBar"/>
-        </rts-opening-stock-grid>
+        </esr-opening-stock-grid>
       }
       @else {
         @if (schemaLevel() === SchemaLevel.ORGANIZATION) {
@@ -39,7 +39,7 @@
           <span class="font-bold">{{locationName()}} Products</span>
         }
 
-        <rts-product-grid class="flex-grow-1" [schemaLevel]="schemaLevel()">
+        <esr-product-grid class="flex-grow-1" [schemaLevel]="schemaLevel()">
           <div class="flex gap-2 flex-grow-1 justify-content-between">
             <ng-container ngProjectAs="[gridSearch]" *ngTemplateOutlet="searchBar"/>
 
@@ -68,10 +68,10 @@
                       severity="secondary">
                 <i class="pi pi-warehouse"></i> Edit Opening Stock
               </button>
-              <rts-opening-stock-bulk-upload ngProjectAs="[gridActions]"/>
+              <esr-opening-stock-bulk-upload ngProjectAs="[gridActions]"/>
             }
           </div>
-        </rts-product-grid>
+        </esr-product-grid>
       }
     </div>
   </div>
@@ -88,5 +88,5 @@
     <p-message severity="info"> Advanced Filter is in use </p-message>
   }
 
-  <rts-search [searchValueControl]="searchValueFormControl" [ngClass]="{'flex-grow-1': showAdvancedFilter()}"/>
+  <esr-search [searchValueControl]="searchValueFormControl" [ngClass]="{'flex-grow-1': showAdvancedFilter()}"/>
 </ng-template>

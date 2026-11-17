@@ -15,7 +15,7 @@ import {TaxesFilterState} from './taxes-filter/taxes-filter.state'
 import {TaxesSummaryComponent} from './taxes-summary.component'
 
 @Component({
-  selector: 'rts-taxes',
+  selector: 'esr-taxes',
   templateUrl: 'taxes.component.html',
   imports: [
     TaxEntriesGridComponent,

@@ -1,4 +1,4 @@
-<rts-loading-container [loading]="loading()">
+<esr-loading-container [loading]="loading()">
   <div class="flex align-items-center gap-3">
     <button pButton (click)="closed.emit()" severity="secondary" rounded text>
       <i class="pi pi-arrow-left"></i> Contacts
@@ -18,18 +18,18 @@
 
       <p-tabpanels>
         <p-tabpanel value="details">
-          <rts-contact-form [contact]="contact"/>
+          <esr-contact-form [contact]="contact"/>
         </p-tabpanel>
 
         <p-tabpanel value="ledger">
           @if (selectedTab() === 'ledger') {
-            <rts-contact-ledger [contactId]="contact.id"/>
+            <esr-contact-ledger [contactId]="contact.id"/>
           }
         </p-tabpanel>
 
         <p-tabpanel value="openingBalance">
           @if (selectedTab() === 'openingBalance') {
-            <rts-contact-opening-balance [contact]="contact"/>
+            <esr-contact-opening-balance [contact]="contact"/>
           }
         </p-tabpanel>
       </p-tabpanels>
@@ -37,4 +37,4 @@
   } @else if (!loading()) {
     <p class="mt-4">Contact not found</p>
   }
-</rts-loading-container>
+</esr-loading-container>

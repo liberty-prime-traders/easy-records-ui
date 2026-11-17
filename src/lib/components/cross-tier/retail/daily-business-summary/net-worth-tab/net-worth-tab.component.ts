@@ -13,7 +13,7 @@ import {SummaryTileComponent} from '../summary-tile/summary-tile.component'
 import {BalanceRowKind, buildBalanceRows, buildNetWorthTiles} from '../summary-view.util'
 
 @Component({
-  selector: 'rts-net-worth-tab',
+  selector: 'esr-net-worth-tab',
   templateUrl: 'net-worth-tab.component.html',
   styleUrl: 'net-worth-tab.component.scss',
   imports: [

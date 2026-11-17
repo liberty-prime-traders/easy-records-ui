@@ -1,4 +1,4 @@
-<rts-loading-container [loading]="isLoading()" loadingText="Saving...">
+<esr-loading-container [loading]="isLoading()" loadingText="Saving...">
   <div class="flex flex-column gap-3 px-1" id="expense-form" rtsAutoStretch="expense-form">
     <div class="text-lg font-semibold">Record New Expenses</div>
 
@@ -36,7 +36,7 @@
       </button>
     }
 
-    <rts-forms-buttons saveLabel="Save expenses"
+    <esr-forms-buttons saveLabel="Save expenses"
                        resetLabel="Cancel"
                        [hideDelete]="true"
                        [disableSave]="batchForm().invalid() || rowCount() === 0"
@@ -45,9 +45,9 @@
                        [failureMessages]="failureMessages()"
                        (save)="save()"
                        (resetAction)="cancel()">
-    </rts-forms-buttons>
+    </esr-forms-buttons>
   </div>
-</rts-loading-container>
+</esr-loading-container>
 
 <ng-template #expenseRows>
   @for (row of batchForm.rows; track $index) {

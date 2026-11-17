@@ -1,5 +1,5 @@
 <div class="flex flex-wrap gap-3 pr-3">
-  <rts-form-field label="Supplier"
+  <esr-form-field label="Supplier"
                   for="supplierId"
                   contentClass="w-full"
                   [required]="true"
@@ -13,9 +13,9 @@
               [formField]="bulkPaymentForm.supplierId"
               placeholder="Select a supplier">
     </p-select>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field label="Ordered From"
+  <esr-form-field label="Ordered From"
                   for="orderedFrom"
                   contentClass="w-full"
                   [layout]="FormFieldDirection.VERTICAL">
@@ -24,9 +24,9 @@
                    [formField]="bulkPaymentForm.orderedFrom"
                    appendTo="body">
     </p-date-picker>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field label="Ordered To"
+  <esr-form-field label="Ordered To"
                   for="orderedTo"
                   contentClass="w-full"
                   [layout]="FormFieldDirection.VERTICAL">
@@ -35,7 +35,7 @@
                    [formField]="bulkPaymentForm.orderedTo"
                    appendTo="body">
     </p-date-picker>
-  </rts-form-field>
+  </esr-form-field>
 </div>
 
 

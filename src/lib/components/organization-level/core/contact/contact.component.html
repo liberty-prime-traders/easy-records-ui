@@ -1,6 +1,6 @@
 <div id="contacts" rtsAutoStretch="contacts">
   @if (selectedContactId(); as contactId) {
-    <rts-contact-detail [contactId]="contactId" (closed)="selectedContactId.set(undefined)"/>
+    <esr-contact-detail [contactId]="contactId" (closed)="selectedContactId.set(undefined)"/>
 
   } @else if (showBulkImportScreen()) {
 
@@ -8,7 +8,7 @@
       <button pButton (click)="toggleBulkImport()" severity="info" class="w-fit">
         <i class="pi pi-times"></i> Cancel
       </button>
-      <rts-bulk-contact-import (successfulUpload)="finishBulkImport()"/>
+      <esr-bulk-contact-import (successfulUpload)="finishBulkImport()"/>
     </div>
 
   } @else if (addingIsActive()) {
@@ -17,7 +17,7 @@
       <button pButton (click)="setAddingActiveFalse()" severity="info" class="w-fit">
         <i class="pi pi-times"></i> Cancel
       </button>
-      <rts-contact-form (contactCreated)="setAddingActiveFalse()"/>
+      <esr-contact-form (contactCreated)="setAddingActiveFalse()"/>
     </div>
 
   } @else {
@@ -35,7 +35,7 @@
         <div class="flex justify-content-between align-items-center">
           <h3 class="font-bold">Contacts</h3>
 
-          <rts-grid-filter [dataTable]="contactsTable"/>
+          <esr-grid-filter [dataTable]="contactsTable"/>
 
           <div class="flex gap-4">
             @if (showBulkImport()) {
@@ -88,7 +88,7 @@
           <td>{{ contact?.status | prettifyEnum }}</td>
           <td>{{ contact?.contactTypes | joinEnum }}</td>
           <td>
-            <rts-money [amount]="contact?.netBalance" [balanceEffect]="contact?.balanceEffect"/>
+            <esr-money [amount]="contact?.netBalance" [balanceEffect]="contact?.balanceEffect"/>
           </td>
           <td>{{ contact?.email | nullSafe }}</td>
           <td>{{ contact?.phone | nullSafe }}</td>
@@ -106,7 +106,7 @@
       </ng-template>
 
       <ng-template #emptymessage>
-        <tr rts-empty-row [colspan]="8" message="No Contacts Were Found"></tr>
+        <tr esr-empty-row [colspan]="8" message="No Contacts Were Found"></tr>
       </ng-template>
     </p-table>
   }

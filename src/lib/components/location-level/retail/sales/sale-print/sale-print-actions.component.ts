@@ -37,7 +37,7 @@ import {
 import {SalePrintContentComponent} from './sale-print-content.component'
 
 @Component({
-  selector: 'rts-sale-print-actions',
+  selector: 'esr-sale-print-actions',
   templateUrl: 'sale-print-actions.component.html',
   styleUrl: 'sale-print-actions.component.scss',
   imports: [

@@ -13,7 +13,7 @@ import {GridFilterComponent} from '../../reusable/grid-filter/grid-filter.compon
 import {AuthorityHolderComponent} from './authority-holder.component'
 
 @Component({
-  selector: 'rts-platform-authorities',
+  selector: 'esr-platform-authorities',
   templateUrl: './platform-authorities.component.html',
   imports: [
     TableModule,

@@ -10,7 +10,7 @@ import {AutoStretchDirective} from '../../../../../reusable/auto-stretch.directi
 import {SaleFormContext} from '../../form-utils/sale-form-context'
 
 @Component({
-  selector: 'rts-sale-payments-grid',
+  selector: 'esr-sale-payments-grid',
   templateUrl: 'sale-payments-grid.component.html',
   imports: [
     ButtonDirective,

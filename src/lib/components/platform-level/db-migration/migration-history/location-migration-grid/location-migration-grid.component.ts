@@ -7,7 +7,7 @@ import {PrettifyEnumPipe} from '../../../../../utils/pipes/prettify-enum.pipe'
 import {MigrationStatusSeverityPipe} from '../migration-status-severity.pipe'
 
 @Component({
-  selector: 'rts-location-migration-grid',
+  selector: 'esr-location-migration-grid',
   templateUrl: 'location-migration-grid.component.html',
   imports: [
     DatePipe,

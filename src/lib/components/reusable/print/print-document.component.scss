@@ -1,10 +1,10 @@
-// Global by design (see PrintDocumentComponent). Everything is rooted at .rts-print-doc or a .rts-print-* marker.
+// Global by design (see PrintDocumentComponent). Everything is rooted at .esr-print-doc or a .esr-print-* marker.
 
-.rts-print-doc {
+.esr-print-doc {
   display: block;
   box-sizing: border-box;
-  width: var(--rts-print-width);
-  padding: var(--rts-print-pad-top) var(--rts-print-pad-right) var(--rts-print-pad-bottom) var(--rts-print-pad-left);
+  width: var(--esr-print-width);
+  padding: var(--esr-print-pad-top) var(--esr-print-pad-right) var(--esr-print-pad-bottom) var(--esr-print-pad-left);
   background: #fff;
   color: #000;
   color-scheme: light;
@@ -42,11 +42,11 @@
   }
 
   // The preview approximates one sheet; real pagination is the browser's job at print time.
-  &.rts-print-doc--paged {
-    min-height: var(--rts-print-min-height);
+  &.esr-print-doc--paged {
+    min-height: var(--esr-print-min-height);
   }
 
-  &.rts-print-doc--receipt {
+  &.esr-print-doc--receipt {
     font-size: 9pt;
     line-height: 1.25;
   }
@@ -54,24 +54,24 @@
 
 // --- directive semantics ---------------------------------------------------------------------------------
 
-.rts-print-keep-together {
+.esr-print-keep-together {
   break-inside: avoid;
   page-break-inside: avoid;
 }
 
 // Page breaks only mean something on sheets; receipts are one continuous roll.
-.rts-print-doc--paged .rts-print-break-before {
+.esr-print-doc--paged .esr-print-break-before {
   break-before: page;
   page-break-before: always;
 }
 
 // Outside a document surface this never shows. Inside one it is untouched, so the author's own `display` wins.
-.rts-print-only:not(.rts-print-doc .rts-print-only) {
+.esr-print-only:not(.esr-print-doc .esr-print-only) {
   display: none;
 }
 
 // Preview only: show what will be omitted from the printout.
-.rts-print-preview .rts-print-hide {
+.esr-print-preview .esr-print-hide {
   opacity: 0.4;
   outline: 1px dashed #888;
 }
@@ -79,7 +79,7 @@
 // --- printing ----------------------------------------------------------------------------------------------
 
 @media print {
-  .rts-print-doc {
+  .esr-print-doc {
     width: auto;
     min-height: 0;
     margin: 0;
@@ -89,11 +89,11 @@
   }
 
   // Sheets: the @page margin already provides the margins, so padding would double them.
-  .rts-print-doc.rts-print-doc--paged {
+  .esr-print-doc.esr-print-doc--paged {
     padding: 0;
   }
 
-  .rts-print-doc .rts-print-hide {
+  .esr-print-doc .esr-print-hide {
     display: none !important;
   }
 }

@@ -17,7 +17,7 @@ import {FormFieldComponent} from '../../../../reusable/form-field/form-field.com
 import {KafkaEventLogComponent} from '../../../core/kafka-event-log/kafka-event-log.component'
 
 @Component({
-  selector: 'rts-supplier-payment-expanded-row',
+  selector: 'esr-supplier-payment-expanded-row',
   templateUrl: 'payment-expanded-row.component.html',
   imports: [
     ButtonDirective,

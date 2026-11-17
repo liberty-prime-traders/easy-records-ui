@@ -10,7 +10,7 @@ import {FormFieldLayout} from '../../../../reusable/form-field/form-field-layout
 import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
 
 @Component({
-  selector: 'rts-expense-payment-expanded-row',
+  selector: 'esr-expense-payment-expanded-row',
   templateUrl: 'expense-payment-expanded-row.component.html',
   imports: [ButtonDirective, FormButtonsComponent, FormFieldComponent, FormField, InputText]
 })

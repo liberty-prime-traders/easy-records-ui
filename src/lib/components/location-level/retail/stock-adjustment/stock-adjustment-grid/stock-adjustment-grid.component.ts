@@ -8,7 +8,7 @@ import {AutoStretchDirective} from '../../../../reusable/auto-stretch.directive'
 import {EmptyRowComponent} from '../../../../reusable/empty-row/empty-row.component'
 
 @Component({
-  selector: 'rts-location-stock-adjustment-grid',
+  selector: 'esr-location-stock-adjustment-grid',
   templateUrl: 'stock-adjustment-grid.component.html',
   imports: [
     AutoStretchDirective,

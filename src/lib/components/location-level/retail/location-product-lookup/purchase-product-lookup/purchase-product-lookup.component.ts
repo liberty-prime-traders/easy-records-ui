@@ -16,7 +16,7 @@ import {ProductLookupFilterService} from '../product-lookup-filter.service'
 import {PurchaseProductLookupFilterService} from './purchase-product-lookup-filter.service'
 
 @Component({
-  selector: 'rts-purchase-product-lookup',
+  selector: 'esr-purchase-product-lookup',
   templateUrl: '../location-product-lookup.component.html',
   providers: [
     PurchaseProductLookupQuickSearchService,

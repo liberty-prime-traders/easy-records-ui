@@ -16,7 +16,7 @@ import {FormFieldComponent} from '../../../../reusable/form-field/form-field.com
 import {StockMovementReasonFormDefinition} from './stock-movement-reason-form.definition'
 
 @Component({
-  selector: 'rts-stock-movement-reason-form',
+  selector: 'esr-stock-movement-reason-form',
   templateUrl: 'stock-movement-reason-form.component.html',
   imports: [
     FormButtonsComponent,

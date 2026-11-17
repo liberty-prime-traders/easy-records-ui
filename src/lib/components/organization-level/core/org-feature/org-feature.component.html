@@ -1,7 +1,7 @@
 <div class="flex flex-column gap-4">
   @if (addingIsActive()) {
-    <rts-new-form-cancel-button (onCancel)="setAddingActiveFalse()"/>
-    <rts-org-feature-add-form (allSaved)="closeAddRow()"/>
+    <esr-new-form-cancel-button (onCancel)="setAddingActiveFalse()"/>
+    <esr-org-feature-add-form (allSaved)="closeAddRow()"/>
 
   } @else {
     <p-table [loading]="loading()"
@@ -27,7 +27,7 @@
               <button pButton severity="danger" rounded (click)="deactivate()">Deactivate</button>
             }
 
-            <rts-grid-filter [dataTable]="orgFeaturesTable"/>
+            <esr-grid-filter [dataTable]="orgFeaturesTable"/>
 
             <button pButton (click)="setAddingActiveTrue()"
                     [disabled]="loading()"
@@ -70,7 +70,7 @@
       </ng-template>
 
       <ng-template #emptymessage>
-        <tr rts-empty-row [colspan]="7" message="No Features Have Been Added"></tr>
+        <tr esr-empty-row [colspan]="7" message="No Features Have Been Added"></tr>
       </ng-template>
     </p-table>
   }

@@ -11,7 +11,7 @@ import {
 } from '../journal-correction-reversal-form/journal-correction-reversal-form.component'
 
 @Component({
-  selector: 'rts-journal-correction-expanded-row',
+  selector: 'esr-journal-correction-expanded-row',
   templateUrl: 'journal-correction-details.component.html',
   imports: [
     ButtonDirective,

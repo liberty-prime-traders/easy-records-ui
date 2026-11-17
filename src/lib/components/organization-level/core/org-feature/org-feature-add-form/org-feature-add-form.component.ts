@@ -9,7 +9,7 @@ import {PrettifyEnumPipe} from '../../../../../utils/pipes/prettify-enum.pipe'
 import {LoadingContainerComponent} from '../../../../reusable/loading-container/loading-container.component'
 
 @Component({
-  selector: 'rts-org-feature-add-form',
+  selector: 'esr-org-feature-add-form',
   templateUrl: 'org-feature-add-form.component.html',
   imports: [
     ButtonDirective,

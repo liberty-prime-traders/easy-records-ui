@@ -1,4 +1,4 @@
-<rts-loading-container [loading]="loading()">
+<esr-loading-container [loading]="loading()">
 <p-tabs value="membership">
   <p-tablist>
     <p-tab value="membership">Membership history</p-tab>
@@ -30,7 +30,7 @@
     <p-tabpanel value="roles">
       <div class="flex flex-column gap-3">
         @for (grantedRole of accessDetail()?.roles; track grantedRole.role) {
-          <rts-role-permissions [grantedRole]="grantedRole" (revoke)="revokeRole($event)"/>
+          <esr-role-permissions [grantedRole]="grantedRole" (revoke)="revokeRole($event)"/>
           <p-divider/>
         } @empty {
           @if (!loading()) {
@@ -68,4 +68,4 @@
     </p-tabpanel>
   </p-tabpanels>
 </p-tabs>
-</rts-loading-container>
+</esr-loading-container>

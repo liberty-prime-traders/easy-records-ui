@@ -17,7 +17,7 @@ import {SalePrintActionsComponent} from '../sale-print/sale-print-actions.compon
 import {SaleStatusSeverityPipe} from '../sale-status-severity.pipe'
 
 @Component({
-  selector: 'rts-sale-form-header',
+  selector: 'esr-sale-form-header',
   imports: [
     Card,
     ButtonDirective,

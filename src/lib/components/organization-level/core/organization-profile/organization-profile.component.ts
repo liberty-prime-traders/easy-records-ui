@@ -11,7 +11,7 @@ import {AdminDataFixesComponent} from '../../retail/admin-data-fixes/admin-data-
 import {FormFieldComponent} from '../../../reusable/form-field/form-field.component'
 
 @Component({
-  selector: 'rts-update-organization',
+  selector: 'esr-update-organization',
   templateUrl: 'organization-profile.component.html',
   imports: [
     ReactiveFormsModule,

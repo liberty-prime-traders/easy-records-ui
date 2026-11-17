@@ -14,7 +14,7 @@ import {FormFieldLayout} from '../../../../reusable/form-field/form-field-layout
 import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
 
 @Component({
-  selector: 'rts-bulk-unit-import',
+  selector: 'esr-bulk-unit-import',
   imports: [
     FormFieldComponent,
     InputText,

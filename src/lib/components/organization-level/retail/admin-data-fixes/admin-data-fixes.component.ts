@@ -16,7 +16,7 @@ import {LoadingContainerComponent} from '../../../reusable/loading-container/loa
 import {AdminDataFix, AdminDataFixItem} from './admin-data-fix-item.model'
 
 @Component({
-  selector: 'rts-admin-data-fixes',
+  selector: 'esr-admin-data-fixes',
   templateUrl: 'admin-data-fixes.component.html',
   imports: [ButtonDirective, CardModule, Divider, LoadingContainerComponent]
 })

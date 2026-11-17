@@ -7,7 +7,7 @@
   <p-tabpanels>
     <p-tabpanel value="lines">
       @if (revisingLine(); as lineBeingRevised) {
-        <rts-delivery-line-revision-form [deliveryLine]="lineBeingRevised" (cancelled)="revisingLine.set(undefined)"
+        <esr-delivery-line-revision-form [deliveryLine]="lineBeingRevised" (cancelled)="revisingLine.set(undefined)"
                                      (revised)="revisingLine.set(undefined)"/>
 
       } @else {
@@ -48,7 +48,7 @@
     </p-tabpanel>
 
     <p-tabpanel value="events">
-      <rts-kafka-event-log [sourceDocumentId]="delivery().id"/>
+      <esr-kafka-event-log [sourceDocumentId]="delivery().id"/>
     </p-tabpanel>
   </p-tabpanels>
 </p-tabs>

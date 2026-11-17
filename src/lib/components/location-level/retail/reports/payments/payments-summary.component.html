@@ -5,7 +5,7 @@
     <div class="flex gap-4 flex-wrap">
       @for (summary of summaries(); track summary.type) {
         <p-panel [header]="'Active ' + (summary.type | prettifyEnum) + 's (' + summary.activeCount + ')'" class="flex-grow-1">
-          <rts-money [amount]="summary.activeTotal" [balanceEffect]="summary.balanceEffect"/>
+          <esr-money [amount]="summary.activeTotal" [balanceEffect]="summary.balanceEffect"/>
         </p-panel>
 
         <p-panel [header]="'Voided ' + (summary.type | prettifyEnum) + 's (' + summary.voidedCount + ')'" class="flex-grow-1">
@@ -34,7 +34,7 @@
             <td [class.method-label]="row.kind === 'method'">{{ row.label }}</td>
             <td class="summary-money">
               @if (row.kind === 'total') {
-                <rts-money [amount]="row.activeTotal" [balanceEffect]="row.balanceEffect"/>
+                <esr-money [amount]="row.activeTotal" [balanceEffect]="row.balanceEffect"/>
               } @else {
                 {{ row.activeTotal | currency }}
               }

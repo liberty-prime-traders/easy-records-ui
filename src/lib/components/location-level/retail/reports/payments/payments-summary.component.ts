@@ -9,7 +9,7 @@ import {PaymentsFilterFormDefinition} from './payments-filter/payments-filter-fo
 import {buildSummaryGridRows} from './summary-grid-row'
 
 @Component({
-  selector: 'rts-payments-summary',
+  selector: 'esr-payments-summary',
   imports: [
     TableModule,
     Panel,

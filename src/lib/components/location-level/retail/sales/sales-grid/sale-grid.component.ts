@@ -26,7 +26,7 @@ import {SaleFormNavigator} from '../form-utils/sale-form-navigator'
 import {SaleStatusSeverityPipe} from '../sale-status-severity.pipe'
 
 @Component({
-  selector: 'rts-sale-grid',
+  selector: 'esr-sale-grid',
   templateUrl: 'sale-grid.component.html',
   imports: [
     TableModule,

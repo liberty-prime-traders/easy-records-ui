@@ -21,25 +21,25 @@
 
   @if (state.customerNames().length > 0) {
     <p-fieldset legend="Customers">
-      <rts-truncated-list [items]="state.customerNames()"/>
+      <esr-truncated-list [items]="state.customerNames()"/>
     </p-fieldset>
   }
 
   @if (state.soldByUserNames().length > 0) {
     <p-fieldset legend="Sold By">
-      <rts-truncated-list [items]="state.soldByUserNames()"/>
+      <esr-truncated-list [items]="state.soldByUserNames()"/>
     </p-fieldset>
   }
 
   @if (state.saleStatusLabels().length > 0) {
     <p-fieldset legend="Sale Status">
-      <rts-truncated-list [items]="state.saleStatusLabels()"/>
+      <esr-truncated-list [items]="state.saleStatusLabels()"/>
     </p-fieldset>
   }
 
   @if (state.paymentStatusLabels().length > 0) {
     <p-fieldset legend="Payment Status">
-      <rts-truncated-list [items]="state.paymentStatusLabels()"/>
+      <esr-truncated-list [items]="state.paymentStatusLabels()"/>
     </p-fieldset>
   }
 
@@ -65,7 +65,7 @@
 
   @if (state.filterFormValue().saleReferenceNumbers.length > 0) {
     <p-fieldset legend="Sale references">
-      <rts-truncated-list [items]="state.filterFormValue().saleReferenceNumbers"/>
+      <esr-truncated-list [items]="state.filterFormValue().saleReferenceNumbers"/>
     </p-fieldset>
   }
 

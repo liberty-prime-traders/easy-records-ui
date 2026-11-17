@@ -6,7 +6,7 @@
         <i class="pi pi-times"></i> Cancel
       </button>
     </div>
-    <rts-fund-transfer-form (fundMovementCreated)="refreshAfterWrite()"/>
+    <esr-fund-transfer-form (fundMovementCreated)="refreshAfterWrite()"/>
   </div>
 
 } @else {
@@ -100,10 +100,10 @@
                   <b>Reason:</b> {{ fundMovement.void.reason | nullSafe }}
                 </div>
               } @else {
-                <rts-fund-transfer-void-form [fundMovement]="fundMovement"
+                <esr-fund-transfer-void-form [fundMovement]="fundMovement"
                                              (voided)="refreshAfterWrite()"
                                              (cancelled)="refreshAfterWrite()">
-                </rts-fund-transfer-void-form>
+                </esr-fund-transfer-void-form>
               }
             </div>
           </td>
@@ -111,7 +111,7 @@
       </ng-template>
 
       <ng-template #emptymessage>
-        <tr rts-empty-row [colspan]="9" message="No fund transfers were found"></tr>
+        <tr esr-empty-row [colspan]="9" message="No fund transfers were found"></tr>
       </ng-template>
     </p-table>
   </div>

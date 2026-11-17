@@ -1,9 +1,9 @@
-<rts-loading-container [loading]="loading()">
+<esr-loading-container [loading]="loading()">
   <div class="flex" id="sales-report" rtsAutoStretch="sales-report">
     @if (selectedTab() === 'sales' && !salesGridOnly()) {
-      <rts-sales-filter-readonly class="col-2" (editFilters)="selectedTab.set('summary')"/>
+      <esr-sales-filter-readonly class="col-2" (editFilters)="selectedTab.set('summary')"/>
     } @else {
-      <rts-sales-filter class="w-15rem"/>
+      <esr-sales-filter class="w-15rem"/>
     }
 
     <p-divider layout="vertical"/>
@@ -23,15 +23,15 @@
         <p-tabpanels>
           @if (!salesGridOnly()) {
             <p-tabpanel value="summary">
-              <rts-sales-summary/>
+              <esr-sales-summary/>
             </p-tabpanel>
           }
 
           <p-tabpanel value="sales">
-            <rts-sale-grid/>
+            <esr-sale-grid/>
           </p-tabpanel>
         </p-tabpanels>
       </p-tabs>
     </div>
   </div>
-</rts-loading-container>
+</esr-loading-container>

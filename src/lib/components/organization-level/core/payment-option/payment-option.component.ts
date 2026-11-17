@@ -11,7 +11,7 @@ import {NewFormCancelButtonComponent} from '../../../reusable/new-form-cancel-bu
 import {PaymentOptionFormComponent} from './payment-option-form/payment-option-form.component'
 
 @Component({
-  selector: 'rts-payment-option',
+  selector: 'esr-payment-option',
   templateUrl: 'payment-option.component.html',
   imports: [
     TableModule,

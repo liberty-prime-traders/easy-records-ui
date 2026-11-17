@@ -20,7 +20,7 @@ interface TrendDatum {
 }
 
 @Component({
-  selector: 'rts-trend-chart',
+  selector: 'esr-trend-chart',
   templateUrl: 'trend-chart.component.html',
   styleUrl: 'trend-chart.component.scss',
   imports: [AgCharts]

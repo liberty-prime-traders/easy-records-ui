@@ -1,6 +1,6 @@
 <div class="flex flex-column gap-2 form-container filled-background">
 
-  <rts-form-field [required]="true" label="Tax Type" for="orgJurisdictionTaxTypeId">
+  <esr-form-field [required]="true" label="Tax Type" for="orgJurisdictionTaxTypeId">
     <p-select id="orgJurisdictionTaxTypeId"
               class="flex-grow-1"
               [options]="orgJurisdictionTaxTypes()"
@@ -10,13 +10,13 @@
               (onChange)="onOrgTaxTypeChange($event.value)"
               placeholder="Select tax type">
     </p-select>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field [required]="true" label="Name" for="name">
+  <esr-form-field [required]="true" label="Name" for="name">
     <input id="name" class="flex-grow-1" pInputText [formField]="taxRateForm.name"/>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field [required]="true" label="Start Date" for="startDate">
+  <esr-form-field [required]="true" label="Start Date" for="startDate">
     <p-date-picker id="startDate"
                    class="flex-grow-1"
                    [showIcon]="true"
@@ -24,9 +24,9 @@
                    [formField]="taxRateForm.startDate"
                    placeholder="When does this tax rate become effective?">
     </p-date-picker>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field label="End Date" for="endDate">
+  <esr-form-field label="End Date" for="endDate">
     <p-date-picker id="endDate"
                    class="flex-grow-1"
                    [showIcon]="true"
@@ -34,10 +34,10 @@
                    [formField]="taxRateForm.endDate"
                    placeholder="Stop applying this tax rate after this date">
     </p-date-picker>
-  </rts-form-field>
+  </esr-form-field>
 
   @if (isPercentage()) {
-    <rts-form-field [required]="true" label="Rate Percentage" for="ratePercentage">
+    <esr-form-field [required]="true" label="Rate Percentage" for="ratePercentage">
       <p-input-number id="ratePercentage"
                       class="flex-grow-1"
                       [formField]="taxRateForm.ratePercentage"
@@ -47,11 +47,11 @@
                       suffix="%"
                       placeholder="e.g. 15.00">
       </p-input-number>
-    </rts-form-field>
+    </esr-form-field>
   }
 
   @if (isFlatPerUnit()) {
-    <rts-form-field [required]="true" label="Flat Rate Amount" for="rateFlatAmount">
+    <esr-form-field [required]="true" label="Flat Rate Amount" for="rateFlatAmount">
       <p-input-number id="rateFlatAmount"
                       class="flex-grow-1"
                       [formField]="taxRateForm.rateFlatAmount"
@@ -60,24 +60,24 @@
                       [min]="0"
                       placeholder="e.g. 5.00">
       </p-input-number>
-    </rts-form-field>
+    </esr-form-field>
   }
 
-  <rts-form-field label="Billed to Customer Separately" for="taxIsBilledToCustomerSeparately">
+  <esr-form-field label="Billed to Customer Separately" for="taxIsBilledToCustomerSeparately">
     <p-checkbox inputId="taxIsBilledToCustomerSeparately"
                 [binary]="true"
                 [formField]="taxRateForm.taxIsBilledToCustomerSeparately">
     </p-checkbox>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field label="Included in Taxable Amount" for="taxIsIncludedInTaxableAmount">
+  <esr-form-field label="Included in Taxable Amount" for="taxIsIncludedInTaxableAmount">
     <p-checkbox inputId="taxIsIncludedInTaxableAmount"
                 [binary]="true"
                 [formField]="taxRateForm.taxIsIncludedInTaxableAmount">
     </p-checkbox>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-forms-buttons [disableReset]="!taxRateForm().dirty()"
+  <esr-forms-buttons [disableReset]="!taxRateForm().dirty()"
                      [disableSave]="taxRateForm().invalid() || !taxRateForm().dirty()"
                      [hideDelete]="true"
                      [signalForm]="taxRateForm()"
@@ -86,6 +86,6 @@
                      [failureMessages]="failureMessages()"
                      (save)="save()"
                      (resetAction)="resetForm()">
-  </rts-forms-buttons>
+  </esr-forms-buttons>
 
 </div>

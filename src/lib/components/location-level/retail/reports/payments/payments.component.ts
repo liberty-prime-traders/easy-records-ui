@@ -15,7 +15,7 @@ import {PaymentsGridComponent} from './payments-grid.component'
 import {PaymentsSummaryComponent} from './payments-summary.component'
 
 @Component({
-  selector: 'rts-payments',
+  selector: 'esr-payments',
   imports: [
     LoadingContainerComponent,
     PaymentsFilterComponent,

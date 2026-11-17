@@ -21,7 +21,7 @@ import {FundTransferVoidFormComponent} from './fund-transfer-void-form/fund-tran
 const DEFAULT_RANGE_DAYS = 30
 
 @Component({
-  selector: 'rts-fund-transfer',
+  selector: 'esr-fund-transfer',
   templateUrl: 'fund-transfer.component.html',
   imports: [
     FormsModule,

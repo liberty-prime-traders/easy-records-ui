@@ -10,13 +10,13 @@ import {
   DEFAULT_AUTH_FAILURE_MESSAGE
 } from '../../../api/platform-level/authentication/auth-failure.model'
 import {AuthenticationService} from '../../../api/platform-level/authentication/authentication.service'
-import {RtsGoogleAuthService} from '../../../utils/services/auth/rts-google-auth.service'
+import {RtsGoogleAuthService} from '../../../utils/services/auth/esr-google-auth.service'
 import {SessionReauthenticationService} from '../../../utils/services/auth/session-reauthentication.service'
 import {UserContextService} from '../../../utils/services/auth/user-context.service'
 import {RtsConstants} from '../../../utils/constants'
 
 @Component({
-  selector: 'rts-session-expired-dialog',
+  selector: 'esr-session-expired-dialog',
   imports: [ButtonModule, DialogModule],
   template: `
     <p-dialog header="Your session has ended"

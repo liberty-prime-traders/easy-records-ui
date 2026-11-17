@@ -6,7 +6,7 @@ import {PurchaseFormContext} from '../purchase-form/form-utils/purchase-form-con
 import {PurchasesFilterState} from '../purchases-filter/purchases-filter.state'
 
 @Component({
-  selector: 'rts-purchase-form-actions',
+  selector: 'esr-purchase-form-actions',
   imports: [
     ButtonDirective
   ],

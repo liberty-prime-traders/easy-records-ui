@@ -8,12 +8,12 @@ import {
   DEFAULT_AUTH_FAILURE_MESSAGE
 } from '../../../api/platform-level/authentication/auth-failure.model'
 import {AuthenticationService} from '../../../api/platform-level/authentication/authentication.service'
-import {RtsGoogleAuthService} from '../../../utils/services/auth/rts-google-auth.service'
+import {RtsGoogleAuthService} from '../../../utils/services/auth/esr-google-auth.service'
 import {RoutingContextService} from '../../../utils/services/routing-context.service'
 import {ProcessingStatus} from '../../../utils/types/processing-status.enum'
 
 @Component({
-  selector: 'rts-google-auth',
+  selector: 'esr-google-auth',
   template: `
     <div [id]="AUTH_BUTTON_ID"></div>
   `

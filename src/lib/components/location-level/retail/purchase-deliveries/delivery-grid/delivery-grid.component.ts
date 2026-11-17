@@ -9,7 +9,7 @@ import {DeliveryFormComponent} from '../delivery-form/delivery-form.component'
 import {DeliverySubgridComponent} from '../delivery-subgrid/delivery-subgrid.component'
 
 @Component({
-  selector: 'rts-purchase-deliveries',
+  selector: 'esr-purchase-deliveries',
   templateUrl: 'delivery-grid.component.html',
   imports: [
     TableModule,

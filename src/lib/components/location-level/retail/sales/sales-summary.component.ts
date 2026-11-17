@@ -9,7 +9,7 @@ import {EmptyRowComponent} from '../../../reusable/empty-row/empty-row.component
 import {SaleStatusSeverityPipe} from './sale-status-severity.pipe'
 
 @Component({
-  selector: 'rts-sales-summary',
+  selector: 'esr-sales-summary',
   imports: [
     Table,
     Panel,

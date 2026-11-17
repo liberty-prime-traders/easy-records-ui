@@ -18,7 +18,7 @@
 
   <p-divider layout="vertical"/>
 
-  <rts-loading-container [loading]="permissionsLoading()">
+  <esr-loading-container [loading]="permissionsLoading()">
     <div class="flex gap-2 flex-wrap">
       @for (permission of permissions(); track permission.permission) {
         <p-chip [label]="permission.permission | prettifyEnum"/>
@@ -28,5 +28,5 @@
         }
       }
     </div>
-  </rts-loading-container>
+  </esr-loading-container>
 </div>

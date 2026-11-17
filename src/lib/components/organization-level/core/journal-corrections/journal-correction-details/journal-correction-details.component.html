@@ -16,10 +16,10 @@
   </div>
 
   @if (reversingIsVisible()) {
-    <rts-journal-correction-reversal-form [manualJournal]="manualJournal()"
+    <esr-journal-correction-reversal-form [manualJournal]="manualJournal()"
                                           (reversed)="changed.emit()"
                                           (cancelled)="reversingIsVisible.set(false)">
-    </rts-journal-correction-reversal-form>
+    </esr-journal-correction-reversal-form>
   }
 
   <p-table [value]="manualJournal().lines" dataKey="referenceNumber">
@@ -46,7 +46,7 @@
     </ng-template>
 
     <ng-template #emptymessage>
-      <tr rts-empty-row [colspan]="6" message="No lines were found"></tr>
+      <tr esr-empty-row [colspan]="6" message="No lines were found"></tr>
     </ng-template>
   </p-table>
 </div>

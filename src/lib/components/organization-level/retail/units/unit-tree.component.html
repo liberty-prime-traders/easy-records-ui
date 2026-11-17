@@ -1,4 +1,4 @@
-<rts-loading-container [loading]="loading()">
+<esr-loading-container [loading]="loading()">
   <div class="flex align-items-center justify-content-between mb-3">
     <h3 class="font-bold">Units</h3>
 
@@ -25,7 +25,7 @@
   <p-divider/>
 
   @if (showBulkImportScreen()) {
-    <rts-bulk-unit-import (successfulUpload)="toggleBulkImport()"/>
+    <esr-bulk-unit-import (successfulUpload)="toggleBulkImport()"/>
 
   } @else if (unitGroups().length < 1 && !addingIsActive()) {
     <ng-container *ngTemplateOutlet="noUnitGroups"/>
@@ -71,7 +71,7 @@
             <i class="pi pi-times"></i>
             Cancel
           </button>
-          <rts-unit-group-form (unitGroupCreated)="unitGroupCreated($event)"/>
+          <esr-unit-group-form (unitGroupCreated)="unitGroupCreated($event)"/>
 
         } @else if (selectedUnitGroup()) {
           @if (!selectedUnitGroup()?.systemDefined) {
@@ -79,20 +79,20 @@
               <p-accordion-panel value="0">
                 <p-accordion-header>Edit unit group - {{selectedUnitGroup()?.name ?? 'Unit'}}</p-accordion-header>
                 <p-accordion-content>
-                  <rts-unit-group-form [unitGroup]="selectedUnitGroup()"/>
+                  <esr-unit-group-form [unitGroup]="selectedUnitGroup()"/>
                 </p-accordion-content>
               </p-accordion-panel>
             </p-accordion>
           }
 
-          <rts-unit-value [unitGroup]="selectedUnitGroup()!" class="flex-grow-1"/>
+          <esr-unit-value [unitGroup]="selectedUnitGroup()!" class="flex-grow-1"/>
         } @else {
           <span>Select a unit to see its details</span>
         }
       </div>
     </div>
   }
-</rts-loading-container>
+</esr-loading-container>
 
 
 <ng-template #noUnitGroups>

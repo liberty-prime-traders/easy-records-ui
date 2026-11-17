@@ -10,7 +10,7 @@ import {FormFieldComponent} from '../../../../reusable/form-field/form-field.com
 
 
 @Component({
-  selector: 'rts-product-category-form',
+  selector: 'esr-product-category-form',
   templateUrl: 'product-category-form.component.html',
   imports: [
     FormButtonsComponent,

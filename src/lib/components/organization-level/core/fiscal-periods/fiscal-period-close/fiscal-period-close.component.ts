@@ -8,7 +8,7 @@ import {BaseFormComponent} from '../../../../reusable/base-form.component'
 import {ErrorSummaryComponent} from '../../../../reusable/error-summary/error-summary.component'
 
 @Component({
-  selector: 'rts-fiscal-period-close',
+  selector: 'esr-fiscal-period-close',
   imports: [
     Message,
     ButtonDirective,

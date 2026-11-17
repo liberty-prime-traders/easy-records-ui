@@ -13,7 +13,7 @@ import {OrgTaxTypeAddFormComponent} from './org-tax-type-add-form/org-tax-type-a
 import {OrgTaxTypeEditFormComponent} from './org-tax-type-edit-form/org-tax-type-edit-form.component'
 
 @Component({
-  selector: 'rts-org-tax-type',
+  selector: 'esr-org-tax-type',
   templateUrl: 'org-tax-type.component.html',
   imports: [
     TableModule,

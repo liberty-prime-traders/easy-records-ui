@@ -14,7 +14,7 @@ import {FormFieldComponent} from '../../../../reusable/form-field/form-field.com
 import {TaxesFilterState} from './taxes-filter.state'
 
 @Component({
-  selector: 'rts-taxes-filter',
+  selector: 'esr-taxes-filter',
   templateUrl: 'taxes-filter.component.html',
   imports: [
     FormField,

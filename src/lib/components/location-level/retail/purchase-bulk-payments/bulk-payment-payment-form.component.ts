@@ -20,7 +20,7 @@ import {BulkPaymentFormContext} from './bulk-payment-form-context'
 import {BulkPaymentFormDefinition} from './bulk-payment-form.definition'
 
 @Component({
-  selector: 'rts-bulk-payment-payment-form',
+  selector: 'esr-bulk-payment-payment-form',
   templateUrl: 'bulk-payment-payment-form.component.html',
   imports: [
     FormField,

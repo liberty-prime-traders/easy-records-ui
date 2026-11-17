@@ -16,7 +16,7 @@ import {NewFormCancelButtonComponent} from '../../../reusable/new-form-cancel-bu
 import {OrgFeatureAddFormComponent} from './org-feature-add-form/org-feature-add-form.component'
 
 @Component({
-  selector: 'rts-org-feature',
+  selector: 'esr-org-feature',
   templateUrl: 'org-feature.component.html',
   imports: [
     TableModule,

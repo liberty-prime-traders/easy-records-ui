@@ -19,7 +19,7 @@ import {PurchaseFormContext} from '../purchase-form/form-utils/purchase-form-con
 import {PurchaseStatusSeverityPipe} from '../purchase-status-severity.pipe'
 
 @Component({
-  selector: 'rts-purchase-grid',
+  selector: 'esr-purchase-grid',
   templateUrl: 'purchase-grid.component.html',
   imports: [
     TableModule,

@@ -10,7 +10,7 @@ import {BaseGridComponent} from '../../reusable/base-grid.component'
 import {EmptyRowComponent} from '../../reusable/empty-row/empty-row.component'
 
 @Component({
-  selector: 'rts-db-version',
+  selector: 'esr-db-version',
   templateUrl: 'db-version.component.html',
   imports: [
     TableModule,

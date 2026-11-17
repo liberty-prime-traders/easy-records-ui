@@ -21,7 +21,7 @@ import {LoadingContainerComponent} from '../../../../reusable/loading-container/
 import {PaymentFormDefinition} from './payment-form.definition'
 
 @Component({
-  selector: 'rts-supplier-payment-form',
+  selector: 'esr-supplier-payment-form',
   templateUrl: 'payment-form.component.html',
   imports: [
     FormButtonsComponent,

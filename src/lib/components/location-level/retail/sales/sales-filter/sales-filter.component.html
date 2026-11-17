@@ -1,7 +1,7 @@
 <div class="flex flex-column gap-3">
   <p-fieldset legend="" [toggleable]="true">
     <div class="flex flex-column gap-3">
-      <rts-form-field label="Created Date"
+      <esr-form-field label="Created Date"
                       for="createdFrom"
                       [layout]="FormFieldDirection.COMPACT"
                       contentClass="col-11">
@@ -28,9 +28,9 @@
             </p-date-picker>
           </div>
         </div>
-      </rts-form-field>
+      </esr-form-field>
 
-      <rts-form-field label="Customers"
+      <esr-form-field label="Customers"
                       for="contactIds"
                       [layout]="FormFieldDirection.COMPACT"
                       contentClass="col-11">
@@ -53,9 +53,9 @@
             }
           </ng-template>
         </p-select>
-      </rts-form-field>
+      </esr-form-field>
 
-      <rts-form-field label="Sold By"
+      <esr-form-field label="Sold By"
                       for="soldByUserIds"
                       [layout]="FormFieldDirection.COMPACT"
                       contentClass="col-11">
@@ -78,7 +78,7 @@
             }
           </ng-template>
         </p-select>
-      </rts-form-field>
+      </esr-form-field>
     </div>
   </p-fieldset>
 
@@ -116,7 +116,7 @@
 
   <p-fieldset legend="Others" [toggleable]="true" [collapsed]="true">
     <div class="flex flex-column gap-3">
-      <rts-form-field label="Receivable Total (KES)"
+      <esr-form-field label="Receivable Total (KES)"
                       for="minReceivableTotal"
                       [layout]="FormFieldDirection.COMPACT"
                       contentClass="col-11">
@@ -124,9 +124,9 @@
           <p-input-number size="small" [formField]="state.filterForm.minReceivableTotal" placeholder="Min"/>
           <p-input-number size="small" [formField]="state.filterForm.maxReceivableTotal" placeholder="Max"/>
         </div>
-      </rts-form-field>
+      </esr-form-field>
 
-      <rts-form-field label="Discount Total (KES)"
+      <esr-form-field label="Discount Total (KES)"
                       for="minDiscountTotal"
                       [layout]="FormFieldDirection.COMPACT"
                       contentClass="col-11">
@@ -134,9 +134,9 @@
           <p-input-number size="small" [formField]="state.filterForm.minDiscountTotal" placeholder="Min"/>
           <p-input-number size="small" [formField]="state.filterForm.maxDiscountTotal" placeholder="Max"/>
         </div>
-      </rts-form-field>
+      </esr-form-field>
 
-      <rts-form-field label="Sale reference numbers"
+      <esr-form-field label="Sale reference numbers"
                       for="saleReferenceNumberInput"
                       [layout]="FormFieldDirection.COMPACT"
                       contentClass="col-11">
@@ -159,7 +159,7 @@
                [disabled]="state.filterForm.saleReferenceNumbers().value().length >= state.maxSaleReferenceNumbers"
                (keydown.enter)="state.addSaleReferenceNumbers(saleReferenceNumberInput.value); saleReferenceNumberInput.value = ''"
                (paste)="state.addSaleReferenceNumbers($event.clipboardData?.getData('text') ?? ''); $event.preventDefault()" />
-      </rts-form-field>
+      </esr-form-field>
     </div>
   </p-fieldset>
 

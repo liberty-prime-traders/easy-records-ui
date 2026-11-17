@@ -30,7 +30,7 @@ interface Figure {
 }
 
 @Component({
-  selector: 'rts-product-sales-figures',
+  selector: 'esr-product-sales-figures',
   templateUrl: 'product-sales-figures.component.html',
   styleUrl: 'product-sales-figures.component.scss',
   imports: [CurrencyPipe, NullSafePipe, PercentFigurePipe, GrossSalesSplitComponent]

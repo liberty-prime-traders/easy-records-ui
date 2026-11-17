@@ -13,7 +13,7 @@ import {EmptyRowComponent} from '../../../../reusable/empty-row/empty-row.compon
 import {MoneyComponent} from '../../../../reusable/money.component'
 
 @Component({
-  selector: 'rts-contact-ledger',
+  selector: 'esr-contact-ledger',
   templateUrl: 'contact-ledger.component.html',
   imports: [
     TableModule,

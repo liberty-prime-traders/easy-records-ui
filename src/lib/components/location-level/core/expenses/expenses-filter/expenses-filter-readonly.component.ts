@@ -7,7 +7,7 @@ import {TruncatedListComponent} from '../../../../reusable/truncated-list/trunca
 import {ExpensesFilterState} from './expenses-filter.state'
 
 @Component({
-  selector: 'rts-expenses-filter-readonly',
+  selector: 'esr-expenses-filter-readonly',
   imports: [
     OrgDateTimePipe,
     DecimalPipe,

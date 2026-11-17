@@ -10,13 +10,13 @@
       <form [formGroup]="organizationDomainForm" class="px-4 mx-6 mt-4 flex flex-column gap-2">
         <label for="domain">Enter your Organization's Domain:</label>
 
-        <rts-error-summary [regularErrorMessages]="errorMessages()"/>
+        <esr-error-summary [regularErrorMessages]="errorMessages()"/>
 
         <input id="domain" pInputText formControlName="domain" class="w-full" />
       </form>
 
       <div class="flex justify-content-end mr-6">
-        <rts-forms-buttons [disableReset]="!organizationDomainForm.dirty"
+        <esr-forms-buttons [disableReset]="!organizationDomainForm.dirty"
                            [disableSave]="!organizationDomainForm.valid || !organizationDomainForm.dirty || launchingInProgress()"
                            [hideReset]="true"
                            [hideDelete]="true"
@@ -24,7 +24,7 @@
                            [processingStatus]="processingStatus()"
                            saveLabel="Launch"
                            (save)="launchOrganization()">
-        </rts-forms-buttons>
+        </esr-forms-buttons>
       </div>
 
       <div class="px-4 flex flex-column justify-content-center align-items-center gap-3 my-4">

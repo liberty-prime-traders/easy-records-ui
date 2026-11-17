@@ -14,7 +14,7 @@ import {GridWithAddButtonComponent} from '../../../reusable/grid-with-add-button
 import {StockMovementReasonFormComponent} from './stock-movement-reason-form/stock-movement-reason-form.component'
 
 @Component({
-  selector: 'rts-stock-movement-reason',
+  selector: 'esr-stock-movement-reason',
   templateUrl: 'stock-movement-reason.component.html',
   imports: [
     TableModule,

@@ -28,10 +28,10 @@
 
   <p-fieldset [toggleable]="true" legend="Other Filters">
     <div class="flex flex-column gap-3">
-      <rts-purchase-product-lookup (productSelected)="filterState.addLocationProduct($event)"
+      <esr-purchase-product-lookup (productSelected)="filterState.addLocationProduct($event)"
                                    [layout]="FormFieldLayout.COMPACT"
                                    [selectedProductIds]="filterState.filterFormValue().locationProductIds">
-      </rts-purchase-product-lookup>
+      </esr-purchase-product-lookup>
 
       @if (filterState.selectedProducts().length) {
         <div class="flex flex-wrap gap-1">

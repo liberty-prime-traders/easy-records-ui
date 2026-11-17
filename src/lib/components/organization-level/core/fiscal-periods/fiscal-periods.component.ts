@@ -15,7 +15,7 @@ import {FiscalPeriodCloseComponent} from './fiscal-period-close/fiscal-period-cl
 import {FiscalPeriodFormComponent} from './fiscal-period-form/fiscal-period-form.component'
 
 @Component({
-  selector: 'rts-fiscal-periods',
+  selector: 'esr-fiscal-periods',
   templateUrl: 'fiscal-periods.component.html',
   imports: [
     TableModule,

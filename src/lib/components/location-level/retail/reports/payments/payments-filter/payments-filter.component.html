@@ -1,5 +1,5 @@
 <div class="flex flex-column gap-3" id="payments-filter" rtsAutoStretch="payments-filter">
-  <rts-form-field label="Recorded Date"
+  <esr-form-field label="Recorded Date"
                   for="recordedFrom" [layout]="
                   FormFieldDirection.COMPACT"
                   contentClass="col-11">
@@ -27,9 +27,9 @@
         </p-date-picker>
       </div>
     </div>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field label="Payment Date"
+  <esr-form-field label="Payment Date"
                   for="paymentDateFrom"
                   contentClass="col-11"
                   [layout]="FormFieldDirection.COMPACT">
@@ -56,9 +56,9 @@
         </p-date-picker>
       </div>
     </div>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field label="Contacts"
+  <esr-form-field label="Contacts"
                   for="contactIds"
                   contentClass="col-11"
                   [layout]="FormFieldDirection.COMPACT">
@@ -81,9 +81,9 @@
         }
       </ng-template>
     </p-select>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field label="Payment method"
+  <esr-form-field label="Payment method"
                   for="paymentMethod0"
                   contentClass="col-11"
                   [layout]="FormFieldDirection.COMPACT">
@@ -100,10 +100,10 @@
         </div>
       }
     </div>
-  </rts-form-field>
+  </esr-form-field>
 
   <p-fieldset legend="Others" [toggleable]="true">
-    <rts-form-field label="Type"
+    <esr-form-field label="Type"
                     for="type0"
                     contentClass="col-11"
                     [layout]="FormFieldDirection.COMPACT">
@@ -120,9 +120,9 @@
           </div>
         }
       </div>
-    </rts-form-field>
+    </esr-form-field>
 
-    <rts-form-field label="Status"
+    <esr-form-field label="Status"
                     for="statusActive"
                     contentClass="col-11"
                     [layout]="FormFieldDirection.COMPACT">
@@ -147,12 +147,12 @@
           <label for="statusVoided">Voided</label>
         </div>
       </div>
-    </rts-form-field>
+    </esr-form-field>
 
   </p-fieldset>
 
   <p-fieldset [toggleable]="true" [collapsed]="true">
-    <rts-form-field label="Amount (KES)"
+    <esr-form-field label="Amount (KES)"
                     for="minAmount"
                     contentClass="col-11"
                     [layout]="FormFieldDirection.COMPACT">
@@ -160,10 +160,10 @@
         <p-input-number size="small"  [formField]="state.filterForm.minAmount" placeholder="Min"/>
         <p-input-number size="small" [formField]="state.filterForm.maxAmount" placeholder="Max"/>
       </div>
-    </rts-form-field>
+    </esr-form-field>
 
     @for (type of state.types; track type) {
-      <rts-form-field
+      <esr-form-field
         [label]="(type | prettifyEnum) + ' reference numbers'"
         [for]="'referenceNumberInput' + $index"
         contentClass="col-11"
@@ -188,7 +188,7 @@
                [disabled]="state.filterFormValue().referenceNumbersByType[type].length >= state.maxReferenceNumbers"
                (keydown.enter)="state.addReferenceNumbers(type, referenceNumberInput.value); referenceNumberInput.value = ''"
                (paste)="state.addReferenceNumbers(type, $event.clipboardData?.getData('text') ?? ''); $event.preventDefault()" />
-      </rts-form-field>
+      </esr-form-field>
     }
   </p-fieldset>
 

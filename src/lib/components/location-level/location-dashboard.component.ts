@@ -15,7 +15,7 @@ import {SaleFormVisibilityContext} from './retail/sales/sale-form-visibility.con
 import {SaleFormComponent} from './retail/sales/sale-form/sale-form.component'
 
 @Component({
-  selector: 'rts-private',
+  selector: 'esr-private',
   imports: [
     RouterOutlet,
     ButtonDirective,

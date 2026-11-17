@@ -16,7 +16,7 @@ import {PaymentVoidStatusSeverityPipe} from './payment-void-status-severity.pipe
 import {VoidedToVoidStatusPipe} from './voided-to-void-status.pipe'
 
 @Component({
-  selector: 'rts-payments-grid',
+  selector: 'esr-payments-grid',
   templateUrl: 'payments-grid.component.html',
   imports: [
     TableModule,

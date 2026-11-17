@@ -1,10 +1,10 @@
 @if (formIsVisible()) {
-  <rts-expense-batch-form (expensesSaved)="formIsVisible.set(false)"
+  <esr-expense-batch-form (expensesSaved)="formIsVisible.set(false)"
                           (cancelled)="formIsVisible.set(false)">
-  </rts-expense-batch-form>
+  </esr-expense-batch-form>
 
 } @else {
-  <rts-loading-container [loading]="loading()">
+  <esr-loading-container [loading]="loading()">
     <div class="flex justify-content-between">
       <span class="font-bold">Expenses</span>
 
@@ -16,9 +16,9 @@
 
     <div class="flex" id="expenses-report" rtsAutoStretch="expenses-report">
       @if (selectedTab() === 'expenses') {
-        <rts-expenses-filter-readonly class="col-2" (editFilters)="selectedTab.set('summary')"/>
+        <esr-expenses-filter-readonly class="col-2" (editFilters)="selectedTab.set('summary')"/>
       } @else {
-        <rts-expenses-filter class="w-15rem"/>
+        <esr-expenses-filter class="w-15rem"/>
       }
 
       <p-divider layout="vertical"/>
@@ -35,15 +35,15 @@
 
           <p-tabpanels>
             <p-tabpanel value="summary">
-              <rts-expenses-summary/>
+              <esr-expenses-summary/>
             </p-tabpanel>
 
             <p-tabpanel value="expenses">
-              <rts-expense-grid/>
+              <esr-expense-grid/>
             </p-tabpanel>
           </p-tabpanels>
         </p-tabs>
       </div>
     </div>
-  </rts-loading-container>
+  </esr-loading-container>
 }

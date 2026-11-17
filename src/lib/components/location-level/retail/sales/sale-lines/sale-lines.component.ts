@@ -10,7 +10,7 @@ import {EditableSaleLinesComponent} from './editable-sale-lines/editable-sale-li
 import {ReadOnlySaleLinesComponent} from './read-only-sale-lines/read-only-sale-lines.component'
 
 @Component({
-  selector: 'rts-sale-lines',
+  selector: 'esr-sale-lines',
   templateUrl: 'sale-lines.component.html',
   styleUrl: 'sale-lines.component.scss',
   imports: [

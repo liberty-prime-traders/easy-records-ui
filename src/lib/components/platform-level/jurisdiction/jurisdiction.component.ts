@@ -12,7 +12,7 @@ import {NewFormCancelButtonComponent} from '../../reusable/new-form-cancel-butto
 import {JurisdictionFormComponent} from './jurisdiction-form/jurisdiction-form.component'
 
 @Component({
-  selector: 'rts-jurisdiction',
+  selector: 'esr-jurisdiction',
   templateUrl: 'jurisdiction.component.html',
   imports: [
     TableModule,

@@ -1,7 +1,7 @@
 <div class="flex flex-column gap-3">
   <p-fieldset legend="" [toggleable]="true">
     <div class="flex flex-column gap-3">
-      <rts-form-field label="Recorded Date"
+      <esr-form-field label="Recorded Date"
                       for="createdFrom"
                       [layout]="FormFieldDirection.COMPACT"
                       contentClass="col-11">
@@ -28,9 +28,9 @@
             </p-date-picker>
           </div>
         </div>
-      </rts-form-field>
+      </esr-form-field>
 
-      <rts-form-field label="Payees"
+      <esr-form-field label="Payees"
                       for="payeeContactIds"
                       [layout]="FormFieldDirection.COMPACT"
                       contentClass="col-11">
@@ -53,9 +53,9 @@
             }
           </ng-template>
         </p-select>
-      </rts-form-field>
+      </esr-form-field>
 
-      <rts-form-field label="Expense Types"
+      <esr-form-field label="Expense Types"
                       for="expenseTypeIds"
                       [layout]="FormFieldDirection.COMPACT"
                       contentClass="col-11">
@@ -78,7 +78,7 @@
             }
           </ng-template>
         </p-select>
-      </rts-form-field>
+      </esr-form-field>
     </div>
   </p-fieldset>
 
@@ -132,7 +132,7 @@
 
   <p-fieldset legend="Others" [toggleable]="true" [collapsed]="true">
     <div class="flex flex-column gap-3">
-      <rts-form-field label="Expense Date"
+      <esr-form-field label="Expense Date"
                       for="expenseDateFrom"
                       [layout]="FormFieldDirection.COMPACT"
                       contentClass="col-11">
@@ -157,9 +157,9 @@
             </p-date-picker>
           </div>
         </div>
-      </rts-form-field>
+      </esr-form-field>
 
-      <rts-form-field label="Amount (KES)"
+      <esr-form-field label="Amount (KES)"
                       for="minAmount"
                       [layout]="FormFieldDirection.COMPACT"
                       contentClass="col-11">
@@ -167,9 +167,9 @@
           <p-input-number size="small" [formField]="state.filterForm.minAmount" placeholder="Min"/>
           <p-input-number size="small" [formField]="state.filterForm.maxAmount" placeholder="Max"/>
         </div>
-      </rts-form-field>
+      </esr-form-field>
 
-      <rts-form-field label="Source references"
+      <esr-form-field label="Source references"
                       for="sourceReferenceInput"
                       [layout]="FormFieldDirection.COMPACT"
                       contentClass="col-11">
@@ -192,7 +192,7 @@
                [disabled]="state.filterForm.sourceReferences().value().length >= state.maxSourceReferences"
                (keydown.enter)="state.addSourceReferences(sourceReferenceInput.value); sourceReferenceInput.value = ''"
                (paste)="state.addSourceReferences($event.clipboardData?.getData('text') ?? ''); $event.preventDefault()" />
-      </rts-form-field>
+      </esr-form-field>
     </div>
   </p-fieldset>
 

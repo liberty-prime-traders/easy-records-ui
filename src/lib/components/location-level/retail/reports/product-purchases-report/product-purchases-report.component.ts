@@ -15,7 +15,7 @@ import {ProductPurchasesReportFilterComponent} from './report-filter/product-pur
 import {ProductPurchasesReportFilterState} from './report-filter/product-purchases-report-filter.state'
 
 @Component({
-  selector: 'rts-product-purchases-report',
+  selector: 'esr-product-purchases-report',
   templateUrl: 'product-purchases-report.component.html',
   providers: [ProductPurchasesReportFilterState],
   imports: [

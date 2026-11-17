@@ -16,7 +16,7 @@ import {FormFieldComponent} from '../../../../reusable/form-field/form-field.com
 import {ProductFilterService} from '../product-filter.service'
 
 @Component({
-  selector: 'rts-product-filter',
+  selector: 'esr-product-filter',
   templateUrl: './product-filter.component.html',
   imports: [
     FormFieldComponent,

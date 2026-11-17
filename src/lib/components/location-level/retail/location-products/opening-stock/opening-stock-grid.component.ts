@@ -19,7 +19,7 @@ import {OpeningStockCellComponent} from './opening-stock-cell.component'
 import {OpeningStockDeclarationService} from './opening-stock-declaration.service'
 
 @Component({
-  selector: 'rts-opening-stock-grid',
+  selector: 'esr-opening-stock-grid',
   templateUrl: 'opening-stock-grid.component.html',
   imports: [
     TableModule,

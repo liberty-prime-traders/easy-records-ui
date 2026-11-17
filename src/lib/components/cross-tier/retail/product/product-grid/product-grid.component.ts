@@ -27,7 +27,7 @@ import {LoadingContainerComponent} from '../../../../reusable/loading-container/
 import {ProductFilterService} from '../product-filter.service'
 
 @Component({
-  selector: 'rts-product-grid',
+  selector: 'esr-product-grid',
   templateUrl: 'product-grid.component.html',
   imports: [
     FormsModule,

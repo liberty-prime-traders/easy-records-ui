@@ -9,7 +9,7 @@ import {AutoStretchDirective} from '../../../reusable/auto-stretch.directive'
 import {EmptyRowComponent} from '../../../reusable/empty-row/empty-row.component'
 
 @Component({
-  selector: 'rts-stock-history',
+  selector: 'esr-stock-history',
   templateUrl: 'stock-history.component.html',
   imports: [
     AutoStretchDirective,

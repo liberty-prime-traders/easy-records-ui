@@ -10,7 +10,7 @@ import {JournalCorrectionFormComponent} from './journal-correction-form/journal-
 import {JournalCorrectionDetailsComponent} from './journal-correction-details/journal-correction-details.component'
 
 @Component({
-  selector: 'rts-journal-corrections',
+  selector: 'esr-journal-corrections',
   templateUrl: 'journal-corrections.component.html',
   imports: [
     TableModule,

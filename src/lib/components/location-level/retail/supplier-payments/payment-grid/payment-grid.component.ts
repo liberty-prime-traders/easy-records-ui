@@ -9,7 +9,7 @@ import {PaymentExpandedRowComponent} from '../payment-expanded-row/payment-expan
 import {PaymentFormComponent} from '../payment-form/payment-form.component'
 
 @Component({
-  selector: 'rts-supplier-payment-grid',
+  selector: 'esr-supplier-payment-grid',
   templateUrl: 'payment-grid.component.html',
   imports: [
     TableModule,

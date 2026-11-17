@@ -1,13 +1,13 @@
 @if (showAuthorityAssignmentScreen()) {
-  <rts-authority-assignment
+  <esr-authority-assignment
     [schemaLevel]="SchemaLevel.PLATFORM"
     (cancel)="cancelAuthorityAssignment()"
     (assign)="onAuthoritiesAssigned()">
-  </rts-authority-assignment>
+  </esr-authority-assignment>
 } @else {
-  <rts-platform-authorities>
+  <esr-platform-authorities>
     <button pButton class="mb-3" (click)="openAuthorityAssignment()">
       <i class="pi pi-plus"></i> Assign Authority
     </button>
-  </rts-platform-authorities>
+  </esr-platform-authorities>
 }

@@ -13,7 +13,7 @@ import {LoadingContainerComponent} from '../../../../reusable/loading-container/
 import {ExpensePaymentFormDefinition} from './expense-payment-form.definition'
 
 @Component({
-  selector: 'rts-expense-payment-form',
+  selector: 'esr-expense-payment-form',
   templateUrl: 'expense-payment-form.component.html',
   imports: [
     FormField,

@@ -40,31 +40,31 @@
 
   @if (state.payeeNames().length > 0) {
     <p-fieldset legend="Payees">
-      <rts-truncated-list [items]="state.payeeNames()"/>
+      <esr-truncated-list [items]="state.payeeNames()"/>
     </p-fieldset>
   }
 
   @if (state.expenseTypeNames().length > 0) {
     <p-fieldset legend="Expense Types">
-      <rts-truncated-list [items]="state.expenseTypeNames()"/>
+      <esr-truncated-list [items]="state.expenseTypeNames()"/>
     </p-fieldset>
   }
 
   @if (state.paymentStatusLabels().length > 0) {
     <p-fieldset legend="Payment Status">
-      <rts-truncated-list [items]="state.paymentStatusLabels()"/>
+      <esr-truncated-list [items]="state.paymentStatusLabels()"/>
     </p-fieldset>
   }
 
   @if (state.paymentMethodNames().length > 0) {
     <p-fieldset legend="Payment Method">
-      <rts-truncated-list [items]="state.paymentMethodNames()"/>
+      <esr-truncated-list [items]="state.paymentMethodNames()"/>
     </p-fieldset>
   }
 
   @if (state.voidedStateLabels().length > 0) {
     <p-fieldset legend="Voided">
-      <rts-truncated-list [items]="state.voidedStateLabels()"/>
+      <esr-truncated-list [items]="state.voidedStateLabels()"/>
     </p-fieldset>
   }
 
@@ -80,7 +80,7 @@
 
   @if (state.filterFormValue().sourceReferences.length > 0) {
     <p-fieldset legend="Source references">
-      <rts-truncated-list [items]="state.filterFormValue().sourceReferences"/>
+      <esr-truncated-list [items]="state.filterFormValue().sourceReferences"/>
     </p-fieldset>
   }
 

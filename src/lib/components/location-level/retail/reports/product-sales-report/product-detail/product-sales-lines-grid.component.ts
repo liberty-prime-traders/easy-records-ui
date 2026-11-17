@@ -16,7 +16,7 @@ import {EmptyRowComponent} from '../../../../../reusable/empty-row/empty-row.com
 import {PercentFigurePipe} from '../shared/percent-figure.pipe'
 
 @Component({
-  selector: 'rts-product-sales-lines-grid',
+  selector: 'esr-product-sales-lines-grid',
   templateUrl: 'product-sales-lines-grid.component.html',
   imports: [
     Table,

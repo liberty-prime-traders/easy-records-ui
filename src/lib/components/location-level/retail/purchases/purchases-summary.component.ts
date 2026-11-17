@@ -7,7 +7,7 @@ import {PrettifyEnumPipe} from '../../../../utils/pipes/prettify-enum.pipe'
 import {EmptyRowComponent} from '../../../reusable/empty-row/empty-row.component'
 
 @Component({
-  selector: 'rts-purchases-summary',
+  selector: 'esr-purchases-summary',
   imports: [
     Table,
     Panel,

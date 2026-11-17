@@ -4,12 +4,12 @@ import {SchemaLevel} from '../../../../api/platform-level/table-registry/schema-
 import {ProductGeneralComponent} from '../../../cross-tier/retail/product/general-screen/product-general.component'
 
 @Component({
-  selector: 'rts-organization-product',
+  selector: 'esr-organization-product',
   imports: [
     ProductGeneralComponent
   ],
   providers: provideOrganizationServices(),
-  template: `<rts-product [schemaLevel]="SchemaLevel.ORGANIZATION"></rts-product>`
+  template: `<esr-product [schemaLevel]="SchemaLevel.ORGANIZATION"></esr-product>`
 })
 export class OrganizationProductComponent {
 

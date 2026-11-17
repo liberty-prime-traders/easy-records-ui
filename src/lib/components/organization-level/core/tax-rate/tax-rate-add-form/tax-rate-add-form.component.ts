@@ -18,7 +18,7 @@ import {FormFieldComponent} from '../../../../reusable/form-field/form-field.com
 import {TaxRateAddFormDefinition} from './tax-rate-add-form.definition'
 
 @Component({
-  selector: 'rts-tax-rate-add-form',
+  selector: 'esr-tax-rate-add-form',
   templateUrl: 'tax-rate-add-form.component.html',
   imports: [
     FormButtonsComponent,

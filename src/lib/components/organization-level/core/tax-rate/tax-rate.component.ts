@@ -14,7 +14,7 @@ import {TaxRateAddFormComponent} from './tax-rate-add-form/tax-rate-add-form.com
 import {TaxRateEditFormComponent} from './tax-rate-edit-form/tax-rate-edit-form.component'
 
 @Component({
-  selector: 'rts-tax-rate',
+  selector: 'esr-tax-rate',
   templateUrl: 'tax-rate.component.html',
   imports: [
     NgClass,

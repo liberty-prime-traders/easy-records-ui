@@ -1,23 +1,23 @@
-<rts-loading-container [loading]="loading()">
+<esr-loading-container [loading]="loading()">
 
   <div class="flex flex-column gap-4">
     <span class="font-bold">Bulk Supplier Payment</span>
 
     <p-divider class="m-0"/>
 
-    <rts-bulk-payment-filter/>
+    <esr-bulk-payment-filter/>
 
     <div class="flex gap-4 p-2">
       <ng-container *ngTemplateOutlet="bulkPaymentGrid"/>
 
       <p-card class="w-20rem pb-2">
-        <rts-bulk-payment-payment-form/>
+        <esr-bulk-payment-payment-form/>
       </p-card>
     </div>
 
   </div>
 
-</rts-loading-container>
+</esr-loading-container>
 
 <ng-template #bulkPaymentGrid>
   <div id="bulk-payment-grid" rtsAutoStretch="bulk-payment-grid" class="flex-grow-1">
@@ -91,7 +91,7 @@
       </ng-template>
 
       <ng-template #emptymessage>
-        <tr rts-empty-row [colspan]="8" message="No payable purchases found."></tr>
+        <tr esr-empty-row [colspan]="8" message="No payable purchases found."></tr>
       </ng-template>
 
       @if (rows().length) {

@@ -23,7 +23,7 @@ import {
 } from './top-navigation/user-account-nav-content/user-account-nav-content.component'
 
 @Component({
-  selector: 'rts-welcome',
+  selector: 'esr-welcome',
   templateUrl: 'welcome.component.html',
   styleUrls: ['welcome.component.scss'],
   providers: [NgxResizeObserverModule],

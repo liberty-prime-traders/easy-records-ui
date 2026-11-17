@@ -1,6 +1,6 @@
 <span class="font-bold">Declare Opening Stock</span>
 
-<rts-loading-container [loading]="loading()">
+<esr-loading-container [loading]="loading()">
   @if (unitsReady()) {
     <div id="opening-stock-productLines" rtsAutoStretch="opening-stock-productLines">
       <p-table [value]="products()"
@@ -49,16 +49,16 @@
               <td>{{ product?.productGroupName | nullSafe }}</td>
               <td>{{ product?.productName | nullSafe }}</td>
               <td>
-                <rts-opening-stock-cell [product]="product" [editMode]="true"/>
+                <esr-opening-stock-cell [product]="product" [editMode]="true"/>
               </td>
             </tr>
           }
         </ng-template>
 
         <ng-template #emptymessage>
-          <tr rts-empty-row [colspan]="4" message="No products found."></tr>
+          <tr esr-empty-row [colspan]="4" message="No products found."></tr>
         </ng-template>
       </p-table>
     </div>
   }
-</rts-loading-container>
+</esr-loading-container>

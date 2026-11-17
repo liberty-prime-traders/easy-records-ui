@@ -16,7 +16,7 @@ import {SalesFilterState} from './sales-filter/sales-filter.state'
 import {SalesSummaryComponent} from './sales-summary.component'
 
 @Component({
-  selector: 'rts-sales',
+  selector: 'esr-sales',
   templateUrl: 'sales.component.html',
   imports: [
     SaleGridComponent,

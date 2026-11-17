@@ -18,7 +18,7 @@ import {LoadingContainerComponent} from '../../../reusable/loading-container/loa
 import {RolePermissionsComponent} from '../role-permissions/role-permissions.component'
 
 @Component({
-  selector: 'rts-user-access-detail',
+  selector: 'esr-user-access-detail',
   templateUrl: 'user-access-detail.component.html',
   imports: [
     Tab,

@@ -1,7 +1,7 @@
-<rts-loading-container [loading]="unitConversionGraphIsLoading()" loadingText="Loading sale lines...">
+<esr-loading-container [loading]="unitConversionGraphIsLoading()" loadingText="Loading sale lines...">
   @if (canEditLines()) {
-    <rts-editable-sale-lines [saleLines]="saleLines()"/>
+    <esr-editable-sale-lines [saleLines]="saleLines()"/>
   } @else {
-    <rts-read-only-sale-lines [saleLines]="saleLines()"/>
+    <esr-read-only-sale-lines [saleLines]="saleLines()"/>
   }
-</rts-loading-container>
+</esr-loading-container>

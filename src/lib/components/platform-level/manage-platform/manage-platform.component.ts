@@ -6,7 +6,7 @@ import {PlatformSysUserService} from '../../../api/platform-level/sys-user/platf
 import {AutoStretchDirective} from '../../reusable/auto-stretch.directive'
 
 @Component({
-  selector: 'rts-manage-platform',
+  selector: 'esr-manage-platform',
   templateUrl: './manage-platform.component.html',
   imports: [
     RouterOutlet,

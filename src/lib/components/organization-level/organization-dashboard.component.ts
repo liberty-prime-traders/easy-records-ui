@@ -11,7 +11,7 @@ import {AutoStretchDirective} from '../reusable/auto-stretch.directive'
 import {OrganizationLaunchService} from '../welcome/top-navigation/organization-nav-content/organization-launch.service'
 
 @Component({
-  selector: 'rts-manage-organization',
+  selector: 'esr-manage-organization',
   templateUrl: 'organization-dashboard.component.html',
   imports: [
     RouterOutlet,

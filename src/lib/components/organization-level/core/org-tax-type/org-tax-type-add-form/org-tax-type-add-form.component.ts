@@ -11,12 +11,12 @@ import {
 import {OrgFeatureService} from '../../../../../api/organization-level/core/org-feature/org-feature.service'
 import {OrgTaxTypeService} from '../../../../../api/organization-level/core/org-tax-type/org-tax-type.service'
 import {TaxRecoveryType} from '../../../../../api/platform-level/tax-type/tax-recovery-type.enum'
-import {RtsTreeNode} from '../../../../../utils/types/rts-tree-node'
+import {RtsTreeNode} from '../../../../../utils/types/esr-tree-node'
 import {LoadingContainerComponent} from '../../../../reusable/loading-container/loading-container.component'
 import {OrgTaxTypeAddFormDefinition} from './org-tax-type-add-form.definition'
 
 @Component({
-  selector: 'rts-org-tax-type-add-form',
+  selector: 'esr-org-tax-type-add-form',
   templateUrl: 'org-tax-type-add-form.component.html',
   imports: [
     ButtonDirective,

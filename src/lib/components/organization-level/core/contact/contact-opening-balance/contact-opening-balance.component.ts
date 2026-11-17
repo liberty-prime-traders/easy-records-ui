@@ -20,7 +20,7 @@ import {
 } from './contact-opening-settlement-grid/contact-opening-settlement-grid.component'
 
 @Component({
-  selector: 'rts-contact-opening-balance',
+  selector: 'esr-contact-opening-balance',
   templateUrl: 'contact-opening-balance.component.html',
   imports: [
     ButtonDirective,

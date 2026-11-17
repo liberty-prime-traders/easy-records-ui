@@ -11,7 +11,7 @@ import {AutoStretchDirective} from '../../../../../reusable/auto-stretch.directi
 import {SaleLineFormDefinition} from '../../form-utils/sale-line-form.definition'
 
 @Component({
-  selector: 'rts-read-only-sale-lines',
+  selector: 'esr-read-only-sale-lines',
   templateUrl: 'read-only-sale-lines.component.html',
   imports: [
     TableModule,

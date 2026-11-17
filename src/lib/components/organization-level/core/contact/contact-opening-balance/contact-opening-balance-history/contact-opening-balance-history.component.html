@@ -23,13 +23,13 @@
       <td>{{ revision.changedAt | date }}</td>
       <td>{{ revision.subledgerDirection | contactSubledgerDirectionLabel }}</td>
       <td>
-        <rts-money [amount]="revision.amount" [balanceEffect]="revision.balanceEffect"/>
+        <esr-money [amount]="revision.amount" [balanceEffect]="revision.balanceEffect"/>
       </td>
     </tr>
   </ng-template>
 
   <ng-template #emptymessage>
-    <tr rts-empty-row [colspan]="5" message="Opening balance has not been recorded yet"></tr>
+    <tr esr-empty-row [colspan]="5" message="Opening balance has not been recorded yet"></tr>
   </ng-template>
 
 </p-table>

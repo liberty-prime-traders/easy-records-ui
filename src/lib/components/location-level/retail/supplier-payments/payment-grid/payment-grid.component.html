@@ -1,8 +1,8 @@
 @if (showAddForm()) {
-  <rts-supplier-payment-form [purchaseId]="purchaseId()"
+  <esr-supplier-payment-form [purchaseId]="purchaseId()"
                              (paymentSaved)="onPaymentChange()"
                              (cancelled)="showAddForm.set(false)">
-  </rts-supplier-payment-form>
+  </esr-supplier-payment-form>
 } @else {
   <div class="flex flex-column gap-3">
 
@@ -41,7 +41,7 @@
             <div class="flex gap-2">
               {{ payment.referenceNumber }}
               @if (paymentIsVoided) {
-                <rts-tooltip [messages]="[payment.voidedReason]"/>
+                <esr-tooltip [messages]="[payment.voidedReason]"/>
               }
             </div>
           </td>
@@ -56,16 +56,16 @@
       <ng-template #expandedrow let-payment>
         <tr>
           <td colspan="7" class="filled-background p-4">
-            <rts-supplier-payment-expanded-row [payment]="payment"
+            <esr-supplier-payment-expanded-row [payment]="payment"
                                                (paymentVoided)="onPaymentChange()"
                                                [purchaseId]="purchaseId()">
-            </rts-supplier-payment-expanded-row>
+            </esr-supplier-payment-expanded-row>
           </td>
         </tr>
       </ng-template>
 
       <ng-template #emptymessage>
-        <tr [colspan]="7" rts-empty-row message="No payments recorded yet"></tr>
+        <tr [colspan]="7" esr-empty-row message="No payments recorded yet"></tr>
       </ng-template>
 
     </p-table>

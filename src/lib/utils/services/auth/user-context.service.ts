@@ -7,7 +7,7 @@ import {
 } from '../../../api/platform-level/organization/organization-admin/organization-admin.service'
 import {LibertyAccessService} from '../../../api/organization-level/core/liberty-access/liberty-access.service'
 import {UserRole} from '../../../api/cross-tier/core/authorization/user-role.enum'
-import {RtsGoogleAuthService} from './rts-google-auth.service'
+import {RtsGoogleAuthService} from './esr-google-auth.service'
 
 @Injectable({ providedIn: 'root' })
 export class UserContextService {

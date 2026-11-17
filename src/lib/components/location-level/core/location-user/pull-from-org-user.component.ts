@@ -9,7 +9,7 @@ import {OrgMembershipUserService} from '../../../../api/organization-level/core/
 import {parseError} from '../../../../utils/errors'
 
 @Component({
-  selector: 'rts-pull-from-org-user',
+  selector: 'esr-pull-from-org-user',
   templateUrl: 'pull-from-org-user.component.html',
   imports: [
     FormsModule,

@@ -12,14 +12,14 @@ import {OrgTaxType} from '../../../../../api/organization-level/core/org-tax-typ
 import {OrgTaxTypeService} from '../../../../../api/organization-level/core/org-tax-type/org-tax-type.service'
 import {TaxRecoveryType} from '../../../../../api/platform-level/tax-type/tax-recovery-type.enum'
 import {EnumToDropdownPipe} from '../../../../../utils/pipes/enum-to-dropdown.pipe'
-import {RtsTreeNode} from '../../../../../utils/types/rts-tree-node'
+import {RtsTreeNode} from '../../../../../utils/types/esr-tree-node'
 import {BaseFormComponent} from '../../../../reusable/base-form.component'
 import {FormButtonsComponent} from '../../../../reusable/form-buttons/form-buttons.component'
 import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
 import {OrgTaxTypeEditFormDefinition} from './org-tax-type-edit-form.definition'
 
 @Component({
-  selector: 'rts-org-tax-type-edit-form',
+  selector: 'esr-org-tax-type-edit-form',
   templateUrl: 'org-tax-type-edit-form.component.html',
   imports: [
     FormButtonsComponent,

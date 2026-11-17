@@ -1,4 +1,4 @@
-<rts-loading-container [loading]="isLoading()" loadingText="Saving...">
+<esr-loading-container [loading]="isLoading()" loadingText="Saving...">
   <div class="flex flex-column gap-3">
     @for (row of paymentsForm; track $index) {
       <div class="flex gap-3 flex-wrap align-items-center">
@@ -38,7 +38,7 @@
       </button>
     </div>
 
-    <rts-forms-buttons saveLabel="Save payments"
+    <esr-forms-buttons saveLabel="Save payments"
                        resetLabel="Cancel"
                        [hideDelete]="true"
                        [disableSave]="paymentsForm().invalid() || paymentCount() === 0"
@@ -47,6 +47,6 @@
                        [failureMessages]="failureMessages()"
                        (save)="save()"
                        (resetAction)="cancel()">
-    </rts-forms-buttons>
+    </esr-forms-buttons>
   </div>
-</rts-loading-container>
+</esr-loading-container>

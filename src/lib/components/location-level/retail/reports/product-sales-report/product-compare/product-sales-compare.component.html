@@ -9,11 +9,11 @@
   <div class="flex gap-3 align-items-center">
     <div class="flex flex-column gap-2 flex-grow-1">
       @if (canAddProduct()) {
-        <rts-available-product-lookup class="flex-grow-1"
+        <esr-available-product-lookup class="flex-grow-1"
                                       [layout]="FormFieldLayout.COMPACT"
                                       [selectedProductIds]="selectedIds()"
                                       (productSelected)="addProduct($event)">
-        </rts-available-product-lookup>
+        </esr-available-product-lookup>
       }
 
       <div class="flex flex-wrap gap-2">
@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <rts-form-field label="Date sold, from"
+    <esr-form-field label="Date sold, from"
                     for="date-from"
                     class="col-2"
                     contentClass="w-full"
@@ -33,9 +33,9 @@
                      [showIcon]="true"
                      appendTo="body">
       </p-date-picker>
-    </rts-form-field>
+    </esr-form-field>
 
-    <rts-form-field label="Date sold, to"
+    <esr-form-field label="Date sold, to"
                     for="date-to"
                     class="col-2"
                     contentClass="w-full"
@@ -45,12 +45,12 @@
                      [showIcon]="true"
                      appendTo="body">
       </p-date-picker>
-    </rts-form-field>
+    </esr-form-field>
   </div>
 
-  <rts-error-summary [regularErrorMessages]="errorMessages()" />
+  <esr-error-summary [regularErrorMessages]="errorMessages()" />
 
-  <rts-loading-container [loading]="loading()">
+  <esr-loading-container [loading]="loading()">
     @if (summaries().length > 0) {
       <div class="border-1 surface-border border-round overflow-x-auto">
         <table class="compare">
@@ -69,7 +69,7 @@
             <tr>
               <th scope="row" class="text-left">Where gross sales went</th>
               @for (summary of summaries(); track summary.locationProductId) {
-                <td><rts-gross-sales-split [summary]="summary" [showLegend]="false" /></td>
+                <td><esr-gross-sales-split [summary]="summary" [showLegend]="false" /></td>
               }
             </tr>
 
@@ -104,5 +104,5 @@
         </table>
       </div>
     }
-  </rts-loading-container>
+  </esr-loading-container>
 </div>

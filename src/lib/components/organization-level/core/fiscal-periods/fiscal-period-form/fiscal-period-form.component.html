@@ -1,9 +1,9 @@
 <form class="flex flex-column gap-2">
-  <rts-form-field [required]="true" label="Name" for="name">
+  <esr-form-field [required]="true" label="Name" for="name">
     <input id="name" class="flex-grow-1" pInputText [formField]="periodForm.name"/>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-forms-buttons [disableReset]="!periodForm().dirty()"
+  <esr-forms-buttons [disableReset]="!periodForm().dirty()"
                      [disableSave]="periodForm().invalid() || !periodForm().dirty()"
                      [hideDelete]="true"
                      [signalForm]="periodForm()"
@@ -13,5 +13,5 @@
                      (save)="save()"
                      class="flex-grow-1"
                      (resetAction)="resetForm()">
-  </rts-forms-buttons>
+  </esr-forms-buttons>
 </form>

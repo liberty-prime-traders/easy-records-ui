@@ -1,9 +1,9 @@
-<rts-loading-container [loading]="loading()">
+<esr-loading-container [loading]="loading()">
   <div class="flex" id="payments-report" rtsAutoStretch="payments-report">
     @if (selectedTab() === 'payments') {
-      <rts-payments-filter-readonly class="col-2" (editFilters)="selectedTab.set('summary')"/>
+      <esr-payments-filter-readonly class="col-2" (editFilters)="selectedTab.set('summary')"/>
     } @else {
-      <rts-payments-filter class="col-3" />
+      <esr-payments-filter class="col-3" />
     }
 
     <p-divider layout="vertical"/>
@@ -22,14 +22,14 @@
 
         <p-tabpanels>
           <p-tabpanel value="summary">
-            <rts-payments-summary/>
+            <esr-payments-summary/>
           </p-tabpanel>
 
           <p-tabpanel value="payments">
-            <rts-payments-grid/>
+            <esr-payments-grid/>
           </p-tabpanel>
         </p-tabpanels>
       </p-tabs>
     </div>
   </div>
-</rts-loading-container>
+</esr-loading-container>

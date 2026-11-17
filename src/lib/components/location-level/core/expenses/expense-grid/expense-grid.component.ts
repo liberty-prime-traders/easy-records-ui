@@ -19,7 +19,7 @@ import {AutoStretchDirective} from '../../../../reusable/auto-stretch.directive'
 import {EmptyRowComponent} from '../../../../reusable/empty-row/empty-row.component'
 
 @Component({
-  selector: 'rts-expense-grid',
+  selector: 'esr-expense-grid',
   templateUrl: 'expense-grid.component.html',
   providers: [{provide: EXPENSE_ACTIONS, useExisting: ExpenseService}],
   imports: [

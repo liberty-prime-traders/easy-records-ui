@@ -1,4 +1,4 @@
-<rts-loading-container [loading]="isLoading()" loadingText="Building preview...">
+<esr-loading-container [loading]="isLoading()" loadingText="Building preview...">
   <div class="flex flex-column gap-3">
 
     <div class="flex flex-column">
@@ -8,13 +8,13 @@
       }
     </div>
 
-    <rts-form-field label="Delivered as" [layout]="FormFieldDirection.VERTICAL">
+    <esr-form-field label="Delivered as" [layout]="FormFieldDirection.VERTICAL">
       {{ deliveryLine().quantityDelivered }} {{ deliveryLine().unitId | fullUnitDescription }}
       at {{ deliveryLine().unitCost | currency }}
-    </rts-form-field>
+    </esr-form-field>
 
     <div class="flex gap-4">
-      <rts-form-field [required]="true"
+      <esr-form-field [required]="true"
                       label="Unit"
                       contentClass="w-full"
                       for="unitId"
@@ -25,9 +25,9 @@
                   [formField]="deliveryLineRevisionForm.unitId"
                   (onChange)="clearQuantityAndCost()">
         </p-select>
-      </rts-form-field>
+      </esr-form-field>
 
-      <rts-form-field [required]="true"
+      <esr-form-field [required]="true"
                       label="New Quantity ({{ deliveryLineRevisionFormValue().unitId | fullUnitDescription }})"
                       for="userProvidedQuantityDelivered"
                       [layout]="FormFieldDirection.VERTICAL">
@@ -36,9 +36,9 @@
                         [min]="0"
                         [maxFractionDigits]="2">
         </p-input-number>
-      </rts-form-field>
+      </esr-form-field>
 
-      <rts-form-field [required]="true"
+      <esr-form-field [required]="true"
                       label="New Unit Cost (per {{ deliveryLineRevisionFormValue().unitId | fullUnitDescription }})"
                       for="unitCost"
                       [layout]="FormFieldDirection.VERTICAL">
@@ -50,10 +50,10 @@
                         mode="currency"
                         currency="KES">
         </p-input-number>
-      </rts-form-field>
+      </esr-form-field>
     </div>
 
-    <rts-form-field [required]="true"
+    <esr-form-field [required]="true"
                     label="Reason"
                     for="reason"
                     contentClass="col-8"
@@ -64,16 +64,16 @@
                 class="flex-grow-1"
                 [formField]="deliveryLineRevisionForm.reason">
       </textarea>
-    </rts-form-field>
+    </esr-form-field>
 
     @if (deliveryLineRevisionForm().dirty()) {
-      <rts-error-summary [signalFormErrors]="deliveryLineRevisionForm().errorSummary()"
+      <esr-error-summary [signalFormErrors]="deliveryLineRevisionForm().errorSummary()"
                          [fieldMap]="DeliveryLineRevisionFormDefinition.fieldMap">
-      </rts-error-summary>
+      </esr-error-summary>
     }
-    <rts-error-summary [regularErrorMessages]="failureMessages()"/>
+    <esr-error-summary [regularErrorMessages]="failureMessages()"/>
     @if (saveFailureMessages().length > 0) {
-      <rts-error-summary [regularErrorMessages]="saveFailureMessages()"/>
+      <esr-error-summary [regularErrorMessages]="saveFailureMessages()"/>
       <small class="info-message">Preview the revision to see what needs fixing.</small>
     }
 
@@ -93,13 +93,13 @@
     </div>
 
   </div>
-</rts-loading-container>
+</esr-loading-container>
 
 @if (preview(); as preview) {
-  <rts-revision-preview-dialog [preview]="preview"
+  <esr-revision-preview-dialog [preview]="preview"
                                [(visible)]="previewVisible"
                                [deliveryLine]="deliveryLine()"
                                [saving]="isSaving()"
                                (saveRequested)="saveRevision()">
-  </rts-revision-preview-dialog>
+  </esr-revision-preview-dialog>
 }

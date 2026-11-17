@@ -27,7 +27,7 @@ import {ProductFilterService} from '../product-filter.service'
 import {ProductGridComponent} from '../product-grid/product-grid.component'
 
 @Component({
-  selector: 'rts-product',
+  selector: 'esr-product',
   templateUrl: 'product-general.component.html',
   imports: [
     TableModule,

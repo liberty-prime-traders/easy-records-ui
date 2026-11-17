@@ -22,7 +22,7 @@ import {LoadingContainerComponent} from '../../../../reusable/loading-container/
 import {JournalCorrectionFormDefinition} from './journal-correction-form.definition'
 
 @Component({
-  selector: 'rts-journal-correction-form',
+  selector: 'esr-journal-correction-form',
   templateUrl: 'journal-correction-form.component.html',
   imports: [
     FormsModule,

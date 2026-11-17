@@ -12,7 +12,7 @@
   </div>
 
   <div class="flex flex-wrap align-items-end gap-3">
-    <rts-form-field label="Date sold, from"
+    <esr-form-field label="Date sold, from"
                     for="date-from"
                     class="col-2"
                     contentClass="w-full"
@@ -22,9 +22,9 @@
                      [showIcon]="true"
                      appendTo="body">
       </p-date-picker>
-    </rts-form-field>
+    </esr-form-field>
 
-    <rts-form-field label="Date sold, to"
+    <esr-form-field label="Date sold, to"
                     for="date-to"
                     class="col-2"
                     contentClass="w-full"
@@ -34,9 +34,9 @@
                      [showIcon]="true"
                      appendTo="body">
       </p-date-picker>
-    </rts-form-field>
+    </esr-form-field>
 
-    <rts-form-field label="Search products"
+    <esr-form-field label="Search products"
                     for="product-health-search"
                     class="col-3"
                     contentClass="w-full"
@@ -45,7 +45,7 @@
              pInputText type="search"
              placeholder="Product name, etc."
              [formField]="searchForm.searchText"/>
-    </rts-form-field>
+    </esr-form-field>
   </div>
 
   @if (productsSelected) {
@@ -59,13 +59,13 @@
     </p-panel>
   }
 
-  <rts-error-summary [regularErrorMessages]="failureMessages()" />
+  <esr-error-summary [regularErrorMessages]="failureMessages()" />
 
-  <rts-loading-container [loading]="loading()">
+  <esr-loading-container [loading]="loading()">
     <div id="product-health-table" rtsAutoStretch="product-health-table">
       <ng-container *ngTemplateOutlet="productHealthTable"/>
     </div>
-  </rts-loading-container>
+  </esr-loading-container>
 </div>
 
 <ng-template #sortableHeader let-sortField="sortField" let-label="label">
@@ -191,7 +191,7 @@
     </ng-template>
 
     <ng-template #emptymessage>
-      <tr rts-empty-row [colspan]="8" message="No products with sales in this date range."></tr>
+      <tr esr-empty-row [colspan]="8" message="No products with sales in this date range."></tr>
     </ng-template>
   </p-table>
 </ng-template>

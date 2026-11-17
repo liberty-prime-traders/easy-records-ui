@@ -1,9 +1,9 @@
 <form class="flex flex-column gap-2" [ngClass]="productGroupFormValue().id ? '' : 'filled-background'">
-  <rts-form-field [required]="true" label="Group Name" for="groupName">
+  <esr-form-field [required]="true" label="Group Name" for="groupName">
     <input id="groupName" class="flex-grow-1" pInputText [formField]="productGroupForm.groupName" />
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field [required]="true" label="Product Category" for="categoryId">
+  <esr-form-field [required]="true" label="Product Category" for="categoryId">
     <p-select id="categoryId"
               class="flex-grow-1"
               [filter]="true"
@@ -13,13 +13,13 @@
               [formField]="productGroupForm.categoryId"
               placeholder="Select a Product Category" >
     </p-select>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field label="Description" for="description">
+  <esr-form-field label="Description" for="description">
     <input id="description" pInputText [formField]="productGroupForm.description" />
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-forms-buttons [disableReset]="!productGroupForm().dirty()"
+  <esr-forms-buttons [disableReset]="!productGroupForm().dirty()"
                      [disableSave]="productGroupForm().invalid() || !productGroupForm().dirty()"
                      [hideDelete]="!originalProductGroup()?.id"
                      [signalForm]="productGroupForm()"
@@ -29,5 +29,5 @@
                      (delete)="deleteProductGroup()"
                      (save)="upsertProductGroup()"
                      (resetAction)="resetForm()">
-  </rts-forms-buttons>
+  </esr-forms-buttons>
 </form>

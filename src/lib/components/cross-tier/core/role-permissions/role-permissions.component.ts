@@ -11,7 +11,7 @@ import {PrettifyEnumPipe} from '../../../../utils/pipes/prettify-enum.pipe'
 import {LoadingContainerComponent} from '../../../reusable/loading-container/loading-container.component'
 
 @Component({
-  selector: 'rts-role-permissions',
+  selector: 'esr-role-permissions',
   templateUrl: 'role-permissions.component.html',
   imports: [
     Chip,

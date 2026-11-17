@@ -14,7 +14,7 @@ import {LocationMigrationGridComponent} from './location-migration-grid/location
 import {MigrationStatusSeverityPipe} from './migration-status-severity.pipe'
 
 @Component({
-  selector: 'rts-migration-history',
+  selector: 'esr-migration-history',
   imports: [
     TableModule,
     Tag,

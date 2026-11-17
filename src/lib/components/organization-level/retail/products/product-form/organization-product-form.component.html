@@ -1,12 +1,12 @@
-<rts-loading-container [loading]="dependenciesLoading()">
+<esr-loading-container [loading]="dependenciesLoading()">
   <form class="flex flex-column gap-2" [ngClass]="productFormValue().id ? '' : 'filled-background'" >
     @let labelSize = originalProduct() ? 3 : 2;
 
-    <rts-form-field [required]="true" label="Product Name" for="productName" [labelColumnSize]="labelSize">
+    <esr-form-field [required]="true" label="Product Name" for="productName" [labelColumnSize]="labelSize">
       <input id="productName" class="flex-grow-1" pInputText [formField]="productForm.productName" />
-    </rts-form-field>
+    </esr-form-field>
 
-    <rts-form-field [required]="true" label="Product Group" for="productGroupId"  [labelColumnSize]="labelSize">
+    <esr-form-field [required]="true" label="Product Group" for="productGroupId"  [labelColumnSize]="labelSize">
       <p-select id="productGroupId"
                 class="flex-grow-1"
                 [options]="productGroups()"
@@ -17,10 +17,10 @@
                 [formField]="productForm.productGroupId"
                 placeholder="Select a Product Group" >
       </p-select>
-    </rts-form-field>
+    </esr-form-field>
 
     @if (!originalProduct()) {
-      <rts-form-field [required]="true" label="Base Unit Group" for="baseUnitGroupId" [labelColumnSize]="labelSize">
+      <esr-form-field [required]="true" label="Base Unit Group" for="baseUnitGroupId" [labelColumnSize]="labelSize">
         <p-select id="baseUnitGroupId"
                   class="flex-grow-1"
                   [options]="unitGroups()"
@@ -31,9 +31,9 @@
                   [formField]="productForm.baseUnitGroupId"
                   placeholder="Select a Unit Group" >
         </p-select>
-      </rts-form-field>
+      </esr-form-field>
 
-      <rts-form-field [required]="true" label="Base Unit" for="baseUnitId" [labelColumnSize]="labelSize">
+      <esr-form-field [required]="true" label="Base Unit" for="baseUnitId" [labelColumnSize]="labelSize">
         <p-select id="baseUnitId"
                   class="flex-grow-1"
                   [options]="unitValues()"
@@ -42,12 +42,12 @@
                   [formField]="productForm.baseUnitId"
                   placeholder="Select a Unit" >
         </p-select>
-      </rts-form-field>
+      </esr-form-field>
     }
 
-    <rts-form-field  label="Description" for="description" [labelColumnSize]="labelSize">
+    <esr-form-field  label="Description" for="description" [labelColumnSize]="labelSize">
       <input id="description" pInputText [formField]="productForm.description" />
-    </rts-form-field>
+    </esr-form-field>
 
     <p-panel class="m-4" header="Assign tags to product" toggleable [collapsed]="true">
       <p-pick-list
@@ -68,7 +68,7 @@
         filterBy="tagName"
         breakpoint="1400px">
         <ng-template let-item #item>
-          <rts-tag-display [currentTag]="item" [productFormValue]="productFormValue()"/>
+          <esr-tag-display [currentTag]="item" [productFormValue]="productFormValue()"/>
         </ng-template>
       </p-pick-list>
     </p-panel>
@@ -77,7 +77,7 @@
       <button pButton type="button" (click)="reactivateProduct()" severity="success">Reactivate</button>
 
     } @else {
-      <rts-forms-buttons [disableReset]="!productForm().dirty"
+      <esr-forms-buttons [disableReset]="!productForm().dirty"
                          [disableSave]="productForm().invalid() || !productForm().dirty"
                          [hideDelete]="!originalProduct()?.id"
                          [signalForm]="productForm()"
@@ -90,8 +90,8 @@
                          (delete)="deactivateProduct()"
                          (save)="upsertProduct()"
                          (resetAction)="resetForm()">
-      </rts-forms-buttons>
+      </esr-forms-buttons>
     }
 
   </form>
-</rts-loading-container>
+</esr-loading-container>

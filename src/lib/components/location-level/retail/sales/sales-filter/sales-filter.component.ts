@@ -16,7 +16,7 @@ import {FormFieldComponent} from '../../../../reusable/form-field/form-field.com
 import {SalesFilterState} from './sales-filter.state'
 
 @Component({
-  selector: 'rts-sales-filter',
+  selector: 'esr-sales-filter',
   templateUrl: 'sales-filter.component.html',
   imports: [
     DatePicker,

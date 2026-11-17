@@ -86,17 +86,17 @@
     <p-divider/>
 
     <div class="flex gap-2 flex-column">
-      <rts-form-field label="Voided By" [layout]="FormFieldLayout.COMPACT" contentClass="w-full">
+      <esr-form-field label="Voided By" [layout]="FormFieldLayout.COMPACT" contentClass="w-full">
         {{ saleSession().saleVoidInfo?.voidedBy | nullSafe }}
-      </rts-form-field>
+      </esr-form-field>
 
-      <rts-form-field label="Voided On" [layout]="FormFieldLayout.COMPACT" contentClass="w-full">
+      <esr-form-field label="Voided On" [layout]="FormFieldLayout.COMPACT" contentClass="w-full">
         {{ saleSession().saleVoidInfo?.voidedOn | date }}
-      </rts-form-field>
+      </esr-form-field>
 
-      <rts-form-field label="Void Reason" [layout]="FormFieldLayout.COMPACT" contentClass="w-full">
+      <esr-form-field label="Void Reason" [layout]="FormFieldLayout.COMPACT" contentClass="w-full">
         {{ saleSession().saleVoidInfo?.voidedReason | nullSafe }}
-      </rts-form-field>
+      </esr-form-field>
     </div>
   }
 

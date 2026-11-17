@@ -1,6 +1,6 @@
 <div id="fund-transfer-form">
   <div class="flex flex-column gap-2 filled-background" >
-    <rts-form-field [required]="true" label="Type" for="type">
+    <esr-form-field [required]="true" label="Type" for="type">
       <p-select id="type"
                 class="flex-grow-1"
                 optionLabel="label"
@@ -8,11 +8,11 @@
                 [options]="FundMovementType | enumToDropdown"
                 [formField]="fundTransferForm.type">
       </p-select>
-    </rts-form-field>
+    </esr-form-field>
 
-    <rts-loading-container [loading]="accountTreesLoading()">
+    <esr-loading-container [loading]="accountTreesLoading()">
       @if (isTransfer()) {
-        <rts-form-field [required]="true" label="From Account" for="fromAccount">
+        <esr-form-field [required]="true" label="From Account" for="fromAccount">
           <p-tree-select id="fromAccount"
                          class="flex-grow-1"
                          appendTo="body"
@@ -21,9 +21,9 @@
                          [ngModel]="fromAccount()"
                          (ngModelChange)="onFromAccountChange($event)">
           </p-tree-select>
-        </rts-form-field>
+        </esr-form-field>
 
-        <rts-form-field [required]="true" label="To Account" for="toAccount">
+        <esr-form-field [required]="true" label="To Account" for="toAccount">
           <p-tree-select id="toAccount"
                          class="flex-grow-1"
                          appendTo="body"
@@ -32,9 +32,9 @@
                          [ngModel]="toAccount()"
                          (ngModelChange)="onToAccountChange($event)">
           </p-tree-select>
-        </rts-form-field>
+        </esr-form-field>
       } @else {
-        <rts-form-field [required]="true" [label]="accountLabel()" for="account">
+        <esr-form-field [required]="true" [label]="accountLabel()" for="account">
           <p-tree-select id="account"
                          class="flex-grow-1"
                          appendTo="body"
@@ -43,11 +43,11 @@
                          [ngModel]="account()"
                          (ngModelChange)="onAccountChange($event)">
           </p-tree-select>
-        </rts-form-field>
+        </esr-form-field>
       }
-    </rts-loading-container>
+    </esr-loading-container>
 
-    <rts-form-field [required]="true" label="Amount" for="amount">
+    <esr-form-field [required]="true" label="Amount" for="amount">
       <p-input-number inputId="amount"
                       mode="currency"
                       currency="KES"
@@ -55,9 +55,9 @@
                       [min]="0"
                       [formField]="fundTransferForm.amount">
       </p-input-number>
-    </rts-form-field>
+    </esr-form-field>
 
-    <rts-form-field [required]="true" label="Date" for="movementDate">
+    <esr-form-field [required]="true" label="Date" for="movementDate">
       <p-date-picker inputId="movementDate"
                      class="flex-grow-1"
                      appendTo="body"
@@ -65,13 +65,13 @@
                      [maxDate]="today"
                      [formField]="fundTransferForm.movementDate">
       </p-date-picker>
-    </rts-form-field>
+    </esr-form-field>
 
-    <rts-form-field label="Note" for="note">
+    <esr-form-field label="Note" for="note">
       <input id="note" class="flex-grow-1" pInputText [formField]="fundTransferForm.note"/>
-    </rts-form-field>
+    </esr-form-field>
 
-    <rts-forms-buttons [disableReset]="!fundTransferForm().dirty()"
+    <esr-forms-buttons [disableReset]="!fundTransferForm().dirty()"
                        [disableSave]="fundTransferForm().invalid() || !fundTransferForm().dirty()"
                        [hideDelete]="true"
                        [signalForm]="fundTransferForm()"
@@ -80,6 +80,6 @@
                        [failureMessages]="failureMessages()"
                        (save)="save()"
                        (resetAction)="resetForm()">
-    </rts-forms-buttons>
+    </esr-forms-buttons>
   </div>
 </div>

@@ -17,7 +17,7 @@ interface SalePrintTotalRow {
 }
 
 @Component({
-  selector: 'rts-sale-print-content',
+  selector: 'esr-sale-print-content',
   templateUrl: 'sale-print-content.component.html',
   styleUrl: 'sale-print-content.component.scss',
   imports: [

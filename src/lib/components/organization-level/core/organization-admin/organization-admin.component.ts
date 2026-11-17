@@ -10,7 +10,7 @@ import {ProcessingStatus} from '../../../../utils/types/processing-status.enum'
 import {GridFilterComponent} from '../../../reusable/grid-filter/grid-filter.component'
 
 @Component({
-  selector: 'rts-admin',
+  selector: 'esr-admin',
   templateUrl: 'organization-admin.component.html',
   imports: [
     DatePipe,

@@ -5,7 +5,7 @@ import {InputIcon} from 'primeng/inputicon'
 import {InputText} from 'primeng/inputtext'
 
 @Component({
-  selector: 'rts-search',
+  selector: 'esr-search',
   imports: [
     InputText,
     InputIcon,

@@ -13,7 +13,7 @@ import {ProductGroupFormDefinition} from './product-group-form.definition'
 
 
 @Component({
-  selector: 'rts-product-group-form',
+  selector: 'esr-product-group-form',
   templateUrl: 'product-group-form.component.html',
   imports: [
     FormButtonsComponent,

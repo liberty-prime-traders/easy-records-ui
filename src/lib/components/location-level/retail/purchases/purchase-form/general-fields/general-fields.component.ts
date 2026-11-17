@@ -19,7 +19,7 @@ import {PurchaseFormContext} from '../form-utils/purchase-form-context'
 import {PurchaseGeneralFieldsFormDefinition} from '../form-utils/purchase-general-fields-form.definition'
 
 @Component({
-  selector: 'rts-purchase-form-general-fields',
+  selector: 'esr-purchase-form-general-fields',
   templateUrl: './general-fields.component.html',
   imports: [
     FormFieldComponent,

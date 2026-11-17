@@ -22,7 +22,7 @@ import {LoanFormComponent} from './loan-form/loan-form.component'
 const DEFAULT_RANGE_DAYS = 30
 
 @Component({
-  selector: 'rts-loan',
+  selector: 'esr-loan',
   templateUrl: 'loan.component.html',
   imports: [
     FormsModule,

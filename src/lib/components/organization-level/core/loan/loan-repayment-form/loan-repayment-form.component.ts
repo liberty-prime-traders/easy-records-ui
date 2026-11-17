@@ -17,7 +17,7 @@ import {LoadingContainerComponent} from '../../../../reusable/loading-container/
 import {LoanRepaymentFormDefinition} from './loan-repayment-form.definition'
 
 @Component({
-  selector: 'rts-loan-repayment-form',
+  selector: 'esr-loan-repayment-form',
   templateUrl: 'loan-repayment-form.component.html',
   imports: [
     FormsModule,

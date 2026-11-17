@@ -14,7 +14,7 @@ import {ExpenseFormComponent} from '../expense-form/expense-form.component'
 import {ExpensePaymentSubgridComponent} from '../expense-payment-subgrid/expense-payment-subgrid.component'
 
 @Component({
-  selector: 'rts-contextual-expense-grid',
+  selector: 'esr-contextual-expense-grid',
   templateUrl: 'contextual-expense-grid.component.html',
   providers: [{provide: EXPENSE_ACTIONS, useExisting: ContextualExpenseService}],
   imports: [

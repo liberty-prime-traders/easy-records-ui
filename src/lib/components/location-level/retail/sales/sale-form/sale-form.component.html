@@ -1,15 +1,15 @@
-<rts-loading-container [loading]="sessionIsLoading()">
+<esr-loading-container [loading]="sessionIsLoading()">
 
   @if (showUnsavedCarts()) {
-    <rts-open-sale-sessions />
+    <esr-open-sale-sessions />
 
   } @else {
     <div class="flex flex-column" id="sale-form" rtsAutoStretch="sale-form" [padding]="0">
-      <rts-sale-form-header/>
+      <esr-sale-form-header/>
 
       <div class="flex flex-grow-1">
         <div class="flex flex-column flex-grow-1 pt-3">
-          <rts-form-field label="Customer" class="pl-3">
+          <esr-form-field label="Customer" class="pl-3">
             @if (canEditCustomer()) {
               <div class="flex gap-2">
                 <p-select
@@ -34,26 +34,26 @@
             } @else {
               {{ saleSession().contactLabel | nullSafe }}
             }
-          </rts-form-field>
+          </esr-form-field>
 
           @if (canAddProducts()) {
-            <rts-available-product-lookup
+            <esr-available-product-lookup
               class="px-3"
               (productSelected)="sendLineRequest($event)"
               [selectedProductIds]="selectedProductIds()">
-            </rts-available-product-lookup>
+            </esr-available-product-lookup>
           }
 
-          <rts-sale-form-tabs class="flex-grow-1"/>
+          <esr-sale-form-tabs class="flex-grow-1"/>
         </div>
 
         @if (isPendingConsolidation()) {
-          <rts-sale-consolidation-panel class="col-3 p-0"/>
+          <esr-sale-consolidation-panel class="col-3 p-0"/>
         } @else {
-          <rts-sale-form-summary class="col-3 p-0"/>
+          <esr-sale-form-summary class="col-3 p-0"/>
         }
       </div>
     </div>
   }
 
-</rts-loading-container>
+</esr-loading-container>

@@ -3,7 +3,7 @@ import {BalanceEffect} from '../../../../../api/organization-level/core/chart-of
 import {MoneyComponent} from '../../../../reusable/money.component'
 
 @Component({
-  selector: 'rts-amount-change',
+  selector: 'esr-amount-change',
   templateUrl: 'amount-change.component.html',
   imports: [MoneyComponent]
 })

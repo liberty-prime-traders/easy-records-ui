@@ -20,7 +20,7 @@ import {LoadingContainerComponent} from '../../../../reusable/loading-container/
 import {FundTransferFormDefinition} from './fund-transfer-form.definition'
 
 @Component({
-  selector: 'rts-fund-transfer-form',
+  selector: 'esr-fund-transfer-form',
   templateUrl: 'fund-transfer-form.component.html',
   imports: [
     FormsModule,

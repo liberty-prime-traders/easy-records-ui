@@ -52,7 +52,7 @@
 
     <p-tabpanels>
       <p-tabpanel [value]="SummaryTab.PERFORMANCE">
-        <rts-performance-tab [figures]="performanceFigures()"
+        <esr-performance-tab [figures]="performanceFigures()"
                              [days]="performance()?.days ?? []"
                              [focusedDate]="focusedDate()"
                              [loading]="performanceLoading()"
@@ -61,11 +61,11 @@
                              [asOf]="performance()?.asOf"
                              (dayFocused)="focusDay($event)"
                              (retried)="retryPerformance()">
-        </rts-performance-tab>
+        </esr-performance-tab>
       </p-tabpanel>
 
       <p-tabpanel [value]="SummaryTab.NET_WORTH">
-        <rts-net-worth-tab [balances]="balanceSections()"
+        <esr-net-worth-tab [balances]="balanceSections()"
                            [days]="balances()?.days ?? []"
                            [focusedDate]="focusedDate()"
                            [loading]="balancesLoading()"
@@ -75,7 +75,7 @@
                            [changeSuffix]="balancesChangeSuffix()"
                            (dayFocused)="focusDay($event)"
                            (retried)="retryBalances()">
-        </rts-net-worth-tab>
+        </esr-net-worth-tab>
       </p-tabpanel>
     </p-tabpanels>
   </p-tabs>

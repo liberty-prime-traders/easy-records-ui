@@ -37,7 +37,7 @@ import {PurchaseLineFormDefinition} from '../form-utils/purchase-line-form.defin
 import PurchaseLineModel = PurchaseLineFormDefinition.PurchaseLineModel
 
 @Component({
-  selector: 'rts-purchase-lines',
+  selector: 'esr-purchase-lines',
   templateUrl: 'purchase-lines.component.html',
   imports: [
     TableModule,

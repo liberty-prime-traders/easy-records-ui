@@ -21,7 +21,7 @@ import {DeliveryGridComponent} from '../../purchase-deliveries/delivery-grid/del
 import {PurchaseLinesComponent} from './purchase-lines/purchase-lines.component'
 
 @Component({
-  selector: 'rts-purchase-form',
+  selector: 'esr-purchase-form',
   templateUrl: 'purchase-form.component.html',
   imports: [
     FormsModule,

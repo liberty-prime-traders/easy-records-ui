@@ -1,7 +1,7 @@
 import {Component} from '@angular/core'
 
 @Component({
-  selector: 'rts-homepage',
+  selector: 'esr-homepage',
   templateUrl: 'organization-summary.component.html',
 })
 export class OrganizationSummaryComponent {

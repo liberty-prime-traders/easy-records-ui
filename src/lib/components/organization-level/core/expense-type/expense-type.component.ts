@@ -13,7 +13,7 @@ import {GridWithAddButtonComponent} from '../../../reusable/grid-with-add-button
 import {ExpenseTypeFormComponent} from './expense-type-form/expense-type-form.component'
 
 @Component({
-  selector: 'rts-expense-type',
+  selector: 'esr-expense-type',
   templateUrl: 'expense-type.component.html',
   imports: [
     TableModule,

@@ -9,7 +9,7 @@ import {FormFieldLayout} from '../../../../reusable/form-field/form-field-layout
 import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
 
 @Component({
-  selector: 'rts-expense-void-form',
+  selector: 'esr-expense-void-form',
   templateUrl: 'expense-void-form.component.html',
   imports: [FormButtonsComponent, FormFieldComponent, FormField, InputText]
 })

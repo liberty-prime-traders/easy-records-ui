@@ -28,11 +28,11 @@
         </p-tag>
       </div>
 
-      <rts-sale-print-actions [sale]="originalSale"
+      <esr-sale-print-actions [sale]="originalSale"
                               [autoPrint]="autoPrintAfterConfirm()"
                               (autoPrinted)="markAutoPrinted()"
                               (printed)="startFreshFormAfterPrint()">
-      </rts-sale-print-actions>
+      </esr-sale-print-actions>
 
     } @else {
       <h2 class="m-0">New Sale</h2>

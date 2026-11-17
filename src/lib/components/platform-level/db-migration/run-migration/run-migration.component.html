@@ -1,6 +1,6 @@
-<rts-loading-container [loading]="migrationInProgress()">
+<esr-loading-container [loading]="migrationInProgress()">
   <form [formGroup]="migrationForm" class="flex flex-column gap-2 bg-white p-4">
-    <rts-form-field label="Organization" for="organizationId" [required]="true">
+    <esr-form-field label="Organization" for="organizationId" [required]="true">
       <p-select
         id="organizationId"
         formControlName="organizationId"
@@ -11,9 +11,9 @@
         [loading]="loadingOrganizations()"
         (onChange)="onOrganizationChange($event.value)">
       </p-select>
-    </rts-form-field>
+    </esr-form-field>
 
-    <rts-form-field label="Target DB Version" for="targetDbVersionId" [required]="true">
+    <esr-form-field label="Target DB Version" for="targetDbVersionId" [required]="true">
       <p-select
         id="targetDbVersionId"
         formControlName="targetDbVersionId"
@@ -23,10 +23,10 @@
         [showClear]="true"
         [loading]="loadingDbVersions()">
       </p-select>
-    </rts-form-field>
+    </esr-form-field>
 
 
-    <rts-form-field label="Locations to Migrate" for="locationIdsToMigrate">
+    <esr-form-field label="Locations to Migrate" for="locationIdsToMigrate">
       <p-select
         id="locationIdsToMigrate"
         formControlName="locationIdsToMigrate"
@@ -37,9 +37,9 @@
         [showClear]="true"
         [loading]="loadingLocations()">
       </p-select>
-    </rts-form-field>
+    </esr-form-field>
 
-    <rts-forms-buttons
+    <esr-forms-buttons
       [disableReset]="!migrationForm.dirty"
       [disableSave]="!migrationForm.valid || !migrationForm.dirty"
       [hideDelete]="true"
@@ -48,6 +48,6 @@
       saveLabel="Execute"
       (save)="runMigration()"
       (resetAction)="resetForm()">
-    </rts-forms-buttons>
+    </esr-forms-buttons>
   </form>
-</rts-loading-container>
+</esr-loading-container>

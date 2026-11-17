@@ -4,12 +4,12 @@ import {SchemaLevel} from '../../../../api/platform-level/table-registry/schema-
 import {ProductGeneralComponent} from '../../../cross-tier/retail/product/general-screen/product-general.component'
 
 @Component({
-  selector: 'rts-location-product',
+  selector: 'esr-location-product',
   imports: [
     ProductGeneralComponent
   ],
   providers: provideLocationServices(),
-  template: `<rts-product [schemaLevel]="SchemaLevel.LOCATION"/>`
+  template: `<esr-product [schemaLevel]="SchemaLevel.LOCATION"/>`
 })
 export class LocationProductComponent {
 

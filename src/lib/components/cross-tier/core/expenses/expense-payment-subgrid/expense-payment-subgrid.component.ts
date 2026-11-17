@@ -13,7 +13,7 @@ import {ExpensePaymentFormComponent} from '../expense-payment-form/expense-payme
 import {ExpenseVoidFormComponent} from '../expense-void-form/expense-void-form.component'
 
 @Component({
-  selector: 'rts-expense-payment-subgrid',
+  selector: 'esr-expense-payment-subgrid',
   templateUrl: 'expense-payment-subgrid.component.html',
   imports: [
     TableModule,

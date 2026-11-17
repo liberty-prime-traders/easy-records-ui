@@ -9,7 +9,7 @@ import {FormFieldComponent} from '../../../../reusable/form-field/form-field.com
 import {FiscalPeriodFormDefinition} from './fiscal-period-form.definition'
 
 @Component({
-  selector: 'rts-fiscal-period-form',
+  selector: 'esr-fiscal-period-form',
   templateUrl: 'fiscal-period-form.component.html',
   imports: [
     FormButtonsComponent,

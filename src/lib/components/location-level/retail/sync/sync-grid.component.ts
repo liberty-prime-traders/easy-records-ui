@@ -10,7 +10,7 @@ import {AutoStretchDirective} from '../../../reusable/auto-stretch.directive'
 import {SyncStatusSeverityPipe} from './sync-status-severity.pipe'
 
 @Component({
-  selector: 'rts-sync-grid',
+  selector: 'esr-sync-grid',
   templateUrl: 'sync-grid.component.html',
   imports: [
     TableModule,

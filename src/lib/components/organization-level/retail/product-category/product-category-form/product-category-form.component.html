@@ -1,13 +1,13 @@
 <form [formGroup]="productCategoryForm()" class="flex flex-column gap-2" [ngClass]="productCategory()?.id ? '' : 'filled-background'">
-  <rts-form-field [required]="true" label="Product Category Name" for="categoryName">
+  <esr-form-field [required]="true" label="Product Category Name" for="categoryName">
     <input id="categoryName" class="flex-grow-1" pInputText formControlName="categoryName">
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field label="Description" for="description">
+  <esr-form-field label="Description" for="description">
     <input id="description" pInputText formControlName="description">
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-forms-buttons [disableReset]="!productCategoryForm().dirty"
+  <esr-forms-buttons [disableReset]="!productCategoryForm().dirty"
                      [disableSave]="!productCategoryForm().valid || !productCategoryForm().dirty"
                      [hideDelete]="!productCategory()?.id"
                      [processingStatus]="processingStatus()"
@@ -15,5 +15,5 @@
                      (delete)="deleteProductCategory()"
                      (save)="upsertProductCategory()"
                      (resetAction)="resetForm()">
-  </rts-forms-buttons>
+  </esr-forms-buttons>
 </form>

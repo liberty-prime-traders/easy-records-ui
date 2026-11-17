@@ -7,7 +7,7 @@ import {AuthorityAssignmentComponent} from '../../cross-tier/core/authority-assi
 import {PlatformAuthoritiesComponent} from './platform-authorities.component'
 
 @Component({
-  selector: 'rts-access-control',
+  selector: 'esr-access-control',
   templateUrl: './access-control.component.html',
   imports: [
     TableModule,

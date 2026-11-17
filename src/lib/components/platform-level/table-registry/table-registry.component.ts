@@ -14,7 +14,7 @@ import {GridFilterComponent} from '../../reusable/grid-filter/grid-filter.compon
 import {TableRegistryFormComponent} from './table-registry-form/table-registry-form.component'
 
 @Component({
-  selector: 'rts-table-registries',
+  selector: 'esr-table-registries',
   templateUrl: 'table-registry.component.html',
   imports: [
     TableModule,

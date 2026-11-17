@@ -20,7 +20,7 @@ import {
 } from '../contact-opening-settlement-void-form/contact-opening-settlement-void-form.component'
 
 @Component({
-  selector: 'rts-contact-opening-settlement-grid',
+  selector: 'esr-contact-opening-settlement-grid',
   templateUrl: 'contact-opening-settlement-grid.component.html',
   imports: [
     TableModule,

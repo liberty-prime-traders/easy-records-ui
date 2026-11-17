@@ -8,7 +8,7 @@ import {
 import {EmptyRowComponent} from '../../../reusable/empty-row/empty-row.component'
 
 @Component({
-  selector: 'rts-taxes-summary',
+  selector: 'esr-taxes-summary',
   imports: [
     Table,
     Panel,

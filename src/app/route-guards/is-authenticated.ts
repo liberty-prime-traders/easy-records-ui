@@ -1,7 +1,7 @@
 import {inject, Injectable} from '@angular/core'
 import {CanActivate, CanActivateChild, GuardResult, MaybeAsync, Router} from '@angular/router'
 import {AuthenticationService} from '../../lib/api/platform-level/authentication/authentication.service'
-import {RtsGoogleAuthService} from '../../lib/utils/services/auth/rts-google-auth.service'
+import {RtsGoogleAuthService} from '../../lib/utils/services/auth/esr-google-auth.service'
 import {LOGGED_OUT_ROUTE} from '../app.routes'
 
 @Injectable({providedIn: 'root'})

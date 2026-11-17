@@ -31,7 +31,7 @@ import {NullSafePipe} from '../../../../../../utils/pipes/null-safe.pipe'
 import {PercentFigurePipe} from '../shared/percent-figure.pipe'
 
 @Component({
-  selector: 'rts-product-sales-compare',
+  selector: 'esr-product-sales-compare',
   templateUrl: 'product-sales-compare.component.html',
   styleUrl: 'product-sales-compare.component.scss',
   imports: [

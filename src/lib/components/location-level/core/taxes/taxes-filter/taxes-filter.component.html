@@ -1,7 +1,7 @@
 <div class="flex flex-column gap-3">
   <p-fieldset legend="" [toggleable]="true">
     <div class="flex flex-column gap-3">
-      <rts-form-field label="Fiscal Periods"
+      <esr-form-field label="Fiscal Periods"
                       for="fiscalPeriodIds"
                       [layout]="FormFieldDirection.COMPACT"
                       contentClass="col-11">
@@ -24,9 +24,9 @@
             }
           </ng-template>
         </p-select>
-      </rts-form-field>
+      </esr-form-field>
 
-      <rts-form-field label="Tax Types"
+      <esr-form-field label="Tax Types"
                       for="taxTypeIds"
                       [layout]="FormFieldDirection.COMPACT"
                       contentClass="col-11">
@@ -49,7 +49,7 @@
             }
           </ng-template>
         </p-select>
-      </rts-form-field>
+      </esr-form-field>
     </div>
   </p-fieldset>
 
@@ -71,7 +71,7 @@
 
   <p-fieldset legend="Others" [toggleable]="true" [collapsed]="true">
     <div class="flex flex-column gap-3">
-      <rts-form-field label="Tax Amount (KES)"
+      <esr-form-field label="Tax Amount (KES)"
                       for="minTaxAmount"
                       [layout]="FormFieldDirection.COMPACT"
                       contentClass="col-11">
@@ -79,9 +79,9 @@
           <p-input-number size="small" [formField]="state.filterForm.minTaxAmount" placeholder="Min"/>
           <p-input-number size="small" [formField]="state.filterForm.maxTaxAmount" placeholder="Max"/>
         </div>
-      </rts-form-field>
+      </esr-form-field>
 
-      <rts-form-field label="Source reference numbers"
+      <esr-form-field label="Source reference numbers"
                       for="sourceReferenceNumberInput"
                       [layout]="FormFieldDirection.COMPACT"
                       contentClass="col-11">
@@ -104,7 +104,7 @@
                [disabled]="state.filterForm.sourceReferenceNumbers().value().length >= state.maxSourceReferenceNumbers"
                (keydown.enter)="state.addSourceReferenceNumbers(sourceReferenceNumberInput.value); sourceReferenceNumberInput.value = ''"
                (paste)="state.addSourceReferenceNumbers($event.clipboardData?.getData('text') ?? ''); $event.preventDefault()" />
-      </rts-form-field>
+      </esr-form-field>
     </div>
   </p-fieldset>
 

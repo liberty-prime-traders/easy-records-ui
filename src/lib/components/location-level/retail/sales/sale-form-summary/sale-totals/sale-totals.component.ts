@@ -9,7 +9,7 @@ import {FormFieldComponent} from '../../../../../reusable/form-field/form-field.
 import {SaleFormContext} from '../../form-utils/sale-form-context'
 
 @Component({
-  selector: 'rts-sale-totals',
+  selector: 'esr-sale-totals',
   templateUrl: 'sale-totals.component.html',
   imports: [
     Divider,

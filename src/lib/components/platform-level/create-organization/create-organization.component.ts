@@ -15,7 +15,7 @@ import {FormFieldComponent} from '../../reusable/form-field/form-field.component
 import {CreateOrganizationFormDefinition} from './create-organization-form.definition'
 
 @Component({
-  selector: 'rts-create-organization',
+  selector: 'esr-create-organization',
   templateUrl: 'create-organization.component.html',
   imports: [
     ButtonDirective,

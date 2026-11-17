@@ -1,7 +1,7 @@
 <div class="flex flex-column gap-3">
   <span class="text-lg font-semibold">Select Location</span>
 
-  <rts-loading-container [loading]="loading()">
+  <esr-loading-container [loading]="loading()">
     <div class="flex flex-column gap-1">
       @for (location of locations(); track location.id) {
 
@@ -19,6 +19,6 @@
         }
       }
     </div>
-  </rts-loading-container>
+  </esr-loading-container>
 
 </div>

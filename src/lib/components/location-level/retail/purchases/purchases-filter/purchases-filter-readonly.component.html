@@ -40,19 +40,19 @@
 
   @if (state.supplierNames().length > 0) {
     <p-fieldset legend="Suppliers">
-      <rts-truncated-list [items]="state.supplierNames()"/>
+      <esr-truncated-list [items]="state.supplierNames()"/>
     </p-fieldset>
   }
 
   @if (state.purchaseStatusLabels().length > 0) {
     <p-fieldset legend="Purchase Status">
-      <rts-truncated-list [items]="state.purchaseStatusLabels()"/>
+      <esr-truncated-list [items]="state.purchaseStatusLabels()"/>
     </p-fieldset>
   }
 
   @if (state.paymentStatusLabels().length > 0) {
     <p-fieldset legend="Payment Status">
-      <rts-truncated-list [items]="state.paymentStatusLabels()"/>
+      <esr-truncated-list [items]="state.paymentStatusLabels()"/>
     </p-fieldset>
   }
 
@@ -68,7 +68,7 @@
 
   @if (state.filterFormValue().purchaseReferenceNumbers.length > 0) {
     <p-fieldset legend="Purchase references">
-      <rts-truncated-list [items]="state.filterFormValue().purchaseReferenceNumbers"/>
+      <esr-truncated-list [items]="state.filterFormValue().purchaseReferenceNumbers"/>
     </p-fieldset>
   }
 

@@ -10,7 +10,7 @@ import {NullishToZeroPipe} from '../../../../../utils/pipes/nullish-to-zero.pipe
 import {OpeningStockDeclarationService} from './opening-stock-declaration.service'
 
 @Component({
-  selector: 'rts-opening-stock-cell',
+  selector: 'esr-opening-stock-cell',
   templateUrl: 'opening-stock-cell.component.html',
   imports: [
     FormsModule,

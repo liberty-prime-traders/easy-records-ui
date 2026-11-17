@@ -9,7 +9,7 @@ import {FormFieldComponent} from '../../../reusable/form-field/form-field.compon
 import {PlatformFeatureFormDefinition} from './platform-feature-form.definition'
 
 @Component({
-  selector: 'rts-platform-feature-form',
+  selector: 'esr-platform-feature-form',
   templateUrl: 'platform-feature-form.component.html',
   imports: [
     FormButtonsComponent,

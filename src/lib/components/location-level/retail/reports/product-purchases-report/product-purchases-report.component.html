@@ -1,5 +1,5 @@
 <div class="flex gap-3">
-  <rts-product-purchases-report-filter class="w-15rem"/>
+  <esr-product-purchases-report-filter class="w-15rem"/>
 
   <p-divider layout="vertical" />
 
@@ -10,7 +10,7 @@
       <div class="flex gap-3 text-sm">
         <div class="flex gap-1">
           <span class="info-message">Total Cost</span>
-          <rts-money [amount]="totalCost()" [balanceEffect]="BalanceEffect.ADDS" />
+          <esr-money [amount]="totalCost()" [balanceEffect]="BalanceEffect.ADDS" />
         </div>
 
         <div class="flex gap-1">
@@ -72,15 +72,15 @@
         <ng-template #expandedrow let-row>
           <tr>
             <td colspan="7" class="filled-background">
-              <rts-product-purchases-delivery-lines-grid [locationProductId]="row.locationProductId"
+              <esr-product-purchases-delivery-lines-grid [locationProductId]="row.locationProductId"
                                                          [parameters]="filterState.deliveryLinesParameters()">
-              </rts-product-purchases-delivery-lines-grid>
+              </esr-product-purchases-delivery-lines-grid>
             </td>
           </tr>
         </ng-template>
 
         <ng-template #emptymessage>
-          <tr rts-empty-row [colspan]="7" message="No deliveries in this range."></tr>
+          <tr esr-empty-row [colspan]="7" message="No deliveries in this range."></tr>
         </ng-template>
       </p-table>
     </div>

@@ -7,7 +7,7 @@ import {LoadingContainerComponent} from '../../../reusable/loading-container/loa
 import {OrganizationLaunchService} from './organization-launch.service'
 
 @Component({
-  selector: 'rts-organization-nav-content',
+  selector: 'esr-organization-nav-content',
   templateUrl: 'organization-nav-content.component.html',
   imports: [
     Divider,

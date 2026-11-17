@@ -22,13 +22,13 @@
 
   @if (loan().status === LoanStatus.OPEN) {
     @if (voidingLoanIsVisible()) {
-      <rts-loan-void-form [loan]="loan()"
+      <esr-loan-void-form [loan]="loan()"
                           (voided)="changed.emit()"
                           (cancelled)="voidingLoanIsVisible.set(false)">
-      </rts-loan-void-form>
+      </esr-loan-void-form>
     } @else {
       <p-panel header="Record Payment" [toggleable]="true" [collapsed]="true">
-        <rts-loan-repayment-form [loan]="loan()" (repaymentRecorded)="changed.emit()"/>
+        <esr-loan-repayment-form [loan]="loan()" (repaymentRecorded)="changed.emit()"/>
       </p-panel>
     }
   }
@@ -72,17 +72,17 @@
             } @else if (loan().status === LoanStatus.VOIDED) {
               <span>This repayment was reversed when the loan was voided.</span>
             } @else {
-              <rts-loan-repayment-void-form [repayment]="repayment"
+              <esr-loan-repayment-void-form [repayment]="repayment"
                                             (voided)="changed.emit()"
                                             (cancelled)="repaymentsTable.toggleRow(repayment)">
-              </rts-loan-repayment-void-form>
+              </esr-loan-repayment-void-form>
             }
           </td>
         </tr>
       </ng-template>
 
       <ng-template #emptymessage>
-        <tr rts-empty-row [colspan]="6" message="No repayments recorded"></tr>
+        <tr esr-empty-row [colspan]="6" message="No repayments recorded"></tr>
       </ng-template>
     </p-table>
   </p-panel>

@@ -29,7 +29,7 @@ import {SaleLineFormDefinition} from '../../form-utils/sale-line-form.definition
 import {SaleLineHasChangedPipe} from '../sale-line-has-changed.pipe'
 
 @Component({
-  selector: 'rts-editable-sale-lines',
+  selector: 'esr-editable-sale-lines',
   imports: [
     AlternativeUnitsFinderPipe,
     Badge,

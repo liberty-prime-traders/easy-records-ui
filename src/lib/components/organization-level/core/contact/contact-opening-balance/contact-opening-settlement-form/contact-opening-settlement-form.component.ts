@@ -21,7 +21,7 @@ import {FormFieldComponent} from '../../../../../reusable/form-field/form-field.
 import {ContactOpeningSettlementFormDefinition} from './contact-opening-settlement-form.definition'
 
 @Component({
-  selector: 'rts-contact-opening-settlement-form',
+  selector: 'esr-contact-opening-settlement-form',
   templateUrl: 'contact-opening-settlement-form.component.html',
   imports: [
     FormField,

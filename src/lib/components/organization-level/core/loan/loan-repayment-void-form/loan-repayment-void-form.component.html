@@ -1,12 +1,12 @@
 <div class="flex flex-column gap-3">
-  <rts-form-field label="Void Reason"
+  <esr-form-field label="Void Reason"
                   [layout]="FormFieldDirection.VERTICAL"
                   class="col-5"
                   contentClass="col-12">
     <textarea pInputText class="w-full" rows="3" [formField]="voidForm.reason"></textarea>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-forms-buttons deleteLabel="Void Repayment"
+  <esr-forms-buttons deleteLabel="Void Repayment"
                      deleteWarning="This reverses the ledger entry and cannot be undone."
                      deleteInProgressMessage="Voiding repayment..."
                      deleteIcon="pi pi-ban"
@@ -16,5 +16,5 @@
                      [failureMessages]="failureMessages()"
                      (resetAction)="cancelled.emit()"
                      (delete)="confirmVoid()">
-  </rts-forms-buttons>
+  </esr-forms-buttons>
 </div>

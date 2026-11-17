@@ -28,7 +28,7 @@ interface AssignableUser {
 }
 
 @Component({
-  selector: 'rts-authority-assignment',
+  selector: 'esr-authority-assignment',
   templateUrl: 'authority-assignment.component.html',
   imports: [
     ButtonDirective,

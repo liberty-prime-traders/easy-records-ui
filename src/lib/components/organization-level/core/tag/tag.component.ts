@@ -15,7 +15,7 @@ import {GridWithAddButtonComponent} from '../../../reusable/grid-with-add-button
 import {TagFormComponent} from './tag-form/tag-form.component'
 
 @Component({
-  selector: 'rts-tag',
+  selector: 'esr-tag',
   templateUrl: 'tag.component.html',
   imports: [
     TableModule,

@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core'
 
 @Component({
-  selector: 'tr' + '[rts-empty-row]',
+  selector: 'tr' + '[esr-empty-row]',
   templateUrl: './empty-row.component.html',
   imports: []
 })

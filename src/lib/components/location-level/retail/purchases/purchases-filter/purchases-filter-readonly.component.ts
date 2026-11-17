@@ -7,7 +7,7 @@ import {TruncatedListComponent} from '../../../../reusable/truncated-list/trunca
 import {PurchasesFilterState} from './purchases-filter.state'
 
 @Component({
-  selector: 'rts-purchases-filter-readonly',
+  selector: 'esr-purchases-filter-readonly',
   imports: [
     OrgDateTimePipe,
     DecimalPipe,

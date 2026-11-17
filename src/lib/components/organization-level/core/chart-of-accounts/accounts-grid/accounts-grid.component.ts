@@ -20,7 +20,7 @@ import {AccountPopUpReason} from '../account-pop-up-reason.enum'
 import {OpeningBalanceEditComponent} from '../opening-balance-edit/opening-balance-edit.component'
 
 @Component({
-  selector: 'rts-accounts-grid',
+  selector: 'esr-accounts-grid',
   imports: [
     AccountFormComponent,
     AutoStretchDirective,

@@ -24,12 +24,12 @@
     </p-message>
   }
 
-  <rts-error-summary [fieldMap]="bulkPaymentFormFields"
+  <esr-error-summary [fieldMap]="bulkPaymentFormFields"
                      [regularErrorMessages]="failureMessages()"
                      [signalFormErrors]="bulkPaymentForm().errorSummary()">
-  </rts-error-summary>
+  </esr-error-summary>
 
-  <rts-form-field label="Amount"
+  <esr-form-field label="Amount"
                   for="amount"
                   contentClass="w-full"
                   [required]="true"
@@ -40,9 +40,9 @@
                     [min]="0"
                     [formField]="bulkPaymentForm.amount">
     </p-input-number>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field label="Payment Method"
+  <esr-form-field label="Payment Method"
                   for="paymentMethodId"
                   contentClass="w-full"
                   [required]="true"
@@ -55,9 +55,9 @@
               appendTo="body"
               placeholder="Select method...">
     </p-select>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field label="Payment Date"
+  <esr-form-field label="Payment Date"
                   for="paymentDate"
                   contentClass="w-full"
                   [required]="true"
@@ -67,9 +67,9 @@
                    [formField]="bulkPaymentForm.paymentDate"
                    appendTo="body">
     </p-date-picker>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field label="Notes"
+  <esr-form-field label="Notes"
                   for="notes"
                   contentClass="w-full"
                   [layout]="FormFieldDirection.VERTICAL">
@@ -80,5 +80,5 @@
               [formField]="bulkPaymentForm.notes"
               placeholder="Optional notes">
     </textarea>
-  </rts-form-field>
+  </esr-form-field>
 </ng-template>

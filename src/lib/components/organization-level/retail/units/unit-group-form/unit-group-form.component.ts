@@ -10,7 +10,7 @@ import {FormFieldComponent} from '../../../../reusable/form-field/form-field.com
 import {UnitGroupFormDefinition} from './unit-group-form.definition'
 
 @Component({
-  selector: 'rts-unit-group-form',
+  selector: 'esr-unit-group-form',
   templateUrl: 'unit-group-form.component.html',
   imports: [
     InputText,

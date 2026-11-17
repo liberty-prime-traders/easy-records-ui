@@ -18,7 +18,7 @@ import {ContactFormComponent} from './contact-form/contact-form.component'
 import {ContactNamePipe} from './contact-name.pipe'
 
 @Component({
-  selector: 'rts-contact',
+  selector: 'esr-contact',
   templateUrl: 'contact.component.html',
   imports: [
     TableModule,

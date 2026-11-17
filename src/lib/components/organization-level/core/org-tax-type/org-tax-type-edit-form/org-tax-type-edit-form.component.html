@@ -1,14 +1,14 @@
 <div class="flex flex-column gap-2 form-container">
-  <rts-form-field [required]="true" label="Status" for="status">
+  <esr-form-field [required]="true" label="Status" for="status">
     <p-select id="status"
               class="flex-grow-1"
               [options]="OrgTaxTypeStatus | enumToDropdown"
               [formField]="editForm.status">
     </p-select>
-  </rts-form-field>
+  </esr-form-field>
 
   @if (isCoaEnabled()) {
-    <rts-form-field [required]="true" label="Payable Account" for="payableAccount">
+    <esr-form-field [required]="true" label="Payable Account" for="payableAccount">
       <p-tree-select id="payableAccount"
                      [options]="payableAccounts()"
                      [loading]="accountTreesLoading()"
@@ -17,10 +17,10 @@
                      placeholder="Select a Payable Account"
                      class="flex-grow-1">
       </p-tree-select>
-    </rts-form-field>
+    </esr-form-field>
 
     @if (formValue().taxRecoveryType === TaxRecoveryType.RECOVERABLE) {
-      <rts-form-field label="Recoverable Account" [required]="true" for="recoverableAccount">
+      <esr-form-field label="Recoverable Account" [required]="true" for="recoverableAccount">
         <p-tree-select id="recoverableAccount"
                        [options]="recoverableAccounts()"
                        [loading]="accountTreesLoading()"
@@ -29,11 +29,11 @@
                        placeholder="Select a Recoverable Account"
                        class="flex-grow-1">
         </p-tree-select>
-      </rts-form-field>
+      </esr-form-field>
     }
   }
 
-  <rts-forms-buttons [disableSave]="editForm().invalid() || !editForm().dirty()"
+  <esr-forms-buttons [disableSave]="editForm().invalid() || !editForm().dirty()"
                      [disableReset]="!editForm().dirty()"
                      [hideDelete]="true"
                      [signalForm]="editForm()"
@@ -42,5 +42,5 @@
                      [failureMessages]="failureMessages()"
                      (save)="save()"
                      (resetAction)="resetForm()">
-  </rts-forms-buttons>
+  </esr-forms-buttons>
 </div>

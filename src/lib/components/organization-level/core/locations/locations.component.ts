@@ -15,7 +15,7 @@ import {GridWithAddButtonComponent} from '../../../reusable/grid-with-add-button
 import {LocationFormComponent} from './location-form/location-form.component'
 
 @Component({
-  selector: 'rts-location',
+  selector: 'esr-location',
   templateUrl: 'locations.component.html',
   imports: [
     AddRowComponent,

@@ -15,7 +15,7 @@ import {TrendChartComponent} from '../trend-chart/trend-chart.component'
 import {buildCollectedRows, buildProfitAndLossRows, hasActivity} from '../summary-view.util'
 
 @Component({
-  selector: 'rts-performance-tab',
+  selector: 'esr-performance-tab',
   templateUrl: 'performance-tab.component.html',
   styleUrl: 'performance-tab.component.scss',
   imports: [

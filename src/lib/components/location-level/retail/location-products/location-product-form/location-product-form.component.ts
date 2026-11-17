@@ -15,7 +15,7 @@ import {StockHistoryComponent} from '../../stock-history/stock-history.component
 import {LocationProductFormDefinition} from './location-product-form.definition'
 
 @Component({
-  selector: 'rts-location-product-form',
+  selector: 'esr-location-product-form',
   templateUrl: 'location-product-form.component.html',
   imports: [
     InputNumber,

@@ -11,7 +11,7 @@ import {FormFieldComponent} from '../../../reusable/form-field/form-field.compon
 import {LoadingContainerComponent} from '../../../reusable/loading-container/loading-container.component'
 
 @Component({
-  selector: 'rts-run-migration',
+  selector: 'esr-run-migration',
   imports: [
     FormsModule,
     ReactiveFormsModule,

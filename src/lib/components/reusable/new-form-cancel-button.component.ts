@@ -2,7 +2,7 @@ import {ChangeDetectionStrategy, Component, output} from '@angular/core'
 import {ButtonDirective} from 'primeng/button'
 
 @Component({
-  selector: 'rts-new-form-cancel-button',
+  selector: 'esr-new-form-cancel-button',
   imports: [
     ButtonDirective
   ],

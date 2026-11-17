@@ -5,7 +5,7 @@ import {StockTransferDetailComponent} from './stock-transfer-detail.component'
 import {StockTransferFormContext} from './stock-transfer-form-context'
 
 @Component({
-  selector: 'rts-location-stock-transfer-form',
+  selector: 'esr-location-stock-transfer-form',
   templateUrl: 'stock-transfer-form.component.html',
   imports: [
     StockTransferCreateFormComponent,

@@ -9,7 +9,7 @@ import {FormFieldComponent} from '../../../../reusable/form-field/form-field.com
 
 
 @Component({
-  selector: 'rts-job-title-form',
+  selector: 'esr-job-title-form',
   templateUrl: 'job-title-form.component.html',
   imports: [
     FormButtonsComponent,

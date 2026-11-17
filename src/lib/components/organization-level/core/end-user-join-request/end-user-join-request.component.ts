@@ -19,7 +19,7 @@ import {EmptyRowComponent} from '../../../reusable/empty-row/empty-row.component
 import {GridFilterComponent} from '../../../reusable/grid-filter/grid-filter.component'
 
 @Component({
-  selector: 'rts-end-user-join-request',
+  selector: 'esr-end-user-join-request',
   templateUrl: 'end-user-join-request.component.html',
   imports: [
     DatePipe,

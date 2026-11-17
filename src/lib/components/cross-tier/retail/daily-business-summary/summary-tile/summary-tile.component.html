@@ -12,7 +12,7 @@
         {{ amount() | currency }}
       </span>
       @if (change() !== null) {
-        <rts-amount-change [amount]="change()!" [suffix]="changeSuffix()" [changeEffect]="changeEffect()" />
+        <esr-amount-change [amount]="change()!" [suffix]="changeSuffix()" [changeEffect]="changeEffect()" />
       } @else if (subLabel()) {
         <span class="text-color-secondary">{{ subLabel() }}</span>
       }

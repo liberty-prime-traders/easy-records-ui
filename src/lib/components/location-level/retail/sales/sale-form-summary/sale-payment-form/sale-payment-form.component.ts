@@ -21,7 +21,7 @@ import {SaleFormContext} from '../../form-utils/sale-form-context'
 import {SalePaymentFormDefinition} from '../../form-utils/sale-payment-form-definition'
 
 @Component({
-  selector: 'rts-sale-payment-form',
+  selector: 'esr-sale-payment-form',
   templateUrl: 'sale-payment-form.component.html',
   styleUrl: 'sale-payment-form.component.scss',
   imports: [

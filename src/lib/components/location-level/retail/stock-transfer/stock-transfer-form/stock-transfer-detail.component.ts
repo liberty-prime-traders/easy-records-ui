@@ -16,7 +16,7 @@ import {StockTransferStatusSeverityPipe} from '../stock-transfer-status-severity
 import {StockTransferFormContext} from './stock-transfer-form-context'
 
 @Component({
-  selector: 'rts-location-stock-transfer-detail',
+  selector: 'esr-location-stock-transfer-detail',
   templateUrl: 'stock-transfer-detail.component.html',
   imports: [
     ButtonDirective,

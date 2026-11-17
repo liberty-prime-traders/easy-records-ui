@@ -5,7 +5,7 @@ import {ScreenSizeService} from '../../utils/services/screen-size.service'
 import {GoogleAuthComponent} from '../auth/google/google-auth.component'
 
 @Component({
-  selector: 'rts-public',
+  selector: 'esr-public',
   imports: [
     AsyncPipe,
     Card,

@@ -31,7 +31,7 @@ import {PurchaseDeliveryFormDefinition} from './purchase-delivery-form.definitio
 import {PurchaseFormContext} from '../../purchases/purchase-form/form-utils/purchase-form-context'
 
 @Component({
-  selector: 'rts-purchase-delivery-form',
+  selector: 'esr-purchase-delivery-form',
   templateUrl: 'delivery-form.component.html',
   imports: [
     TableModule,

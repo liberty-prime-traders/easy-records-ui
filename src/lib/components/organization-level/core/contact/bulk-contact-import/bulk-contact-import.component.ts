@@ -14,7 +14,7 @@ import {FormFieldComponent} from '../../../../reusable/form-field/form-field.com
 import {LoadingContainerComponent} from '../../../../reusable/loading-container/loading-container.component'
 
 @Component({
-  selector: 'rts-bulk-contact-import',
+  selector: 'esr-bulk-contact-import',
   imports: [
     FormFieldComponent,
     InputText,

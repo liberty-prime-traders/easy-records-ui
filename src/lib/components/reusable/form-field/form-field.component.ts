@@ -3,7 +3,7 @@ import {Component, computed, input} from '@angular/core'
 import {FormFieldLayout} from './form-field-layout'
 
 @Component({
-  selector: 'rts-form-field',
+  selector: 'esr-form-field',
   templateUrl: './form-field.component.html',
   imports: [
     NgClass

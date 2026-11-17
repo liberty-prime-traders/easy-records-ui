@@ -6,7 +6,7 @@ import {SessionContextService} from '../../../../utils/services/session-context.
 import {NavigationScope, ScopePillConfig} from '../navigation-scope.model'
 
 @Component({
-  selector: 'rts-scope-pill',
+  selector: 'esr-scope-pill',
   templateUrl: 'scope-pill.component.html',
   imports: [
     NgStyle,

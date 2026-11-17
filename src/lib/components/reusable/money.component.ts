@@ -3,7 +3,7 @@ import {Component, computed, input} from '@angular/core'
 import {BalanceEffect, findColorClass} from '../../api/organization-level/core/chart-of-accounts/balance-effect.enum'
 
 @Component({
-  selector: 'rts-money',
+  selector: 'esr-money',
   imports: [
     NgClass,
     CurrencyPipe

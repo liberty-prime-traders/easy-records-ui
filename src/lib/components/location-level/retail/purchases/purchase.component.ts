@@ -18,7 +18,7 @@ import {PurchasesFilterState} from './purchases-filter/purchases-filter.state'
 import {PurchasesSummaryComponent} from './purchases-summary.component'
 
 @Component({
-  selector: 'rts-purchases',
+  selector: 'esr-purchases',
   templateUrl: 'purchase.component.html',
   providers: [PurchaseFormContext],
   imports: [

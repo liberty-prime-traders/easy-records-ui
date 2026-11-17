@@ -7,7 +7,7 @@ import {NavigationScope} from '../../lib/components/welcome/top-navigation/navig
 import {SessionReauthenticationService} from '../../lib/utils/services/auth/session-reauthentication.service'
 import {UserContextService} from '../../lib/utils/services/auth/user-context.service'
 import {SessionContextService} from '../../lib/utils/services/session-context.service'
-import {RtsHttpInterceptor} from './rts-http.interceptor'
+import {RtsHttpInterceptor} from './esr-http.interceptor'
 
 describe('RtsHttpInterceptor location header', () => {
   const selectedScope = signal(NavigationScope.ORG)

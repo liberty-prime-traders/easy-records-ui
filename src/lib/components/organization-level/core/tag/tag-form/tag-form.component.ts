@@ -14,7 +14,7 @@ import {FormFieldComponent} from '../../../../reusable/form-field/form-field.com
 
 
 @Component({
-  selector: 'rts-tag-form',
+  selector: 'esr-tag-form',
   templateUrl: 'tag-form.component.html',
   imports: [
     FormButtonsComponent,

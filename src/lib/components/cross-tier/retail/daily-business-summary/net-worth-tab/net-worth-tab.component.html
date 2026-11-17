@@ -10,26 +10,26 @@
     <div class="tiles">
       @if (loading()) {
         @for (placeholder of [1, 2, 3, 4, 5]; track placeholder) {
-          <rts-summary-tile label="" [loading]="true" />
+          <esr-summary-tile label="" [loading]="true" />
         }
       } @else {
         @for (tile of otherTiles(); track tile.label) {
-          <rts-summary-tile [label]="tile.label"
+          <esr-summary-tile [label]="tile.label"
                             [amount]="tile.amount"
                             [caption]="tile.caption"
                             [change]="tile.change"
                             [changeEffect]="tile.changeEffect">
-          </rts-summary-tile>
+          </esr-summary-tile>
         }
       }
     </div>
     <div class="overview">
       @if (loading()) {
-        <rts-summary-tile class="featured" label="" [loading]="true" />
+        <esr-summary-tile class="featured" label="" [loading]="true" />
         <p-skeleton class="overview-chart" height="18rem" />
       } @else {
         @if (featuredTile(); as tile) {
-          <rts-summary-tile class="featured"
+          <esr-summary-tile class="featured"
                             [label]="tile.label"
                             [amount]="tile.amount"
                             [caption]="tile.caption"
@@ -37,13 +37,13 @@
                             [changeSuffix]="changeSuffix()"
                             [changeEffect]="tile.changeEffect"
                             [emphasized]="true">
-          </rts-summary-tile>
+          </esr-summary-tile>
         }
-        <rts-net-worth-chart class="overview-chart"
+        <esr-net-worth-chart class="overview-chart"
                              [days]="days()"
                              [focusedDate]="focusedDate()"
                              (dayFocused)="dayFocused.emit($event)">
-        </rts-net-worth-chart>
+        </esr-net-worth-chart>
       }
     </div>
     @if (loading()) {
@@ -75,7 +75,7 @@
                   </td>
                   <td class="text-right tabular-nums" [ngClass]="{'irregular-balance': row.closingBalanceEffect === BalanceEffect.IRREGULAR}">{{ row.closingBalance | currency }}</td>
                   <td class="text-right">
-                    <rts-amount-change [amount]="row.change" [changeEffect]="row.changeEffect ?? BalanceEffect.ZERO" />
+                    <esr-amount-change [amount]="row.change" [changeEffect]="row.changeEffect ?? BalanceEffect.ZERO" />
                   </td>
                 </tr>
               }

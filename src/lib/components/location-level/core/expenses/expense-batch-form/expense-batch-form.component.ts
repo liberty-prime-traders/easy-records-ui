@@ -23,7 +23,7 @@ import {LoadingContainerComponent} from '../../../../reusable/loading-container/
 import {ExpenseBatchFormDefinition} from './expense-batch-form.definition'
 
 @Component({
-  selector: 'rts-expense-batch-form',
+  selector: 'esr-expense-batch-form',
   templateUrl: 'expense-batch-form.component.html',
   imports: [
     FormField,

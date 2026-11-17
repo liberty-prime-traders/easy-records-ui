@@ -8,7 +8,7 @@ import {SessionExpiredDialogComponent} from '../lib/components/auth/session-expi
 import {WelcomeComponent} from '../lib/components/welcome/welcome.component'
 
 @Component({
-  selector: 'rts-root',
+  selector: 'esr-root',
   templateUrl: 'app.component.html',
   styleUrl: 'app.component.scss',
   imports: [

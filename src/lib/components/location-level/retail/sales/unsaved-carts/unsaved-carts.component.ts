@@ -13,7 +13,7 @@ import {ErrorSummaryComponent} from '../../../../reusable/error-summary/error-su
 import {SaleFormNavigator} from '../form-utils/sale-form-navigator'
 
 @Component({
-  selector: 'rts-open-sale-sessions',
+  selector: 'esr-open-sale-sessions',
   templateUrl: 'unsaved-carts.component.html',
   imports: [
     TableModule,

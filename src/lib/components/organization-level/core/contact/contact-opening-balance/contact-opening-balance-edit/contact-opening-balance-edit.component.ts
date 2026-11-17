@@ -17,7 +17,7 @@ import {LoadingContainerComponent} from '../../../../../reusable/loading-contain
 import {ContactOpeningBalanceEditDefinition} from './contact-opening-balance-edit.definition'
 
 @Component({
-  selector: 'rts-contact-opening-balance-edit',
+  selector: 'esr-contact-opening-balance-edit',
   templateUrl: 'contact-opening-balance-edit.component.html',
   imports: [
     Message,

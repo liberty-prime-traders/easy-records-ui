@@ -1,6 +1,6 @@
 <form class="flex flex-column gap-2">
 
-  <rts-form-field [required]="true" label="Minimum Stock Level" for="minStockLevel">
+  <esr-form-field [required]="true" label="Minimum Stock Level" for="minStockLevel">
     <p-input-number id="minStockLevel"
                    class="flex-grow-1"
                    [formField]="locationProductForm.minStockLevel"
@@ -8,9 +8,9 @@
                    [showButtons]="true"
                    placeholder="Enter minimum stock level">
     </p-input-number>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field [required]="true" label="Default Sale Price" for="defaultSalePrice">
+  <esr-form-field [required]="true" label="Default Sale Price" for="defaultSalePrice">
     <p-input-number id="defaultSalePrice"
                    class="flex-grow-1"
                    [formField]="locationProductForm.defaultSalePrice"
@@ -21,9 +21,9 @@
                    currency="KES"
                    placeholder="Enter default sale price" >
     </p-input-number>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field label="Stock Balance">
+  <esr-form-field label="Stock Balance">
     <div class="flex gap-2 align-items-center">
       {{ originalLocationProduct()?.stockBalanceBreakdown | nullishToZero }}
 
@@ -34,9 +34,9 @@
         View History
       </button>
     </div>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-forms-buttons [disableReset]="!locationProductForm().dirty"
+  <esr-forms-buttons [disableReset]="!locationProductForm().dirty"
                      [disableSave]="locationProductForm().invalid() || !locationProductForm().dirty"
                      [hideSave]="productIsInactive()"
                      [hideReset]="productIsInactive()"
@@ -52,7 +52,7 @@
                      [failureMessages]="failureMessages()"
                      (save)="updateLocationProduct()"
                      (resetAction)="resetForm()">
-  </rts-forms-buttons>
+  </esr-forms-buttons>
 </form>
 
 @if (showStockHistory()) {
@@ -60,7 +60,7 @@
             [modal]="false"
             appendTo="body"
             [(visible)]="showStockHistory">
-    <rts-stock-history [locationProductId]="originalLocationProduct()?.id"/>
+    <esr-stock-history [locationProductId]="originalLocationProduct()?.id"/>
   </p-dialog>
 }
 

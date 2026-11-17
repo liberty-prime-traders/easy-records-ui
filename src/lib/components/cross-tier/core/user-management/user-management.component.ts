@@ -7,7 +7,7 @@ import {AuthorityAssignmentComponent} from '../authority-assignment/authority-as
 import {MembershipComponent} from '../membership/membership.component'
 
 @Component({
-  selector: 'rts-user-management',
+  selector: 'esr-user-management',
   templateUrl: 'user-management.component.html',
   imports: [
     AuthorityAssignmentComponent,

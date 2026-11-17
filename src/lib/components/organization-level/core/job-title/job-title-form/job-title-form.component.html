@@ -1,9 +1,9 @@
 <form [formGroup]="jobTitleForm()" class="flex flex-column gap-2">
-  <rts-form-field [required]="true" label="Value" for="value">
+  <esr-form-field [required]="true" label="Value" for="value">
     <input id="value" pInputText formControlName="value">
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-forms-buttons [disableReset]="!jobTitleForm().dirty"
+  <esr-forms-buttons [disableReset]="!jobTitleForm().dirty"
                      [disableSave]="!jobTitleForm().valid || !jobTitleForm().dirty"
                      [hideDelete]="!jobTitle()?.id"
                      [processingStatus]="processingStatus()"
@@ -11,5 +11,5 @@
                      (delete)="deleteJobTitle()"
                      (save)="upsertJobTitle()"
                      (resetAction)="resetForm()">
-  </rts-forms-buttons>
+  </esr-forms-buttons>
 </form>

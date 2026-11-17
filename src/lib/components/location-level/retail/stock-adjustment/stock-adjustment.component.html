@@ -13,12 +13,12 @@
 
   @if (formIsVisible()) {
     <p-divider class="m-0"/>
-    <rts-location-stock-adjustment-form (stockAdjustmentSaved)="formIsVisible.set(false)"/>
+    <esr-location-stock-adjustment-form (stockAdjustmentSaved)="formIsVisible.set(false)"/>
   } @else {
     <div class="pt-3">
-      <rts-location-stock-adjustment-grid/>
+      <esr-location-stock-adjustment-grid/>
     </div>
   }
 
-  <rts-error-summary class="floating bottom left" [regularErrorMessages]="failureMessages()"/>
+  <esr-error-summary class="floating bottom left" [regularErrorMessages]="failureMessages()"/>
 </div>

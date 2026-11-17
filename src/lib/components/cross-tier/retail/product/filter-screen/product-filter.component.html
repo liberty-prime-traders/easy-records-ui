@@ -1,14 +1,14 @@
 <form class="flex flex-column gap-2 mt-4" [formGroup]="productFilterService.filterForm">
 
-  <rts-form-field label="Reference Number" for="referenceNumber" [layout]="FormFieldDirection.VERTICAL" contentClass="col-12">
+  <esr-form-field label="Reference Number" for="referenceNumber" [layout]="FormFieldDirection.VERTICAL" contentClass="col-12">
     <input [placeholder]="referenceNumberPlaceholder()"
            id="referenceNumber"
            class="flex-grow-1"
            pInputText
            formControlName="referenceNumber" />
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field label="Product Categories" for="categoryIds" [layout]="FormFieldDirection.VERTICAL" contentClass="col-12">
+  <esr-form-field label="Product Categories" for="categoryIds" [layout]="FormFieldDirection.VERTICAL" contentClass="col-12">
     <p-select id="categoryIds"
               class="flex-grow-1"
               [options]="productCategories()"
@@ -18,10 +18,10 @@
               formControlName="categoryIds"
               placeholder="Select Product Categories" >
     </p-select>
-  </rts-form-field>
+  </esr-form-field>
 
   @if (schemaLevel() === SchemaLevel.ORGANIZATION) {
-    <rts-form-field  label="Tags" for="tagIds" [layout]="FormFieldDirection.VERTICAL" contentClass="col-12">
+    <esr-form-field  label="Tags" for="tagIds" [layout]="FormFieldDirection.VERTICAL" contentClass="col-12">
       <p-select id="tagIds"
                 class="flex-grow-1"
                 [options]="productTags()"
@@ -31,7 +31,7 @@
                 formControlName="tagIds"
                 placeholder="Select Tags" >
       </p-select>
-    </rts-form-field>
+    </esr-form-field>
   }
 
   <div class="flex flex-column gap-2">

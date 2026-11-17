@@ -28,7 +28,7 @@ import {ProductSalesFiguresComponent} from './product-sales-figures.component'
 import {ProductSalesLinesGridComponent} from './product-sales-lines-grid.component'
 
 @Component({
-  selector: 'rts-product-sales-detail',
+  selector: 'esr-product-sales-detail',
   templateUrl: 'product-sales-detail.component.html',
   imports: [
     RouterLink,

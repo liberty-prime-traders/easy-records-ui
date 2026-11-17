@@ -7,7 +7,7 @@ import {SaleSessionService} from '../../../../../api/location-level/retail/sale_
 import {SaleFormContext} from '../form-utils/sale-form-context'
 
 @Component({
-  selector: 'rts-sale-consolidation-panel',
+  selector: 'esr-sale-consolidation-panel',
   templateUrl: 'sale-consolidation-panel.component.html',
   imports: [Card, Badge, ButtonDirective, Tag]
 })

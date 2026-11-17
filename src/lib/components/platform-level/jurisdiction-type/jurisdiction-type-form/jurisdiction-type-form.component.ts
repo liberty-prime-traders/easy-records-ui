@@ -11,7 +11,7 @@ import {JurisdictionTypeFormDefinition} from './jurisdiction-type-form.definitio
 
 
 @Component({
-  selector: 'rts-jurisdiction-type-form',
+  selector: 'esr-jurisdiction-type-form',
   templateUrl: 'jurisdiction-type-form.component.html',
   imports: [
     FormButtonsComponent,

@@ -13,7 +13,7 @@ import {GridWithAddButtonComponent} from '../../../../reusable/grid-with-add-but
 import {UnitValueFormComponent} from './unit-value-form/unit-value-form.component'
 
 @Component({
-  selector: 'rts-unit-value',
+  selector: 'esr-unit-value',
   templateUrl: 'unit-value.component.html',
   imports: [
     TableModule,

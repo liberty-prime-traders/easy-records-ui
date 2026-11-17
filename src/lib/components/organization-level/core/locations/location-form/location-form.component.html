@@ -1,17 +1,17 @@
 <form [formGroup]="locationForm()" class="flex flex-column gap-2">
-  <rts-form-field label="Name" for="name">
+  <esr-form-field label="Name" for="name">
     <input id="name" pInputText formControlName="name">
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field label="Location Type" for="locationType">
+  <esr-form-field label="Location Type" for="locationType">
     <p-select id="locationType" formControlName="locationType" [options]="locationType | enumToDropdown"/>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field label="Description" for="description">
+  <esr-form-field label="Description" for="description">
     <input id="description" pInputText formControlName="description">
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-forms-buttons [disableReset]="!locationForm().dirty"
+  <esr-forms-buttons [disableReset]="!locationForm().dirty"
                      [disableSave]="!locationForm().valid || !locationForm().dirty"
                      [hideDelete]="!location()?.id"
                      [processingStatus]="processingStatus()"
@@ -19,5 +19,5 @@
                      (delete)="deleteLocation()"
                      (save)="upsertLocation()"
                      (resetAction)="resetForm()">
-  </rts-forms-buttons>
+  </esr-forms-buttons>
 </form>

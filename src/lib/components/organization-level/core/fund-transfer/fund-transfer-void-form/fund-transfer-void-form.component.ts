@@ -9,7 +9,7 @@ import {FormFieldLayout} from '../../../../reusable/form-field/form-field-layout
 import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
 
 @Component({
-  selector: 'rts-fund-transfer-void-form',
+  selector: 'esr-fund-transfer-void-form',
   templateUrl: 'fund-transfer-void-form.component.html',
   imports: [FormButtonsComponent, FormFieldComponent, FormField, InputText]
 })

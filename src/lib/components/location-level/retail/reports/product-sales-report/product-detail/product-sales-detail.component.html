@@ -10,7 +10,7 @@
   </div>
 
   <div class="flex flex-wrap align-items-end gap-3">
-    <rts-form-field label="Date sold, from"
+    <esr-form-field label="Date sold, from"
                     for="date-from"
                     class="col-2"
                     contentClass="w-full"
@@ -20,9 +20,9 @@
                      [showIcon]="true"
                      appendTo="body">
       </p-date-picker>
-    </rts-form-field>
+    </esr-form-field>
 
-    <rts-form-field label="Date sold, to"
+    <esr-form-field label="Date sold, to"
                     for="date-to" class="col-2"
                     contentClass="w-full"
                     [layout]="FormFieldLayout.COMPACT">
@@ -31,12 +31,12 @@
                      [showIcon]="true"
                      appendTo="body">
       </p-date-picker>
-    </rts-form-field>
+    </esr-form-field>
   </div>
 
-  <rts-error-summary [regularErrorMessages]="errorMessages()" />
+  <esr-error-summary [regularErrorMessages]="errorMessages()" />
 
-  <rts-loading-container [loading]="loading()">
+  <esr-loading-container [loading]="loading()">
     <p-tabs [value]="selectedTab()" (valueChange)="selectedTab.set($any($event))">
       <p-tablist>
         <p-tab value="summary">Summary</p-tab>
@@ -49,19 +49,19 @@
       <p-tabpanels>
         <p-tabpanel value="summary">
           @if (summary(); as summary) {
-            <rts-product-sales-figures [summary]="summary" />
+            <esr-product-sales-figures [summary]="summary" />
           }
         </p-tabpanel>
 
         <p-tabpanel value="lines">
           @if (locationProductId(); as productId) {
-            <rts-product-sales-lines-grid [locationProductId]="productId"
+            <esr-product-sales-lines-grid [locationProductId]="productId"
                                           [parameters]="linesParameters()"
                                           [summary]="summary()">
-            </rts-product-sales-lines-grid>
+            </esr-product-sales-lines-grid>
           }
         </p-tabpanel>
       </p-tabpanels>
     </p-tabs>
-  </rts-loading-container>
+  </esr-loading-container>
 </div>

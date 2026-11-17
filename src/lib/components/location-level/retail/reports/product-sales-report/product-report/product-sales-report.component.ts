@@ -45,7 +45,7 @@ const SEARCH_DEBOUNCE_IN_MS = 500
 const RANGE_DEBOUNCE_IN_MS = 800
 
 @Component({
-  selector: 'rts-product-sales-report',
+  selector: 'esr-product-sales-report',
   templateUrl: 'product-sales-report.component.html',
   imports: [
     TableModule,

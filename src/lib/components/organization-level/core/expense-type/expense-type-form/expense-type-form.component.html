@@ -1,11 +1,11 @@
 <div class="flex flex-column gap-2" [ngClass]="expenseTypeFormValue().id ? '' : 'filled-background'">
-  <rts-form-field [required]="true" label="Name" for="name">
+  <esr-form-field [required]="true" label="Name" for="name">
     <input id="name" class="flex-grow-1" pInputText [formField]="expenseTypeForm.name" />
-  </rts-form-field>
+  </esr-form-field>
 
   @if (!expenseTypeFormValue().systemDefined) {
-    <rts-loading-container [loading]="accountTreesLoading()">
-      <rts-form-field [required]="true" label="Expense Account" for="expenseAccountCode">
+    <esr-loading-container [loading]="accountTreesLoading()">
+      <esr-form-field [required]="true" label="Expense Account" for="expenseAccountCode">
         <p-tree-select id="expenseAccountCode"
                        [options]="expenseAccountTrees()"
                        [loading]="accountTreesLoading()"
@@ -15,10 +15,10 @@
                        placeholder="Select an Expense Account"
                        class="flex-grow-1">
         </p-tree-select>
-      </rts-form-field>
-    </rts-loading-container>
+      </esr-form-field>
+    </esr-loading-container>
 
-    <rts-form-field [required]="true" label="Who can charge us under this expense" labelClass="align-self-start">
+    <esr-form-field [required]="true" label="Who can charge us under this expense" labelClass="align-self-start">
       <div class="flex flex-column gap-2">
         @for (type of (contactType | enumToDropdown); track type) {
           <div class="flex gap-2">
@@ -31,9 +31,9 @@
           </div>
         }
       </div>
-    </rts-form-field>
+    </esr-form-field>
 
-    <rts-form-field [required]="true" label="Expense can only originate from" labelClass="align-self-start">
+    <esr-form-field [required]="true" label="Expense can only originate from" labelClass="align-self-start">
       <div class="flex flex-column gap-2">
         @for (type of (expenseSourceType | enumToDropdown); track type) {
           <div class="flex gap-2">
@@ -46,10 +46,10 @@
           </div>
         }
       </div>
-    </rts-form-field>
+    </esr-form-field>
   }
 
-  <rts-forms-buttons [disableReset]="!expenseTypeForm().dirty()"
+  <esr-forms-buttons [disableReset]="!expenseTypeForm().dirty()"
                      [disableSave]="expenseTypeForm().invalid() || !expenseTypeForm().dirty()"
                      [hideDelete]="true"
                      [signalForm]="expenseTypeForm()"
@@ -58,5 +58,5 @@
                      [failureMessages]="failureMessages()"
                      (save)="upsertExpenseType()"
                      (resetAction)="resetForm()">
-  </rts-forms-buttons>
+  </esr-forms-buttons>
 </div>

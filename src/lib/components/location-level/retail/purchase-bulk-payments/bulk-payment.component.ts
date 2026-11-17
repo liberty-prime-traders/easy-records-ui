@@ -24,7 +24,7 @@ import {BulkPaymentFormContext} from './bulk-payment-form-context'
 import {BulkPaymentPaymentFormComponent} from './bulk-payment-payment-form.component'
 
 @Component({
-  selector: 'rts-bulk-payment',
+  selector: 'esr-bulk-payment',
   templateUrl: 'bulk-payment.component.html',
   providers: [BulkPaymentFormContext],
   imports: [

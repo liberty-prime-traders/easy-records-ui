@@ -10,7 +10,7 @@ import {FormFieldLayout} from '../../../../../reusable/form-field/form-field-lay
 import {ProductPurchasesReportFilterState} from './product-purchases-report-filter.state'
 
 @Component({
-  selector: 'rts-product-purchases-report-filter',
+  selector: 'esr-product-purchases-report-filter',
   templateUrl: 'product-purchases-report-filter.component.html',
   imports: [
     FormField,

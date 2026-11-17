@@ -1,9 +1,9 @@
 <div class="flex flex-column gap-2 p-3 filled-background">
-  <rts-form-field [required]="true" label="Summary" for="summary">
+  <esr-form-field [required]="true" label="Summary" for="summary">
     <input id="summary" class="flex-grow-1" pInputText [formField]="journalForm.summary"/>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field [required]="true" label="Date" for="postingDate">
+  <esr-form-field [required]="true" label="Date" for="postingDate">
     <p-date-picker inputId="postingDate"
                    class="flex-grow-1"
                    appendTo="body"
@@ -11,13 +11,13 @@
                    [maxDate]="today"
                    [formField]="journalForm.postingDate">
     </p-date-picker>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field label="Details" for="details">
+  <esr-form-field label="Details" for="details">
     <textarea id="details" class="w-full" pInputTextarea [formField]="journalForm.details"></textarea>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-loading-container [loading]="accountTreesLoading()">
+  <esr-loading-container [loading]="accountTreesLoading()">
     @for (line of journalForm.lines; track $index) {
       <div class="flex gap-2 align-items-end mb-2">
         <p-tree-select appendTo="body"
@@ -47,13 +47,13 @@
         </button>
       </div>
     }
-  </rts-loading-container>
+  </esr-loading-container>
 
   <button pButton type="button" text severity="secondary" class="w-fit" (click)="addLine()">
     <i class="pi pi-plus"></i> Add line
   </button>
 
-  <rts-forms-buttons [disableReset]="!journalForm().dirty()"
+  <esr-forms-buttons [disableReset]="!journalForm().dirty()"
                      [disableSave]="journalForm().invalid() || !journalForm().dirty()"
                      [hideDelete]="true"
                      [signalForm]="journalForm()"
@@ -62,6 +62,6 @@
                      [failureMessages]="failureMessages()"
                      (save)="save()"
                      (resetAction)="resetForm()">
-  </rts-forms-buttons>
+  </esr-forms-buttons>
 </div>
 

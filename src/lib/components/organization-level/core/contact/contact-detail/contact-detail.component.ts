@@ -10,7 +10,7 @@ import {ContactNamePipe} from '../contact-name.pipe'
 import {ContactOpeningBalanceComponent} from '../contact-opening-balance/contact-opening-balance.component'
 
 @Component({
-  selector: 'rts-contact-detail',
+  selector: 'esr-contact-detail',
   templateUrl: 'contact-detail.component.html',
   imports: [
     ButtonDirective,

@@ -16,26 +16,26 @@
           <div class="scrollable" id="sale-form-summary" [padding]="30" rtsAutoStretch="sale-form-summary">
 
             @if (canAddPayments) {
-              <rts-sale-payment-form/>
+              <esr-sale-payment-form/>
             }
             <div class="flex flex-column gap-3 px-3">
               @if (canAddPaymentsToSale()) {
                 <p-divider/>
               }
 
-              <rts-error-summary
+              <esr-error-summary
                 [signalFormErrors]="saleForm().errorSummary()"
                 [regularErrorMessages]="errorMessages()"
                 [fieldMap]="saleFormFieldMap">
-              </rts-error-summary>
+              </esr-error-summary>
 
-              <rts-sale-totals/>
+              <esr-sale-totals/>
             </div>
           </div>
         </p-tabpanel>
 
         <p-tabpanel value="payments">
-          <rts-sale-payments-grid/>
+          <esr-sale-payments-grid/>
         </p-tabpanel>
 
       </p-tabpanels>

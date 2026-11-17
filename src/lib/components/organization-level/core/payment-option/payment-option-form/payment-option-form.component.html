@@ -1,11 +1,11 @@
 <div class="form-container flex flex-column gap-2" [ngClass]="formValue().id ? '' : 'filled-background'">
-  <rts-form-field [required]="true" label="Name" for="name">
+  <esr-form-field [required]="true" label="Name" for="name">
     <input id="name" class="flex-grow-1" pInputText [formField]="paymentOptionForm.name"/>
-  </rts-form-field>
+  </esr-form-field>
 
   @if (isChartOfAccountsEnabled()) {
-    <rts-loading-container [loading]="accountTreesLoading()">
-      <rts-form-field label="Linked Account" for="accountCode" [required]="true" >
+    <esr-loading-container [loading]="accountTreesLoading()">
+      <esr-form-field label="Linked Account" for="accountCode" [required]="true" >
         <p-tree-select id="accountCode"
                        [options]="paymentMethodTrees()"
                        [loading]="accountTreesLoading()"
@@ -15,15 +15,15 @@
                        placeholder="Select an Account"
                        class="flex-grow-1">
         </p-tree-select>
-      </rts-form-field>
-    </rts-loading-container>
+      </esr-form-field>
+    </esr-loading-container>
   }
 
-  <rts-form-field label="Description" for="description">
+  <esr-form-field label="Description" for="description">
     <input id="description" class="flex-grow-1" pInputText [formField]="paymentOptionForm.description"/>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-forms-buttons [disableReset]="!paymentOptionForm().dirty()"
+  <esr-forms-buttons [disableReset]="!paymentOptionForm().dirty()"
                      [disableSave]="paymentOptionForm().invalid() || !paymentOptionForm().dirty()"
                      [hideDelete]="!originalPaymentOption()?.id"
                      [signalForm]="paymentOptionForm()"
@@ -33,5 +33,5 @@
                      (delete)="deletePaymentOption()"
                      (save)="upsertPaymentOption()"
                      (resetAction)="resetForm()">
-  </rts-forms-buttons>
+  </esr-forms-buttons>
 </div>

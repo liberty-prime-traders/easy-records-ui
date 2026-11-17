@@ -7,7 +7,7 @@ import {SchemaLevel} from '../../../../api/platform-level/table-registry/schema-
 import {UserManagementComponent} from '../../../cross-tier/core/user-management/user-management.component'
 
 @Component({
-  selector: 'rts-organization-user',
+  selector: 'esr-organization-user',
   templateUrl: 'organization-user.component.html',
   imports: [
     UserManagementComponent

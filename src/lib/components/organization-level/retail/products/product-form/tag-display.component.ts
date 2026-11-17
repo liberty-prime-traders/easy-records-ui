@@ -4,7 +4,7 @@ import {Tag} from '../../../../../api/organization-level/core/tag/tag.model'
 import {OrganizationProductFormDefinition} from './organization-product-form.definition'
 
 @Component({
-  selector: 'rts-tag-display',
+  selector: 'esr-tag-display',
   imports: [
     NgClass
   ],

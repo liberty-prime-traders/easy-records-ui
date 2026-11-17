@@ -4,7 +4,7 @@
     <button pButton (click)="setAddingActiveFalse()" severity="info" class="align-self-end">
       <i class="pi pi-times"></i> Cancel
     </button>
-    <rts-account-form (accountCreated)="closeAddRow()"/>
+    <esr-account-form (accountCreated)="closeAddRow()"/>
 
   } @else {
     <p-table [loading]="loading()"
@@ -23,7 +23,7 @@
         <div class="flex justify-content-between align-items-center">
           <h3 class="font-bold">Chart of Accounts</h3>
 
-          <rts-grid-filter [dataTable]="accountsTable"/>
+          <esr-grid-filter [dataTable]="accountsTable"/>
 
           <div class="flex gap-1 align-items-center">
             <p-toggle-switch [(ngModel)]="showEditButtons"/>
@@ -57,11 +57,11 @@
           <td>{{ account.displayName }}</td>
           <td>{{ account.accountType | prettifyEnum }}</td>
           <td>
-            <rts-money [amount]="account.currentBalance" [balanceEffect]="account.balanceEffect"/>
+            <esr-money [amount]="account.currentBalance" [balanceEffect]="account.balanceEffect"/>
           </td>
           <td>
             <div class="flex gap-2 align-items-center">
-              <rts-money [amount]="account.openingBalance"/>
+              <esr-money [amount]="account.openingBalance"/>
 
               <button pButton
                       (click)="togglePopup(account)"
@@ -94,13 +94,13 @@
       <ng-template #expandedrow let-account>
         <tr>
           <td colspan="9" class="filled-background">
-            <rts-account-form [account]="account"/>
+            <esr-account-form [account]="account"/>
           </td>
         </tr>
       </ng-template>
 
       <ng-template #emptymessage>
-        <tr rts-empty-row [colspan]="9" message="No Accounts Found"></tr>
+        <tr esr-empty-row [colspan]="9" message="No Accounts Found"></tr>
       </ng-template>
     </p-table>
   }
@@ -109,9 +109,9 @@
 @if (showPopup()) {
   <p-dialog [header]="popUpHeader()" [(visible)]="showPopup" [modal]="true">
     @if (popupReason() === AccountPopUpReason.SHOW_OPENING_BALANCE_HISTORY) {
-      <rts-opening-balance-history [accountCode]="poppedUpAccount()!.code"/>
+      <esr-opening-balance-history [accountCode]="poppedUpAccount()!.code"/>
     } @else {
-      <rts-opening-balance-edit [account]="poppedUpAccount()" [(showDialog)]="showPopup"/>
+      <esr-opening-balance-edit [account]="poppedUpAccount()" [(showDialog)]="showPopup"/>
     }
   </p-dialog>
 }

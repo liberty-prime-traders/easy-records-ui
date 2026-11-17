@@ -45,7 +45,7 @@
               </tr>
             </ng-template>
             <ng-template #emptymessage>
-              <tr [colspan]="4" rts-empty-row message="Nothing is affected by this revision"></tr>
+              <tr [colspan]="4" esr-empty-row message="Nothing is affected by this revision"></tr>
             </ng-template>
           </p-table>
         </p-tabpanel>
@@ -91,12 +91,12 @@
                   </td>
                   <td class="text-right">
                     @if (line.debit) {
-                      <rts-money [amount]="line.debit" [balanceEffect]="line.balanceEffect"/>
+                      <esr-money [amount]="line.debit" [balanceEffect]="line.balanceEffect"/>
                     }
                   </td>
                   <td class="text-right">
                     @if (line.credit) {
-                      <rts-money [amount]="line.credit" [balanceEffect]="line.balanceEffect"/>
+                      <esr-money [amount]="line.credit" [balanceEffect]="line.balanceEffect"/>
                     }
                   </td>
                 </tr>
@@ -110,7 +110,7 @@
               }
             </ng-template>
             <ng-template #emptymessage>
-              <tr [colspan]="3" rts-empty-row message="No ledger entries to show"></tr>
+              <tr [colspan]="3" esr-empty-row message="No ledger entries to show"></tr>
             </ng-template>
           </p-table>
         </p-tabpanel>

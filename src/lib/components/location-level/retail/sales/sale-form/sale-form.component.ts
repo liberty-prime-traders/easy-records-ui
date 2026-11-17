@@ -28,7 +28,7 @@ import {SaleFormSummaryComponent} from '../sale-form-summary/sale-form-summary.c
 import {UnsavedCartsComponent} from '../unsaved-carts/unsaved-carts.component'
 
 @Component({
-  selector: 'rts-new-sale',
+  selector: 'esr-new-sale',
   templateUrl: 'sale-form.component.html',
   styleUrl: 'sale-form.component.scss',
   imports: [

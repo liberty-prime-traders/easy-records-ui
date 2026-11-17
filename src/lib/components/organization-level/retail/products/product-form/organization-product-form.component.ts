@@ -40,7 +40,7 @@ import {OrganizationProductFormDefinition} from './organization-product-form.def
 import {ProductFormTagDisplayComponent} from './tag-display.component'
 
 @Component({
-  selector: 'rts-organization-product-form',
+  selector: 'esr-organization-product-form',
   templateUrl: 'organization-product-form.component.html',
   imports: [
     InputText,

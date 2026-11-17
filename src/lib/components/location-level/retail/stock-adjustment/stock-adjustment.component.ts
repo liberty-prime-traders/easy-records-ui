@@ -9,7 +9,7 @@ import {StockAdjustmentFormComponent} from './stock-adjustment-form/stock-adjust
 import {StockAdjustmentGridComponent} from './stock-adjustment-grid/stock-adjustment-grid.component'
 
 @Component({
-  selector: 'rts-location-stock-adjustment',
+  selector: 'esr-location-stock-adjustment',
   templateUrl: 'stock-adjustment.component.html',
   imports: [
     ButtonDirective,

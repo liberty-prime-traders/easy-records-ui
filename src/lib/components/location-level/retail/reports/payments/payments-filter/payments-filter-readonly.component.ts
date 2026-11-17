@@ -8,7 +8,7 @@ import {TruncatedListComponent} from '../../../../../reusable/truncated-list/tru
 import {PaymentsFilterState} from './payments-filter.state'
 
 @Component({
-  selector: 'rts-payments-filter-readonly',
+  selector: 'esr-payments-filter-readonly',
   imports: [
     OrgDateTimePipe,
     PrettifyEnumPipe,

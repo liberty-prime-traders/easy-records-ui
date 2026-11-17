@@ -14,7 +14,7 @@ import {SalePaymentsGridComponent} from './sale-payments-grid/sale-payments-grid
 import {SaleTotalsComponent} from './sale-totals/sale-totals.component'
 
 @Component({
-  selector: 'rts-sale-form-summary',
+  selector: 'esr-sale-form-summary',
   templateUrl: 'sale-form-summary.component.html',
   styleUrl: 'sale-form-summary.component.scss',
   imports: [

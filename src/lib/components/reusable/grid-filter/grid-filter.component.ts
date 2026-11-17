@@ -7,7 +7,7 @@ import {Table} from 'primeng/table'
 import {BaseModel} from '../../../api/util/base-api/base.model'
 
 @Component({
-  selector: 'rts-grid-filter',
+  selector: 'esr-grid-filter',
   templateUrl: 'grid-filter.component.html',
   imports: [
     IconField,

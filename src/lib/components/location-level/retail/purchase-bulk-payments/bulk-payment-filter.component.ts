@@ -9,7 +9,7 @@ import {FormFieldComponent} from '../../../reusable/form-field/form-field.compon
 import {BulkPaymentFormContext} from './bulk-payment-form-context'
 
 @Component({
-  selector: 'rts-bulk-payment-filter',
+  selector: 'esr-bulk-payment-filter',
   templateUrl: 'bulk-payment-filter.component.html',
   imports: [FormField, DatePicker, Message, Select, FormFieldComponent]
 })

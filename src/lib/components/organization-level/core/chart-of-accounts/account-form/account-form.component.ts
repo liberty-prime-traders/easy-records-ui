@@ -18,7 +18,7 @@ import {FormFieldComponent} from '../../../../reusable/form-field/form-field.com
 import {AccountFormDefinition} from './account-form.definition'
 
 @Component({
-  selector: 'rts-account-form',
+  selector: 'esr-account-form',
   templateUrl: 'account-form.component.html',
   imports: [
     FormButtonsComponent,

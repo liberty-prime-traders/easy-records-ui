@@ -20,7 +20,7 @@ interface SeverityDisplay {
 }
 
 @Component({
-  selector: 'rts-revision-preview-dialog',
+  selector: 'esr-revision-preview-dialog',
   templateUrl: 'revision-preview-dialog.component.html',
   imports: [
     ButtonDirective,

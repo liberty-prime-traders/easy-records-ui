@@ -1,4 +1,4 @@
-<rts-loading-container [loading]="paymentOptionsLoading()">
+<esr-loading-container [loading]="paymentOptionsLoading()">
   <div class="flex flex-column gap-3 p-2">
 
     <div class="flex gap-1">
@@ -21,7 +21,7 @@
 
     <div class="flex flex-column gap-1">
       <div class="flex justify-content-between gap-2">
-        <rts-form-field label="Amount" [layout]="FormFieldDirection.COMPACT" contentClass="">
+        <esr-form-field label="Amount" [layout]="FormFieldDirection.COMPACT" contentClass="">
           <p-input-number
             [min]="0"
             mode="currency"
@@ -29,14 +29,14 @@
             [placeholder]="(0 | currency) ?? undefined"
             [formField]="paymentForm.amount">
           </p-input-number>
-        </rts-form-field>
+        </esr-form-field>
 
-        <rts-form-field label="Reference" [layout]="FormFieldDirection.COMPACT" contentClass="">
+        <esr-form-field label="Reference" [layout]="FormFieldDirection.COMPACT" contentClass="">
           <input pInputText [formField]="paymentForm.reference"/>
-        </rts-form-field>
+        </esr-form-field>
       </div>
 
-      <rts-form-field label="Date" [layout]="FormFieldDirection.COMPACT" contentClass="">
+      <esr-form-field label="Date" [layout]="FormFieldDirection.COMPACT" contentClass="">
         @if (!paymentForm.useNowForDate().value()) {
           <p-date-picker
             [showIcon]="true"
@@ -57,7 +57,7 @@
             </div>
           </a>
         }
-      </rts-form-field>
+      </esr-form-field>
 
       <div class="flex justify-content-end">
         <button pButton
@@ -69,4 +69,4 @@
       </div>
     </div>
   </div>
-</rts-loading-container>
+</esr-loading-container>

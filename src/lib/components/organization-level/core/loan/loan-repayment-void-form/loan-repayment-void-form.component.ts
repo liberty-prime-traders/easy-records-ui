@@ -9,7 +9,7 @@ import {FormFieldLayout} from '../../../../reusable/form-field/form-field-layout
 import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
 
 @Component({
-  selector: 'rts-loan-repayment-void-form',
+  selector: 'esr-loan-repayment-void-form',
   templateUrl: 'loan-repayment-void-form.component.html',
   imports: [FormButtonsComponent, FormFieldComponent, FormField, InputText]
 })

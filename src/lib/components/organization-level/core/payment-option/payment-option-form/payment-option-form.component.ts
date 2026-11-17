@@ -10,7 +10,7 @@ import {Account} from '../../../../../api/organization-level/core/chart-of-accou
 import {PaymentOption} from '../../../../../api/organization-level/core/payment-option/payment-option.model.'
 import {PaymentOptionService} from '../../../../../api/organization-level/core/payment-option/payment-option.service'
 import {OrgFeatureService} from '../../../../../api/organization-level/core/org-feature/org-feature.service'
-import {RtsTreeNode} from '../../../../../utils/types/rts-tree-node'
+import {RtsTreeNode} from '../../../../../utils/types/esr-tree-node'
 import {BaseFormComponent} from '../../../../reusable/base-form.component'
 import {FormButtonsComponent} from '../../../../reusable/form-buttons/form-buttons.component'
 import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
@@ -18,7 +18,7 @@ import {LoadingContainerComponent} from '../../../../reusable/loading-container/
 import {PaymentOptionFormDefinition} from './payment-option-form.definition'
 
 @Component({
-  selector: 'rts-payment-option-form',
+  selector: 'esr-payment-option-form',
   templateUrl: 'payment-option-form.component.html',
   imports: [
     FormButtonsComponent,

@@ -18,7 +18,7 @@ import {LoadingContainerComponent} from '../../../../reusable/loading-container/
 import {ExpenseFormDefinition} from './expense-form.definition'
 
 @Component({
-  selector: 'rts-expense-form',
+  selector: 'esr-expense-form',
   templateUrl: 'expense-form.component.html',
   imports: [
     FormField,

@@ -25,7 +25,7 @@ export enum SummaryTab {
 }
 
 @Component({
-  selector: 'rts-daily-business-summary',
+  selector: 'esr-daily-business-summary',
   templateUrl: 'daily-business-summary.component.html',
   imports: [
     FormsModule, ButtonDirective, DatePicker, Message, SelectButton, Tab, TabList, TabPanel, TabPanels, Tabs,

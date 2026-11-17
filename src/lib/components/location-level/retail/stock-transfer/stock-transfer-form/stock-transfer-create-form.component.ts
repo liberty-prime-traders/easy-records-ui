@@ -14,7 +14,7 @@ import {LoadingContainerComponent} from '../../../../reusable/loading-container/
 import {StockTransferCreateFormDefinition} from './stock-transfer-create-form.definition'
 
 @Component({
-  selector: 'rts-location-stock-transfer-create-form',
+  selector: 'esr-location-stock-transfer-create-form',
   templateUrl: 'stock-transfer-create-form.component.html',
   imports: [
     FormField,

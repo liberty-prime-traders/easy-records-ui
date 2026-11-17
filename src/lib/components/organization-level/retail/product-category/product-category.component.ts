@@ -12,7 +12,7 @@ import {GridWithAddButtonComponent} from '../../../reusable/grid-with-add-button
 import {ProductCategoryFormComponent} from './product-category-form/product-category-form.component'
 
 @Component({
-  selector: 'rts-product-category',
+  selector: 'esr-product-category',
   templateUrl: 'product-category.component.html',
   imports: [
     TableModule,

@@ -1,4 +1,4 @@
-<rts-loading-container [loading]="loading()">
+<esr-loading-container [loading]="loading()">
   <div class="p-2 flex flex-column gap-4">
     <p-message severity="warn" icon="pi pi-exclamation-triangle">
       <ul>
@@ -8,7 +8,7 @@
       </ul>
     </p-message>
 
-    <rts-form-field [required]="true" label="We owed them" for="payable" [layout]="FormFieldLayout.VERTICAL">
+    <esr-form-field [required]="true" label="We owed them" for="payable" [layout]="FormFieldLayout.VERTICAL">
       <p-input-number id="payable"
                       mode="currency"
                       placeholder="e.g. 15.00"
@@ -17,9 +17,9 @@
                       [currency]="currencyCodeProviderService.currencyCode"
                       [formField]="openingBalanceForm.payable">
       </p-input-number>
-    </rts-form-field>
+    </esr-form-field>
 
-    <rts-form-field [required]="true" label="They owed us" for="receivable" [layout]="FormFieldLayout.VERTICAL">
+    <esr-form-field [required]="true" label="They owed us" for="receivable" [layout]="FormFieldLayout.VERTICAL">
       <p-input-number id="receivable"
                       mode="currency"
                       placeholder="e.g. 15.00"
@@ -28,11 +28,11 @@
                       [currency]="currencyCodeProviderService.currencyCode"
                       [formField]="openingBalanceForm.receivable">
       </p-input-number>
-    </rts-form-field>
+    </esr-form-field>
 
     <div class="flex justify-content-between">
-      <rts-error-summary [regularErrorMessages]="failureMessages()"/>
+      <esr-error-summary [regularErrorMessages]="failureMessages()"/>
       <button pButton [disabled]="openingBalanceForm().invalid()" (click)="save()">Save</button>
     </div>
   </div>
-</rts-loading-container>
+</esr-loading-container>

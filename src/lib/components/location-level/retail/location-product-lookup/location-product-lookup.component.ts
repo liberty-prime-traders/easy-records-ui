@@ -11,7 +11,7 @@ import {FormFieldLayout} from '../../../reusable/form-field/form-field-layout'
 import {HasFilteredDataComponent} from '../../../reusable/has-filtered-data.component'
 import {ProductLookupFilterService} from './product-lookup-filter.service'
 
-@Component({selector: 'rts-product-lookup', template: ''})
+@Component({selector: 'esr-product-lookup', template: ''})
 export abstract class LocationProductLookupComponent<LOOKUP extends ProductCore & PaginatedModel>
   extends HasFilteredDataComponent implements OnInit {
 

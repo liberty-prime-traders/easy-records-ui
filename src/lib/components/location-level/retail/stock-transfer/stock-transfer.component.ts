@@ -11,7 +11,7 @@ import {StockTransferFormComponent} from './stock-transfer-form/stock-transfer-f
 import {StockTransferGridComponent} from './stock-transfer-grid/stock-transfer-grid.component'
 
 @Component({
-  selector: 'rts-location-stock-transfer',
+  selector: 'esr-location-stock-transfer',
   templateUrl: 'stock-transfer.component.html',
   providers: [StockTransferFormContext],
   imports: [

@@ -13,7 +13,7 @@ import {MoneyComponent} from '../../../reusable/money.component'
 import {AccountsGridComponent} from './accounts-grid/accounts-grid.component'
 
 @Component({
-  selector: 'rts-chart-of-accounts',
+  selector: 'esr-chart-of-accounts',
   templateUrl: 'chart-of-accounts.component.html',
   imports: [
     TableModule,

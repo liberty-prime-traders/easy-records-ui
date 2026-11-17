@@ -1,21 +1,21 @@
 <form [formGroup]="tagForm()" class="flex flex-column gap-2" [ngClass]="tag()?.id ? '' : 'filled-background'">
-  <rts-form-field [required]="true" label="Tag Name" for="tagName">
+  <esr-form-field [required]="true" label="Tag Name" for="tagName">
     <input id="tagName" class="flex-grow-1" pInputText formControlName="tagName">
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field label="Category" for="category" [required]="true">
+  <esr-form-field label="Category" for="category" [required]="true">
     <p-select id="category"
               class="flex-grow-1"
               formControlName="category"
               [options]="categoryType | enumToDropdown">
     </p-select>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field label="Description" for="description">
+  <esr-form-field label="Description" for="description">
     <input id="description" pInputText formControlName="description">
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-forms-buttons [disableReset]="!tagForm().dirty"
+  <esr-forms-buttons [disableReset]="!tagForm().dirty"
                      [disableSave]="!tagForm().valid || !tagForm().dirty"
                      [hideDelete]="!tag()?.id"
                      [processingStatus]="processingStatus()"
@@ -23,5 +23,5 @@
                      (delete)="deleteTag()"
                      (save)="upsertTag()"
                      (resetAction)="resetForm()">
-  </rts-forms-buttons>
+  </esr-forms-buttons>
 </form>

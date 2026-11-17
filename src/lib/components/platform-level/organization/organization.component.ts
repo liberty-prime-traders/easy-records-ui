@@ -9,7 +9,7 @@ import {EmptyRowComponent} from '../../reusable/empty-row/empty-row.component'
 import {GridFilterComponent} from '../../reusable/grid-filter/grid-filter.component'
 
 @Component({
-  selector: 'rts-organization',
+  selector: 'esr-organization',
   templateUrl: './organization.component.html',
   imports: [
     DatePipe,

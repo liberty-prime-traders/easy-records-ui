@@ -31,7 +31,7 @@ import {DeliveryLineRevisionFormDefinition} from './delivery-line-revision-form.
 import {RevisionPreviewDialogComponent} from './revision-preview-dialog.component'
 
 @Component({
-  selector: 'rts-delivery-line-revision-form',
+  selector: 'esr-delivery-line-revision-form',
   templateUrl: 'delivery-line-revision-form.component.html',
   imports: [
     ButtonDirective,

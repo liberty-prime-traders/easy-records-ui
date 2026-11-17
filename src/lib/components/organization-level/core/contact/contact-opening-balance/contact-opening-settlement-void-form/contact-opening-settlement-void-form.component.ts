@@ -13,7 +13,7 @@ import {FormFieldLayout} from '../../../../../reusable/form-field/form-field-lay
 import {FormFieldComponent} from '../../../../../reusable/form-field/form-field.component'
 
 @Component({
-  selector: 'rts-contact-opening-settlement-void-form',
+  selector: 'esr-contact-opening-settlement-void-form',
   templateUrl: 'contact-opening-settlement-void-form.component.html',
   imports: [FormButtonsComponent, FormFieldComponent, FormField, InputText]
 })

@@ -18,7 +18,7 @@ import {ExpensesFilterState} from './expenses-filter/expenses-filter.state'
 import {ExpensesSummaryComponent} from './expenses-summary.component'
 
 @Component({
-  selector: 'rts-expenses',
+  selector: 'esr-expenses',
   templateUrl: 'expenses.component.html',
   imports: [
     ButtonDirective,

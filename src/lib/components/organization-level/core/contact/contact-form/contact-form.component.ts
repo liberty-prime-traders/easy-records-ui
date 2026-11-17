@@ -19,7 +19,7 @@ import {ContactFormDefinition} from './contact-form.definition'
 
 
 @Component({
-  selector: 'rts-contact-form',
+  selector: 'esr-contact-form',
   templateUrl: 'contact-form.component.html',
   imports: [
     FormButtonsComponent,

@@ -1,9 +1,9 @@
 <div class="flex flex-column gap-4">
   @if (isDraftOrNew()) {
-    <rts-purchase-product-lookup
+    <esr-purchase-product-lookup
       (productSelected)="addPurchaseLine($event)"
       [selectedProductIds]="selectedProductIds()">
-    </rts-purchase-product-lookup>
+    </esr-purchase-product-lookup>
   }
 
   <p-table [value]="purchaseLinesArray()"
@@ -196,7 +196,7 @@
     </ng-template>
 
     <ng-template #emptymessage>
-      <tr rts-empty-row [colspan]="isDraftOrNew() ? 7 : 9" [message]="emptyPurchaseLinesMessage()"></tr>
+      <tr esr-empty-row [colspan]="isDraftOrNew() ? 7 : 9" [message]="emptyPurchaseLinesMessage()"></tr>
     </ng-template>
   </p-table>
 </div>

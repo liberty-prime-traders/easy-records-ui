@@ -33,17 +33,17 @@
           <td>{{ entry.sourceType | prettifyEnum }}</td>
           <td>{{ entry.sourceReferenceNumber }}</td>
           <td>
-            <rts-money [amount]="entry.transactionAmount" [balanceEffect]="entry.transactionBalanceEffect"/>
+            <esr-money [amount]="entry.transactionAmount" [balanceEffect]="entry.transactionBalanceEffect"/>
           </td>
           <td>
-            <rts-money [amount]="entry.netBalance" [balanceEffect]="entry.netBalanceEffect"/>
+            <esr-money [amount]="entry.netBalance" [balanceEffect]="entry.netBalanceEffect"/>
           </td>
         </tr>
       }
     </ng-template>
 
     <ng-template #emptymessage>
-      <tr [colspan]="6" rts-empty-row message="No ledger entries recorded yet"></tr>
+      <tr [colspan]="6" esr-empty-row message="No ledger entries recorded yet"></tr>
     </ng-template>
   </p-table>
 </div>

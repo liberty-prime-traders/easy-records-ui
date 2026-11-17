@@ -12,7 +12,7 @@ import {LoanRepaymentVoidFormComponent} from '../loan-repayment-void-form/loan-r
 import {LoanVoidFormComponent} from '../loan-void-form/loan-void-form.component'
 
 @Component({
-  selector: 'rts-loan-expanded-row',
+  selector: 'esr-loan-expanded-row',
   templateUrl: 'loan-expanded-row.component.html',
   imports: [
     ButtonDirective,

@@ -8,32 +8,32 @@
 } @else {
   <div class="flex flex-column gap-4">
     <div class="flex flex-wrap gap-3">
-      <rts-summary-tile label="Net sales" [loading]="loading()" [amount]="figures()?.netSales ?? 0" />
+      <esr-summary-tile label="Net sales" [loading]="loading()" [amount]="figures()?.netSales ?? 0" />
 
-      <rts-summary-tile label="Cost of goods sold"
+      <esr-summary-tile label="Cost of goods sold"
                         [loading]="loading()"
                         [amount]="figures()?.costOfGoodsSold ?? 0"
                         [subLabel]="costOfGoodsSoldShare()">
-      </rts-summary-tile>
+      </esr-summary-tile>
 
-      <rts-summary-tile label="Gross profit"
+      <esr-summary-tile label="Gross profit"
                         [loading]="loading()"
                         [amount]="figures()?.grossProfit ?? 0"
                         [subLabel]="grossMarginLabel()">
-      </rts-summary-tile>
+      </esr-summary-tile>
 
-      <rts-summary-tile label="Expenses"
+      <esr-summary-tile label="Expenses"
                         [loading]="loading()"
                         [amount]="figures()?.expensesTotal ?? 0">
-      </rts-summary-tile>
+      </esr-summary-tile>
 
-      <rts-summary-tile label="Net profit"
+      <esr-summary-tile label="Net profit"
                         [emphasized]="true"
                         [loading]="loading()"
                         [amount]="figures()?.netProfit ?? 0"
                         [tone]="netProfitTone()"
                         [subLabel]="netMarginLabel()">
-      </rts-summary-tile>
+      </esr-summary-tile>
     </div>
 
     @if (partial() && !loading()) {
@@ -45,10 +45,10 @@
     @if (loading()) {
       <p-skeleton height="18rem" />
     } @else {
-      <rts-trend-chart [days]="days()"
+      <esr-trend-chart [days]="days()"
                        [focusedDate]="focusedDate()"
                        (dayFocused)="dayFocused.emit($event)">
-      </rts-trend-chart>
+      </esr-trend-chart>
     }
 
     @if (loading()) {

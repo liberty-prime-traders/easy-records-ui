@@ -11,7 +11,7 @@ import {SaleFormContext} from '../form-utils/sale-form-context'
 import {SaleLinesComponent} from '../sale-lines/sale-lines.component'
 
 @Component({
-  selector: 'rts-sale-form-tabs',
+  selector: 'esr-sale-form-tabs',
   templateUrl: 'sale-form-tabs.component.html',
   imports: [Tabs, TabList, Tab, TabPanels, TabPanel, Badge, ButtonDirective, CurrencyPipe, SaleLinesComponent, Textarea, FormsModule]
 })

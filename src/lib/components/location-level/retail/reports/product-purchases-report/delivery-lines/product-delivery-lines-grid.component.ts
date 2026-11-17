@@ -18,7 +18,7 @@ import {PrettifyEnumPipe} from '../../../../../../utils/pipes/prettify-enum.pipe
 import {EmptyRowComponent} from '../../../../../reusable/empty-row/empty-row.component'
 
 @Component({
-  selector: 'rts-product-purchases-delivery-lines-grid',
+  selector: 'esr-product-purchases-delivery-lines-grid',
   templateUrl: 'product-delivery-lines-grid.component.html',
   imports: [
     Table,

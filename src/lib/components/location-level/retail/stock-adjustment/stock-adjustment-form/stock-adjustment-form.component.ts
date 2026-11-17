@@ -24,7 +24,7 @@ import {
 import {StockAdjustmentFormDefinition} from './stock-adjustment-form.definition'
 
 @Component({
-  selector: 'rts-location-stock-adjustment-form',
+  selector: 'esr-location-stock-adjustment-form',
   templateUrl: 'stock-adjustment-form.component.html',
   imports: [
     FormButtonsComponent,

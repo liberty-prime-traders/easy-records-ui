@@ -34,7 +34,7 @@
           <h3 class="font-bold">Fiscal Periods</h3>
 
           <div class="flex gap-3 align-items-center">
-            <rts-grid-filter [dataTable]="periodsTable"/>
+            <esr-grid-filter [dataTable]="periodsTable"/>
 
             <button pButton
                     rounded
@@ -102,16 +102,16 @@
         <tr>
           <td colspan="8" class="filled-background">
             @if (period.closable) {
-              <rts-fiscal-period-close [fiscalPeriod]="period"/>
+              <esr-fiscal-period-close [fiscalPeriod]="period"/>
             } @else {
-              <rts-fiscal-period-form [period]="period"/>
+              <esr-fiscal-period-form [period]="period"/>
             }
           </td>
         </tr>
       </ng-template>
 
       <ng-template #emptymessage>
-        <tr rts-empty-row [colspan]="8" message="No Fiscal Periods Found"></tr>
+        <tr esr-empty-row [colspan]="8" message="No Fiscal Periods Found"></tr>
       </ng-template>
     </p-table>
   </div>

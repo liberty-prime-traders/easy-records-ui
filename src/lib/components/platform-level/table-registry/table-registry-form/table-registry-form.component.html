@@ -1,21 +1,21 @@
 <form [formGroup]="form()" class="flex flex-column gap-2">
-  <rts-form-field [required]="true" label="Display Name" for="displayName">
+  <esr-form-field [required]="true" label="Display Name" for="displayName">
     <input id="displayName" pInputText formControlName="displayName">
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field label="Default Prefix" for="defaultPrefix" [required]="true">
+  <esr-form-field label="Default Prefix" for="defaultPrefix" [required]="true">
     <input id="defaultPrefix" pInputText formControlName="defaultPrefix">
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field label="User Facing" for="userFacing">
+  <esr-form-field label="User Facing" for="userFacing">
     <p-toggle-switch id="userFacing" formControlName="userFacing" style="width: 40px"/>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field label="Description" for="description" [required]="true">
+  <esr-form-field label="Description" for="description" [required]="true">
     <textarea id="description" class="w-full" pInputText formControlName="description"></textarea>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-forms-buttons [disableReset]="!form().dirty"
+  <esr-forms-buttons [disableReset]="!form().dirty"
                      [disableSave]="!form().valid || !form().dirty"
                      [hideDelete]="!registry().id"
                      [processingStatus]="processingStatus()"
@@ -23,5 +23,5 @@
                      (resetAction)="reset()"
                      (save)="upsert()"
                      (delete)="delete()">
-  </rts-forms-buttons>
+  </esr-forms-buttons>
 </form>

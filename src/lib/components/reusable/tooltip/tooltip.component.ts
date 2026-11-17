@@ -2,7 +2,7 @@ import {Component, input} from '@angular/core'
 import {Tooltip} from 'primeng/tooltip'
 
 @Component({
-  selector: 'rts-tooltip',
+  selector: 'esr-tooltip',
   templateUrl: 'tooltip.component.html',
   imports: [
     Tooltip

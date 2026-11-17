@@ -2,7 +2,7 @@
   <h3>Note to Admin</h3>
 
   @for (adminDataFixItem of adminDataFixItems; track adminDataFixItem.fix; let isLast = $last) {
-    <rts-loading-container [loading]="adminDataFixItem.isLoading()" loadingText="Running">
+    <esr-loading-container [loading]="adminDataFixItem.isLoading()" loadingText="Running">
       <div class="grid align-items-center">
         <div class="col-9">
           <h4 class="mt-0">{{ adminDataFixItem.title }}</h4>
@@ -14,7 +14,7 @@
           </button>
         </div>
       </div>
-    </rts-loading-container>
+    </esr-loading-container>
     @if (!isLast) {
       <p-divider/>
     }

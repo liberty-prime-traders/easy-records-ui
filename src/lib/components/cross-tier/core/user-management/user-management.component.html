@@ -1,12 +1,12 @@
 
   @if (showAuthorityAssignmentScreen()) {
-    <rts-authority-assignment
+    <esr-authority-assignment
       [schemaLevel]="schemaLevel()"
       (cancel)="hideAuthorityAssignment()"
       (assign)="onAuthoritiesAssigned($event)">
-    </rts-authority-assignment>
+    </esr-authority-assignment>
   } @else {
-    <rts-membership [schemaLevel]="schemaLevel()">
+    <esr-membership [schemaLevel]="schemaLevel()">
       <div class="flex align-items-center gap-2 mb-3">
         <ng-content/>
 
@@ -15,6 +15,6 @@
           <i class="pi pi-plus"></i> Assign Authority
         </button>
       </div>
-    </rts-membership>
+    </esr-membership>
   }
 

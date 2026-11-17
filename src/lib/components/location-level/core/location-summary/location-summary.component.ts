@@ -3,7 +3,7 @@ import {UserContextService} from '../../../../utils/services/auth/user-context.s
 import {AutoStretchDirective} from '../../../reusable/auto-stretch.directive'
 
 @Component({
-  selector: 'rts-location-summary',
+  selector: 'esr-location-summary',
   templateUrl: 'location-summary.component.html',
   imports: [
     AutoStretchDirective

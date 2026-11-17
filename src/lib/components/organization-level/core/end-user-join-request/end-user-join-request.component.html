@@ -32,7 +32,7 @@
             <i class="pi pi-user-minus"></i> Reject Selected
           </button>
         }
-        <rts-grid-filter [dataTable]="requestsTable" margin="m-0"/>
+        <esr-grid-filter [dataTable]="requestsTable" margin="m-0"/>
       </div>
     </div>
   </ng-template>
@@ -76,6 +76,6 @@
   </ng-template>
 
   <ng-template #emptymessage>
-    <tr rts-empty-row [colspan]="4" message="No join requests found"></tr>
+    <tr esr-empty-row [colspan]="4" message="No join requests found"></tr>
   </ng-template>
 </p-table>

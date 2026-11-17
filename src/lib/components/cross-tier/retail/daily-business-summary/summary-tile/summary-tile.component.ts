@@ -12,7 +12,7 @@ export enum TileTone {
 }
 
 @Component({
-  selector: 'rts-summary-tile',
+  selector: 'esr-summary-tile',
   templateUrl: 'summary-tile.component.html',
   styleUrl: 'summary-tile.component.scss',
   imports: [Card, Skeleton, CurrencyPipe, NgClass, AmountChangeComponent]

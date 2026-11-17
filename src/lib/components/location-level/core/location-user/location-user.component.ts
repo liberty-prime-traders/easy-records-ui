@@ -9,7 +9,7 @@ import {UserManagementComponent} from '../../../cross-tier/core/user-management/
 import {PullFromOrgUserComponent} from './pull-from-org-user.component'
 
 @Component({
-  selector: 'rts-location-user',
+  selector: 'esr-location-user',
   templateUrl: 'location-user.component.html',
   imports: [
     UserManagementComponent,

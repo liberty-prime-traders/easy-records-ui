@@ -6,7 +6,7 @@ import {TruncatedListComponent} from '../../../../reusable/truncated-list/trunca
 import {TaxesFilterState} from './taxes-filter.state'
 
 @Component({
-  selector: 'rts-taxes-filter-readonly',
+  selector: 'esr-taxes-filter-readonly',
   imports: [
     DecimalPipe,
     TruncatedListComponent,

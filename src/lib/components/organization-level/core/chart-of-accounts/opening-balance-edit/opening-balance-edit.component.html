@@ -1,4 +1,4 @@
-<rts-loading-container [loading]="loading()">
+<esr-loading-container [loading]="loading()">
   <div class="p-2 flex flex-column gap-4">
     <p-message severity="warn" icon="pi pi-exclamation-triangle">
       <ul>
@@ -8,7 +8,7 @@
       </ul>
     </p-message>
 
-    <rts-form-field label="Amount" >
+    <esr-form-field label="Amount" >
       <p-input-number
         [maxFractionDigits]="2"
         [min]="0"
@@ -17,12 +17,12 @@
         [currency]="currencyCodeProviderService.currencyCode"
         placeholder="e.g. 15.00">
       </p-input-number>
-    </rts-form-field>
+    </esr-form-field>
 
     <div class="flex justify-content-between">
-      <rts-error-summary [regularErrorMessages]="failureMessages()"/>
+      <esr-error-summary [regularErrorMessages]="failureMessages()"/>
       <button pButton (click)="updateOpeningBalance(newAmount.value())">Save</button>
     </div>
   </div>
 
-</rts-loading-container>
+</esr-loading-container>

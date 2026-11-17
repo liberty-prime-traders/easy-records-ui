@@ -16,7 +16,7 @@ import {FormFieldComponent} from '../../../../reusable/form-field/form-field.com
 import {ExpensesFilterState} from './expenses-filter.state'
 
 @Component({
-  selector: 'rts-expenses-filter',
+  selector: 'esr-expenses-filter',
   templateUrl: 'expenses-filter.component.html',
   imports: [
     DatePicker,

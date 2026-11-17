@@ -12,7 +12,7 @@ import {GridWithAddButtonComponent} from '../../../reusable/grid-with-add-button
 import {JobTitleFormComponent} from './job-title-form/job-title-form.component'
 
 @Component({
-  selector: 'rts-job-title',
+  selector: 'esr-job-title',
   templateUrl: 'job-title.component.html',
   imports: [
     TableModule,

@@ -10,7 +10,7 @@
     </p-tabpanel>
 
     <p-tabpanel value="events">
-      <rts-kafka-event-log [sourceDocumentId]="payment().id"/>
+      <esr-kafka-event-log [sourceDocumentId]="payment().id"/>
     </p-tabpanel>
   </p-tabpanels>
 </p-tabs>
@@ -43,15 +43,15 @@
         </button>
 
         @if (voidIsActive()) {
-          <rts-form-field label="Void Reason"
+          <esr-form-field label="Void Reason"
                           [required]="true"
                           [layout]="FormFieldDirection.VERTICAL"
                           class="col-5"
                           contentClass="col-12">
             <textarea pInputText class="w-full" rows="3" [formField]="voidForm.reason"></textarea>
-          </rts-form-field>
+          </esr-form-field>
 
-          <rts-forms-buttons deleteLabel="Void Payment"
+          <esr-forms-buttons deleteLabel="Void Payment"
                              deleteWarning="This action cannot be undone."
                              deleteInProgressMessage="Voiding payment..."
                              deleteIcon="pi pi-ban"
@@ -61,7 +61,7 @@
                              [failureMessages]="failureMessages()"
                              (resetAction)="voidIsActive.set(false)"
                              (delete)="confirmVoid()">
-          </rts-forms-buttons>
+          </esr-forms-buttons>
         }
       </div>
     }

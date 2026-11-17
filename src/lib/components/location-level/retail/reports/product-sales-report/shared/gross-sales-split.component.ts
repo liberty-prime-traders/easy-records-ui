@@ -5,7 +5,7 @@ import {NullishToZeroPipe} from '../../../../../../utils/pipes/nullish-to-zero.p
 import {PercentFigurePipe} from './percent-figure.pipe'
 
 @Component({
-  selector: 'rts-gross-sales-split',
+  selector: 'esr-gross-sales-split',
   templateUrl: 'gross-sales-split.component.html',
   styleUrl: 'gross-sales-split.component.scss',
   imports: [CurrencyPipe, NullishToZeroPipe, PercentFigurePipe]

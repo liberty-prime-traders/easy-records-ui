@@ -12,7 +12,7 @@ import {FormButtonsComponent} from '../../../../reusable/form-buttons/form-butto
 import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
 
 @Component({
-  selector: 'rts-location-form',
+  selector: 'esr-location-form',
   templateUrl: 'location-form.component.html',
   imports: [
     FormButtonsComponent,

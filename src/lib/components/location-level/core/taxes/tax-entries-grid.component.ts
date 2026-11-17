@@ -15,7 +15,7 @@ import {TaxRatePipe} from './tax-rate.pipe'
 import {TaxSourceTypeSeverityPipe} from './tax-source-type-severity.pipe'
 
 @Component({
-  selector: 'rts-tax-entries-grid',
+  selector: 'esr-tax-entries-grid',
   templateUrl: 'tax-entries-grid.component.html',
   imports: [
     TableModule,
