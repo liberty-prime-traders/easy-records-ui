@@ -22,7 +22,7 @@
   <esr-purchase-form/>
 } @else {
   <esr-loading-container [loading]="loading()">
-    <div class="flex" id="purchases-report" rtsAutoStretch="purchases-report">
+    <div class="flex" id="purchases-report" esrAutoStretch="purchases-report">
       @if (selectedTab() === 'purchases') {
         <esr-purchases-filter-readonly class="col-2" (editFilters)="selectedTab.set('summary')"/>
       } @else {

@@ -10,14 +10,14 @@ import {createPresetPrintLayout} from './print-layout.util'
   template: `
     <esr-print-document [layout]="layout()">
       @if (withHeader()) {
-        <ng-template rtsPrintHeader><span id="header">Header</span></ng-template>
+        <ng-template esrPrintHeader><span id="header">Header</span></ng-template>
       }
       <p id="body">Body</p>
-      <p id="hide" rtsPrintHide>Hidden</p>
-      <p id="only" rtsPrintOnly>Only</p>
-      <p id="keep" rtsPrintKeepTogether>Keep</p>
-      <p id="break" rtsPrintBreakBefore>Break</p>
-      <ng-template rtsPrintFooter><span id="footer">Footer</span></ng-template>
+      <p id="hide" esrPrintHide>Hidden</p>
+      <p id="only" esrPrintOnly>Only</p>
+      <p id="keep" esrPrintKeepTogether>Keep</p>
+      <p id="break" esrPrintBreakBefore>Break</p>
+      <ng-template esrPrintFooter><span id="footer">Footer</span></ng-template>
     </esr-print-document>
   `
 })
@@ -83,7 +83,7 @@ describe('PrintDocumentComponent', () => {
     }
   })
 
-  it('hides rtsPrintOnly outside of a document surface', () => {
+  it('hides esrPrintOnly outside of a document surface', () => {
     const stray = document.createElement('p')
     stray.className = 'esr-print-only'
     document.body.appendChild(stray)

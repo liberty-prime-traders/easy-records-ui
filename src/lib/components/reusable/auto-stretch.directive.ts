@@ -4,10 +4,10 @@ import {tap} from 'rxjs/operators'
 import {stretchVisibleElement} from '../../utils/display-manips'
 import {AutoStretchService} from './auto-stretch.service'
 
-@Directive({selector: '[rtsAutoStretch]'})
+@Directive({selector: '[esrAutoStretch]'})
 export class AutoStretchDirective implements AfterViewInit {
 
-  readonly elementId = input('', {alias: 'rtsAutoStretch'})
+  readonly elementId = input('', {alias: 'esrAutoStretch'})
   readonly useMinHeight = input(false)
   readonly padding = input<number|undefined>(undefined)
   readonly stopBefore = input<string>()

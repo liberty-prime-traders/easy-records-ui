@@ -1,4 +1,4 @@
-<div class="flex flex-column gap-4 flex-grow-1" id="jurisdictions" rtsAutoStretch="jurisdictions">
+<div class="flex flex-column gap-4 flex-grow-1" id="jurisdictions" esrAutoStretch="jurisdictions">
   @if (addingIsActive()) {
     <esr-new-form-cancel-button (onCancel)="setAddingActiveFalse()"/>
     <esr-jurisdiction-form (jurisdictionCreated)="closeAddRow()"/>

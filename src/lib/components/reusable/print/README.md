@@ -7,10 +7,10 @@ nothing here imports PrimeNG.
 | Piece | Role |
 |---|---|
 | `PrintLayout`, `PRINT_LAYOUT_PRESETS`, `createPresetPrintLayout`, `createCustomPrintLayout` | Typed, validated layouts. Physical units are preserved; lengths are compared in millimetres, never by `parseFloat`. |
-| `esr-print-document` | The paper surface. Projects any content; optional `rtsPrintHeader` / `rtsPrintFooter` templates. |
+| `esr-print-document` | The paper surface. Projects any content; optional `esrPrintHeader` / `esrPrintFooter` templates. |
 | `esr-print-preview` | On-screen desk (backdrop, shadow, zoom) around a document. Preview chrome never reaches paper. |
 | `PrintService` | `print(surface, layout)` - native print in an isolated, hidden iframe. |
-| `rtsPrintHide`, `rtsPrintOnly`, `rtsPrintKeepTogether`, `rtsPrintBreakBefore` | Host-class directives; the behaviour is CSS. |
+| `esrPrintHide`, `esrPrintOnly`, `esrPrintKeepTogether`, `esrPrintBreakBefore` | Host-class directives; the behaviour is CSS. |
 
 No dependencies were added.
 
@@ -18,13 +18,13 @@ No dependencies were added.
 
 ```html
 <esr-print-document [layout]="layout()">
-  <ng-template rtsPrintHeader>
+  <ng-template esrPrintHeader>
     <div class="branding">{{ organizationName() }}</div>
   </ng-template>
 
   <esr-sale-print-content [sale]="sale()" [layout]="layout()" />
 
-  <ng-template rtsPrintFooter>
+  <ng-template esrPrintFooter>
     <p>Thank you for shopping with us.</p>
   </ng-template>
 </esr-print-document>
@@ -44,7 +44,7 @@ to the sale header, remembers the chosen paper in local storage, and declares th
     <esr-print-preview>
       <esr-print-document #doc [layout]="layout">
         @for (label of labels(); track label.sku) {
-          <section rtsPrintKeepTogether>
+          <section esrPrintKeepTogether>
             <h2>{{ label.name }}</h2>
             <p>{{ label.sku }}</p>
           </section>
@@ -85,12 +85,12 @@ createCustomPrintLayout({kind: PrintLayoutKind.RECEIPT, width: mm(76), margins: 
 
 | Directive | Print output | Preview | Elsewhere in the app |
 |---|---|---|---|
-| `rtsPrintHide` | removed | shown, dimmed with a dashed outline | untouched |
-| `rtsPrintOnly` | shown | shown | **hidden** (when not inside a `esr-print-document`) |
-| `rtsPrintKeepTogether` | `break-inside: avoid` (best effort) | no effect | untouched |
-| `rtsPrintBreakBefore` | `break-before: page` in PAGED layouts only | no effect | untouched |
+| `esrPrintHide` | removed | shown, dimmed with a dashed outline | untouched |
+| `esrPrintOnly` | shown | shown | **hidden** (when not inside a `esr-print-document`) |
+| `esrPrintKeepTogether` | `break-inside: avoid` (best effort) | no effect | untouched |
+| `esrPrintBreakBefore` | `break-before: page` in PAGED layouts only | no effect | untouched |
 
-`rtsPrintHeader` / `rtsPrintFooter` are marker directives on `ng-template`. They render **once**, at the top and
+`esrPrintHeader` / `esrPrintFooter` are marker directives on `ng-template`. They render **once**, at the top and
 bottom of the document flow. They do **not** repeat on every physical page. (For a repeating table header, use a
 real `<thead>`; browsers repeat it across pages.)
 
@@ -167,7 +167,7 @@ set Margins to *Default*/*None* as noted.
 5. **58 mm** - same; nothing clipped on the right, no label overlapping an amount.
 6. **Isolation** - open the preview from a screen with a sidebar and open dialogs behind it; none appear in the print.
 7. **Repeat** - press Print twice quickly: only one dialog opens. Cancel, then print again: works.
-8. **Hide/only** - elements with `rtsPrintHide` appear dimmed in preview and are absent when printed.
+8. **Hide/only** - elements with `esrPrintHide` appear dimmed in preview and are absent when printed.
 9. **Unsupported** - in a browser where `window.print` is unavailable, a toast "Unable to print" is shown.
 
 Automated coverage: `print-layout.util.spec.ts` (units, presets, validation, `@page` output),

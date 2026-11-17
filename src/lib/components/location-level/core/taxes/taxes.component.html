@@ -1,5 +1,5 @@
 <esr-loading-container [loading]="loading()">
-  <div class="flex" id="taxes-report" rtsAutoStretch="taxes-report">
+  <div class="flex" id="taxes-report" esrAutoStretch="taxes-report">
     @if (selectedTab() === 'entries') {
       <esr-taxes-filter-readonly class="col-2" (editFilters)="selectedTab.set('summary')"/>
     } @else {

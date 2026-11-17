@@ -1,6 +1,6 @@
 <div class="p-2 flex flex-column gap-4 scrollable"
      id="editable-sale-lines"
-     rtsAutoStretch="editable-sale-lines">
+     esrAutoStretch="editable-sale-lines">
 
   @for (line of saleLines(); track line.locationProductId; let index = $index) {
     @let touched = line | saleLineHasChanged;

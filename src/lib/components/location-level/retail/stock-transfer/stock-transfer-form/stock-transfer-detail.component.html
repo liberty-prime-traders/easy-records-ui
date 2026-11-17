@@ -1,5 +1,5 @@
 <esr-loading-container [loading]="loading()" loadingText="Saving...">
-  <div id="stock-transfer-detail" class="flex flex-column gap-5" rtsAutoStretch="stock-transfer-detail">
+  <div id="stock-transfer-detail" class="flex flex-column gap-5" esrAutoStretch="stock-transfer-detail">
     <div class="flex gap-3 flex-wrap pl-3">
       <esr-form-field label="Reference Number" [layout]="FormFieldLayout.COMPACT">
         <span class="white-space-nowrap">{{ transferSummary()?.referenceNumber | nullSafe }}</span>

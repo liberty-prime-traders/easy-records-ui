@@ -24,7 +24,7 @@
 
 <ng-template #documentTemplate>
   <esr-print-document [layout]="layout()">
-    <ng-template rtsPrintHeader>
+    <ng-template esrPrintHeader>
       <div class="sale-print-branding">
         <strong>{{ organizationName()  | uppercase | nullSafe }} - {{ locationName() | uppercase | nullSafe }}</strong>
         <span>TEL: {{ phoneNumber }}</span>
@@ -33,7 +33,7 @@
 
     <esr-sale-print-content [sale]="sale()" [layout]="layout()" />
 
-    <ng-template rtsPrintFooter>
+    <ng-template esrPrintFooter>
       <p class="sale-print-thanks">Thank you for shopping with us.</p>
     </ng-template>
   </esr-print-document>

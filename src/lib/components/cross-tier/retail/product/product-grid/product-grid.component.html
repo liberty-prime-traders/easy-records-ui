@@ -1,5 +1,5 @@
 <esr-loading-container [loading]="loading()">
-  <div [id]="schemaLevel() + '-productLines'" [rtsAutoStretch]="schemaLevel() + '-productLines'">
+  <div [id]="schemaLevel() + '-productLines'" [esrAutoStretch]="schemaLevel() + '-productLines'">
     <p-table [value]="products()"
              (onRowExpand)="onRowExpand()"
              (onRowCollapse)="onRowCollapse()"

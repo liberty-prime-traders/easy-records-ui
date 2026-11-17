@@ -15,7 +15,7 @@
 
     <div class="scrollable flex flex-column gap-2 p-2"
          id="sale-payments-grid"
-         rtsAutoStretch="sale-payments-grid">
+         esrAutoStretch="sale-payments-grid">
       @for (payment of payments(); track (payment.identity.id ?? '') + (payment.identity.transientId ?? '')) {
 
         @let isVoided = !!payment.voidedReason;

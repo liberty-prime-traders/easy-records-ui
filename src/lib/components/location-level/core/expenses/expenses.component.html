@@ -14,7 +14,7 @@
       </button>
     </div>
 
-    <div class="flex" id="expenses-report" rtsAutoStretch="expenses-report">
+    <div class="flex" id="expenses-report" esrAutoStretch="expenses-report">
       @if (selectedTab() === 'expenses') {
         <esr-expenses-filter-readonly class="col-2" (editFilters)="selectedTab.set('summary')"/>
       } @else {

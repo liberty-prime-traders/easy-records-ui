@@ -2,7 +2,7 @@
 
 <esr-loading-container [loading]="loading()">
   @if (unitsReady()) {
-    <div id="opening-stock-productLines" rtsAutoStretch="opening-stock-productLines">
+    <div id="opening-stock-productLines" esrAutoStretch="opening-stock-productLines">
       <p-table [value]="products()"
                (onLazyLoad)="onLazyLoad($event)"
                [lazy]="true"

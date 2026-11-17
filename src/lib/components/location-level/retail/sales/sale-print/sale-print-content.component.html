@@ -18,7 +18,7 @@
     <hr>
 
     @for (line of lines(); track line.identity.id ?? line.identity.transientId) {
-      <div class="receipt-line" rtsPrintKeepTogether>
+      <div class="receipt-line" esrPrintKeepTogether>
         <div class="receipt-line-name">{{ line.productPrintLabel }}</div>
         <div class="row">
           <span class="row-label">
@@ -32,7 +32,7 @@
 
     <hr>
 
-    <div class="receipt-totals" rtsPrintKeepTogether>
+    <div class="receipt-totals" esrPrintKeepTogether>
       @for (row of totalRows(); track row.label) {
         <div class="row" [class.emphasis]="row.emphasis">
           <span class="row-label">{{ row.label }}</span>
@@ -43,9 +43,9 @@
 
     @if (payments().length) {
       <hr>
-      <div class="receipt-payments" rtsPrintKeepTogether>
+      <div class="receipt-payments" esrPrintKeepTogether>
         @for (payment of payments(); track payment.identity.id ?? payment.identity.transientId) {
-          <div class="receipt-payment" rtsPrintKeepTogether>
+          <div class="receipt-payment" esrPrintKeepTogether>
             <div class="row">
               <span class="row-label">{{ payment.paymentMethod }}</span>
               <span class="money">{{ payment.amount | currency }}</span>
@@ -66,14 +66,14 @@
 
 } @else {
   <article class="sheet">
-    <section class="sheet-heading" rtsPrintKeepTogether>
+    <section class="sheet-heading" esrPrintKeepTogether>
       <h2>{{ current.referenceNumber | nullSafe }}</h2>
       @if (isDraft() || isVoided()) {
         <strong class="status-flag">{{ current.saleStatus | prettifyEnum }}</strong>
       }
     </section>
 
-    <dl class="sheet-meta" rtsPrintKeepTogether>
+    <dl class="sheet-meta" esrPrintKeepTogether>
       <div>
         <dt>Customer</dt>
         <dd>{{ customerLabel() | nullSafe }}</dd>
@@ -118,7 +118,7 @@
       </tbody>
     </table>
 
-    <section class="sheet-summary" rtsPrintKeepTogether>
+    <section class="sheet-summary" esrPrintKeepTogether>
       @if (payments().length) {
         <div class="sheet-payments">
           <h2>Payments</h2>
@@ -147,11 +147,11 @@
     </section>
 
     @if (current.notes) {
-      <p class="note" rtsPrintKeepTogether>{{ current.notes }}</p>
+      <p class="note" esrPrintKeepTogether>{{ current.notes }}</p>
     }
 
     @if (isVoided()) {
-      <p class="note" rtsPrintKeepTogether>
+      <p class="note" esrPrintKeepTogether>
         Voided by {{ current.saleVoidInfo?.voidedBy | nullSafe }} on {{ current.saleVoidInfo?.voidedOn | date | nullSafe }}:
         {{ current.saleVoidInfo?.voidedReason | nullSafe }}
       </p>
