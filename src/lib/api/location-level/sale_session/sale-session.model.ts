@@ -5,6 +5,29 @@ import {ProductQuantities} from '../product-lookup/product-with-availability.mod
 import {PaymentStatus} from '../purchase/payment-status.enum'
 import {SaleStatus} from '../sale-summary/sale-status.enum'
 
+export enum SaleSessionKind {
+  SALE = 'SALE',
+  PENDING_CONSOLIDATION = 'PENDING_CONSOLIDATION'
+}
+
+export interface ConsolidationIssue {
+  saleReferences: string
+  description: string
+  fix: string
+  blocking: boolean
+}
+
+export interface RemovedSaleLine {
+  identity: SessionIdentity
+  locationProductId: string
+  productLabel: string
+  quantity: number
+  unitId: string
+  unitPrice: number
+  lineTotal: number
+  sourceSaleReference: string
+}
+
 export interface SaleSession extends BaseModel {
   saleId: EntityId | null
   createdBy: string
@@ -25,6 +48,9 @@ export interface SaleSession extends BaseModel {
   salePayments: SalePayment[]
   totals: SaleSessionTotals
   uiOptions: SaleSessionUiOptions
+  kind: SaleSessionKind
+  consolidationIssues: ConsolidationIssue[]
+  removedSaleLines: RemovedSaleLine[]
 }
 
 export interface SaleVoidInfo {
@@ -33,11 +59,26 @@ export interface SaleVoidInfo {
   voidedReason: string
 }
 
+export enum SaleDiscardAction {
+  DISCARD_DRAFT = 'DISCARD_DRAFT',
+  VOID_SALE = 'VOID_SALE',
+  DISCARD_PENDING_CONSOLIDATION = 'DISCARD_PENDING_CONSOLIDATION'
+}
+
 export interface SaleSessionUiOptions {
-  canMakeChangesToTheSale: boolean
+  canAddLines: boolean
+  canEditLines: boolean
+  canChangeContact: boolean
+  canSaveDraft: boolean
+  canConfirm: boolean
+  saveDraftBlockers: string[]
+  confirmBlockers: string[]
+  allowedDiscardAction: SaleDiscardAction | null
+  canCopySale: boolean
   canAddPaymentsToSale: boolean
   showActiveUserWarning: boolean
   showUnreservedChangesWarning: boolean
+  canGenerateConsolidatedSale: boolean
 }
 
 export interface SessionIdentity {

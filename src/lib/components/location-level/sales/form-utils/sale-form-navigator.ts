@@ -1,3 +1,4 @@
+import {HttpErrorResponse} from '@angular/common/http'
 import {inject, Injectable, signal} from '@angular/core'
 import {EntityId} from '@ngrx/signals/entities'
 import {
@@ -49,6 +50,16 @@ export class SaleFormNavigator {
 
   openForCopyOfSale(sourceSaleId: EntityId) {
     this.saleSessionService.startNewSession({copyFromSaleId: sourceSaleId}, {
+      onSuccess: (session) => {
+        this._formOpenedFromPicker.set(false)
+        this.enterFormWithSession(session)
+      }
+    })
+  }
+
+  openForConsolidationOfSales(saleIds: EntityId[], onFail: (error: HttpErrorResponse) => void) {
+    this.saleSessionService.consolidateSales({saleIds}, {
+      onFail,
       onSuccess: (session) => {
         this._formOpenedFromPicker.set(false)
         this.enterFormWithSession(session)

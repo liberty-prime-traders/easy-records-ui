@@ -1,5 +1,4 @@
 import {max, schema, validateTree} from '@angular/forms/signals'
-import {sortBy} from 'lodash-es'
 import {SaleLine} from '../../../../api/location-level/sale_session/sale-session.model'
 
 export namespace SaleLineFormDefinition {
@@ -11,13 +10,12 @@ export namespace SaleLineFormDefinition {
   }
 
   export const mapSaleLines = (saleLines: SaleLine[]): SaleLineFormModel[] => {
-    return sortBy(saleLines,'productLabel')
-      .map(line => ({
-        ...line,
-        snapshotUnitId: line.unitId,
-        snapshotQuantity: line.quantity,
-        snapshotUnitPriceOverride: line.unitPriceOverride
-      }))
+    return saleLines.map(line => ({
+      ...line,
+      snapshotUnitId: line.unitId,
+      snapshotQuantity: line.quantity,
+      snapshotUnitPriceOverride: line.unitPriceOverride
+    }))
   }
 
   export const hasChanged = (saleLine: SaleLineFormDefinition.SaleLineFormModel): boolean => {

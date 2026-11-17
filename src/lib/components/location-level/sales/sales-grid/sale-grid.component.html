@@ -1,5 +1,19 @@
+<rts-error-summary [regularErrorMessages]="consolidationFailureMessages()"/>
+
+@if (selectedSales().length) {
+  <div class="flex align-items-center gap-3 pb-2">
+    <button pButton severity="secondary" [disabled]="!canConsolidate()" (click)="consolidateSelectedSales()">
+      <i class="pi pi-clone"></i>Consolidate sales
+    </button>
+    <span class="text-color-secondary">
+      {{ selectedSales().length }} selected
+    </span>
+  </div>
+}
+
 <div id="sale-grid" rtsAutoStretch="sale-grid">
   <p-table [value]="sales()"
+           [(selection)]="selectedSales"
            [loading]="loading()"
            (onLazyLoad)="onLazyLoad($event)"
            [lazy]="true"
@@ -12,27 +26,31 @@
 
     <ng-template #header>
       <tr>
+        <th style="width: 2rem"></th>
         <th>Reference</th>
         <th>Customer</th>
         <th>Sale Status</th>
-        <th>Payment Status</th>
+        <th  style="width: 9rem">Payment Status</th>
         <th>Arrears</th>
         <th>Total Paid</th>
         <th>Sold By</th>
         <th>Date Sold</th>
-        <th style="width: 5rem"></th>
+        <th style="width: 3rem"></th>
       </tr>
     </ng-template>
 
     <ng-template #body let-sale>
       @if (sale?.placeholder) {
         <tr>
-          <td style="height: 55px" colspan="9">
+          <td style="height: 55px" colspan="10">
             <p-skeleton class="h-full"/>
           </td>
         </tr>
       } @else {
         <tr style="height: 55px">
+          <td>
+            <p-table-checkbox [value]="sale" [disabled]="!sale.canConsolidate"/>
+          </td>
           <td>{{ sale.referenceNumber | nullSafe }}</td>
           <td>{{ sale.contactName | nullSafe }}</td>
 
@@ -47,18 +65,25 @@
                    [severity]="sale.paymentStatus | paymentStatusSeverity">
             </p-tag>
           </td>
-          <td>{{ sale.arrearsTotal | currency }}</td>
-          <td>{{ sale.totalPaid | currency }}</td>
+          <td>
+            <rts-money [amount]="sale.arrearsTotal"
+                       [balanceEffect]="sale.arrearsTotal | nonZeroBalanceEffect: BalanceEffect.SUBTRACTS">
+            </rts-money>
+          </td>
+          <td>
+            <rts-money [amount]="sale.totalPaid"
+                       [balanceEffect]="sale.totalPaid | nonZeroBalanceEffect: BalanceEffect.ADDS">
+            </rts-money>
+          </td>
           <td>{{ sale.soldBy | nullSafe }}</td>
           <td>{{ sale.dateSold | date | nullSafe }}</td>
 
           <td>
             <button pButton
-                    rounded
                     severity="secondary"
                     [disabled]="loading()"
                     (click)="onEditSale(sale)">
-              <i class="pi pi-pen-to-square"></i>
+              <i class="pi pi-pen-line"></i>
             </button>
           </td>
         </tr>
@@ -66,7 +91,7 @@
     </ng-template>
 
     <ng-template #emptymessage>
-      <tr rts-empty-row [colspan]="9" message="No sales found."></tr>
+      <tr rts-empty-row [colspan]="10" message="No sales found."></tr>
     </ng-template>
 
   </p-table>

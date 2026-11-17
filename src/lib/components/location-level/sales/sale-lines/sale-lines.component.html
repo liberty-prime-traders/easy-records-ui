@@ -1,17 +1,5 @@
-@if (canAddOrEditProducts()) {
-  <rts-available-product-lookup
-    (productSelected)="sendLineRequest($event)"
-    [selectedProductIds]="selectedProductIds()">
-  </rts-available-product-lookup>
-}
-
-<div class="flex gap-3 mb-2">
-  <span class="font-medium text-xl">Sale Lines</span>
-  <p-badge [value]="saleLines().length" severity="info"/>
-</div>
-
 <rts-loading-container [loading]="unitConversionGraphIsLoading()" loadingText="Loading sale lines...">
-  @if (canAddOrEditProducts()) {
+  @if (canEditLines()) {
     <rts-editable-sale-lines [saleLines]="saleLines()"/>
   } @else {
     <rts-read-only-sale-lines [saleLines]="saleLines()"/>
