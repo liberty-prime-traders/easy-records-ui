@@ -1,3 +1,5 @@
+<rts-error-summary [regularErrorMessages]="consolidationFailureMessages()"/>
+
 @if (selectedSales().length) {
   <div class="flex align-items-center gap-3 pb-2">
     <button pButton severity="secondary" [disabled]="!canConsolidate()" (click)="consolidateSelectedSales()">
@@ -24,11 +26,11 @@
 
     <ng-template #header>
       <tr>
-        <th style="width: 3rem"></th>
+        <th style="width: 2rem"></th>
         <th>Reference</th>
         <th>Customer</th>
         <th>Sale Status</th>
-        <th>Payment Status</th>
+        <th  style="width: 9rem">Payment Status</th>
         <th>Arrears</th>
         <th>Total Paid</th>
         <th>Sold By</th>
@@ -63,8 +65,16 @@
                    [severity]="sale.paymentStatus | paymentStatusSeverity">
             </p-tag>
           </td>
-          <td>{{ sale.arrearsTotal | currency }}</td>
-          <td>{{ sale.totalPaid | currency }}</td>
+          <td>
+            <rts-money [amount]="sale.arrearsTotal"
+                       [balanceEffect]="sale.arrearsTotal | nonZeroBalanceEffect: BalanceEffect.SUBTRACTS">
+            </rts-money>
+          </td>
+          <td>
+            <rts-money [amount]="sale.totalPaid"
+                       [balanceEffect]="sale.totalPaid | nonZeroBalanceEffect: BalanceEffect.ADDS">
+            </rts-money>
+          </td>
           <td>{{ sale.soldBy | nullSafe }}</td>
           <td>{{ sale.dateSold | date | nullSafe }}</td>
 

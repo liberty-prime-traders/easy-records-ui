@@ -7,7 +7,7 @@ export interface SaleSessionStartRequest {
   copyFromSaleId?: EntityId
 }
 
-export interface SaleConsolidationSelectRequest {
+export interface SaleConsolidationRequest {
   saleIds: EntityId[]
 }
 

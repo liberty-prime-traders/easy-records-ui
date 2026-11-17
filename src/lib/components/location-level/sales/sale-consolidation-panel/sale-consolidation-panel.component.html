@@ -13,17 +13,23 @@
 
     <div class="flex align-items-center gap-2">
       <span class="font-semibold">Issues</span>
-      <p-badge [value]="issues().length" [severity]="issues().length ? 'danger' : 'success'" size="small"/>
+      <p-badge [value]="blockingIssueCount()" [severity]="blockingIssueCount() ? 'danger' : 'success'" size="small"/>
     </div>
 
     <div class="flex flex-column gap-3">
       @for (issue of issues(); track $index) {
         <div class="flex flex-column gap-1 border-bottom-1 surface-border pb-3">
-          <span class="font-semibold">{{ issue.saleReferences }}</span>
+          <div class="flex align-items-center gap-2">
+            <span class="font-semibold">{{ issue.saleReferences }}</span>
+            @if (!issue.blocking) {
+              <p-tag value="Heads up" severity="warn"/>
+            }
+          </div>
           <span>{{ issue.description }}</span>
           <span class="text-color-secondary">{{ issue.fix }}</span>
         </div>
-      } @empty {
+      }
+      @if (!blockingIssueCount()) {
         <span>Nothing left to fix. Generate the consolidated sale.</span>
       }
     </div>

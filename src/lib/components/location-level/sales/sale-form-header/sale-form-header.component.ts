@@ -83,12 +83,17 @@ export class SaleFormHeaderComponent {
   }
 
   confirmSaleVoid(voidReason: string) {
+    const voidingConfirmedSale = this.isVoidingConfirmedSale()
     this.saleSessionService.discardOrVoidSale(
       voidReason,
       {
         onSuccess: (sale) => {
-          this.context.loadSession(sale)
           this.showVoidSaleScreen.set(false)
+          if (voidingConfirmedSale) {
+            this.context.loadSession(sale)
+          } else {
+            this.navigator.backFromForm()
+          }
         }
       }
     )

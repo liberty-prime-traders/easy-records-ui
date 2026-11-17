@@ -4,7 +4,7 @@ import {ApiCallbacks} from '../../util/base-api/api-callbacks'
 import {BaseService} from '../../util/base-api/base.service'
 import {UnsavedCartsSummaryService} from '../unsaved-carts-summary/unsaved-carts-summary.service'
 import {
-  SaleConsolidationSelectRequest,
+  SaleConsolidationRequest,
   SaleSessionHeaderUpdateRequest,
   SaleSessionLineRequest,
   SaleSessionPaymentAddRequest,
@@ -52,7 +52,7 @@ export class SaleSessionService extends BaseService<SaleSession> {
     })
   }
 
-  selectSalesToConsolidate(selectRequest: SaleConsolidationSelectRequest, callbacks?: ApiCallbacks<SaleSession>) {
+  consolidateSales(selectRequest: SaleConsolidationRequest, callbacks?: ApiCallbacks<SaleSession>) {
     this.resetStoreAndClearCache()
     return this.postRequest({
       config: {urlSuffix: 'consolidate'},

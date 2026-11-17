@@ -14,6 +14,7 @@ export interface ConsolidationIssue {
   saleReferences: string
   description: string
   fix: string
+  blocking: boolean
 }
 
 export interface RemovedSaleLine {
