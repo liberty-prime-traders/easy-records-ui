@@ -13,7 +13,7 @@ import {ContactType} from '../../../../../api/organization-level/core/contact/co
 import {ExpenseType} from '../../../../../api/organization-level/core/expense-type/expense-type.model'
 import {ExpenseTypeService} from '../../../../../api/organization-level/core/expense-type/expense-type.service'
 import {EnumToDropdownPipe} from '../../../../../utils/pipes/enum-to-dropdown.pipe'
-import {RtsTreeNode} from '../../../../../utils/types/esr-tree-node'
+import {LibertyTreeNode} from '../../../../../utils/types/liberty-tree-node'
 import {BaseFormComponent} from '../../../../reusable/base-form.component'
 import {FormButtonsComponent} from '../../../../reusable/form-buttons/form-buttons.component'
 import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
@@ -120,6 +120,6 @@ export class ExpenseTypeFormComponent extends BaseFormComponent<ExpenseTypeServi
   }
 
   private findOriginalAccount(): TreeNode<Account> | null {
-    return RtsTreeNode.findNode(this.originalExpenseType()?.expenseAccountCode, this.expenseAccountTrees())
+    return LibertyTreeNode.findNode(this.originalExpenseType()?.expenseAccountCode, this.expenseAccountTrees())
   }
 }

@@ -6,7 +6,7 @@ import {environment} from '@environments/environment'
 import {CURRENCY} from '@global/utils/currencies.config'
 import {provideMarkdown} from 'ngx-markdown'
 import {providePrimeNG} from 'primeng/config'
-import {RtsHttpInterceptor} from './utils/esr-http.interceptor'
+import {LibertyHttpInterceptor} from './utils/liberty-http.interceptor'
 import {ZonedDatesService} from '../lib/utils/services/zoned-dates.service'
 import {AppPreset, darkModeSelector} from './app.preset'
 import {appRoutes} from './app.routes'
@@ -27,7 +27,7 @@ export const appConfig: ApplicationConfig = {
         }
       }
     }),
-    {provide: HTTP_INTERCEPTORS, useClass: RtsHttpInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: LibertyHttpInterceptor, multi: true},
     {provide: CurrencyPipe},
     {provide: DatePipe},
     {

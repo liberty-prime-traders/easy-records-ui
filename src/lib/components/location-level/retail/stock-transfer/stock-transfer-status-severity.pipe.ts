@@ -1,21 +1,21 @@
 import {Pipe, PipeTransform} from '@angular/core'
 import {StockTransferStatus} from '../../../../api/cross-tier/retail/stock-transfer/stock-transfer-status.enum'
-import {RtsSeverity} from '../../../../utils/types/severity'
+import {LibertySeverity} from '../../../../utils/types/severity'
 
 @Pipe({name: 'stockTransferStatusSeverity', standalone: true})
 export class StockTransferStatusSeverityPipe implements PipeTransform {
-  transform(status?: StockTransferStatus): RtsSeverity {
+  transform(status?: StockTransferStatus): LibertySeverity {
     switch (status) {
     case StockTransferStatus.DRAFT:
-      return RtsSeverity.WARN
+      return LibertySeverity.WARN
     case StockTransferStatus.DISPATCHED:
-      return RtsSeverity.INFO
+      return LibertySeverity.INFO
     case StockTransferStatus.COMPLETED:
-      return RtsSeverity.SUCCESS
+      return LibertySeverity.SUCCESS
     case StockTransferStatus.CANCELLED:
-      return RtsSeverity.DANGER
+      return LibertySeverity.DANGER
     default:
-      return RtsSeverity.SECONDARY
+      return LibertySeverity.SECONDARY
     }
   }
 }

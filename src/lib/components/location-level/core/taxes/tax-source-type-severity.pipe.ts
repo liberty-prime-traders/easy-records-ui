@@ -1,19 +1,19 @@
 import {Pipe, PipeTransform} from '@angular/core'
 import {TaxSourceType} from '../../../../api/location-level/core/tax-entry/tax-source-type.enum'
-import {RtsSeverity} from '../../../../utils/types/severity'
+import {LibertySeverity} from '../../../../utils/types/severity'
 
 @Pipe({name: 'taxSourceTypeSeverity', standalone: true})
 export class TaxSourceTypeSeverityPipe implements PipeTransform {
-  transform(sourceType?: TaxSourceType): RtsSeverity {
+  transform(sourceType?: TaxSourceType): LibertySeverity {
     switch (sourceType) {
       case TaxSourceType.SALE:
-        return RtsSeverity.SUCCESS
+        return LibertySeverity.SUCCESS
       case TaxSourceType.SALE_VOID:
-        return RtsSeverity.DANGER
+        return LibertySeverity.DANGER
       case TaxSourceType.PURCHASE_DELIVERY:
-        return RtsSeverity.INFO
+        return LibertySeverity.INFO
       default:
-        return RtsSeverity.SECONDARY
+        return LibertySeverity.SECONDARY
     }
   }
 }

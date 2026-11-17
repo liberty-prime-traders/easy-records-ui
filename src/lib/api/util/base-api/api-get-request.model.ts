@@ -10,10 +10,10 @@ export interface ApiGetRequestModel<RESPONSE, PARAMS = any> {
   config?: Partial<ApiRequestConfig>
 }
 
-export interface RtsHttpParams extends Partial<HttpParams> {
+export interface LibertyHttpParams extends Partial<HttpParams> {
   id?: string
   pathParams?: string
   pathSuffix?: string
 }
 
-export type FetchParams = RtsHttpParams | any
+export type FetchParams = LibertyHttpParams | any

@@ -3,7 +3,7 @@ import {TestBed} from '@angular/core/testing'
 import {Router} from '@angular/router'
 import {of} from 'rxjs'
 import {AuthenticationService} from '../../../api/platform-level/authentication/authentication.service'
-import {RtsGoogleAuthService} from '../../../utils/services/auth/esr-google-auth.service'
+import {LibertyGoogleAuthService} from '../../../utils/services/auth/liberty-google-auth.service'
 import {SessionReauthenticationService} from '../../../utils/services/auth/session-reauthentication.service'
 import {UserContextService} from '../../../utils/services/auth/user-context.service'
 import {SessionExpiredDialogComponent} from './session-expired-dialog.component'
@@ -28,7 +28,7 @@ describe('SessionExpiredDialogComponent', () => {
 
     TestBed.configureTestingModule({
       providers: [
-        {provide: RtsGoogleAuthService, useValue: googleAuthService},
+        {provide: LibertyGoogleAuthService, useValue: googleAuthService},
         {provide: AuthenticationService, useValue: authenticationService},
         {provide: UserContextService, useValue: userContextService},
         {provide: Router, useValue: router}

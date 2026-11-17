@@ -12,7 +12,7 @@ import {OrgTaxType} from '../../../../../api/organization-level/core/org-tax-typ
 import {OrgTaxTypeService} from '../../../../../api/organization-level/core/org-tax-type/org-tax-type.service'
 import {TaxRecoveryType} from '../../../../../api/platform-level/tax-type/tax-recovery-type.enum'
 import {EnumToDropdownPipe} from '../../../../../utils/pipes/enum-to-dropdown.pipe'
-import {RtsTreeNode} from '../../../../../utils/types/esr-tree-node'
+import {LibertyTreeNode} from '../../../../../utils/types/liberty-tree-node'
 import {BaseFormComponent} from '../../../../reusable/base-form.component'
 import {FormButtonsComponent} from '../../../../reusable/form-buttons/form-buttons.component'
 import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
@@ -96,11 +96,11 @@ export class OrgTaxTypeEditFormComponent extends BaseFormComponent<OrgTaxTypeSer
   }
 
   private findOriginalPayableNode(): TreeNode<Account> | null {
-    return RtsTreeNode.findNode(this.originalTaxType()?.payableAccountCode, this.payableAccounts())
+    return LibertyTreeNode.findNode(this.originalTaxType()?.payableAccountCode, this.payableAccounts())
   }
 
   private findOriginalRecoverableNode(): TreeNode<Account> | null {
-    return RtsTreeNode.findNode(this.originalTaxType()?.recoverableAccountCode, this.recoverableAccounts())
+    return LibertyTreeNode.findNode(this.originalTaxType()?.recoverableAccountCode, this.recoverableAccounts())
   }
 
   save() {

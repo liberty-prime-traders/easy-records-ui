@@ -7,22 +7,22 @@ import {NavigationScope} from '../../lib/components/welcome/top-navigation/navig
 import {SessionReauthenticationService} from '../../lib/utils/services/auth/session-reauthentication.service'
 import {UserContextService} from '../../lib/utils/services/auth/user-context.service'
 import {SessionContextService} from '../../lib/utils/services/session-context.service'
-import {RtsHttpInterceptor} from './esr-http.interceptor'
+import {LibertyHttpInterceptor} from './liberty-http.interceptor'
 
-describe('RtsHttpInterceptor location header', () => {
+describe('LibertyHttpInterceptor location header', () => {
   const selectedScope = signal(NavigationScope.ORG)
   const location = {id: 'loc-1'}
   let sentRequest: HttpRequest<unknown>
 
   const send = () => {
     const handler = {handle: (request: HttpRequest<unknown>) => { sentRequest = request; return of() }} as HttpHandler
-    TestBed.inject(RtsHttpInterceptor).intercept(new HttpRequest('GET', '/secured/anything'), handler).subscribe()
+    TestBed.inject(LibertyHttpInterceptor).intercept(new HttpRequest('GET', '/secured/anything'), handler).subscribe()
   }
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        RtsHttpInterceptor,
+        LibertyHttpInterceptor,
         {provide: UserContextService, useValue: {token: () => 'token'}},
         {
           provide: SessionContextService,
@@ -44,7 +44,7 @@ describe('RtsHttpInterceptor location header', () => {
   })
 })
 
-describe('RtsHttpInterceptor session renewal and unauthorized retry', () => {
+describe('LibertyHttpInterceptor session renewal and unauthorized retry', () => {
   let currentToken: string
   let userContextService: {token: () => string; signOut: jasmine.Spy}
   let authenticationService: {renewSessionToken: jasmine.Spy}
@@ -62,7 +62,7 @@ describe('RtsHttpInterceptor session renewal and unauthorized retry', () => {
   })
 
   const interceptSecured = (handler: HttpHandler): Observable<unknown> =>
-    TestBed.inject(RtsHttpInterceptor).intercept(new HttpRequest('GET', '/secured/anything'), handler)
+    TestBed.inject(LibertyHttpInterceptor).intercept(new HttpRequest('GET', '/secured/anything'), handler)
 
   beforeEach(() => {
     currentToken = 'token'
@@ -75,7 +75,7 @@ describe('RtsHttpInterceptor session renewal and unauthorized retry', () => {
 
     TestBed.configureTestingModule({
       providers: [
-        RtsHttpInterceptor,
+        LibertyHttpInterceptor,
         {provide: UserContextService, useValue: userContextService},
         {
           provide: SessionContextService,

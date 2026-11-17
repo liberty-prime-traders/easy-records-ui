@@ -5,7 +5,7 @@ import {LocalStorageService} from '../local-storage.service'
 import {LocalStorageKey} from '../../types/local-storage-key.enum'
 
 @Injectable({providedIn: 'root'})
-export class RtsGoogleAuthService {
+export class LibertyGoogleAuthService {
   private static readonly CLIENT_ID = environment.GOOGLE_CLIENT_ID
 
   // TODO: swap localStorage for a Cookie ASAP - localStorage is not appropriate for storing auth credentials
@@ -27,7 +27,7 @@ export class RtsGoogleAuthService {
       // @ts-ignore
       use_fedcm_for_button: true,
       button_auto_select: true,
-      client_id: RtsGoogleAuthService.CLIENT_ID,
+      client_id: LibertyGoogleAuthService.CLIENT_ID,
       callback: (response: CredentialResponse) => {
         this.setStoredCredential(response.credential)
         onCredential(response.credential)

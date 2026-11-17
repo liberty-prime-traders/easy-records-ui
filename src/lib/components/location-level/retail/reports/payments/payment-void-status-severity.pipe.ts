@@ -1,17 +1,17 @@
 import {Pipe, PipeTransform} from '@angular/core'
 import {PaymentVoidStatus} from '../../../../../api/location-level/retail/payment/payment-void-status.enum'
-import {RtsSeverity} from '../../../../../utils/types/severity'
+import {LibertySeverity} from '../../../../../utils/types/severity'
 
 @Pipe({name: 'paymentVoidStatusSeverity', standalone: true})
 export class PaymentVoidStatusSeverityPipe implements PipeTransform {
-  transform(status?: PaymentVoidStatus): RtsSeverity {
+  transform(status?: PaymentVoidStatus): LibertySeverity {
     switch (status) {
       case PaymentVoidStatus.ACTIVE:
-        return RtsSeverity.SUCCESS
+        return LibertySeverity.SUCCESS
       case PaymentVoidStatus.VOIDED:
-        return RtsSeverity.DANGER
+        return LibertySeverity.DANGER
       default:
-        return RtsSeverity.SECONDARY
+        return LibertySeverity.SECONDARY
     }
   }
 }

@@ -11,7 +11,7 @@ import {
 import {OrgFeatureService} from '../../../../../api/organization-level/core/org-feature/org-feature.service'
 import {OrgTaxTypeService} from '../../../../../api/organization-level/core/org-tax-type/org-tax-type.service'
 import {TaxRecoveryType} from '../../../../../api/platform-level/tax-type/tax-recovery-type.enum'
-import {RtsTreeNode} from '../../../../../utils/types/esr-tree-node'
+import {LibertyTreeNode} from '../../../../../utils/types/liberty-tree-node'
 import {LoadingContainerComponent} from '../../../../reusable/loading-container/loading-container.component'
 import {OrgTaxTypeAddFormDefinition} from './org-tax-type-add-form.definition'
 
@@ -36,7 +36,7 @@ export class OrgTaxTypeAddFormComponent implements OnInit {
 
   readonly availableTaxTypes = this.availableTaxTypesService.selectAll
   readonly taxTypeTreeIsLoading = this.availableTaxTypesService.selectLoading
-  readonly selectedTaxNodes = model<RtsTreeNode.EntityTreeNode<TaxRecoveryType>[]>([])
+  readonly selectedTaxNodes = model<LibertyTreeNode.EntityTreeNode<TaxRecoveryType>[]>([])
   readonly processingStatus = this.orgJurisdictionTaxTypeService.selectProcessingStatus
   readonly failureMessages = this.orgJurisdictionTaxTypeService.selectFailureMessages
   readonly orgTaxTypesLoading = this.orgJurisdictionTaxTypeService.selectLoading

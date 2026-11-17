@@ -4,7 +4,7 @@ import {EntityId} from '@ngrx/signals/entities'
 import {isNil} from 'lodash-es'
 import {throwError} from 'rxjs'
 import {ProcessingStatus} from '../../../utils/types/processing-status.enum'
-import {RtsDeclaredTypes} from '../../../utils/types/esr-declared-types'
+import {LibertyDeclaredTypes} from '../../../utils/types/liberty-declared-types'
 import {isPaginated} from '../paginated-api/page-response.model'
 import {ApiRequestConfig, ApiRequestContext} from './api-request-config'
 import {BaseModel} from './base.model'
@@ -37,7 +37,7 @@ export abstract class ServiceFacade<RESPONSE extends BaseModel> {
     return this.store.selectForId(id)
   }
 
-  protected prepareResponse(body: RtsDeclaredTypes.OrPaginated<RESPONSE>, idParam?: EntityId): any {
+  protected prepareResponse(body: LibertyDeclaredTypes.OrPaginated<RESPONSE>, idParam?: EntityId): any {
     if (idParam) {
       return {...body, id: idParam}
     }
@@ -85,7 +85,7 @@ export abstract class ServiceFacade<RESPONSE extends BaseModel> {
     this.store.upsert(entity)
   }
 
-  protected finishSavingWithSuccess(response: RtsDeclaredTypes.OrPaginated<RESPONSE>, request?: ApiRequestContext) {
+  protected finishSavingWithSuccess(response: LibertyDeclaredTypes.OrPaginated<RESPONSE>, request?: ApiRequestContext) {
     const result = this.prepareResponse(response, request?.id)
     if (Array.isArray(result)) {
       if (this.resolveApiRequestConfig(request?.config).upsertOnSuccess) {

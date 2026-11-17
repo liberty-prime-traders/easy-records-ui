@@ -19,7 +19,7 @@ import {SessionContextService} from '../../lib/utils/services/session-context.se
 const RENEWED_TOKEN_HEADER = 'X-Renewed-Token'
 
 @Injectable()
-export class RtsHttpInterceptor implements HttpInterceptor {
+export class LibertyHttpInterceptor implements HttpInterceptor {
   private readonly userContextService = inject(UserContextService)
   private readonly sessionContextService = inject(SessionContextService)
   private readonly authenticationService = inject(AuthenticationService)

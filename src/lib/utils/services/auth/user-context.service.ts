@@ -7,13 +7,13 @@ import {
 } from '../../../api/platform-level/organization/organization-admin/organization-admin.service'
 import {LibertyAccessService} from '../../../api/organization-level/core/liberty-access/liberty-access.service'
 import {UserRole} from '../../../api/cross-tier/core/authorization/user-role.enum'
-import {RtsGoogleAuthService} from './esr-google-auth.service'
+import {LibertyGoogleAuthService} from './liberty-google-auth.service'
 
 @Injectable({ providedIn: 'root' })
 export class UserContextService {
   private readonly authenticationService = inject(AuthenticationService)
   private readonly organizationAdminService = inject(OrganizationAdminService)
-  private readonly googleAuthService = inject(RtsGoogleAuthService)
+  private readonly googleAuthService = inject(LibertyGoogleAuthService)
   private readonly libertyAccessService = inject(LibertyAccessService)
 
   private readonly _isOrganizationAdmin = signal<boolean>(false)

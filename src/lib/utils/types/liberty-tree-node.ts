@@ -2,7 +2,7 @@ import {EntityId} from '@ngrx/signals/entities'
 import {TreeNode} from 'primeng/api'
 import {BaseModel} from '../../api/util/base-api/base.model'
 
-export namespace RtsTreeNode {
+export namespace LibertyTreeNode {
 
   export declare type EntityTreeNode<T = never> = TreeNode<T> & BaseModel & {
     key: EntityId

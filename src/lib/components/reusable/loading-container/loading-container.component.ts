@@ -1,7 +1,7 @@
 import {NgClass} from '@angular/common'
 import {Component, input} from '@angular/core'
 import {ProgressSpinner} from 'primeng/progressspinner'
-import {RtsConstants} from '../../../utils/constants'
+import {LibertyConstants} from '../../../utils/constants'
 
 @Component({
   selector: 'esr-loading-container',
@@ -28,7 +28,7 @@ import {RtsConstants} from '../../../utils/constants'
   ]
 })
 export class LoadingContainerComponent {
-  readonly ZIndexes = RtsConstants.ZIndexes
+  readonly ZIndexes = LibertyConstants.ZIndexes
   readonly loading = input(false)
   readonly loadingText = input('Loading')
 }
