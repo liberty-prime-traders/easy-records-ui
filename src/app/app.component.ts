@@ -22,5 +22,5 @@ import {WelcomeComponent} from '../lib/components/welcome/welcome.component'
   ]
 })
 export class AppComponent {
-  title = 'retail-software-solution-ui'
+  title = 'easy-records-ui'
 }
