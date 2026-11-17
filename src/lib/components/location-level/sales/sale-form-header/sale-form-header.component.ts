@@ -6,6 +6,7 @@ import {Dialog} from 'primeng/dialog'
 import {InputText} from 'primeng/inputtext'
 import {Tag} from 'primeng/tag'
 import {SaleStatus} from '../../../../api/location-level/sale-summary/sale-status.enum'
+import {SaleDiscardAction} from '../../../../api/location-level/sale_session/sale-session.model'
 import {SaleSessionService} from '../../../../api/location-level/sale_session/sale-session.service'
 import {NullSafePipe} from '../../../../utils/pipes/null-safe.pipe'
 import {PrettifyEnumPipe} from '../../../../utils/pipes/prettify-enum.pipe'
@@ -40,21 +41,30 @@ export class SaleFormHeaderComponent {
 
   readonly saleStatus = computed(() => this.saleSession().saleStatus)
   readonly saleSession = this.context.saleSession
-  private readonly sessionIsPersisted = computed(() => !!this.saleSession().id)
 
   readonly saleIsBeyondDraft = computed(() =>
     this.saleStatus() && [SaleStatus.CONFIRMED, SaleStatus.VOIDED].includes(this.saleStatus()!)
   )
 
-  readonly canDiscardSale = computed(() =>
-    this.sessionIsPersisted() && [SaleStatus.DRAFT, SaleStatus.CONFIRMED].includes(this.saleStatus())
+  readonly allowedDiscardAction = computed(() => this.saleSession().uiOptions.allowedDiscardAction)
+  readonly canDiscardSale = computed(() => !!this.allowedDiscardAction())
+  readonly isVoidingConfirmedSale = computed(() => this.allowedDiscardAction() === SaleDiscardAction.VOID_SALE)
+  readonly isDiscardingPendingConsolidation = computed(() =>
+    this.allowedDiscardAction() === SaleDiscardAction.DISCARD_PENDING_CONSOLIDATION
   )
 
-  readonly discardSaleLabel = computed(() =>
-    this.saleStatus() === SaleStatus.DRAFT ? 'Discard Draft' : 'Void Sale'
-  )
+  readonly discardSaleLabel = computed(() => {
+    switch (this.allowedDiscardAction()) {
+      case SaleDiscardAction.VOID_SALE:
+        return 'Void Sale'
+      case SaleDiscardAction.DISCARD_PENDING_CONSOLIDATION:
+        return 'Discard Consolidation'
+      default:
+        return 'Discard Draft'
+    }
+  })
 
-  readonly canCopySale = computed(() => !!this.saleSession().saleId)
+  readonly canCopySale = computed(() => this.saleSession().uiOptions.canCopySale)
 
   readonly startFreshFormAfterPrint = this.context.startFreshFormAfterPrint
   readonly autoPrintAfterConfirm = this.context.autoPrintAfterConfirm

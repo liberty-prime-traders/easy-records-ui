@@ -2,9 +2,11 @@ import {CurrencyPipe, DatePipe} from '@angular/common'
 import {Component, computed, inject} from '@angular/core'
 import {ButtonDirective} from 'primeng/button'
 import {TableModule} from 'primeng/table'
+import {Tag} from 'primeng/tag'
 import {
   UnsavedCartsSummaryService
 } from '../../../../api/location-level/unsaved-carts-summary/unsaved-carts-summary.service'
+import {SaleSessionKind} from '../../../../api/location-level/sale_session/sale-session.model'
 import {SaleSessionService} from '../../../../api/location-level/sale_session/sale-session.service'
 import {NullSafePipe} from '../../../../utils/pipes/null-safe.pipe'
 import {ErrorSummaryComponent} from '../../../reusable/error-summary/error-summary.component'
@@ -19,7 +21,8 @@ import {SaleFormNavigator} from '../form-utils/sale-form-navigator'
     NullSafePipe,
     ButtonDirective,
     CurrencyPipe,
-    ErrorSummaryComponent
+    ErrorSummaryComponent,
+    Tag
   ]
 })
 export class UnsavedCartsComponent {
@@ -27,6 +30,7 @@ export class UnsavedCartsComponent {
   private readonly unsavedCartsSummaryService = inject(UnsavedCartsSummaryService)
   private readonly navigator = inject(SaleFormNavigator)
 
+  readonly pendingConsolidationKind = SaleSessionKind.PENDING_CONSOLIDATION
   readonly failureMessages = this.unsavedCartsSummaryService.selectFailureMessages
   readonly myUnsavedCarts = this.unsavedCartsSummaryService.selectAll
 

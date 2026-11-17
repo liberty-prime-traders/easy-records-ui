@@ -11,4 +11,5 @@ export interface SaleSearchResult extends PaginatedModel {
   paymentStatus: PaymentStatus
   arrearsTotal: number
   totalPaid: number
+  canConsolidate: boolean
 }

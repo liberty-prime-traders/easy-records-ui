@@ -56,6 +56,15 @@ export class SaleFormNavigator {
     })
   }
 
+  openForConsolidationOfSales(saleIds: EntityId[]) {
+    this.saleSessionService.selectSalesToConsolidate({saleIds}, {
+      onSuccess: (session) => {
+        this._formOpenedFromPicker.set(false)
+        this.enterFormWithSession(session)
+      }
+    })
+  }
+
   resumeOpenSession(sessionId: string) {
     this.saleSessionService.acquireSession(sessionId, {
       onSuccess: (session) => {

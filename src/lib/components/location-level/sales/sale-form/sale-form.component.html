@@ -36,10 +36,22 @@
             }
           </rts-form-field>
 
-          <rts-sale-lines class="p-3 flex-grow-1"/>
+          @if (canAddProducts()) {
+            <rts-available-product-lookup
+              class="px-3"
+              (productSelected)="sendLineRequest($event)"
+              [selectedProductIds]="selectedProductIds()">
+            </rts-available-product-lookup>
+          }
+
+          <rts-sale-form-tabs class="flex-grow-1"/>
         </div>
 
-        <rts-sale-form-summary class="col-3 p-0"/>
+        @if (isPendingConsolidation()) {
+          <rts-sale-consolidation-panel class="col-3 p-0"/>
+        } @else {
+          <rts-sale-form-summary class="col-3 p-0"/>
+        }
       </div>
     </div>
   }

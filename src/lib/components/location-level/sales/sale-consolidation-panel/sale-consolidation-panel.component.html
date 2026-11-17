@@ -1,0 +1,31 @@
+<p-card class="border-noround shadow-none h-full">
+  <div class="flex flex-column gap-3 pb-3">
+    <button pButton
+            class="w-full"
+            [disabled]="!canGenerate()"
+            (click)="generate()">
+      <i class="pi pi-check"></i> Generate consolidated sale
+    </button>
+
+    @for (message of failureMessages(); track message) {
+      <div class="text-red-500">{{ message }}</div>
+    }
+
+    <div class="flex align-items-center gap-2">
+      <span class="font-semibold">Issues</span>
+      <p-badge [value]="issues().length" [severity]="issues().length ? 'danger' : 'success'" size="small"/>
+    </div>
+
+    <div class="flex flex-column gap-3">
+      @for (issue of issues(); track $index) {
+        <div class="flex flex-column gap-1 border-bottom-1 surface-border pb-3">
+          <span class="font-semibold">{{ issue.saleReferences }}</span>
+          <span>{{ issue.description }}</span>
+          <span class="text-color-secondary">{{ issue.fix }}</span>
+        </div>
+      } @empty {
+        <span>Nothing left to fix. Generate the consolidated sale.</span>
+      }
+    </div>
+  </div>
+</p-card>

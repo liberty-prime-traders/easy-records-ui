@@ -2,6 +2,7 @@ import {Component, computed, inject, OnInit} from '@angular/core'
 import {FormField} from '@angular/forms/signals'
 import {Select} from 'primeng/select'
 import {ToggleButton} from 'primeng/togglebutton'
+import {SaleSessionKind} from '../../../../api/location-level/sale_session/sale-session.model'
 import {SaleSessionService} from '../../../../api/location-level/sale_session/sale-session.service'
 import {
   UnsavedCartsSummaryService
@@ -12,12 +13,18 @@ import {AutoStretchDirective} from '../../../reusable/auto-stretch.directive'
 import {FormFieldComponent} from '../../../reusable/form-field/form-field.component'
 import {HasSubscriptionComponent} from '../../../reusable/has-subscription.component'
 import {LoadingContainerComponent} from '../../../reusable/loading-container/loading-container.component'
+import {
+  AvailableProductLookupComponent
+} from '../../location-product-lookup/available-product-lookup/available-product-lookup.component'
+import {ProductWithAvailability} from '../../../../api/location-level/product-lookup/product-with-availability.model'
+import {WALK_IN_CUSTOMER_ID} from '../walk-in-customer-id'
 import {SaleFormContext} from '../form-utils/sale-form-context'
 import {SaleFormMode} from '../form-utils/sale-form-mode.enum'
 import {SaleFormNavigator} from '../form-utils/sale-form-navigator'
 import {SaleFormHeaderComponent} from '../sale-form-header/sale-form-header.component'
+import {SaleFormTabsComponent} from '../sale-form-tabs/sale-form-tabs.component'
+import {SaleConsolidationPanelComponent} from '../sale-consolidation-panel/sale-consolidation-panel.component'
 import {SaleFormSummaryComponent} from '../sale-form-summary/sale-form-summary.component'
-import {SaleLinesComponent} from '../sale-lines/sale-lines.component'
 import {UnsavedCartsComponent} from '../unsaved-carts/unsaved-carts.component'
 
 @Component({
@@ -30,7 +37,9 @@ import {UnsavedCartsComponent} from '../unsaved-carts/unsaved-carts.component'
     Select,
     ToggleButton,
     SaleFormSummaryComponent,
-    SaleLinesComponent,
+    SaleConsolidationPanelComponent,
+    SaleFormTabsComponent,
+    AvailableProductLookupComponent,
     LoadingContainerComponent,
     AutoStretchDirective,
     NullSafePipe,
@@ -46,12 +55,10 @@ export class SaleFormComponent extends HasSubscriptionComponent implements OnIni
   private readonly saleSessionService = inject(SaleSessionService)
   private readonly saleSessionSummaryService = inject(UnsavedCartsSummaryService)
 
-  private static readonly WalkInCustomerId = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
   readonly customers = this.contactService.customers
   readonly saleForm = this.context.saleForm
   readonly saleSession = this.context.saleSession
   readonly currentContactId = computed(() => this.context.currentContactId())
-  private readonly sessionIsPersisted = computed(() => !!this.saleSession().id)
 
   readonly showUnsavedCarts = computed(() => this.navigator.mode() === SaleFormMode.PICKER)
 
@@ -59,9 +66,11 @@ export class SaleFormComponent extends HasSubscriptionComponent implements OnIni
     this.saleSessionService.selectLoading() || this.saleSessionSummaryService.selectLoading()
   )
 
-  readonly canEditCustomer = computed(() =>
-    !this.sessionIsPersisted() || this.saleSession().uiOptions.canMakeChangesToTheSale
-  )
+  readonly isPendingConsolidation = computed(() => this.saleSession().kind === SaleSessionKind.PENDING_CONSOLIDATION)
+
+  readonly canAddProducts = computed(() => this.saleSession().uiOptions.canAddLines)
+  readonly selectedProductIds = computed(() => this.context.saleLines().map(saleLine => saleLine.locationProductId))
+  readonly canEditCustomer = computed(() => this.saleSession().uiOptions.canChangeContact)
 
   ngOnInit() {
     this.contactService.fetch()
@@ -86,7 +95,7 @@ export class SaleFormComponent extends HasSubscriptionComponent implements OnIni
   }
 
   respondToWalkInCustomer(walkInCustomer: boolean) {
-    const newId = walkInCustomer ? SaleFormComponent.WalkInCustomerId : '';
+    const newId = walkInCustomer ? WALK_IN_CUSTOMER_ID : '';
     const wasEmpty = !this.currentContactId();
     this.saleForm.contactId().value.set(newId);
     if (walkInCustomer && wasEmpty) {
@@ -96,4 +105,7 @@ export class SaleFormComponent extends HasSubscriptionComponent implements OnIni
     }
   }
 
+  sendLineRequest(newProduct?: ProductWithAvailability) {
+    this.context.sendLineRequest(newProduct)
+  }
 }

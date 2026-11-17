@@ -1,14 +1,4 @@
-import {
-  applyEach,
-  applyWhen,
-  disabled,
-  max,
-  minLength,
-  required,
-  RootFieldContext,
-  schema
-} from '@angular/forms/signals'
-import {SaleStatus} from '../../../../api/location-level/sale-summary/sale-status.enum'
+import {applyEach, applyWhen, disabled, required, RootFieldContext, schema} from '@angular/forms/signals'
 import {SaleSession} from '../../../../api/location-level/sale_session/sale-session.model'
 import {SaleLineFormDefinition} from './sale-line-form.definition'
 
@@ -18,42 +8,31 @@ export namespace SaleFormDefinition {
     contactId: string
     walkInCustomer: boolean | null
     saleLines: SaleLineFormDefinition.SaleLineFormModel[]
-    receivableTotal: number
-    paymentTotal: number
-    balance: number
-    saleStatus: SaleStatus
+    canEditLines: boolean
   }
 
 
   export const fieldMap: Map<string, string> = new Map([
     ['contactId', 'Customer'],
     ['walkInCustomer', 'Walk-in Customer'],
-    ['saleLines', 'Sale Lines'],
-    ['receivableTotal', 'Total Receivable'],
-    ['paymentTotal', 'Total Paid'],
-    ['balance', 'Balance Due']
+    ['saleLines', 'Sale Lines']
   ])
 
   export const createDefault = (): SaleFormModel => ({
     contactId: '',
     walkInCustomer: null,
     saleLines: [],
-    paymentTotal: 0,
-    balance: 0,
-    receivableTotal: 0,
-    saleStatus: SaleStatus.DRAFT
+    canEditLines: true
   })
 
   export const saleFormSchema = schema<SaleFormModel>((salePath) => {
     applyEach(salePath.saleLines, (linePath) => {
       applyWhen(
         linePath,
-        ({valueOf}) => valueOf(salePath.saleStatus) === SaleStatus.DRAFT,
+        ({valueOf}) => valueOf(salePath.canEditLines),
         SaleLineFormDefinition.saleLineSchema
       )
     })
-
-    minLength(salePath.saleLines, 1, {message: 'Sale must have at least one line'})
 
     required(
       salePath.contactId,
@@ -64,18 +43,6 @@ export namespace SaleFormDefinition {
       salePath.contactId,
       {when: ({valueOf}: RootFieldContext<string>) => !!valueOf(salePath.walkInCustomer)}
     )
-
-    max(
-      salePath.balance,
-      ({valueOf}) => valueOf(salePath.walkInCustomer) ? 0 : valueOf(salePath.receivableTotal),
-      {message: 'Walk-in customers must pay in full'}
-    )
-
-    max(
-      salePath.paymentTotal,
-      ({valueOf}) => valueOf(salePath.receivableTotal),
-      {message: 'Total paid cannot exceed order total'}
-    )
   })
 
   export const convertToFormModel = (sale: SaleSession): SaleFormModel => {
@@ -83,10 +50,7 @@ export namespace SaleFormDefinition {
       contactId: sale.contactId,
       walkInCustomer: sale.walkInCustomer ?? null,
       saleLines: SaleLineFormDefinition.mapSaleLines(sale.saleLines),
-      receivableTotal: sale.totals.receivableTotal,
-      paymentTotal: sale.totals.paymentTotal,
-      balance: sale.totals.balance,
-      saleStatus: sale.saleStatus
+      canEditLines: sale.uiOptions.canEditLines
     }
   }
 

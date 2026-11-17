@@ -22,9 +22,7 @@
     <ng-template #header>
       <tr>
         <th>Created By</th>
-        <th>Created On</th>
         <th>Last Accessed By</th>
-        <th>Last Accessed At</th>
         <th>Last Updated At</th>
         <th>Contact</th>
         <th>Receivable Total</th>
@@ -35,12 +33,27 @@
 
     <ng-template #body let-session>
       <tr>
-        <td>{{ session.createdBy }}</td>
-        <td>{{ session.createdAt | date }}</td>
-        <td>{{ session.lastAccessedBy | nullSafe }}</td>
-        <td>{{ session.lastAccessedAt | date }}</td>
+        <td>
+          <div class="flex flex-column">
+            <span>{{ session.createdBy }}</span>
+            <span class="text-color-secondary">{{ session.createdAt | date }}</span>
+          </div>
+        </td>
+        <td>
+          <div class="flex flex-column">
+            <span>{{ session.lastAccessedBy | nullSafe }}</span>
+            <span class="text-color-secondary">{{ session.lastAccessedAt | date }}</span>
+          </div>
+        </td>
         <td>{{ session.lastUpdatedAt | date }}</td>
-        <td>{{ session.contactLabel }}</td>
+        <td>
+          <div class="flex flex-column align-items-start gap-1">
+            <span>{{ session.contactLabel }}</span>
+            @if (session.kind === pendingConsolidationKind) {
+              <p-tag value="Pending consolidation" severity="warn"/>
+            }
+          </div>
+        </td>
         <td>{{ session.receivableTotal | currency }}</td>
 
         <td>

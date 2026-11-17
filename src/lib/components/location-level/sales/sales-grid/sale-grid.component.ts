@@ -1,8 +1,8 @@
 import {CurrencyPipe, DatePipe} from '@angular/common'
-import {Component, computed, effect, inject, viewChild} from '@angular/core'
+import {Component, computed, effect, inject, signal, viewChild} from '@angular/core'
 import {ButtonDirective} from 'primeng/button'
 import {Skeleton} from 'primeng/skeleton'
-import {Table, TableModule} from 'primeng/table'
+import {Table, TableCheckbox, TableModule} from 'primeng/table'
 import {TableLazyLoadEvent} from 'primeng/types/table'
 import {Tag} from 'primeng/tag'
 import {SaleSearchResult} from '../../../../api/location-level/sale-summary/sale-search-result.model'
@@ -23,6 +23,7 @@ import {SaleStatusSeverityPipe} from '../sale-status-severity.pipe'
   templateUrl: 'sale-grid.component.html',
   imports: [
     TableModule,
+    TableCheckbox,
     ButtonDirective,
     Tag,
     Skeleton,
@@ -42,7 +43,6 @@ export class SaleGridComponent {
   private readonly navigator = inject(SaleFormNavigator)
 
   private readonly table = viewChild(Table)
-
   readonly sales = this.saleSearchResultService.selectAll
 
   readonly loading = computed(() =>
@@ -51,6 +51,7 @@ export class SaleGridComponent {
 
   readonly $resetScrollOnSearch = effect(() => {
     this.saleSearchResultService.freshLoadCompleted()
+    this.selectedSales.set([])
     const table = this.table()
     if (table) {
       resetVirtualScrollOnSearch(table)
@@ -59,6 +60,13 @@ export class SaleGridComponent {
 
   onLazyLoad(lazyLoadEvent: TableLazyLoadEvent): void {
     loadNextOnLazyLoad(this.saleSearchResultService, lazyLoadEvent.last)
+  }
+
+  readonly selectedSales = signal<SaleSearchResult[]>([])
+  readonly canConsolidate = computed(() => this.selectedSales().length >= 2 && !this.loading())
+
+  consolidateSelectedSales() {
+    this.navigator.openForConsolidationOfSales(this.selectedSales().map(sale => sale.id))
   }
 
   onEditSale(sale: SaleSearchResult) {

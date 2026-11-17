@@ -7,6 +7,10 @@ export interface SaleSessionStartRequest {
   copyFromSaleId?: EntityId
 }
 
+export interface SaleConsolidationSelectRequest {
+  saleIds: EntityId[]
+}
+
 export interface SaleSessionLineRequest {
   additions: SaleSessionLineAddRequest[]
   updates: SaleSessionLineUpdateRequest[]

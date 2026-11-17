@@ -4,6 +4,7 @@ import {ApiCallbacks} from '../../util/base-api/api-callbacks'
 import {BaseService} from '../../util/base-api/base.service'
 import {UnsavedCartsSummaryService} from '../unsaved-carts-summary/unsaved-carts-summary.service'
 import {
+  SaleConsolidationSelectRequest,
   SaleSessionHeaderUpdateRequest,
   SaleSessionLineRequest,
   SaleSessionPaymentAddRequest,
@@ -48,6 +49,34 @@ export class SaleSessionService extends BaseService<SaleSession> {
     return this.postRequest({
       body: newSessionRequest,
       callbacks: this.getSessionCallback({refetchUnsavedCarts: true}, callbacks)
+    })
+  }
+
+  selectSalesToConsolidate(selectRequest: SaleConsolidationSelectRequest, callbacks?: ApiCallbacks<SaleSession>) {
+    this.resetStoreAndClearCache()
+    return this.postRequest({
+      config: {urlSuffix: 'consolidate'},
+      body: selectRequest as any,
+      callbacks: this.getSessionCallback({refetchUnsavedCarts: true, bumpSaleMutatedCount: true}, callbacks)
+    })
+  }
+
+  generateConsolidatedSale(callbacks?: ApiCallbacks<SaleSession>) {
+    return this.postRequest({
+      id: this.currentSessionId(),
+      config: {urlSuffix: 'generate-consolidated-sale'},
+      callbacks: this.getSessionCallback(
+        {removeFromUnsavedCarts: true, refetchUnsavedCarts: true, bumpSaleMutatedCount: true}, callbacks
+      )
+    })
+  }
+
+  restoreRemovedLine(identity: SessionIdentity, callbacks?: ApiCallbacks<SaleSession>) {
+    return this.postRequest({
+      id: this.currentSessionId(),
+      config: {urlSuffix: 'lines/restore'},
+      body: {identity} as any,
+      callbacks: this.getSessionCallback({}, callbacks)
     })
   }
 
