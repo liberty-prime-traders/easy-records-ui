@@ -57,7 +57,13 @@
 
 <p-dialog [header]="discardSaleLabel()" [(visible)]="showVoidSaleScreen" [modal]="true">
   <div class="flex flex-column gap-2">
-    @if (saleIsBeyondDraft()) {
+    @if (isDiscardingPendingConsolidation()) {
+      <ul>
+        <li> This holds only the lines that could not be combined.</li>
+        <li> Discarding it leaves the selected sales exactly as they are.</li>
+      </ul>
+
+    } @else if (isVoidingConfirmedSale()) {
       <ul>
         <li> This sale has been confirmed which means products have been handed over to the customer.</li>
         <li> Discarding it will reverse the sale and return all products back to stock.</li>

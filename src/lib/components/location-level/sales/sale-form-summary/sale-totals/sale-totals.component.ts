@@ -2,7 +2,6 @@ import {CurrencyPipe, DatePipe, NgClass} from '@angular/common'
 import {Component, computed, inject} from '@angular/core'
 import {ButtonDirective} from 'primeng/button'
 import {Divider} from 'primeng/divider'
-import {SaleStatus} from '../../../../../api/location-level/sale-summary/sale-status.enum'
 import {SaleSessionService} from '../../../../../api/location-level/sale_session/sale-session.service'
 import {NullSafePipe} from '../../../../../utils/pipes/null-safe.pipe'
 import {FormFieldLayout} from '../../../../reusable/form-field/form-field-layout'
@@ -31,11 +30,16 @@ export class SaleTotalsComponent {
   readonly saleForm = this.context.saleForm
   readonly saleSession =  this.context.saleSession
 
-  readonly canMakeChangesToTheSale = computed(() => this.saleSession()?.uiOptions.canMakeChangesToTheSale)
-  readonly isVoided = computed(() => this.saleSession()?.saleStatus === SaleStatus.VOIDED)
+  readonly canSaveDraft = computed(() => this.saleSession().uiOptions.canSaveDraft)
+  readonly canConfirm = computed(() => this.saleSession().uiOptions.canConfirm)
+  readonly isVoided = computed(() => !!this.saleSession().saleVoidInfo)
 
-  readonly hasInactiveProducts = computed(() =>
-    this.saleSession()?.saleLines.some(saleLine => !saleLine.productActive) ?? false
+  readonly saveDisabled = computed(() =>
+    this.saleForm().invalid() || this.saleSession().uiOptions.saveDraftBlockers.length > 0
+  )
+
+  readonly confirmDisabled = computed(() =>
+    this.saleForm().invalid() || this.saleSession().uiOptions.confirmBlockers.length > 0
   )
 
   saveDraft() {

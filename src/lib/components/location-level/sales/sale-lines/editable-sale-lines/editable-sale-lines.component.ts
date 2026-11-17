@@ -1,5 +1,5 @@
 import {CurrencyPipe} from '@angular/common'
-import {Component, inject, input} from '@angular/core'
+import {Component, computed, inject, input} from '@angular/core'
 import {FormField} from '@angular/forms/signals'
 import {Badge} from 'primeng/badge'
 import {ButtonDirective} from 'primeng/button'
@@ -11,6 +11,7 @@ import {InputGroupAddon} from 'primeng/inputgroupaddon'
 import {InputNumber} from 'primeng/inputnumber'
 import {Select} from 'primeng/select'
 import {Tooltip} from 'primeng/tooltip'
+import {SaleSessionKind} from '../../../../../api/location-level/sale_session/sale-session.model'
 import {SaleSessionService} from '../../../../../api/location-level/sale_session/sale-session.service'
 import {
   AlternativeUnitsFinderPipe
@@ -56,6 +57,10 @@ import {SaleLineHasChangedPipe} from '../sale-line-has-changed.pipe'
 export class EditableSaleLinesComponent {
   private readonly context = inject(SaleFormContext)
   private readonly saleSessionService = inject(SaleSessionService)
+
+  readonly availableLabelSuffix = computed(() =>
+    this.context.saleSession().kind === SaleSessionKind.PENDING_CONSOLIDATION ? ' once these sales are voided' : ''
+  )
 
   readonly saleLinesFieldTree = this.context.saleForm.saleLines
 

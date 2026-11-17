@@ -45,6 +45,12 @@ export class SaleFormSummaryComponent {
   readonly canAddPaymentsToSale = computed(() => this.saleSession()?.uiOptions.canAddPaymentsToSale)
   readonly saleFormFieldMap = SaleFormDefinition.fieldMap
 
+  readonly errorMessages = computed(() => {
+    const uiOptions = this.saleSession().uiOptions
+    const blockers = uiOptions.canConfirm ? uiOptions.confirmBlockers : uiOptions.saveDraftBlockers
+    return blockers.concat(this.failureMessages())
+  })
+
   onTabChange() {
     this.autoStretchService.triggerStretch()
   }

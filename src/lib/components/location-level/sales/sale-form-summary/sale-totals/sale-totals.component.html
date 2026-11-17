@@ -52,22 +52,26 @@
     </div>
   </div>
 
-  @if (canMakeChangesToTheSale()) {
+  @if (canSaveDraft() || canConfirm()) {
     <div class="flex gap-2 justify-content-end">
-      <button pButton
-              text
-              severity="secondary"
-              [disabled]="saleForm().invalid() || hasInactiveProducts()"
-              (click)="saveDraft()">
-        Save Draft
-      </button>
+      @if (canSaveDraft()) {
+        <button pButton
+                text
+                severity="secondary"
+                [disabled]="saveDisabled()"
+                (click)="saveDraft()">
+          Save Draft
+        </button>
+      }
 
-      <button pButton
-              severity="success"
-              [disabled]="saleForm().invalid() || hasInactiveProducts()"
-              (click)="completeSale()">
-        <i class="pi pi-check"></i> Confirm Sale
-      </button>
+      @if (canConfirm()) {
+        <button pButton
+                severity="success"
+                [disabled]="confirmDisabled()"
+                (click)="completeSale()">
+          <i class="pi pi-check"></i> Confirm Sale
+        </button>
+      }
     </div>
 
     @if (saleSession().uiOptions.showUnreservedChangesWarning) {

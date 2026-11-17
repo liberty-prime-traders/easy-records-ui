@@ -1,6 +1,6 @@
 import {PaymentStatus} from '../purchase/payment-status.enum'
 import {SaleStatus} from '../sale-summary/sale-status.enum'
-import {SaleSession} from './sale-session.model'
+import {SaleSession, SaleSessionKind} from './sale-session.model'
 
 export const defaultSaleSession = (): SaleSession => {
   return {
@@ -36,10 +36,22 @@ export const defaultSaleSession = (): SaleSession => {
       balance: 0,
     },
     uiOptions: {
-      canMakeChangesToTheSale: false,
+      canAddLines: false,
+      canEditLines: false,
+      canChangeContact: true,
+      canSaveDraft: false,
+      canConfirm: false,
+      saveDraftBlockers: [],
+      confirmBlockers: [],
+      allowedDiscardAction: null,
+      canCopySale: false,
       canAddPaymentsToSale: false,
       showActiveUserWarning: false,
-      showUnreservedChangesWarning: false
+      showUnreservedChangesWarning: false,
+      canGenerateConsolidatedSale: false
     },
+    kind: SaleSessionKind.SALE,
+    consolidationIssues: [],
+    removedSaleLines: [],
   }
 }
