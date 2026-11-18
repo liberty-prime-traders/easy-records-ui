@@ -2,7 +2,7 @@ import {Component, input} from '@angular/core'
 import {TruncatedListPipe} from '../../../utils/pipes/truncated-list.pipe'
 
 @Component({
-  selector: 'rts-truncated-list',
+  selector: 'esr-truncated-list',
   imports: [
     TruncatedListPipe
   ],

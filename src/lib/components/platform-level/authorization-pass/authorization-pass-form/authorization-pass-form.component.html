@@ -1,15 +1,15 @@
 <form class="flex flex-column gap-2" [class.filled-background]="!formValue().id">
   @if (isCreatingNewPass()) {
-    <rts-form-field [required]="true" label="Pass Type" for="passType">
+    <esr-form-field [required]="true" label="Pass Type" for="passType">
       <p-select id="passType"
                 class="flex-grow-1"
                 [options]="PassType | enumToDropdown"
                 [formField]="passForm.passType"
                 placeholder="Select a Pass Type">
       </p-select>
-    </rts-form-field>
+    </esr-form-field>
 
-    <rts-form-field [required]="true" label="Assigned To" for="assignedToId">
+    <esr-form-field [required]="true" label="Assigned To" for="assignedToId">
       <p-select id="assignedToId"
                 class="flex-grow-1"
                 [filter]="true"
@@ -19,18 +19,18 @@
                 [formField]="passForm.assignedToId"
                 placeholder="Who will use this pass?">
       </p-select>
-    </rts-form-field>
+    </esr-form-field>
   }
 
-  <rts-form-field [required]="true" label="Max Use Count" for="maxUseCount">
+  <esr-form-field [required]="true" label="Max Use Count" for="maxUseCount">
     <p-input-number id="maxUseCount" [min]="1" [formField]="passForm.maxUseCount"/>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-form-field label="Expires On" for="expiresOn">
+  <esr-form-field label="Expires On" for="expiresOn">
     <p-date-picker [formField]="passForm.expiresOn" id="expiresOn" [minDate]="tomorrow" [showIcon]="true"/>
-  </rts-form-field>
+  </esr-form-field>
 
-  <rts-forms-buttons [disableReset]="!passForm().dirty"
+  <esr-forms-buttons [disableReset]="!passForm().dirty"
                      [disableSave]="passForm().invalid() || !passForm().dirty"
                      [hideDelete]="!canRevoke()"
                      deleteLabel="Revoke"
@@ -43,5 +43,5 @@
                      (delete)="revoke()"
                      (save)="upsert()"
                      (resetAction)="resetForm()">
-  </rts-forms-buttons>
+  </esr-forms-buttons>
 </form>

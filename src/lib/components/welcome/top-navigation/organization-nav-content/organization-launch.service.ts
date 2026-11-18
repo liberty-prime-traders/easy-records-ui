@@ -3,8 +3,8 @@ import {Router} from '@angular/router'
 import {MessageService} from 'primeng/api'
 import {finalize, of} from 'rxjs'
 import {catchError, tap} from 'rxjs/operators'
-import {LibertyAccessService} from '../../../../api/organization-level/liberty-access/liberty-access.service'
-import {LocationService} from '../../../../api/organization-level/location/location.service'
+import {LibertyAccessService} from '../../../../api/organization-level/core/liberty-access/liberty-access.service'
+import {LocationService} from '../../../../api/organization-level/core/location/location.service'
 import {
   OrganizationLaunchResponse
 } from '../../../../api/platform-level/organization/organization-launch-response.model'

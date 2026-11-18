@@ -1,4 +1,4 @@
-export enum RtsSeverity {
+export enum LibertySeverity {
   SUCCESS = 'success',
   SECONDARY = 'secondary',
   INFO = 'info',

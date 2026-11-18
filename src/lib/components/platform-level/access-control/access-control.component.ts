@@ -1,13 +1,13 @@
 import {Component, inject, signal} from '@angular/core'
 import {ButtonDirective} from 'primeng/button'
 import {TableModule} from 'primeng/table'
-import {AuthorityService} from '../../../api/cross-tier/authorization/authority.service'
+import {AuthorityService} from '../../../api/cross-tier/core/authorization/authority.service'
 import {SchemaLevel} from '../../../api/platform-level/table-registry/schema-level.enum'
-import {AuthorityAssignmentComponent} from '../../cross-tier/authority-assignment/authority-assignment.component'
+import {AuthorityAssignmentComponent} from '../../cross-tier/core/authority-assignment/authority-assignment.component'
 import {PlatformAuthoritiesComponent} from './platform-authorities.component'
 
 @Component({
-  selector: 'rts-access-control',
+  selector: 'esr-access-control',
   templateUrl: './access-control.component.html',
   imports: [
     TableModule,

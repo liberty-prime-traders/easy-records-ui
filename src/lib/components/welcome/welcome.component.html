@@ -1,8 +1,8 @@
-<rts-loading-container [loading]="isAuthenticating()" loadingText="Authenticating...">
+<esr-loading-container [loading]="isAuthenticating()" loadingText="Authenticating...">
   <div class="flex flex-column"
        id="welcome-screen"
        [padding]="0"
-       rtsAutoStretch="welcome-screen"
+       esrAutoStretch="welcome-screen"
        (onResize)="onResize()"
        [ngClass]="fullScreen() ? 'gap-1' : 'gap-4'">
 
@@ -25,25 +25,25 @@
 
             @if (isPlatformAdmin()) {
               <ng-template #panel>
-                <rts-scope-pill [config]="PlatformPillConfig"/>
+                <esr-scope-pill [config]="PlatformPillConfig"/>
               </ng-template>
             }
 
             <ng-template #panel>
-              <rts-scope-pill [config]="OrganizationPillConfig">
-                <rts-organization-nav-content/>
-              </rts-scope-pill>
+              <esr-scope-pill [config]="OrganizationPillConfig">
+                <esr-organization-nav-content/>
+              </esr-scope-pill>
             </ng-template>
 
             <ng-template #panel>
-              <rts-scope-pill [config]="LocationPillConfig">
-                <rts-location-nav-content/>
-              </rts-scope-pill>
+              <esr-scope-pill [config]="LocationPillConfig">
+                <esr-location-nav-content/>
+              </esr-scope-pill>
             </ng-template>
 
             <ng-template #panel>
               <div class="flex h-full flex-grow-1 justify-content-center align-items-center">
-                <rts-user-account-nav-content/>
+                <esr-user-account-nav-content/>
               </div>
             </ng-template>
           </p-splitter>
@@ -66,4 +66,4 @@
       <router-outlet/>
     </div>
   </div>
-</rts-loading-container>
+</esr-loading-container>

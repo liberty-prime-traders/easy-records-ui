@@ -1,5 +1,5 @@
 
-export namespace RtsConstants {
+export namespace LibertyConstants {
 
   export namespace ZIndexes {
     export const LOADING_BACKDROP = 9998

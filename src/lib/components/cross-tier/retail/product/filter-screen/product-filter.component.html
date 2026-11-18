@@ -1,0 +1,60 @@
+<form class="flex flex-column gap-2 mt-4" [formGroup]="productFilterService.filterForm">
+
+  <esr-form-field label="Reference Number" for="referenceNumber" [layout]="FormFieldDirection.VERTICAL" contentClass="col-12">
+    <input [placeholder]="referenceNumberPlaceholder()"
+           id="referenceNumber"
+           class="flex-grow-1"
+           pInputText
+           formControlName="referenceNumber" />
+  </esr-form-field>
+
+  <esr-form-field label="Product Categories" for="categoryIds" [layout]="FormFieldDirection.VERTICAL" contentClass="col-12">
+    <p-select id="categoryIds"
+              class="flex-grow-1"
+              [options]="productCategories()"
+              optionLabel="categoryName"
+              optionValue="id"
+              [multiple]="true"
+              formControlName="categoryIds"
+              placeholder="Select Product Categories" >
+    </p-select>
+  </esr-form-field>
+
+  @if (schemaLevel() === SchemaLevel.ORGANIZATION) {
+    <esr-form-field  label="Tags" for="tagIds" [layout]="FormFieldDirection.VERTICAL" contentClass="col-12">
+      <p-select id="tagIds"
+                class="flex-grow-1"
+                [options]="productTags()"
+                optionLabel="tagName"
+                optionValue="id"
+                [multiple]="true"
+                formControlName="tagIds"
+                placeholder="Select Tags" >
+      </p-select>
+    </esr-form-field>
+  }
+
+  <div class="flex flex-column gap-2">
+    @for (statusOption of (ProductStatus | enumToDropdown); track statusOption.value) {
+      <div class="flex align-items-center gap-2 pl-4">
+        <p-checkbox [value]="statusOption.value"
+                    formControlName="statusList"
+                    [inputId]="'statusOption' + $index"
+                    name="status">
+        </p-checkbox>
+
+        <label [for]="'statusOption' + $index">{{ statusOption.label }}</label>
+      </div>
+    }
+  </div>
+
+  <div class="flex justify-content-end pt-4">
+    <button pButton
+            type="button"
+            (click)="productFilterService.resetFilters()"
+            severity="secondary">
+      <i class="pi pi-filter-slash"></i> Reset Filters
+    </button>
+  </div>
+
+</form>

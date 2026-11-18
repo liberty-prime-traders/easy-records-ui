@@ -27,7 +27,7 @@
 
       @if (fieldMap(); as fieldMap) {
         @if (signalForm()?.dirty()) {
-          <rts-error-summary [signalFormErrors]="signalForm()?.errorSummary()" [fieldMap]="fieldMap"/>
+          <esr-error-summary [signalFormErrors]="signalForm()?.errorSummary()" [fieldMap]="fieldMap"/>
         }
       }
 
@@ -40,7 +40,7 @@
           <p-tag severity="success" [value]="successMessage()" icon="pi pi-check"/>
 
         } @else if (processingStatus() === ProcessingStatus.FAILURE) {
-          <rts-error-summary [regularErrorMessages]="failureMessages()"/>
+          <esr-error-summary [regularErrorMessages]="failureMessages()"/>
         }
 
         @if (!hideReset()) {

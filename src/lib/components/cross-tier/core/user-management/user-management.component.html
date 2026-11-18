@@ -1,0 +1,20 @@
+
+  @if (showAuthorityAssignmentScreen()) {
+    <esr-authority-assignment
+      [schemaLevel]="schemaLevel()"
+      (cancel)="hideAuthorityAssignment()"
+      (assign)="onAuthoritiesAssigned($event)">
+    </esr-authority-assignment>
+  } @else {
+    <esr-membership [schemaLevel]="schemaLevel()">
+      <div class="flex align-items-center gap-2 mb-3">
+        <ng-content/>
+
+        <button pButton
+                (click)="openAuthorityAssignment()">
+          <i class="pi pi-plus"></i> Assign Authority
+        </button>
+      </div>
+    </esr-membership>
+  }
+

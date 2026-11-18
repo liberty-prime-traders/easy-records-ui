@@ -14,7 +14,7 @@ import {LocalStorageService} from '../../../../utils/services/local-storage.serv
 import {LocalStorageKey} from '../../../../utils/types/local-storage-key.enum'
 
 @Component({
-  selector: 'rts-user-account-nav-content',
+  selector: 'esr-user-account-nav-content',
   imports: [
     Avatar,
     Popover,

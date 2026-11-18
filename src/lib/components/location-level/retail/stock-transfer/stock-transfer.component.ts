@@ -1,0 +1,46 @@
+import {Component, inject} from '@angular/core'
+import {ButtonDirective} from 'primeng/button'
+import {Divider} from 'primeng/divider'
+import {StockTransferSummaryService} from '../../../../api/cross-tier/retail/stock-transfer/stock-transfer-summary.service'
+import {StockTransferService} from '../../../../api/location-level/retail/stock-transfer/stock-transfer.service'
+import {AutoStretchDirective} from '../../../reusable/auto-stretch.directive'
+import {ErrorSummaryComponent} from '../../../reusable/error-summary/error-summary.component'
+import {HidesSaleButtonComponent} from '../../hides-sale-button.component'
+import {StockTransferFormContext} from './stock-transfer-form/stock-transfer-form-context'
+import {StockTransferFormComponent} from './stock-transfer-form/stock-transfer-form.component'
+import {StockTransferGridComponent} from './stock-transfer-grid/stock-transfer-grid.component'
+
+@Component({
+  selector: 'esr-location-stock-transfer',
+  templateUrl: 'stock-transfer.component.html',
+  providers: [StockTransferFormContext],
+  imports: [
+    ButtonDirective,
+    StockTransferGridComponent,
+    StockTransferFormComponent,
+    ErrorSummaryComponent,
+    AutoStretchDirective,
+    Divider
+  ]
+})
+export class StockTransferComponent extends HidesSaleButtonComponent {
+  private readonly stockTransferSummaryService = inject(StockTransferSummaryService)
+  private readonly context = inject(StockTransferFormContext)
+  private readonly stockTransferService = inject(StockTransferService)
+
+  readonly formIsVisible = this.context.formIsVisible
+  readonly failureMessages = this.stockTransferService.selectFailureMessages
+
+  override ngOnInit() {
+    super.ngOnInit()
+    this.stockTransferSummaryService.fetch()
+  }
+
+  startNewTransfer() {
+    this.context.startNewTransfer()
+  }
+
+  hideForm() {
+    this.context.hideForm()
+  }
+}

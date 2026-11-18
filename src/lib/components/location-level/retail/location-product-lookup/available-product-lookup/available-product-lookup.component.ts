@@ -1,0 +1,38 @@
+import {CurrencyPipe} from '@angular/common'
+import {Component} from '@angular/core'
+import {Divider} from 'primeng/divider'
+import {Select} from 'primeng/select'
+import {Skeleton} from 'primeng/skeleton'
+import {
+  AvailableProductLookupQuickSearchService
+} from '../../../../../api/location-level/retail/product-lookup/available-product-lookup-quick-search.service'
+import {AvailableProductLookupStore} from '../../../../../api/location-level/retail/product-lookup/available-product-lookup.store'
+import {ProductWithAvailability} from '../../../../../api/location-level/retail/product-lookup/product-with-availability.model'
+import {PaginatedBaseService} from '../../../../../api/util/paginated-api/paginated-base.service'
+import {ProductLabelPipe} from '../../../../../utils/pipes/product-label.pipe'
+import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
+import {LocationProductLookupComponent} from '../location-product-lookup.component'
+import {ProductLookupFilterService} from '../product-lookup-filter.service'
+import {AvailableProductLookupFilterService} from './available-product-lookup-filter.service'
+
+@Component({
+  selector: 'esr-available-product-lookup',
+  templateUrl: 'available-product-lookup.component.html',
+  providers: [
+    AvailableProductLookupQuickSearchService,
+    AvailableProductLookupStore,
+    AvailableProductLookupFilterService,
+    {provide: PaginatedBaseService, useExisting: AvailableProductLookupQuickSearchService},
+    {provide: ProductLookupFilterService, useExisting: AvailableProductLookupFilterService}
+  ],
+  imports: [
+    FormFieldComponent,
+    Select,
+    Skeleton,
+    ProductLabelPipe,
+    Divider,
+    CurrencyPipe
+  ]
+})
+export class AvailableProductLookupComponent extends LocationProductLookupComponent<ProductWithAvailability> {
+}

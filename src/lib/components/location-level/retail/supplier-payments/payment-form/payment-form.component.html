@@ -1,0 +1,87 @@
+<esr-loading-container [loading]="isLoading()" loadingText="Saving...">
+  <div class="text-lg font-semibold">Record New Payment</div>
+
+  <div class="flex flex flex-wrap mt-5">
+    <div class="flex flex-column col-4 p-0">
+      <esr-form-field label="Payment Date"
+                      class="flex-grow-1"
+                      contentClass="col-8"
+                      [required]="true"
+                      [layout]="FormFieldDirection.VERTICAL">
+        <p-date-picker [formField]="paymentForm.paymentDate"
+                       [showIcon]="true"
+                       class="w-full"
+                       appendTo="body">
+        </p-date-picker>
+      </esr-form-field>
+
+      <esr-form-field label="Amount"
+                      class="flex-grow-1"
+                      contentClass="col-8"
+                      [required]="true"
+                      [layout]="FormFieldDirection.VERTICAL">
+        <p-input-number [formField]="paymentForm.amount"
+                       mode="currency"
+                       currency="KES"
+                       [min]="0"
+                       class="w-full">
+        </p-input-number>
+        <small>Balance: {{remainingAmount() | currency}}</small>
+      </esr-form-field>
+    </div>
+
+    <div class="flex flex-column col-4 p-0">
+      <esr-form-field label="Payment Method"
+                      class="flex-grow-1"
+                      contentClass="col-8"
+                      [required]="true"
+                      [layout]="FormFieldDirection.VERTICAL">
+        <p-select [options]="paymentOptions()"
+                  [formField]="paymentForm.paymentMethodId"
+                  appendTo="body"
+                  optionLabel="name"
+                  optionValue="id"
+                  placeholder="Select method..."
+                  class="w-full">
+        </p-select>
+      </esr-form-field>
+
+      <esr-form-field label="Delivery"
+                      class="flex-grow-1"
+                      contentClass="col-8"
+                      [layout]="FormFieldDirection.VERTICAL">
+        <p-select [options]="deliveryOptions()"
+                  [formField]="paymentForm.deliveryId"
+                  appendTo="body"
+                  placeholder="None (not tied to a delivery)"
+                  [showClear]="true"
+                  class="w-full">
+        </p-select>
+      </esr-form-field>
+    </div>
+
+    <esr-form-field label="Notes"
+                    class="flex-grow-1"
+                    contentClass="col-8"
+                    [layout]="FormFieldDirection.VERTICAL">
+      <textarea pInputText
+                rows="3"
+                class="w-full"
+                [formField]="paymentForm.notes"
+                placeholder="Optional notes">
+      </textarea>
+    </esr-form-field>
+  </div>
+
+  <esr-forms-buttons saveLabel="Record Payment"
+                     resetLabel="Cancel"
+                     [hideDelete]="true"
+                     [disableSave]="paymentForm().invalid()"
+                     [signalForm]="paymentForm()"
+                     [fieldMap]="paymentFormFields"
+                     [processingStatus]="processingStatus()"
+                     [failureMessages]="failureMessages()"
+                     (save)="save()"
+                     (resetAction)="cancel()">
+  </esr-forms-buttons>
+</esr-loading-container>

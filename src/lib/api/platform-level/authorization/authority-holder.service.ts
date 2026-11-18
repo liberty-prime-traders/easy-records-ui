@@ -1,6 +1,6 @@
 import {HttpParams} from '@angular/common/http'
 import {Injectable} from '@angular/core'
-import {AuthorityType} from '../../cross-tier/authorization/authority.model'
+import {AuthorityType} from '../../cross-tier/core/authorization/authority.model'
 import {FetchParams} from '../../util/base-api/api-get-request.model'
 import {MultimapBaseService} from '../../util/base-api/multimap-base.service'
 import {AuthorityHolder} from './authority-holder.model'

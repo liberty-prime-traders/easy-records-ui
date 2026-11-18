@@ -1,0 +1,65 @@
+<p-tabs value="0" class="relative">
+
+  <p-tablist>
+    <div class="flex justify-content-between w-full">
+      <div class="flex-grow-1">
+        <p-tab value="0">Summary</p-tab>
+        <p-tab value="1">Detailed View</p-tab>
+        <p-tab value="2">Documentation</p-tab>
+      </div>
+
+      <button pButton
+              text
+              class="align-self-center"
+              (click)="refresh()">
+        <i class="pi pi-refresh"></i> Refresh
+      </button>
+    </div>
+  </p-tablist>
+
+  <p-tabpanels class="p-0">
+    <p-tabpanel value="0">
+      <ng-container *ngTemplateOutlet="accountsTree"/>
+    </p-tabpanel>
+
+    <p-tabpanel value="1">
+      <esr-accounts-grid/>
+    </p-tabpanel>
+
+    <p-tabpanel value="2">
+      <markdown style="height: inherit; overflow-y: scroll" class="block md-content" src="/assets/md/accounting-guideline.md"/>
+    </p-tabpanel>
+  </p-tabpanels>
+</p-tabs>
+
+<ng-template #accountsTree>
+  <div id="coaTree" esrAutoStretch="coaTree">
+    <p-tree-table [loading]="loading()"
+                  [value]="accountsChart()"
+                  sortField="code"
+                  scrollHeight="flex"
+                  [scrollable]="true">
+
+      <ng-template #header>
+        <tr>
+          <th>Account</th>
+          <th>Balance</th>
+        </tr>
+      </ng-template>
+
+      <ng-template #body let-node let-rowData="rowData">
+        <tr [ttRow]="node">
+          <td>
+            <div class="flex align-items-center gap-2">
+              <p-treetable-toggler [rowNode]="node" />
+              <span>{{ rowData.displayName }}</span>
+            </div>
+          </td>
+          <td>
+            <esr-money [amount]="rowData.currentBalance" [balanceEffect]="rowData.balanceEffect"/>
+          </td>
+        </tr>
+      </ng-template>
+    </p-tree-table>
+  </div>
+</ng-template>

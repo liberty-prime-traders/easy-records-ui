@@ -1,0 +1,72 @@
+<button pButton
+        type="button"
+        size="small"
+        severity="secondary"
+        [disabled]="isPrinting()"
+        (click)="printNow()">
+  <i class="pi pi-print"></i> Print
+</button>
+
+<button pButton
+        type="button"
+        size="small"
+        severity="secondary"
+        text
+        (click)="openPreview()">
+  <i class="pi pi-eye"></i> Preview
+</button>
+
+@if (renderedOffScreenForPrint()) {
+  <div class="sale-print-offscreen" aria-hidden="true">
+    <ng-container [ngTemplateOutlet]="documentTemplate" />
+  </div>
+}
+
+<ng-template #documentTemplate>
+  <esr-print-document [layout]="layout()">
+    <ng-template esrPrintHeader>
+      <div class="sale-print-branding">
+        <strong>{{ organizationName()  | uppercase | nullSafe }} - {{ locationName() | uppercase | nullSafe }}</strong>
+        <span>TEL: {{ phoneNumber }}</span>
+      </div>
+    </ng-template>
+
+    <esr-sale-print-content [sale]="sale()" [layout]="layout()" />
+
+    <ng-template esrPrintFooter>
+      <p class="sale-print-thanks">Thank you for shopping with us.</p>
+    </ng-template>
+  </esr-print-document>
+</ng-template>
+
+<p-dialog header="Print preview"
+          [(visible)]="previewVisible"
+          [modal]="true"
+          [draggable]="false"
+          [style]="{width: 'min(96vw, 1000px)'}">
+  <div class="flex flex-column gap-3">
+    <div class="flex align-items-center gap-2">
+      <label for="sale-print-layout">Paper</label>
+      <p-select inputId="sale-print-layout"
+                [options]="layouts"
+                optionLabel="label"
+                dataKey="id"
+                [ngModel]="layout()"
+                (onChange)="changeLayout($event.value)">
+      </p-select>
+    </div>
+
+    @if (previewVisible()) {
+      <esr-print-preview class="sale-print-preview" [zoom]="previewZoom()">
+        <ng-container [ngTemplateOutlet]="documentTemplate" />
+      </esr-print-preview>
+    }
+
+    <div class="flex justify-content-end gap-2">
+      <button pButton type="button" severity="secondary" text (click)="previewVisible.set(false)">Close</button>
+      <button pButton type="button" [disabled]="isPrinting()" (click)="printNow()">
+        <i class="pi pi-print"></i> Print
+      </button>
+    </div>
+  </div>
+</p-dialog>

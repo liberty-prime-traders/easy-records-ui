@@ -1,0 +1,201 @@
+<div class="flex flex-column gap-3" id="payments-filter" esrAutoStretch="payments-filter">
+  <esr-form-field label="Recorded Date"
+                  for="recordedFrom" [layout]="
+                  FormFieldDirection.COMPACT"
+                  contentClass="col-11">
+
+    <div class="flex flex-column gap-1">
+      <div class="flex align-items-center gap-2">
+        <span class="font-bold">&ge;</span>
+        <p-date-picker id="recordedFrom"
+                       class="flex-grow-1"
+                       [formField]="state.filterForm.recordedFrom"
+                       [showTime]="true"
+                       [showIcon]="true"
+                       appendTo="body">
+        </p-date-picker>
+      </div>
+
+      <div class="flex align-items-center gap-2">
+        <span class="font-bold">&lt;</span>
+        <p-date-picker id="recordedBefore"
+                       class="flex-grow-1"
+                       [formField]="state.filterForm.recordedBefore"
+                       [showTime]="true"
+                       [showIcon]="true"
+                       appendTo="body">
+        </p-date-picker>
+      </div>
+    </div>
+  </esr-form-field>
+
+  <esr-form-field label="Payment Date"
+                  for="paymentDateFrom"
+                  contentClass="col-11"
+                  [layout]="FormFieldDirection.COMPACT">
+    <div class="flex flex-column gap-1">
+      <div class="flex align-items-center gap-2">
+          <span class="font-bold">&ge;</span>
+          <p-date-picker id="paymentDateFrom"
+                         class="flex-grow-1"
+                         [formField]="state.filterForm.paymentDateFrom"
+                         [showTime]="true"
+                       [showIcon]="true"
+                       appendTo="body">
+        </p-date-picker>
+      </div>
+
+      <div class="flex align-items-center gap-2">
+        <span class="font-bold">&lt;</span>
+        <p-date-picker id="paymentDateBefore"
+                       class="flex-grow-1"
+                       [formField]="state.filterForm.paymentDateBefore"
+                       [showTime]="true"
+                       [showIcon]="true"
+                       appendTo="body">
+        </p-date-picker>
+      </div>
+    </div>
+  </esr-form-field>
+
+  <esr-form-field label="Contacts"
+                  for="contactIds"
+                  contentClass="col-11"
+                  [layout]="FormFieldDirection.COMPACT">
+    <p-select id="contactIds"
+              class="flex-grow-1"
+              [options]="state.contacts()"
+              optionLabel="fullName"
+              optionValue="id"
+              [multiple]="true"
+              [filter]="true"
+              [checkmark]="true"
+              [formField]="state.filterForm.contactIds"
+              placeholder="Select contacts">
+
+      <ng-template #selectedItem let-selectedOption>
+        @let remainingCount = state.filterForm.contactIds().value().length - 1;
+        {{ selectedOption.fullName }}
+        @if (remainingCount > 0) {
+          (+{{ remainingCount }} Others)
+        }
+      </ng-template>
+    </p-select>
+  </esr-form-field>
+
+  <esr-form-field label="Payment method"
+                  for="paymentMethod0"
+                  contentClass="col-11"
+                  [layout]="FormFieldDirection.COMPACT">
+    <div class="flex flex-column gap-1">
+      @for (paymentMethod of state.paymentMethods(); track paymentMethod.id) {
+        <div class="flex align-items-center gap-2">
+          <p-checkbox [value]="paymentMethod.id"
+                      [formField]="state.filterForm.paymentMethodIds"
+                      [inputId]="'paymentMethod' + $index"
+                      name="paymentMethod">
+          </p-checkbox>
+
+          <label [for]="'paymentMethod' + $index">{{ paymentMethod.name }}</label>
+        </div>
+      }
+    </div>
+  </esr-form-field>
+
+  <p-fieldset legend="Others" [toggleable]="true">
+    <esr-form-field label="Type"
+                    for="type0"
+                    contentClass="col-11"
+                    [layout]="FormFieldDirection.COMPACT">
+      <div class="flex flex-column gap-1">
+        @for (type of state.types; track type) {
+          <div class="flex align-items-center gap-2">
+            <p-checkbox [value]="type"
+                        [formField]="state.filterForm.selectedTypes"
+                        [inputId]="'type' + $index"
+                        size="small"
+                        name="type">
+            </p-checkbox>
+            <label [for]="'type' + $index">{{ type | prettifyEnum }}</label>
+          </div>
+        }
+      </div>
+    </esr-form-field>
+
+    <esr-form-field label="Status"
+                    for="statusActive"
+                    contentClass="col-11"
+                    [layout]="FormFieldDirection.COMPACT">
+      <div class="flex flex-column gap-1">
+        <div class="flex align-items-center gap-2">
+          <p-checkbox [value]="PaymentVoidStatus.ACTIVE"
+                      [formField]="state.filterForm.statuses"
+                      inputId="statusActive"
+                      size="small"
+                      name="status">
+          </p-checkbox>
+          <label for="statusActive">Active</label>
+        </div>
+
+        <div class="flex align-items-center gap-2">
+          <p-checkbox [value]="PaymentVoidStatus.VOIDED"
+                      [formField]="state.filterForm.statuses"
+                      inputId="statusVoided"
+                      size="small"
+                      name="status">
+          </p-checkbox>
+          <label for="statusVoided">Voided</label>
+        </div>
+      </div>
+    </esr-form-field>
+
+  </p-fieldset>
+
+  <p-fieldset [toggleable]="true" [collapsed]="true">
+    <esr-form-field label="Amount (KES)"
+                    for="minAmount"
+                    contentClass="col-11"
+                    [layout]="FormFieldDirection.COMPACT">
+      <div class="flex gap-1 flex-column">
+        <p-input-number size="small"  [formField]="state.filterForm.minAmount" placeholder="Min"/>
+        <p-input-number size="small" [formField]="state.filterForm.maxAmount" placeholder="Max"/>
+      </div>
+    </esr-form-field>
+
+    @for (type of state.types; track type) {
+      <esr-form-field
+        [label]="(type | prettifyEnum) + ' reference numbers'"
+        [for]="'referenceNumberInput' + $index"
+        contentClass="col-11"
+        [layout]="FormFieldDirection.COMPACT">
+
+        @if (state.filterFormValue().referenceNumbersByType[type].length > 0) {
+          <div class="flex flex-wrap gap-1">
+            @for (referenceNumber of state.filterFormValue().referenceNumbersByType[type]; track referenceNumber) {
+              <p-chip label="{{ referenceNumber }}"
+                      [removable]="true"
+                      (onRemove)="state.removeReferenceNumber(type, referenceNumber)">
+              </p-chip>
+            }
+          </div>
+        }
+
+        <input [id]="'referenceNumberInput' + $index"
+               #referenceNumberInput
+               class="flex-grow-1"
+               pInputText
+               placeholder="Type ref, press Enter"
+               [disabled]="state.filterFormValue().referenceNumbersByType[type].length >= state.maxReferenceNumbers"
+               (keydown.enter)="state.addReferenceNumbers(type, referenceNumberInput.value); referenceNumberInput.value = ''"
+               (paste)="state.addReferenceNumbers(type, $event.clipboardData?.getData('text') ?? ''); $event.preventDefault()" />
+      </esr-form-field>
+    }
+  </p-fieldset>
+
+  <div class="flex justify-content-end pt-4">
+    <button pButton type="button" (click)="state.resetFilters()" severity="secondary">
+      <i class="pi pi-filter-slash"></i> Reset Filters
+    </button>
+  </div>
+
+</div>

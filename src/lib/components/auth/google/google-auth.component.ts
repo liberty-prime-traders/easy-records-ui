@@ -8,12 +8,12 @@ import {
   DEFAULT_AUTH_FAILURE_MESSAGE
 } from '../../../api/platform-level/authentication/auth-failure.model'
 import {AuthenticationService} from '../../../api/platform-level/authentication/authentication.service'
-import {RtsGoogleAuthService} from '../../../utils/services/auth/rts-google-auth.service'
+import {LibertyGoogleAuthService} from '../../../utils/services/auth/liberty-google-auth.service'
 import {RoutingContextService} from '../../../utils/services/routing-context.service'
 import {ProcessingStatus} from '../../../utils/types/processing-status.enum'
 
 @Component({
-  selector: 'rts-google-auth',
+  selector: 'esr-google-auth',
   template: `
     <div [id]="AUTH_BUTTON_ID"></div>
   `
@@ -24,7 +24,7 @@ export class GoogleAuthComponent implements AfterViewInit {
   readonly ProcessingStatus = ProcessingStatus
 
   private readonly messageService = inject(MessageService)
-  private readonly googleAuthService = inject(RtsGoogleAuthService)
+  private readonly googleAuthService = inject(LibertyGoogleAuthService)
   private readonly authenticationService = inject(AuthenticationService)
   private readonly routingContextService = inject(RoutingContextService)
 

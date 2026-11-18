@@ -1,0 +1,89 @@
+<p-card class="border-noround">
+  <div class="flex align-items-center gap-4 pr-6">
+    <button pButton
+            (click)="hideSaleForm()">
+      <i class="pi pi-chevron-left"></i> Back
+    </button>
+
+    @let originalSale = saleSession();
+    @if (originalSale.referenceNumber) {
+      <div class="flex gap-3 align-items-center">
+        <span class="font-semibold">{{ originalSale.referenceNumber | nullSafe }}</span>
+        <div>&bullet;</div>
+
+        @if (saleIsBeyondDraft()) {
+          <span>{{ originalSale.soldBy | nullSafe }}</span>
+          <div>&bullet;</div>
+          {{ originalSale.dateSold | date }}
+          <div>&bullet;</div>
+        }
+
+        <p-tag [severity]="originalSale.saleStatus | saleStatusSeverity">
+          {{ originalSale.saleStatus | prettifyEnum }}
+        </p-tag>
+
+        <div>&bullet;</div>
+        <p-tag [severity]="originalSale.paymentStatus | paymentStatusSeverity">
+          {{ originalSale.paymentStatus | prettifyEnum }}
+        </p-tag>
+      </div>
+
+      <esr-sale-print-actions [sale]="originalSale"
+                              [autoPrint]="autoPrintAfterConfirm()"
+                              (autoPrinted)="markAutoPrinted()"
+                              (printed)="startFreshFormAfterPrint()">
+      </esr-sale-print-actions>
+
+    } @else {
+      <h2 class="m-0">New Sale</h2>
+    }
+
+    @if (canCopySale()) {
+      <button pButton severity="secondary" (click)="copySale()">
+        <i class="pi pi-copy"></i>
+        Copy Sale
+      </button>
+    }
+
+    @if (canDiscardSale()) {
+      <button pButton (click)="startSaleVoid()" severity="danger">
+        <i class="pi pi-trash"></i>
+        {{discardSaleLabel()}}
+      </button>
+    }
+
+  </div>
+</p-card>
+
+<p-dialog [header]="discardSaleLabel()" [(visible)]="showVoidSaleScreen" [modal]="true">
+  <div class="flex flex-column gap-2">
+    @if (isDiscardingPendingConsolidation()) {
+      <ul>
+        <li> This holds only the lines that could not be combined.</li>
+        <li> Discarding it leaves the selected sales exactly as they are.</li>
+      </ul>
+
+    } @else if (isVoidingConfirmedSale()) {
+      <ul>
+        <li> This sale has been confirmed which means products have been handed over to the customer.</li>
+        <li> Discarding it will reverse the sale and return all products back to stock.</li>
+        <li> Confirm that these items have been physically returned to the shelf or store before voiding.</li>
+        <li> Any payments received should also be returned to the customer.</li>
+      </ul>
+
+    } @else {
+        <ul>
+          <li> This sale is still in a draft status.</li>
+          <li> Discarding it will remove it from the system and cannot be recovered.</li>
+          <li> All stock reservations will also be released.</li>
+        </ul>
+    }
+
+    <textarea pInputText placeholder="What went wrong?" class="w-full" rows="3" #voidReason></textarea>
+
+    <button pButton class="align-self-end" (click)="confirmSaleVoid(voidReason.value)" severity="danger">
+      <i class="pi pi-trash"></i> Confirm
+    </button>
+  </div>
+</p-dialog>
+

@@ -1,5 +1,5 @@
-import {UserPermission} from '../../cross-tier/authorization/user-permission.enum'
-import {UserRole} from '../../cross-tier/authorization/user-role.enum'
+import {UserPermission} from '../../cross-tier/core/authorization/user-permission.enum'
+import {UserRole} from '../../cross-tier/core/authorization/user-role.enum'
 import {BaseModel} from '../../util/base-api/base.model'
 import {PlatformSysUser} from '../sys-user/platform-sys-user.model'
 

@@ -1,0 +1,107 @@
+import {Component, computed, inject, output, signal} from '@angular/core'
+import {FormsModule} from '@angular/forms'
+import {form, FormField, maxDate, required} from '@angular/forms/signals'
+import {ButtonDirective} from 'primeng/button'
+import {DatePicker} from 'primeng/datepicker'
+import {InputNumber} from 'primeng/inputnumber'
+import {InputText} from 'primeng/inputtext'
+import {Select} from 'primeng/select'
+import {TableModule} from 'primeng/table'
+import {PurchaseDeliveryService} from '../../../../../api/location-level/retail/delivery/purchase-delivery.service'
+import {PurchaseService} from '../../../../../api/location-level/retail/purchase/purchase.service'
+import {
+  AlternativeUnitsFinderPipe
+} from '../../../../../api/organization-level/retail/unit-conversion/pipes/alternative-units-finder.pipe'
+import {
+  ConversionContextPipe,
+  UnitConversionDescriptorPipe,
+  UnitConvertPipe,
+  UnitCurrencyPipe,
+  UnitFactorResolver
+} from '../../../../../api/organization-level/retail/unit-conversion/pipes/unit-convert.pipe'
+import {getTomorrow} from '../../../../../utils/dates'
+import {ProductLabelPipe} from '../../../../../utils/pipes/product-label.pipe'
+import {ZonedDatesService} from '../../../../../utils/services/zoned-dates.service'
+import {BaseFormComponent} from '../../../../reusable/base-form.component'
+import {ErrorSummaryComponent} from '../../../../reusable/error-summary/error-summary.component'
+import {FormFieldLayout} from '../../../../reusable/form-field/form-field-layout'
+import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
+import {LoadingContainerComponent} from '../../../../reusable/loading-container/loading-container.component'
+import {PurchaseDeliveryFormDefinition} from './purchase-delivery-form.definition'
+import {PurchaseFormContext} from '../../purchases/purchase-form/form-utils/purchase-form-context'
+
+@Component({
+  selector: 'esr-purchase-delivery-form',
+  templateUrl: 'delivery-form.component.html',
+  imports: [
+    TableModule,
+    ButtonDirective,
+    FormFieldComponent,
+    DatePicker,
+    FormField,
+    InputText,
+    FormsModule,
+    InputNumber,
+    LoadingContainerComponent,
+    ProductLabelPipe,
+    AlternativeUnitsFinderPipe,
+    Select,
+    UnitConvertPipe,
+    ConversionContextPipe,
+    UnitCurrencyPipe,
+    UnitConversionDescriptorPipe,
+    UnitFactorResolver,
+    ErrorSummaryComponent
+  ]
+})
+export class DeliveryFormComponent extends BaseFormComponent<PurchaseDeliveryService> {
+
+  private readonly purchaseFormContext = inject(PurchaseFormContext)
+  private readonly deliveryService = inject(PurchaseDeliveryService)
+  private readonly purchaseService = inject(PurchaseService)
+  protected readonly apiService = this.deliveryService
+  private readonly zonedDatesService = inject(ZonedDatesService)
+
+  readonly cancelled = output()
+  readonly deliverySaved = output()
+
+  readonly FormFieldDirection = FormFieldLayout
+  readonly PurchaseDeliveryFormDefinition = PurchaseDeliveryFormDefinition
+
+  private readonly deliveryFormValue = signal<PurchaseDeliveryFormDefinition.DeliveryFormModel>(
+    PurchaseDeliveryFormDefinition.createDefault(
+      this.purchaseFormContext.purchaseLinesArray().filter(line => line.quantityExpected > 0)
+    )
+  )
+
+  readonly deliveryForm = form(this.deliveryFormValue, s => {
+    required(s.deliveredAt)
+    maxDate(s.deliveredAt, getTomorrow())
+  })
+
+  readonly deliveryLinesArray = computed(() => this.deliveryForm.lines().value())
+  readonly isLoading = this.deliveryService.selectLoading
+
+  cancel() {
+    this.cancelled.emit()
+  }
+
+  save() {
+    const purchaseId = this.purchaseFormContext.purchaseId() ?? ''
+    const dto = PurchaseDeliveryFormDefinition.toBackendModel(
+      purchaseId, this.deliveryFormValue(), this.zonedDatesService
+    )
+    this.deliveryService.post(dto, {
+      onSuccess: (updatedPurchase) => {
+        this.purchaseService.applyResponse(updatedPurchase)
+        this.purchaseFormContext.initializeForm(updatedPurchase)
+        this.deliverySaved.emit()
+      }
+    })
+  }
+
+  clearQuantities(deliveryLine: PurchaseDeliveryFormDefinition.DeliveryLineModel) {
+    deliveryLine.quantityDelivered = 0
+    deliveryLine.unitCost = 0
+  }
+}

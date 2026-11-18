@@ -1,0 +1,70 @@
+<div id="purchase-grid" esrAutoStretch="purchase-grid">
+  <p-table [value]="purchases()"
+           [loading]="loading()"
+           (onLazyLoad)="onLazyLoad($event)"
+           [lazy]="true"
+           dataKey="id"
+           scrollHeight="flex"
+           [scrollable]="true"
+           [rows]="20"
+           [virtualScroll]="true"
+           [virtualScrollItemSize]="55">
+
+    <ng-template #header>
+      <tr>
+        <th>Reference</th>
+        <th>Supplier</th>
+        <th>Delivery Status</th>
+        <th>Date Ordered</th>
+        <th>Ordered By</th>
+        <th>Ordered Total</th>
+        <th>Delivered Total</th>
+        <th>Payment Status</th>
+        <th style="width: 5rem"></th>
+      </tr>
+    </ng-template>
+
+    <ng-template #body let-purchase>
+      @if (purchase?.placeholder) {
+        <tr>
+          <td style="height: 55px" colspan="9">
+            <p-skeleton class="h-full"/>
+          </td>
+        </tr>
+      } @else {
+        <tr style="height: 55px">
+          <td>{{ purchase.referenceNumber | nullSafe }}</td>
+          <td>{{ purchase.supplierName | nullSafe }}</td>
+          <td>
+            <p-tag [value]="purchase.purchaseStatus | prettifyEnum"
+                   [severity]="purchase.purchaseStatus | purchaseStatusSeverity">
+            </p-tag>
+          </td>
+          <td>{{ purchase.dateOrdered | date : 'shortDate' | nullSafe }}</td>
+          <td>{{ purchase.orderedBy | nullSafe }}</td>
+          <td>{{ purchase.orderedTotal | currency }}</td>
+          <td>{{ purchase.deliveredTotal | currency }}</td>
+          <td>
+            <p-tag [value]="purchase.paymentStatus | prettifyEnum"
+                   [severity]="purchase.paymentStatus | paymentStatusSeverity">
+            </p-tag>
+          </td>
+          <td>
+            <button pButton
+                    severity="secondary"
+                    [disabled]="loading()"
+                    (click)="onEditPurchase(purchase)">
+              <i class="pi pi-pen-line"></i>
+            </button>
+          </td>
+        </tr>
+      }
+    </ng-template>
+
+    <ng-template #emptymessage>
+      <tr esr-empty-row [colspan]="9" message="No purchases found."></tr>
+    </ng-template>
+
+  </p-table>
+
+</div>

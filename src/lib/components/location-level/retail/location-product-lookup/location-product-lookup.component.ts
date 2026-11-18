@@ -1,0 +1,88 @@
+import {Component, computed, effect, inject, input, OnInit, output, TemplateRef, untracked} from '@angular/core'
+import {EntityId} from '@ngrx/signals/entities'
+import {ProductCore} from '../../../../api/cross-tier/retail/product/product-core.model'
+import {ProductSearchParameters} from '../../../../api/cross-tier/retail/product/product-search-parameters.model'
+import {UnitConversionGraphService} from '../../../../api/organization-level/retail/unit-conversion/unit-conversion-graph.service'
+import {PaginatedBaseService} from '../../../../api/util/paginated-api/paginated-base.service'
+import {PaginatedModel} from '../../../../api/util/paginated-api/paginated.model'
+import {ProductLabelPipe} from '../../../../utils/pipes/product-label.pipe'
+import {toSelectItems} from '../../../../utils/types/select-item.type'
+import {FormFieldLayout} from '../../../reusable/form-field/form-field-layout'
+import {HasFilteredDataComponent} from '../../../reusable/has-filtered-data.component'
+import {ProductLookupFilterService} from './product-lookup-filter.service'
+
+@Component({selector: 'esr-product-lookup', template: ''})
+export abstract class LocationProductLookupComponent<LOOKUP extends ProductCore & PaginatedModel>
+  extends HasFilteredDataComponent implements OnInit {
+
+  readonly layout = input(FormFieldLayout.HORIZONTAL)
+  readonly contentClass = computed(() => this.layout() === FormFieldLayout.COMPACT ? 'w-full' : 'col-5')
+  readonly templateRef = input<TemplateRef<unknown>>()
+  readonly selectedProductIds = input<string[]>([])
+  readonly productSelected = output<LOOKUP>()
+
+  private readonly productQuickSearchService =
+    inject<PaginatedBaseService<LOOKUP, ProductSearchParameters>>(PaginatedBaseService)
+
+  private readonly unitConversionGraphService = inject(UnitConversionGraphService)
+  private readonly productFilterService = inject<ProductLookupFilterService<LOOKUP>>(ProductLookupFilterService)
+  protected override readonly applyFilters$ = this.productFilterService.applyFilters$
+
+  private readonly searchValueFormControl = this.productFilterService.filterForm.get('searchText')
+
+  pushToSearch(searchText: string) {
+    this.searchValueFormControl?.setValue(searchText)
+  }
+
+  private readonly loadedProducts = computed(() =>
+    this.productFilterService.filteredProducts().filter(product => !product.placeholder)
+  )
+
+  readonly productsMap = computed(() => {
+    const map = new Map<EntityId, LOOKUP>()
+    this.productFilterService.filteredProducts().forEach(product => map.set(product.id, product))
+    return map
+  })
+
+  readonly productOptions = computed(() =>
+    toSelectItems(this.loadedProducts(), {
+      itemValueBy: this.extractValueFromProduct,
+      itemLabelBy: this.extractLabelFromProduct
+    })
+  )
+
+  readonly dependenciesLoading = computed(() =>
+    this.productQuickSearchService.selectLoading() || this.unitConversionGraphService.isLoading()
+  )
+
+  private readonly pushSelectedProductsToDeferred = effect(() => {
+    const selectedProducts = this.selectedProductIds()
+    untracked(() => {
+      if (selectedProducts.length) {
+        this.productFilterService.resetExternalParameters({excludeIds: selectedProducts})
+      }
+    })
+  })
+
+  override ngOnInit() {
+    if (this.selectedProductIds().length) {
+      this.productFilterService.resetExternalParameters({excludeIds: this.selectedProductIds()})
+    }
+    super.ngOnInit()
+  }
+
+  private readonly extractLabelFromProduct = (product: LOOKUP): string => {
+    return ProductLabelPipe.prototype.transform(product)
+  }
+
+  private readonly extractValueFromProduct = (product: LOOKUP): EntityId => {
+    return product.id as EntityId
+  }
+
+  emitSelectedProduct(locationProductId: EntityId) {
+    const selectedProduct = this.productsMap().get(locationProductId)
+    if (selectedProduct && !selectedProduct.placeholder) {
+      this.productSelected.emit(selectedProduct)
+    }
+  }
+}

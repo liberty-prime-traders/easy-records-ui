@@ -1,0 +1,117 @@
+<div class="flex flex-column gap-4" id="chart-of-accounts" esrAutoStretch="chart-of-accounts">
+
+  @if (addingIsActive()) {
+    <button pButton (click)="setAddingActiveFalse()" severity="info" class="align-self-end">
+      <i class="pi pi-times"></i> Cancel
+    </button>
+    <esr-account-form (accountCreated)="closeAddRow()"/>
+
+  } @else {
+    <p-table [loading]="loading()"
+             dataKey="id"
+             rowExpandMode="single"
+             scrollHeight="flex"
+             [scrollable]="true"
+             sortField="code"
+             #accountsTable
+             [globalFilterFields]="['displayName', 'accountType']"
+             (onRowExpand)="rowIsExpanded.set(true)"
+             (onRowCollapse)="rowIsExpanded.set(false)"
+             [value]="accounts()">
+
+      <ng-template #caption>
+        <div class="flex justify-content-between align-items-center">
+          <h3 class="font-bold">Chart of Accounts</h3>
+
+          <esr-grid-filter [dataTable]="accountsTable"/>
+
+          <div class="flex gap-1 align-items-center">
+            <p-toggle-switch [(ngModel)]="showEditButtons"/>
+            <span>Enable Editing</span>
+          </div>
+
+          <button pButton (click)="addingIsActive.set(true)"
+                  [disabled]="loading() || addingIsActive()"
+                  rounded
+                  severity="secondary">
+            + Add Account
+          </button>
+        </div>
+      </ng-template>
+
+      <ng-template #header>
+        <tr>
+          <th pSortableColumn="displayName">Name <p-sort-icon field="displayName"/></th>
+          <th pSortableColumn="accountType">Type <p-sort-icon field="accountType"/></th>
+          <th pSortableColumn="currentBalance">Balance <p-sort-icon field="currentBalance"/></th>
+          <th pSortableColumn="openingBalance">Opening Balance <p-sort-icon field="openingBalance"/></th>
+          <th pSortableColumn="parentAccount">Parent Account <p-sort-icon field="parentAccount"/></th>
+          @if (showEditButtons()) {
+            <th style="width: 5rem"></th>
+          }
+        </tr>
+      </ng-template>
+
+      <ng-template #body let-account let-expanded="expanded">
+        <tr [ngClass]="{ 'expanded-row': expanded, 'strike-through': !account.accountIsActive }">
+          <td>{{ account.displayName }}</td>
+          <td>{{ account.accountType | prettifyEnum }}</td>
+          <td>
+            <esr-money [amount]="account.currentBalance" [balanceEffect]="account.balanceEffect"/>
+          </td>
+          <td>
+            <div class="flex gap-2 align-items-center">
+              <esr-money [amount]="account.openingBalance"/>
+
+              <button pButton
+                      (click)="togglePopup(account)"
+                      rounded
+                      size="small"
+                      severity="secondary">
+                <i [class]="showEditButtons() ? 'pi pi-pencil' : 'pi pi-history'"></i>
+              </button>
+            </div>
+
+          </td>
+          <td>{{ account.parentAccount | nullSafe }}</td>
+
+          @if (showEditButtons()) {
+            <td>
+              @if (!account.accountIsSystemMaintained) {
+                <button pButton
+                        rounded
+                        severity="secondary"
+                        [disabled]="loading() || addingIsActive()"
+                        [pRowToggler]="account">
+                  <i [class]="expanded ? 'pi pi-times' : 'pi pi-pen-to-square'"></i>
+                </button>
+              }
+            </td>
+          }
+        </tr>
+      </ng-template>
+
+      <ng-template #expandedrow let-account>
+        <tr>
+          <td colspan="9" class="filled-background">
+            <esr-account-form [account]="account"/>
+          </td>
+        </tr>
+      </ng-template>
+
+      <ng-template #emptymessage>
+        <tr esr-empty-row [colspan]="9" message="No Accounts Found"></tr>
+      </ng-template>
+    </p-table>
+  }
+</div>
+
+@if (showPopup()) {
+  <p-dialog [header]="popUpHeader()" [(visible)]="showPopup" [modal]="true">
+    @if (popupReason() === AccountPopUpReason.SHOW_OPENING_BALANCE_HISTORY) {
+      <esr-opening-balance-history [accountCode]="poppedUpAccount()!.code"/>
+    } @else {
+      <esr-opening-balance-edit [account]="poppedUpAccount()" [(showDialog)]="showPopup"/>
+    }
+  </p-dialog>
+}

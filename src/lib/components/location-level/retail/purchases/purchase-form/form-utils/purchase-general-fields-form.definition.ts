@@ -1,0 +1,85 @@
+import {disabled, required, schema} from '@angular/forms/signals'
+import {PaymentStatus} from '../../../../../../api/location-level/retail/purchase/payment-status.enum'
+import {PurchaseStatus} from '../../../../../../api/location-level/retail/purchase/purchase-status.enum'
+import {Purchase} from '../../../../../../api/location-level/retail/purchase/purchase.model'
+import {ZonedDatesService} from '../../../../../../utils/services/zoned-dates.service'
+
+export namespace PurchaseGeneralFieldsFormDefinition {
+  export interface PurchaseGeneralFieldsModel {
+    id: string
+    referenceNumber: string
+    supplierId: string
+    supplierName: string
+    dateOrdered: Date | null
+    orderedBy: string
+    orderedById: string
+    notes: string
+    purchaseStatus: PurchaseStatus
+    createdBy: string
+    paymentStatus: PaymentStatus
+    orderedTotal: number
+  }
+
+  export const fieldMap = new Map<keyof PurchaseGeneralFieldsModel, string>([
+    ['supplierId', 'Supplier'],
+    ['dateOrdered', 'Date Ordered'],
+    ['orderedBy', 'Ordered By'],
+    ['notes', 'Notes']
+  ])
+
+  export const createDefaultPurchaseGeneralFieldsFormModel = (): PurchaseGeneralFieldsModel => ({
+    id: '',
+    referenceNumber: '',
+    supplierId: '',
+    supplierName: '',
+    dateOrdered: null,
+    orderedBy: '',
+    orderedById: '',
+    notes: '',
+    purchaseStatus: PurchaseStatus.DRAFT,
+    createdBy: '',
+    paymentStatus: PaymentStatus.UNPAID,
+    orderedTotal: 0
+  })
+
+
+  export const purchaseGeneralFieldsFormSchema = schema<PurchaseGeneralFieldsModel>((path) => {
+    required(path.supplierId)
+
+    const isReadOnly = ({valueOf}: any) => {
+      const purchaseStatus = valueOf(path.purchaseStatus)
+      return purchaseStatus && purchaseStatus !== PurchaseStatus.DRAFT
+    }
+    disabled(path.supplierId, {when: isReadOnly})
+    disabled(path.dateOrdered, {when: isReadOnly})
+    disabled(path.orderedById, {when: isReadOnly})
+  })
+
+  export const convertToFormModel = (
+    purchase: Purchase | null, zonedDatesService: ZonedDatesService
+  ): PurchaseGeneralFieldsModel => ({
+    id: purchase?.id as string ?? '',
+    referenceNumber: purchase?.referenceNumber ?? '',
+    supplierId: purchase?.supplierId ?? '',
+    supplierName: purchase?.supplierName ?? '',
+    dateOrdered: purchase?.dateOrdered ? zonedDatesService.serverInstantToPickerDate(purchase.dateOrdered) : null,
+    orderedBy: purchase?.orderedBy ?? '',
+    orderedById: purchase?.orderedById ?? '',
+    notes: purchase?.notes ?? '',
+    purchaseStatus: purchase?.purchaseStatus ?? PurchaseStatus.DRAFT,
+    createdBy: purchase?.createdBy ?? '',
+    paymentStatus: purchase?.paymentStatus ?? PaymentStatus.UNPAID,
+    orderedTotal: purchase?.orderedTotal ?? 0
+  })
+
+  export const convertToBackendModel = (
+    formValue: PurchaseGeneralFieldsModel, zonedDatesService: ZonedDatesService
+  ): Partial<Purchase> => ({
+
+    id: formValue.id,
+    supplierId: formValue.supplierId,
+    dateOrdered: zonedDatesService.pickedDateAtOrgZone(formValue.dateOrdered),
+    orderedById: formValue.orderedById,
+    notes: formValue.notes
+  })
+}

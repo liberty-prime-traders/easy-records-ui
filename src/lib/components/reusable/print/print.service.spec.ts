@@ -23,7 +23,7 @@ describe('PrintService', () => {
 
   beforeEach(() => {
     surface = document.createElement('div')
-    surface.className = 'rts-print-doc'
+    surface.className = 'esr-print-doc'
     surface.textContent = 'Hello receipt'
   })
 
@@ -39,7 +39,7 @@ describe('PrintService', () => {
       let pageRule = ''
       let bodyText = ''
       service.inspect = win => {
-        pageRule = win.document.getElementById('rts-print-page-style')?.textContent ?? ''
+        pageRule = win.document.getElementById('esr-print-page-style')?.textContent ?? ''
         bodyText = win.document.body.textContent ?? ''
       }
 
@@ -49,7 +49,7 @@ describe('PrintService', () => {
       expect(pageRule).not.toContain('auto')
       expect(pageRule).toContain('margin: 0')
       expect(bodyText).toBe('Hello receipt')
-      expect(document.querySelector('iframe[data-rts-print-frame]')).toBeNull()
+      expect(document.querySelector('iframe[data-esr-print-frame]')).toBeNull()
       expect(service.isPrinting()).toBeFalse()
     })
 
@@ -71,7 +71,7 @@ describe('PrintService', () => {
     it('rejects an invalid layout and does not leave a frame behind', async () => {
       const invalid = {...layout, width: {...layout.width, value: -1}}
       await expectAsync(service.print(surface, invalid)).toBeRejected()
-      expect(document.querySelector('iframe[data-rts-print-frame]')).toBeNull()
+      expect(document.querySelector('iframe[data-esr-print-frame]')).toBeNull()
     })
   })
 

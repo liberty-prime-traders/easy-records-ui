@@ -1,0 +1,14 @@
+import {ProductCore} from '../../../cross-tier/retail/product/product-core.model'
+import {PaginatedModel} from '../../../util/paginated-api/paginated.model'
+
+export interface ProductQuantities {
+  quantityOnHand: number
+  quantityReserved: number
+  quantityAvailable: number
+  quantityAvailableBreakdown: string
+  quantityOnHandBreakdown: string
+}
+
+export interface ProductWithAvailability extends ProductCore, PaginatedModel, ProductQuantities {
+  defaultSalePrice?: number
+}

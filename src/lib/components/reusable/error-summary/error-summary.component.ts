@@ -3,7 +3,7 @@ import {ValidationError} from '@angular/forms/signals'
 import {toErrorMessages} from '../../../utils/form-validation'
 
 @Component({
-  selector: 'rts-error-summary',
+  selector: 'esr-error-summary',
   styles: `
     ul {
       padding-inline-start: 20px;

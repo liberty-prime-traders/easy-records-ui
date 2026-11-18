@@ -18,12 +18,12 @@ export class PrintError extends Error {
 }
 
 const MM_PER_CSS_PIXEL = 25.4 / 96
-const FRAME_ATTRIBUTE = 'data-rts-print-frame'
-const PAGE_STYLE_ID = 'rts-print-page-style'
+const FRAME_ATTRIBUTE = 'data-esr-print-frame'
+const PAGE_STYLE_ID = 'esr-print-page-style'
 const READY_TIMEOUT_MS = 15_000
 
 /**
- * Native browser printing for a rendered `rts-print-document`.
+ * Native browser printing for a rendered `esr-print-document`.
  *
  * Approach: the rendered surface is copied into a hidden, same-origin iframe together with the application's
  * stylesheets, and only that iframe is printed. That gives:

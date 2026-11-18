@@ -4,14 +4,14 @@ import {MenuItem} from 'primeng/api'
 import {ButtonDirective} from 'primeng/button'
 import {Card} from 'primeng/card'
 import {Menu} from 'primeng/menu'
-import {OrgMembershipUserService} from '../../api/organization-level/membership/org-membership-user.service'
-import {OrgFeatureService} from '../../api/organization-level/org-feature/org-feature.service'
+import {OrgMembershipUserService} from '../../api/organization-level/core/membership/org-membership-user.service'
+import {OrgFeatureService} from '../../api/organization-level/core/org-feature/org-feature.service'
 import {UserContextService} from '../../utils/services/auth/user-context.service'
 import {AutoStretchDirective} from '../reusable/auto-stretch.directive'
 import {OrganizationLaunchService} from '../welcome/top-navigation/organization-nav-content/organization-launch.service'
 
 @Component({
-  selector: 'rts-manage-organization',
+  selector: 'esr-manage-organization',
   templateUrl: 'organization-dashboard.component.html',
   imports: [
     RouterOutlet,

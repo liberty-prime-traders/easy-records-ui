@@ -10,32 +10,32 @@ import {assertValidPrintLayout, millimetresToCss, printableWidthMm, toCss} from 
  *
  * Styles are intentionally global (ViewEncapsulation.None) because they must reach elements rendered by
  * arbitrary projected components, and because `PrintService` copies the application's stylesheets into the print
- * frame. Every selector is rooted at `.rts-print-doc` (or a `.rts-print-*` marker class) so nothing else in the
+ * frame. Every selector is rooted at `.esr-print-doc` (or a `.esr-print-*` marker class) so nothing else in the
  * application is affected.
  */
 @Component({
-  selector: 'rts-print-document',
+  selector: 'esr-print-document',
   imports: [NgTemplateOutlet],
   encapsulation: ViewEncapsulation.None,
   host: {
-    class: 'rts-print-doc',
-    '[class.rts-print-doc--paged]': 'isPaged()',
-    '[class.rts-print-doc--receipt]': '!isPaged()',
+    class: 'esr-print-doc',
+    '[class.esr-print-doc--paged]': 'isPaged()',
+    '[class.esr-print-doc--receipt]': '!isPaged()',
     '[style]': 'cssVariables()'
   },
   template: `
     @if (header(); as header) {
-      <header class="rts-print-doc__header">
+      <header class="esr-print-doc__header">
         <ng-container [ngTemplateOutlet]="header.template" />
       </header>
     }
 
-    <main class="rts-print-doc__body">
+    <main class="esr-print-doc__body">
       <ng-content />
     </main>
 
     @if (footer(); as footer) {
-      <footer class="rts-print-doc__footer">
+      <footer class="esr-print-doc__footer">
         <ng-container [ngTemplateOutlet]="footer.template" />
       </footer>
     }
@@ -47,7 +47,7 @@ export class PrintDocumentComponent {
 
   /**
    * Content queries only see templates declared in the consumer's own template, nested at any depth inside
-   * `<rts-print-document>` - but not inside the views of child components.
+   * `<esr-print-document>` - but not inside the views of child components.
    */
   protected readonly header = contentChild(PrintHeaderDirective)
   protected readonly footer = contentChild(PrintFooterDirective)
@@ -61,13 +61,13 @@ export class PrintDocumentComponent {
     const layout = assertValidPrintLayout(this.layout())
     const {margins, height} = layout
     return {
-      '--rts-print-width': toCss(layout.width),
-      '--rts-print-min-height': height ? toCss(height) : 'auto',
-      '--rts-print-printable-width': millimetresToCss(printableWidthMm(layout)),
-      '--rts-print-pad-top': toCss(margins.top),
-      '--rts-print-pad-right': toCss(margins.right),
-      '--rts-print-pad-bottom': toCss(margins.bottom),
-      '--rts-print-pad-left': toCss(margins.left)
+      '--esr-print-width': toCss(layout.width),
+      '--esr-print-min-height': height ? toCss(height) : 'auto',
+      '--esr-print-printable-width': millimetresToCss(printableWidthMm(layout)),
+      '--esr-print-pad-top': toCss(margins.top),
+      '--esr-print-pad-right': toCss(margins.right),
+      '--esr-print-pad-bottom': toCss(margins.bottom),
+      '--esr-print-pad-left': toCss(margins.left)
     }
   })
 }

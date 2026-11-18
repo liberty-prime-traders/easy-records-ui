@@ -1,0 +1,38 @@
+<esr-loading-container [loading]="loading()">
+  <div class="p-2 flex flex-column gap-4">
+    <p-message severity="warn" icon="pi pi-exclamation-triangle">
+      <ul>
+        <li>Changes may take a few seconds to reflect across the system</li>
+        <li>The provided value overwrites the current opening balance</li>
+        <li>All changes to the opening balance are tracked and displayed under update history</li>
+      </ul>
+    </p-message>
+
+    <esr-form-field [required]="true" label="We owed them" for="payable" [layout]="FormFieldLayout.VERTICAL">
+      <p-input-number id="payable"
+                      mode="currency"
+                      placeholder="e.g. 15.00"
+                      [maxFractionDigits]="2"
+                      [min]="0"
+                      [currency]="currencyCodeProviderService.currencyCode"
+                      [formField]="openingBalanceForm.payable">
+      </p-input-number>
+    </esr-form-field>
+
+    <esr-form-field [required]="true" label="They owed us" for="receivable" [layout]="FormFieldLayout.VERTICAL">
+      <p-input-number id="receivable"
+                      mode="currency"
+                      placeholder="e.g. 15.00"
+                      [maxFractionDigits]="2"
+                      [min]="0"
+                      [currency]="currencyCodeProviderService.currencyCode"
+                      [formField]="openingBalanceForm.receivable">
+      </p-input-number>
+    </esr-form-field>
+
+    <div class="flex justify-content-between">
+      <esr-error-summary [regularErrorMessages]="failureMessages()"/>
+      <button pButton [disabled]="openingBalanceForm().invalid()" (click)="save()">Save</button>
+    </div>
+  </div>
+</esr-loading-container>

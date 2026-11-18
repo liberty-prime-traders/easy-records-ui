@@ -1,0 +1,41 @@
+<form class="flex flex-column gap-2 filled-background">
+  <esr-form-field [required]="true" label="Name" for="name">
+    <input id="name" pInputText [formField]="unitGroupForm.name" />
+  </esr-form-field>
+
+  <esr-form-field label="Description" for="description">
+    <input id="description" pInputText [formField]="unitGroupForm.description" />
+  </esr-form-field>
+
+  @if (!originalUnitGroup()?.id) {
+    <esr-form-field label="Override Base Unit Name" for="overrideBaseUnitName">
+      <p-checkbox inputId="overrideBaseUnitName" [binary]="true" [formField]="unitGroupForm.overrideBaseUnitName" />
+    </esr-form-field>
+
+    <esr-form-field [required]="unitGroupFormValue().overrideBaseUnitName" label="Base Unit Name" for="baseUnitName">
+      <input id="baseUnitName" pInputText [formField]="unitGroupForm.baseUnitName" />
+    </esr-form-field>
+
+    <esr-form-field label="Specify Base Unit Code" for="specifyBaseUnitCode">
+      <p-checkbox inputId="specifyBaseUnitCode" [binary]="true" [formField]="unitGroupForm.specifyBaseUnitCode" />
+    </esr-form-field>
+
+    @if (unitGroupFormValue().specifyBaseUnitCode) {
+      <esr-form-field [required]="true" label="Base Unit Code" for="baseUnitCode">
+        <input id="baseUnitCode" pInputText [formField]="unitGroupForm.baseUnitCode" />
+      </esr-form-field>
+    }
+  }
+
+  <esr-forms-buttons [disableReset]="!unitGroupForm().dirty()"
+                     [disableSave]="unitGroupForm().invalid() || !unitGroupForm().dirty()"
+                     [hideDelete]="!originalUnitGroup()?.id"
+                     [signalForm]="unitGroupForm()"
+                     [fieldMap]="unitGroupFormFields"
+                     [processingStatus]="processingStatus()"
+                     [failureMessages]="failureMessages()"
+                     (delete)="deleteUnitGroup()"
+                     (save)="upsertUnitGroup()"
+                     (resetAction)="resetForm()">
+  </esr-forms-buttons>
+</form>

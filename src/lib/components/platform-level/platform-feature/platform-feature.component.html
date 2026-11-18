@@ -1,4 +1,4 @@
-<div class="flex flex-column gap-4 flex-grow-1" id="platformFeatures" rtsAutoStretch="platformFeatures">
+<div class="flex flex-column gap-4 flex-grow-1" id="platformFeatures" esrAutoStretch="platformFeatures">
   <p-table [loading]="loading()"
            rowExpandMode="single"
            dataKey="feature"
@@ -14,7 +14,7 @@
     <ng-template #caption>
       <div class="flex justify-content-between align-items-center">
         <h3 class="font-bold">Platform Features</h3>
-        <rts-grid-filter [dataTable]="platformFeaturesTable"/>
+        <esr-grid-filter [dataTable]="platformFeaturesTable"/>
       </div>
     </ng-template>
 
@@ -49,13 +49,13 @@
     <ng-template #expandedrow let-platformFeature>
       <tr>
         <td colspan="3" class="filled-background">
-          <rts-platform-feature-form [platformFeature]="platformFeature"/>
+          <esr-platform-feature-form [platformFeature]="platformFeature"/>
         </td>
       </tr>
     </ng-template>
 
     <ng-template #emptymessage>
-      <tr rts-empty-row [colspan]="3" message="No Platform Features Were Found"></tr>
+      <tr esr-empty-row [colspan]="3" message="No Platform Features Were Found"></tr>
     </ng-template>
   </p-table>
 </div>

@@ -1,0 +1,5 @@
+@if (context.isNew()) {
+  <esr-location-stock-transfer-create-form (transferCreated)="onTransferCreated($event)"/>
+} @else {
+  <esr-location-stock-transfer-detail/>
+}

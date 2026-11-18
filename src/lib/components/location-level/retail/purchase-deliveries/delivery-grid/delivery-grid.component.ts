@@ -1,0 +1,35 @@
+import {CurrencyPipe, DatePipe, NgClass} from '@angular/common'
+import {Component, computed, inject, signal} from '@angular/core'
+import {ButtonDirective} from 'primeng/button'
+import {TableModule} from 'primeng/table'
+import {PurchaseStatus} from '../../../../../api/location-level/retail/purchase/purchase-status.enum'
+import {EmptyRowComponent} from '../../../../reusable/empty-row/empty-row.component'
+import {PurchaseFormContext} from '../../purchases/purchase-form/form-utils/purchase-form-context'
+import {DeliveryFormComponent} from '../delivery-form/delivery-form.component'
+import {DeliverySubgridComponent} from '../delivery-subgrid/delivery-subgrid.component'
+
+@Component({
+  selector: 'esr-purchase-deliveries',
+  templateUrl: 'delivery-grid.component.html',
+  imports: [
+    TableModule,
+    ButtonDirective,
+    CurrencyPipe,
+    EmptyRowComponent,
+    DeliveryFormComponent,
+    DeliverySubgridComponent,
+    NgClass,
+    DatePipe
+  ]
+})
+export class DeliveryGridComponent {
+
+  private readonly purchaseFormContext = inject(PurchaseFormContext)
+
+  readonly deliveries = this.purchaseFormContext.deliveries
+  readonly showNewDeliveryForm = signal(false)
+
+  readonly canAddDeliveries = computed(() =>
+    this.purchaseFormContext.purchaseForm.generalFields().value().purchaseStatus !== PurchaseStatus.FULLY_DELIVERED
+  )
+}

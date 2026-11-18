@@ -1,0 +1,35 @@
+<esr-loading-container [loading]="loading()">
+  <div class="flex" id="payments-report" esrAutoStretch="payments-report">
+    @if (selectedTab() === 'payments') {
+      <esr-payments-filter-readonly class="col-2" (editFilters)="selectedTab.set('summary')"/>
+    } @else {
+      <esr-payments-filter class="col-3" />
+    }
+
+    <p-divider layout="vertical"/>
+
+    <div class="flex flex-column flex-grow-1">
+      <span class="font-bold">Payments</span>
+
+      <p-tabs [value]="selectedTab()" (valueChange)="onSelectedTabChange($event)">
+        <p-tablist>
+          <p-tab value="summary">Summary</p-tab>
+          <p-tab value="payments">
+            Payments
+            <p-badge [value]="paymentsCount()" severity="info" class="ml-2"/>
+          </p-tab>
+        </p-tablist>
+
+        <p-tabpanels>
+          <p-tabpanel value="summary">
+            <esr-payments-summary/>
+          </p-tabpanel>
+
+          <p-tabpanel value="payments">
+            <esr-payments-grid/>
+          </p-tabpanel>
+        </p-tabpanels>
+      </p-tabs>
+    </div>
+  </div>
+</esr-loading-container>

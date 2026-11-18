@@ -14,7 +14,7 @@ import {GridWithAddButtonComponent} from '../../reusable/grid-with-add-button.co
 import {AuthorizationPassFormComponent} from './authorization-pass-form/authorization-pass-form.component'
 
 @Component({
-  selector: 'rts-authorization-pass',
+  selector: 'esr-authorization-pass',
   templateUrl: 'authorization-pass.component.html',
   imports: [
     TableModule,

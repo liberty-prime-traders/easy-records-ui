@@ -2,7 +2,7 @@ import {Component, model} from '@angular/core'
 import {ButtonDirective} from 'primeng/button'
 
 @Component({
-  selector: 'rts-add-row',
+  selector: 'esr-add-row',
   templateUrl: 'add-row.component.html',
   imports: [
     ButtonDirective,

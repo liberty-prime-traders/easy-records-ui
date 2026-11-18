@@ -1,0 +1,23 @@
+<form [formGroup]="locationForm()" class="flex flex-column gap-2">
+  <esr-form-field label="Name" for="name">
+    <input id="name" pInputText formControlName="name">
+  </esr-form-field>
+
+  <esr-form-field label="Location Type" for="locationType">
+    <p-select id="locationType" formControlName="locationType" [options]="locationType | enumToDropdown"/>
+  </esr-form-field>
+
+  <esr-form-field label="Description" for="description">
+    <input id="description" pInputText formControlName="description">
+  </esr-form-field>
+
+  <esr-forms-buttons [disableReset]="!locationForm().dirty"
+                     [disableSave]="!locationForm().valid || !locationForm().dirty"
+                     [hideDelete]="!location()?.id"
+                     [processingStatus]="processingStatus()"
+                     [failureMessages]="failureMessages()"
+                     (delete)="deleteLocation()"
+                     (save)="upsertLocation()"
+                     (resetAction)="resetForm()">
+  </esr-forms-buttons>
+</form>

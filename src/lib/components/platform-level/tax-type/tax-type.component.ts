@@ -14,7 +14,7 @@ import {NewFormCancelButtonComponent} from '../../reusable/new-form-cancel-butto
 import {TaxTypeFormComponent} from './tax-type-form/tax-type-form.component'
 
 @Component({
-  selector: 'rts-tax-type',
+  selector: 'esr-tax-type',
   templateUrl: 'tax-type.component.html',
   imports: [
     TableModule,

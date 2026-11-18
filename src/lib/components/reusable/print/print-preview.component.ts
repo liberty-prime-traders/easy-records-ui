@@ -1,22 +1,22 @@
 import {Component, input, ViewEncapsulation} from '@angular/core'
 
 /**
- * On-screen "desk" for a `rts-print-document`: neutral backdrop, shadow and scrolling. These frills belong to the
+ * On-screen "desk" for a `esr-print-document`: neutral backdrop, shadow and scrolling. These frills belong to the
  * preview only - `PrintService` prints the document surface itself, so none of this reaches the paper.
  *
  * The preview shows one sheet-width of continuous content; it does not simulate page breaks.
  */
 @Component({
-  selector: 'rts-print-preview',
+  selector: 'esr-print-preview',
   encapsulation: ViewEncapsulation.None,
-  host: {class: 'rts-print-preview', role: 'region', 'aria-label': 'Print preview'},
+  host: {class: 'esr-print-preview', role: 'region', 'aria-label': 'Print preview'},
   template: `
-    <div class="rts-print-preview__sheet" [style.zoom]="zoom()">
+    <div class="esr-print-preview__sheet" [style.zoom]="zoom()">
       <ng-content />
     </div>
   `,
   styles: `
-    .rts-print-preview {
+    .esr-print-preview {
       display: block;
       overflow: auto;
       padding: 1rem;
@@ -24,7 +24,7 @@ import {Component, input, ViewEncapsulation} from '@angular/core'
       max-height: 100%;
     }
 
-    .rts-print-preview__sheet {
+    .esr-print-preview__sheet {
       width: max-content;
       max-width: none;
       margin: 0 auto;

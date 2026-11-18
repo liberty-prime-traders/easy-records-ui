@@ -1,7 +1,7 @@
-<div class="flex flex-column gap-4 flex-grow-1" id="jurisdictions" rtsAutoStretch="jurisdictions">
+<div class="flex flex-column gap-4 flex-grow-1" id="jurisdictions" esrAutoStretch="jurisdictions">
   @if (addingIsActive()) {
-    <rts-new-form-cancel-button (onCancel)="setAddingActiveFalse()"/>
-    <rts-jurisdiction-form (jurisdictionCreated)="closeAddRow()"/>
+    <esr-new-form-cancel-button (onCancel)="setAddingActiveFalse()"/>
+    <esr-jurisdiction-form (jurisdictionCreated)="closeAddRow()"/>
 
   } @else {
     <p-table [loading]="loading() && !addingIsActive()"
@@ -20,7 +20,7 @@
         <div class="flex justify-content-between align-items-center">
           <h3 class="font-bold">Jurisdictions</h3>
 
-          <rts-grid-filter [dataTable]="jurisdictionsTable"/>
+          <esr-grid-filter [dataTable]="jurisdictionsTable"/>
 
           <button pButton (click)="setAddingActiveTrue()"
                   [disabled]="loading() || addingIsActive()"
@@ -68,13 +68,13 @@
       <ng-template #expandedrow let-jurisdiction>
         <tr>
           <td colspan="5" class="filled-background">
-            <rts-jurisdiction-form [jurisdiction]="jurisdiction"/>
+            <esr-jurisdiction-form [jurisdiction]="jurisdiction"/>
           </td>
         </tr>
       </ng-template>
 
       <ng-template #emptymessage>
-        <tr rts-empty-row [colspan]="5" message="No Jurisdictions Were Found"></tr>
+        <tr esr-empty-row [colspan]="5" message="No Jurisdictions Were Found"></tr>
       </ng-template>
     </p-table>
   }

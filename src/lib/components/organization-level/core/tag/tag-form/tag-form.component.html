@@ -1,0 +1,27 @@
+<form [formGroup]="tagForm()" class="flex flex-column gap-2" [ngClass]="tag()?.id ? '' : 'filled-background'">
+  <esr-form-field [required]="true" label="Tag Name" for="tagName">
+    <input id="tagName" class="flex-grow-1" pInputText formControlName="tagName">
+  </esr-form-field>
+
+  <esr-form-field label="Category" for="category" [required]="true">
+    <p-select id="category"
+              class="flex-grow-1"
+              formControlName="category"
+              [options]="categoryType | enumToDropdown">
+    </p-select>
+  </esr-form-field>
+
+  <esr-form-field label="Description" for="description">
+    <input id="description" pInputText formControlName="description">
+  </esr-form-field>
+
+  <esr-forms-buttons [disableReset]="!tagForm().dirty"
+                     [disableSave]="!tagForm().valid || !tagForm().dirty"
+                     [hideDelete]="!tag()?.id"
+                     [processingStatus]="processingStatus()"
+                     [failureMessages]="failureMessages()"
+                     (delete)="deleteTag()"
+                     (save)="upsertTag()"
+                     (resetAction)="resetForm()">
+  </esr-forms-buttons>
+</form>

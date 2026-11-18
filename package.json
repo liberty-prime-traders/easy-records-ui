@@ -1,5 +1,5 @@
 {
-  "name": "retail-software-solution-ui",
+  "name": "easy-records-ui",
   "version": "0.0.0",
   "scripts": {
     "postinstall": "bash scripts/setup-local-env.sh",

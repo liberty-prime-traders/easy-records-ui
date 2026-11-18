@@ -1,9 +1,9 @@
 import {CurrencyPipe, NgClass} from '@angular/common'
 import {Component, computed, input} from '@angular/core'
-import {BalanceEffect, findColorClass} from '../../api/organization-level/chart-of-accounts/balance-effect.enum'
+import {BalanceEffect, findColorClass} from '../../api/organization-level/core/chart-of-accounts/balance-effect.enum'
 
 @Component({
-  selector: 'rts-money',
+  selector: 'esr-money',
   imports: [
     NgClass,
     CurrencyPipe

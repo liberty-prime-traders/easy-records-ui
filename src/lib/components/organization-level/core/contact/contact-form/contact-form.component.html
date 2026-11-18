@@ -1,0 +1,97 @@
+<div class="form-container flex flex-column gap-2">
+
+  <p-panel>
+    <div class="flex flex-wrap">
+      <div class="flex flex-column gap-2 col-5">
+        <esr-form-field [required]="true" label="Identity Type" for="identityType">
+          <p-select id="identityType"
+                    class="flex-grow-1"
+                    [options]="identityType | enumToDropdown"
+                    [formField]="contactForm.identityType">
+          </p-select>
+        </esr-form-field>
+
+        @if (isOrganization()) {
+          <esr-form-field [required]="true" label="Company Name" for="companyName">
+            <input id="companyName" class="flex-grow-1" pInputText [formField]="contactForm.companyName">
+          </esr-form-field>
+
+        } @else {
+          <esr-form-field [required]="true" label="First Name" for="firstName">
+            <input id="firstName" class="flex-grow-1" pInputText [formField]="contactForm.firstName">
+          </esr-form-field>
+
+          <esr-form-field label="Last Name" for="lastName">
+            <input id="lastName" class="flex-grow-1" pInputText [formField]="contactForm.lastName">
+          </esr-form-field>
+        }
+
+        <esr-form-field [required]="true" label="Status" for="status">
+          <p-select id="status"
+                    class="flex-grow-1"
+                    [options]="contactStatus | enumToDropdown"
+                    [formField]="contactForm.status">
+          </p-select>
+        </esr-form-field>
+      </div>
+
+      <div class="flex flex-column gap-2 col-5">
+        <esr-form-field [required]="true" label="Contact Type" labelClass="align-self-start">
+          <div class="flex flex-column gap-2">
+            @for (type of (ContactType | enumToDropdown); track type) {
+              <div class="flex gap-2">
+                <p-check-box [id]="type.value"
+                             [value]="type.value"
+                             (onChange)="onContactTypeChecked()"
+                             [(ngModel)]="selectedContactTypes">
+                </p-check-box>
+                <label [for]="type.value">{{ type.label }}</label>
+              </div>
+            }
+          </div>
+        </esr-form-field>
+      </div>
+    </div>
+  </p-panel>
+
+  <p-panel header="Additional Information" toggleable [collapsed]="true">
+
+    <esr-form-field label="Email" for="email">
+      <input id="email" class="flex-grow-1" pInputText [formField]="contactForm.email" type="email">
+    </esr-form-field>
+
+    <esr-form-field label="Phone" for="phone">
+      <input id="phone" class="flex-grow-1" pInputText [formField]="contactForm.phone" type="tel">
+    </esr-form-field>
+
+    <esr-form-field label="Address" for="address">
+      <textarea pInputText id="address" [formField]="contactForm.address" rows="3"></textarea>
+    </esr-form-field>
+
+    <esr-form-field label="Credit Limit" for="creditLimit">
+      <p-input-number id="creditLimit"
+                     class="flex-grow-1"
+                     [formField]="contactForm.creditLimit"
+                     currency="KES"
+                     mode="currency">
+      </p-input-number>
+    </esr-form-field>
+
+    <esr-form-field label="Notes" for="notes">
+      <textarea pInputText id="notes" [formField]="contactForm.notes" rows="4"></textarea>
+    </esr-form-field>
+  </p-panel>
+
+
+
+  <esr-forms-buttons [disableReset]="!contactForm().dirty"
+                     [disableSave]="contactForm().invalid() || !contactForm().dirty"
+                     [hideDelete]="true"
+                     [signalForm]="contactForm()"
+                     [fieldMap]="contactFormFields"
+                     [processingStatus]="processingStatus()"
+                     [failureMessages]="failureMessages()"
+                     (save)="upsertContact()"
+                     (resetAction)="resetForm()">
+  </esr-forms-buttons>
+</div>

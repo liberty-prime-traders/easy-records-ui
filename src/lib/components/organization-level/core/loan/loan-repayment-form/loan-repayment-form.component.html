@@ -1,0 +1,49 @@
+<div class="flex flex-column gap-2">
+  <esr-loading-container [loading]="accountTreesLoading()">
+    <esr-form-field [required]="true" label="Paid From Account" for="repaymentAccount">
+      <p-tree-select id="repaymentAccount"
+                     class="flex-grow-1"
+                     appendTo="body"
+                     placeholder="Select an Account"
+                     [options]="loanTrees()"
+                     [ngModel]="assetAccount()"
+                     (ngModelChange)="onAssetAccountChange($event)">
+      </p-tree-select>
+    </esr-form-field>
+  </esr-loading-container>
+
+  <esr-form-field [required]="true" label="Amount" for="repaymentAmount">
+    <p-input-number inputId="repaymentAmount"
+                    mode="currency"
+                    currency="KES"
+                    class="flex-grow-1"
+                    [min]="0"
+                    [max]="loan().outstanding"
+                    [formField]="repaymentForm.amount">
+    </p-input-number>
+  </esr-form-field>
+
+  <esr-form-field [required]="true" label="Date" for="repaymentDate">
+    <p-date-picker inputId="repaymentDate"
+                   class="flex-grow-1"
+                   appendTo="body"
+                   [showIcon]="true"
+                   [formField]="repaymentForm.repaymentDate">
+    </p-date-picker>
+  </esr-form-field>
+
+  <esr-form-field label="Note" for="repaymentNote">
+    <input id="repaymentNote" class="flex-grow-1" pInputText [formField]="repaymentForm.note"/>
+  </esr-form-field>
+
+  <esr-forms-buttons [disableReset]="!repaymentForm().dirty()"
+                     [disableSave]="repaymentForm().invalid() || !repaymentForm().dirty()"
+                     [hideDelete]="true"
+                     [signalForm]="repaymentForm()"
+                     [fieldMap]="fieldMap"
+                     [processingStatus]="processingStatus()"
+                     [failureMessages]="failureMessages()"
+                     (save)="save()"
+                     (resetAction)="resetForm()">
+  </esr-forms-buttons>
+</div>

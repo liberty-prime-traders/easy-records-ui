@@ -1,0 +1,15 @@
+@if (showPullFromOrgScreen()) {
+  <esr-pull-from-org-user
+    (cancel)="hidePullFromOrgScreen()"
+    (pulled)="hidePullFromOrgScreen()">
+  </esr-pull-from-org-user>
+
+} @else {
+  <esr-user-management [schemaLevel]="SchemaLevel.LOCATION">
+    <button pButton
+            severity="secondary"
+            (click)="openPullFromOrgScreen()">
+      <i class="pi pi-user-plus"></i> Add Users
+    </button>
+  </esr-user-management>
+}

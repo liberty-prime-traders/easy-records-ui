@@ -1,0 +1,88 @@
+<div class="flex gap-3">
+  <esr-product-purchases-report-filter class="w-15rem"/>
+
+  <p-divider layout="vertical" />
+
+  <div class="flex flex-column gap-3 flex-grow-1">
+    <div class="flex justify-content-between gap-3 pr-4">
+      <span class="text-lg font-semibold">Product purchases report</span>
+
+      <div class="flex gap-3 text-sm">
+        <div class="flex gap-1">
+          <span class="info-message">Total Cost</span>
+          <esr-money [amount]="totalCost()" [balanceEffect]="BalanceEffect.ADDS" />
+        </div>
+
+        <div class="flex gap-1">
+          <span class="info-message">Delivery Lines</span>
+          <span class="font-semibold">{{ deliveryLineCount() | number }}</span>
+        </div>
+
+        <div class="flex gap-1">
+          <span class="info-message">Products</span>
+          <span class="font-semibold">{{ productCount() | number }}</span>
+        </div>
+      </div>
+    </div>
+
+    <p-divider class="mt-0"/>
+
+    <div id="product-purchases-report" esrAutoStretch="product-purchases-report">
+      <p-table [value]="rows()"
+               dataKey="locationProductId"
+               scrollHeight="flex"
+               [scrollable]="true"
+               [loading]="loading()">
+        <ng-template #header>
+          <tr>
+            <th style="width: 3rem"></th>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Qty received</th>
+            <th>Avg unit cost</th>
+            <th>Total cost</th>
+            <th>Deliveries</th>
+          </tr>
+        </ng-template>
+
+        <ng-template #body let-row let-expanded="expanded">
+          <tr [ngClass]="{ 'expanded-row': expanded }">
+            <td>
+              <button pButton type="button" [pRowToggler]="row" text severity="secondary"
+                      [attr.aria-label]="'Toggle deliveries for ' + row.productName">
+                <i class="pi" [class.pi-chevron-down]="expanded" [class.pi-chevron-right]="!expanded"></i>
+              </button>
+            </td>
+            <td>
+              <span class="font-bold">{{ row.productName }}</span>
+              <div class="flex gap-1">
+                <span class="text-color-secondary text-sm">{{ row.productGroupName }}</span>
+                <span class="text-color-secondary text-sm"> - {{ row.referenceNumber }}</span>
+              </div>
+
+            </td>
+            <td>{{ row.categoryName }}</td>
+            <td>{{ row.receivedQuantityBreakdown }}</td>
+            <td>{{ row.averageCostPerBaseUnit }}</td>
+            <td>{{ row.totalCost | currency }}</td>
+            <td>{{ row.deliveryLineCount }}</td>
+          </tr>
+        </ng-template>
+
+        <ng-template #expandedrow let-row>
+          <tr>
+            <td colspan="7" class="filled-background">
+              <esr-product-purchases-delivery-lines-grid [locationProductId]="row.locationProductId"
+                                                         [parameters]="filterState.deliveryLinesParameters()">
+              </esr-product-purchases-delivery-lines-grid>
+            </td>
+          </tr>
+        </ng-template>
+
+        <ng-template #emptymessage>
+          <tr esr-empty-row [colspan]="7" message="No deliveries in this range."></tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>

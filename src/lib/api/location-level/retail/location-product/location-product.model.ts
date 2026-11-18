@@ -1,0 +1,13 @@
+import {ProductDetail} from '../../../cross-tier/retail/product/product-detail.model'
+
+export interface LocationProduct extends ProductDetail {
+  baseUnitId: string
+  defaultSalePrice?: number
+  lastPurchasePrice?: number
+  minStockLevel?: number
+  lastSyncedAt?: number
+  stockBalance?: number
+  stockBalanceBreakdown?: string
+  openingStockBreakdown?: string
+  openingStockQuantity?: number
+}

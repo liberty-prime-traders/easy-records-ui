@@ -1,21 +1,21 @@
 import {Pipe, PipeTransform} from '@angular/core'
 import {MigrationStatus} from '../../../../api/platform-level/db-migration/migration-status.enum'
-import {RtsSeverity} from '../../../../utils/types/severity'
+import {LibertySeverity} from '../../../../utils/types/severity'
 
 @Pipe({
   name: 'migrationStatusSeverity'
 })
 export class MigrationStatusSeverityPipe implements PipeTransform {
-  transform(status?: MigrationStatus): RtsSeverity {
+  transform(status?: MigrationStatus): LibertySeverity {
     switch (status) {
     case MigrationStatus.SUCCESS:
-      return RtsSeverity.SUCCESS
+      return LibertySeverity.SUCCESS
     case MigrationStatus.FAILURE:
-      return RtsSeverity.DANGER
+      return LibertySeverity.DANGER
     case MigrationStatus.PARTIAL:
-      return RtsSeverity.WARN
+      return LibertySeverity.WARN
     default:
-      return RtsSeverity.INFO
+      return LibertySeverity.INFO
     }
   }
 }

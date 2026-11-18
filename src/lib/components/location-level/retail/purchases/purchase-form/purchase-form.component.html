@@ -1,0 +1,50 @@
+<esr-loading-container [loading]="isLoading()" loadingText="Saving...">
+  <p-divider/>
+
+  <form class="flex flex-column" id="purchaseForm" esrAutoStretch="purchaseForm">
+
+    <esr-purchase-form-general-fields/>
+
+    <p-tabs value="items">
+      <p-tablist>
+        <p-tab value="items">Items</p-tab>
+
+        @if (!isDraftOrNew()) {
+          <p-tab value="deliveries">Deliveries</p-tab>
+          <p-tab value="payments">Payments</p-tab>
+          <p-tab value="expenses">Expenses</p-tab>
+        }
+      </p-tablist>
+
+      <p-tabpanels>
+        <p-tabpanel value="items">
+          <esr-purchase-lines/>
+        </p-tabpanel>
+
+        @if (!isDraftOrNew()) {
+          <p-tabpanel value="deliveries">
+            <esr-purchase-deliveries/>
+          </p-tabpanel>
+
+          <p-tabpanel value="payments">
+            <esr-supplier-payment-grid [purchaseId]="purchaseId()"
+                                       [canAddPayment]="canAddPayments()"
+                                       (paymentChanged)="reloadFormFromStore()">
+            </esr-supplier-payment-grid>
+          </p-tabpanel>
+
+          <p-tabpanel value="expenses">
+            <esr-contextual-expense-grid
+              [sourceReference]="purchaseReference()"
+              [defaultPayeeContactId]="supplierId()"
+              [sourceType]="ExpenseSourceType.PURCHASE"
+              [canAddExpense]="true">
+            </esr-contextual-expense-grid>
+          </p-tabpanel>
+        }
+      </p-tabpanels>
+    </p-tabs>
+
+    <div style="height: 100px"></div>
+  </form>
+</esr-loading-container>

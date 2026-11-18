@@ -1,0 +1,57 @@
+<div class="flex align-items-center justify-content-between pr-4">
+  <div class="flex gap-2">
+    @if (formIsVisible()) {
+      <button pButton (click)="hideForm()" severity="secondary">
+        <i class="pi pi-arrow-left"></i>
+      </button>
+    }
+    <span class="font-bold">Purchases</span>
+  </div>
+
+  @if (formIsVisible()) {
+    <esr-purchase-form-actions/>
+  } @else {
+    <button pButton (click)="startNewPurchase()">
+      <i class="pi pi-plus"></i>
+      New Purchase
+    </button>
+  }
+</div>
+
+@if (formIsVisible()) {
+  <esr-purchase-form/>
+} @else {
+  <esr-loading-container [loading]="loading()">
+    <div class="flex" id="purchases-report" esrAutoStretch="purchases-report">
+      @if (selectedTab() === 'purchases') {
+        <esr-purchases-filter-readonly class="col-2" (editFilters)="selectedTab.set('summary')"/>
+      } @else {
+        <esr-purchases-filter class="col-3"/>
+      }
+
+      <p-divider layout="vertical"/>
+
+      <div class="flex flex-column flex-grow-1">
+        <p-tabs [value]="selectedTab()" (valueChange)="onSelectedTabChange($event)">
+          <p-tablist>
+            <p-tab value="summary">Summary</p-tab>
+            <p-tab value="purchases">
+              Purchases
+              <p-badge [value]="purchaseCount()" severity="info" class="ml-2"/>
+            </p-tab>
+          </p-tablist>
+
+          <p-tabpanels>
+            <p-tabpanel value="summary">
+              <esr-purchases-summary/>
+            </p-tabpanel>
+
+            <p-tabpanel value="purchases">
+              <esr-purchase-grid/>
+            </p-tabpanel>
+          </p-tabpanels>
+        </p-tabs>
+      </div>
+    </div>
+  </esr-loading-container>
+}

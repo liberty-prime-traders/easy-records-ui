@@ -19,7 +19,7 @@ import {TaxTypeFormDefinition} from './tax-type-form.definition'
 
 
 @Component({
-  selector: 'rts-tax-type-form',
+  selector: 'esr-tax-type-form',
   templateUrl: 'tax-type-form.component.html',
   imports: [
     FormButtonsComponent,

@@ -1,5 +1,5 @@
 <p-card>
-  <div id="tableRegistry" rtsAutoStretch="tableRegistry">
+  <div id="tableRegistry" esrAutoStretch="tableRegistry">
     <p-table [loading]="loading()"
              rowExpandMode="single"
              dataKey="id"
@@ -15,7 +15,7 @@
       <ng-template #caption>
         <div class="flex justify-content-between align-items-center">
           <h3>Table Registry</h3>
-          <rts-grid-filter [dataTable]="registryTable"/>
+          <esr-grid-filter [dataTable]="registryTable"/>
 
           <button pButton
                   rounded
@@ -82,13 +82,13 @@
       <ng-template #expandedrow let-registry>
         <tr>
           <td colspan="9" class="filled-background">
-            <rts-table-registry-form [registry]="registry"/>
+            <esr-table-registry-form [registry]="registry"/>
           </td>
         </tr>
       </ng-template>
 
       <ng-template #emptymessage>
-        <tr rts-empty-row [colspan]="9" message="No Tables Were Found"></tr>
+        <tr esr-empty-row [colspan]="9" message="No Tables Were Found"></tr>
       </ng-template>
     </p-table>
   </div>

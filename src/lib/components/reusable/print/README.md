@@ -7,27 +7,27 @@ nothing here imports PrimeNG.
 | Piece | Role |
 |---|---|
 | `PrintLayout`, `PRINT_LAYOUT_PRESETS`, `createPresetPrintLayout`, `createCustomPrintLayout` | Typed, validated layouts. Physical units are preserved; lengths are compared in millimetres, never by `parseFloat`. |
-| `rts-print-document` | The paper surface. Projects any content; optional `rtsPrintHeader` / `rtsPrintFooter` templates. |
-| `rts-print-preview` | On-screen desk (backdrop, shadow, zoom) around a document. Preview chrome never reaches paper. |
+| `esr-print-document` | The paper surface. Projects any content; optional `esrPrintHeader` / `esrPrintFooter` templates. |
+| `esr-print-preview` | On-screen desk (backdrop, shadow, zoom) around a document. Preview chrome never reaches paper. |
 | `PrintService` | `print(surface, layout)` - native print in an isolated, hidden iframe. |
-| `rtsPrintHide`, `rtsPrintOnly`, `rtsPrintKeepTogether`, `rtsPrintBreakBefore` | Host-class directives; the behaviour is CSS. |
+| `esrPrintHide`, `esrPrintOnly`, `esrPrintKeepTogether`, `esrPrintBreakBefore` | Host-class directives; the behaviour is CSS. |
 
 No dependencies were added.
 
 ## Example 1 - a sale (feature-owned content)
 
 ```html
-<rts-print-document [layout]="layout()">
-  <ng-template rtsPrintHeader>
+<esr-print-document [layout]="layout()">
+  <ng-template esrPrintHeader>
     <div class="branding">{{ organizationName() }}</div>
   </ng-template>
 
-  <rts-sale-print-content [sale]="sale()" [layout]="layout()" />
+  <esr-sale-print-content [sale]="sale()" [layout]="layout()" />
 
-  <ng-template rtsPrintFooter>
+  <ng-template esrPrintFooter>
     <p>Thank you for shopping with us.</p>
   </ng-template>
-</rts-print-document>
+</esr-print-document>
 ```
 
 See `components/location-level/sales/sale-print/`. `SalePrintActionsComponent` adds the Print / Preview buttons
@@ -38,19 +38,19 @@ to the sale header, remembers the chosen paper in local storage, and declares th
 
 ```ts
 @Component({
-  selector: 'rts-shelf-labels',
+  selector: 'esr-shelf-labels',
   imports: [PrintDocumentComponent, PrintPreviewComponent, PrintKeepTogetherDirective],
   template: `
-    <rts-print-preview>
-      <rts-print-document #doc [layout]="layout">
+    <esr-print-preview>
+      <esr-print-document #doc [layout]="layout">
         @for (label of labels(); track label.sku) {
-          <section rtsPrintKeepTogether>
+          <section esrPrintKeepTogether>
             <h2>{{ label.name }}</h2>
             <p>{{ label.sku }}</p>
           </section>
         }
-      </rts-print-document>
-    </rts-print-preview>
+      </esr-print-document>
+    </esr-print-preview>
     <button (click)="print(doc.element)">Print</button>
   `
 })
@@ -85,20 +85,20 @@ createCustomPrintLayout({kind: PrintLayoutKind.RECEIPT, width: mm(76), margins: 
 
 | Directive | Print output | Preview | Elsewhere in the app |
 |---|---|---|---|
-| `rtsPrintHide` | removed | shown, dimmed with a dashed outline | untouched |
-| `rtsPrintOnly` | shown | shown | **hidden** (when not inside a `rts-print-document`) |
-| `rtsPrintKeepTogether` | `break-inside: avoid` (best effort) | no effect | untouched |
-| `rtsPrintBreakBefore` | `break-before: page` in PAGED layouts only | no effect | untouched |
+| `esrPrintHide` | removed | shown, dimmed with a dashed outline | untouched |
+| `esrPrintOnly` | shown | shown | **hidden** (when not inside a `esr-print-document`) |
+| `esrPrintKeepTogether` | `break-inside: avoid` (best effort) | no effect | untouched |
+| `esrPrintBreakBefore` | `break-before: page` in PAGED layouts only | no effect | untouched |
 
-`rtsPrintHeader` / `rtsPrintFooter` are marker directives on `ng-template`. They render **once**, at the top and
+`esrPrintHeader` / `esrPrintFooter` are marker directives on `ng-template`. They render **once**, at the top and
 bottom of the document flow. They do **not** repeat on every physical page. (For a repeating table header, use a
 real `<thead>`; browsers repeat it across pages.)
 
 ### How nested content is queried
 
-`rts-print-document` finds header/footer with `contentChild`. That sees templates declared **in the template that
-contains `<rts-print-document>`**, at any nesting depth of that template. It does **not** see templates declared
-inside the view of a child component (e.g. inside `<rts-sale-print-content>`'s own template). Declare the
+`esr-print-document` finds header/footer with `contentChild`. That sees templates declared **in the template that
+contains `<esr-print-document>`**, at any nesting depth of that template. It does **not** see templates declared
+inside the view of a child component (e.g. inside `<esr-sale-print-content>`'s own template). Declare the
 header/footer where the document is declared. The other four directives are plain class markers, so they work
 anywhere in projected content, including inside child component templates.
 
@@ -167,7 +167,7 @@ set Margins to *Default*/*None* as noted.
 5. **58 mm** - same; nothing clipped on the right, no label overlapping an amount.
 6. **Isolation** - open the preview from a screen with a sidebar and open dialogs behind it; none appear in the print.
 7. **Repeat** - press Print twice quickly: only one dialog opens. Cancel, then print again: works.
-8. **Hide/only** - elements with `rtsPrintHide` appear dimmed in preview and are absent when printed.
+8. **Hide/only** - elements with `esrPrintHide` appear dimmed in preview and are absent when printed.
 9. **Unsupported** - in a browser where `window.print` is unavailable, a toast "Unable to print" is shown.
 
 Automated coverage: `print-layout.util.spec.ts` (units, presets, validation, `@page` output),

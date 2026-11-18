@@ -17,7 +17,7 @@ import {FormFieldComponent} from '../../../reusable/form-field/form-field.compon
 import {AuthorizationPassFormDefinition} from './authorization-pass-form.definition'
 
 @Component({
-  selector: 'rts-authorization-pass-form',
+  selector: 'esr-authorization-pass-form',
   templateUrl: 'authorization-pass-form.component.html',
   imports: [
     FormField,

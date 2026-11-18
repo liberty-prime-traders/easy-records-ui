@@ -1,0 +1,82 @@
+<esr-loading-container [loading]="orgTaxTypesLoading()" class="block h-full">
+  <div class="flex gap-4 h-full">
+    <div class="flex col-7 flex-column gap-4">
+      <div class="flex gap-5 align-items-center">
+        <p-tree-select [options]="availableTaxTypes()"
+                       [metaKeySelection]="false"
+                       [loading]="taxTypeTreeIsLoading()"
+                       selectionMode="multiple"
+                       appendTo="body"
+                       placeholder="Select taxes that affect your organization"
+                       [(ngModel)]="selectedTaxNodes"
+                       class="col-9">
+        </p-tree-select>
+
+        <button pButton
+                severity="secondary"
+                rounded
+                [disabled]="selectedTaxNodes().length < 1"
+                (click)="confirmSelection()">
+          Confirm Selection
+        </button>
+      </div>
+
+      <div class="flex flex-column gap-3">
+        @for (row of taxTypesToAdd(); track $index) {
+          <div class="flex p-0 col-12 gap-3 align-items-center">
+            <span class="flex-grow-1">{{ row.label }}</span>
+
+            @if (isCoaEnabled()) {
+              <p-tree-select [options]="payableAccounts()"
+                             [loading]="accountTreesLoading()"
+                             #payableTreeSelect
+                             appendTo="body"
+                             [invalid]="!payableTreeSelect._value"
+                             (onNodeSelect)="onPayableChange(row.jurisdictionTaxTypeId, $event.node)"
+                             placeholder="Payable Account"
+                             class="col-4 p-0">
+              </p-tree-select>
+
+              <div class="col-4 p-0">
+                @if (row.taxRecoveryType === TaxRecoveryType.RECOVERABLE) {
+                  <p-tree-select [options]="recoverableAccounts()"
+                                 [loading]="accountTreesLoading()"
+                                 appendTo="body"
+                                 [invalid]="!payableTreeSelect._value"
+                                 (onNodeSelect)="onRecoverableChange(row.jurisdictionTaxTypeId, $event.node)"
+                                 placeholder="Recoverable Account"
+                                 [fluid]="true">
+                  </p-tree-select>
+                }
+              </div>
+            }
+
+            <button pButton
+                    severity="danger"
+                    rounded
+                    text
+                    (click)="removeRow(row.jurisdictionTaxTypeId)">
+              <i class="pi pi-times"></i>
+            </button>
+          </div>
+        }
+      </div>
+
+      @if (taxTypesToAdd().length > 0) {
+        <div class="flex justify-content-end">
+          <button pButton [disabled]="!canSave()" (click)="saveAll()">Save All</button>
+        </div>
+      }
+
+    </div>
+
+    @if (failureMessages().length > 0) {
+      <div class="col-6">
+        @for (error of failureMessages(); track error) {
+          <span class="mb-2 error-message text-wrap">{{ error }}</span>
+        }
+      </div>
+    }
+
+  </div>
+</esr-loading-container>

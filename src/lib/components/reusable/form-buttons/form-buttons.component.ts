@@ -11,7 +11,7 @@ import {ProcessingStatus} from '../../../utils/types/processing-status.enum'
 import {ErrorSummaryComponent} from '../error-summary/error-summary.component'
 
 @Component({
-  selector: 'rts-forms-buttons',
+  selector: 'esr-forms-buttons',
   templateUrl: 'form-buttons.component.html',
   providers: [ConfirmationService],
   imports: [

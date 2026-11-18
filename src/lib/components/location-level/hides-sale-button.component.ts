@@ -1,8 +1,8 @@
 import {Component, inject, OnDestroy, OnInit} from '@angular/core'
-import {SaleFormVisibilityContext} from './sales/sale-form-visibility.context'
+import {SaleFormVisibilityContext} from './retail/sales/sale-form-visibility.context'
 
 @Component({
-  selector: 'rts-hides-sale-button',
+  selector: 'esr-hides-sale-button',
   template: ''
 })
 export abstract class HidesSaleButtonComponent implements OnInit, OnDestroy {

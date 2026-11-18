@@ -1,0 +1,39 @@
+import {CurrencyPipe, NgClass} from '@angular/common'
+import {Component, inject} from '@angular/core'
+import {ButtonDirective} from 'primeng/button'
+import {TableModule} from 'primeng/table'
+import {TaxRateService} from '../../../../api/organization-level/core/tax-rate/tax-rate.service'
+import {CalculationMethod} from '../../../../api/platform-level/tax-type/calculation-method.enum'
+import {BooleanToTextPipe} from '../../../../utils/pipes/boolean-to-text.pipe'
+import {NullSafePipe} from '../../../../utils/pipes/null-safe.pipe'
+import {EmptyRowComponent} from '../../../reusable/empty-row/empty-row.component'
+import {GridFilterComponent} from '../../../reusable/grid-filter/grid-filter.component'
+import {GridWithAddButtonComponent} from '../../../reusable/grid-with-add-button.component'
+import {NewFormCancelButtonComponent} from '../../../reusable/new-form-cancel-button.component'
+import {TaxRateAddFormComponent} from './tax-rate-add-form/tax-rate-add-form.component'
+import {TaxRateEditFormComponent} from './tax-rate-edit-form/tax-rate-edit-form.component'
+
+@Component({
+  selector: 'esr-tax-rate',
+  templateUrl: 'tax-rate.component.html',
+  imports: [
+    NgClass,
+    TableModule,
+    NullSafePipe,
+    ButtonDirective,
+    TaxRateAddFormComponent,
+    TaxRateEditFormComponent,
+    GridFilterComponent,
+    EmptyRowComponent,
+    NewFormCancelButtonComponent,
+    CurrencyPipe,
+    BooleanToTextPipe,
+  ]
+})
+export class TaxRateComponent extends GridWithAddButtonComponent<TaxRateService> {
+  private readonly taxRateService = inject(TaxRateService)
+  readonly apiService = this.taxRateService
+
+  readonly taxRates = this.taxRateService.selectAll
+  protected readonly CalculationMethod = CalculationMethod
+}

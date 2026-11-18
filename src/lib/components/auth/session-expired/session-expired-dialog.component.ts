@@ -10,13 +10,13 @@ import {
   DEFAULT_AUTH_FAILURE_MESSAGE
 } from '../../../api/platform-level/authentication/auth-failure.model'
 import {AuthenticationService} from '../../../api/platform-level/authentication/authentication.service'
-import {RtsGoogleAuthService} from '../../../utils/services/auth/rts-google-auth.service'
+import {LibertyGoogleAuthService} from '../../../utils/services/auth/liberty-google-auth.service'
 import {SessionReauthenticationService} from '../../../utils/services/auth/session-reauthentication.service'
 import {UserContextService} from '../../../utils/services/auth/user-context.service'
-import {RtsConstants} from '../../../utils/constants'
+import {LibertyConstants} from '../../../utils/constants'
 
 @Component({
-  selector: 'rts-session-expired-dialog',
+  selector: 'esr-session-expired-dialog',
   imports: [ButtonModule, DialogModule],
   template: `
     <p-dialog header="Your session has ended"
@@ -43,11 +43,11 @@ import {RtsConstants} from '../../../utils/constants'
 export class SessionExpiredDialogComponent {
 
   readonly GOOGLE_BUTTON_ID = 'sessionExpiredGoogleButton'
-  readonly ZIndexes = RtsConstants.ZIndexes
+  readonly ZIndexes = LibertyConstants.ZIndexes
   readonly errorMessage = signal<string | null>(null)
 
   private readonly sessionReauthenticationService = inject(SessionReauthenticationService)
-  private readonly googleAuthService = inject(RtsGoogleAuthService)
+  private readonly googleAuthService = inject(LibertyGoogleAuthService)
   private readonly authenticationService = inject(AuthenticationService)
   private readonly userContextService = inject(UserContextService)
   private readonly router = inject(Router)

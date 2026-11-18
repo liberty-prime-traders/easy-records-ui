@@ -1,0 +1,7 @@
+<esr-loading-container [loading]="unitConversionGraphIsLoading()" loadingText="Loading sale lines...">
+  @if (canEditLines()) {
+    <esr-editable-sale-lines [saleLines]="saleLines()"/>
+  } @else {
+    <esr-read-only-sale-lines [saleLines]="saleLines()"/>
+  }
+</esr-loading-container>

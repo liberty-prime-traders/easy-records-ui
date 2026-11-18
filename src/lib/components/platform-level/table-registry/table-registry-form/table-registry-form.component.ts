@@ -9,7 +9,7 @@ import {FormButtonsComponent} from '../../../reusable/form-buttons/form-buttons.
 import {FormFieldComponent} from '../../../reusable/form-field/form-field.component'
 
 @Component({
-  selector: 'rts-table-registry-form',
+  selector: 'esr-table-registry-form',
   templateUrl: 'table-registry-form.component.html',
   imports: [
     ReactiveFormsModule,

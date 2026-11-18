@@ -1,0 +1,36 @@
+import {NgTemplateOutlet} from '@angular/common'
+import {Component} from '@angular/core'
+import {Select} from 'primeng/select'
+import {Skeleton} from 'primeng/skeleton'
+import {ProductForPurchase} from '../../../../../api/location-level/retail/product-lookup/product-for-purchase.model'
+import {
+  PurchaseProductLookupQuickSearchService
+} from '../../../../../api/location-level/retail/product-lookup/purchase-product-lookup-quick-search.service'
+import {
+  PurchaseProductLookupStore
+} from '../../../../../api/location-level/retail/product-lookup/purchase-product-lookup.store'
+import {PaginatedBaseService} from '../../../../../api/util/paginated-api/paginated-base.service'
+import {FormFieldComponent} from '../../../../reusable/form-field/form-field.component'
+import {LocationProductLookupComponent} from '../location-product-lookup.component'
+import {ProductLookupFilterService} from '../product-lookup-filter.service'
+import {PurchaseProductLookupFilterService} from './purchase-product-lookup-filter.service'
+
+@Component({
+  selector: 'esr-purchase-product-lookup',
+  templateUrl: '../location-product-lookup.component.html',
+  providers: [
+    PurchaseProductLookupQuickSearchService,
+    PurchaseProductLookupStore,
+    PurchaseProductLookupFilterService,
+    {provide: PaginatedBaseService, useExisting: PurchaseProductLookupQuickSearchService},
+    {provide: ProductLookupFilterService, useExisting: PurchaseProductLookupFilterService}
+  ],
+  imports: [
+    FormFieldComponent,
+    Select,
+    Skeleton,
+    NgTemplateOutlet
+  ]
+})
+export class PurchaseProductLookupComponent extends LocationProductLookupComponent<ProductForPurchase> {
+}

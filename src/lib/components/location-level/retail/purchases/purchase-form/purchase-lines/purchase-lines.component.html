@@ -1,0 +1,202 @@
+<div class="flex flex-column gap-4">
+  @if (isDraftOrNew()) {
+    <esr-purchase-product-lookup
+      (productSelected)="addPurchaseLine($event)"
+      [selectedProductIds]="selectedProductIds()">
+    </esr-purchase-product-lookup>
+  }
+
+  <p-table [value]="purchaseLinesArray()"
+           [editingRowKeys]="editingRowKeys()"
+           dataKey="referenceNumber"
+           sortMode="multiple"
+           [multiSortMeta]="linesMultiSort"
+           editMode="row">
+
+    <ng-template #header>
+      <tr>
+        <th>Product</th>
+        <th>Units</th>
+        <th>Qty Ordered</th>
+        <th>Unit Price</th>
+
+        @if (!isDraftOrNew()) {
+          <th>Qty Canceled</th>
+          <th>Qty Delivered</th>
+        }
+
+        <th>Total</th>
+        <th style="width: 100px"></th>
+      </tr>
+    </ng-template>
+
+    <ng-template #body let-purchaseLine let-editing="editing">
+      <tr [pEditableRow]="purchaseLine"
+          [ngClass]="{'opacity-70': purchaseLine.canceledWithoutSingleDelivery}">
+
+        <td>{{ purchaseLine | productLabel }}</td>
+
+        @if (isDraftOrNew()) {
+          <td>
+            <p-cell-editor>
+              <ng-template #input>
+                <p-select [options]="purchaseLine.baseUnitId | alternativeUnitsFinder"
+                          appendTo="body"
+                          class="col-10 p-0"
+                          [(ngModel)]="purchaseLine.unitId">
+                </p-select>
+              </ng-template>
+              <ng-template #output>
+                {{ purchaseLine.unitId | fullUnitDescription  }}
+              </ng-template>
+            </p-cell-editor>
+            <small class="block info-message">
+              {{ purchaseLine.unitId | buildConversionContext : purchaseLine | unitConversionDescriptor }}
+            </small>
+          </td>
+
+          <td>
+            <p-cell-editor>
+              <ng-template #input>
+                <p-input-number [min]="0" [maxFractionDigits]="2" [(ngModel)]="purchaseLine.quantityOrdered"/>
+              </ng-template>
+              <ng-template #output>
+                {{ purchaseLine.quantityOrdered }}
+              </ng-template>
+            </p-cell-editor>
+            <small class="block info-message">
+              {{
+                purchaseLine.unitId
+                  | buildConversionContext : purchaseLine : purchaseLine.quantityOrdered
+                  | convertToTargetUnitForDisplay
+              }}
+            </small>
+          </td>
+
+          <td>
+            <p-cell-editor>
+              <ng-template #input>
+                <p-input-number [min]="0" [maxFractionDigits]="2" [(ngModel)]="purchaseLine.unitCost" />
+              </ng-template>
+              <ng-template #output>
+                {{ purchaseLine.unitCost | currency  }}
+              </ng-template>
+            </p-cell-editor>
+            <small class="block info-message">
+              {{
+                purchaseLine.unitId
+                  | buildConversionContext : purchaseLine : purchaseLine.unitCost
+                  | convertToTargetUnitAsCurrency
+              }}
+            </small>
+          </td>
+
+        } @else {
+          <td>
+            {{ purchaseLine.unitId | fullUnitDescription }}
+            <small class="block info-message">
+              {{ purchaseLine.unitId | buildConversionContext : purchaseLine | unitConversionDescriptor }}
+            </small>
+          </td>
+
+          <td>
+            {{ purchaseLine.quantityOrdered }}
+            <small class="block info-message">
+              {{
+                purchaseLine.unitId
+                  | buildConversionContext : purchaseLine : purchaseLine.quantityOrdered
+                  | convertToTargetUnitForDisplay
+              }}
+            </small>
+          </td>
+
+          <td>
+            {{ purchaseLine.unitCost | currency }}
+            <small class="block info-message">
+              {{
+                purchaseLine.unitId
+                  | buildConversionContext : purchaseLine : purchaseLine.unitCost
+                  | convertToTargetUnitAsCurrency
+              }}
+            </small>
+          </td>
+
+          <td>
+            <p-cell-editor>
+              <ng-template #input>
+                @let cancelUnitFactor = purchaseLine.cancelUnitId | unitFactorResolver : purchaseLine.baseUnitId;
+                @let effectiveFactor = (purchaseLine.conversionFactor ?? 1) / cancelUnitFactor;
+
+                <div class="flex gap-2">
+                  <p-select appendTo="body"
+                            [options]="purchaseLine.unitId | alternativeUnitsFinder"
+                            (ngModelChange)="clearCanceledQuantity(purchaseLine)"
+                            [(ngModel)]="purchaseLine.cancelUnitId">
+                  </p-select>
+                  <p-input-number [min]="0"
+                                  [max]="purchaseLine.quantityThatCanBeCanceled * effectiveFactor | round : 2"
+                                  [maxFractionDigits]="2"
+                                  [(ngModel)]="purchaseLine.quantityCanceled">
+                  </p-input-number>
+                </div>
+
+                <small class="block info-message">
+                  {{
+                    purchaseLine.cancelUnitId
+                      | buildConversionContext : purchaseLine : purchaseLine.quantityCanceled
+                      | convertToTargetUnitForDisplay
+                  }}
+                </small>
+              </ng-template>
+              <ng-template #output>
+                {{ purchaseLine.quantityCanceledBreakdown }}
+              </ng-template>
+            </p-cell-editor>
+          </td>
+
+          <td>{{ purchaseLine.quantityDeliveredBreakdown }}</td>
+        }
+
+        <td>{{ purchaseLine.lineTotal | currency }}</td>
+
+        <td>
+          <div class="flex gap-1">
+            @if (editing) {
+              <button pButton
+                      text
+                      rounded
+                      pSaveEditableRow
+                      (keydown.enter)="completeEditingLine(purchaseLine)"
+                      (click)="completeEditingLine(purchaseLine)">
+                <i class="pi pi-check"></i>
+              </button>
+
+              <button pButton
+                      text
+                      rounded
+                      pCancelEditableRow
+                      (keydown.enter)="cancelEditingLine(purchaseLine)"
+                      (click)="cancelEditingLine(purchaseLine)">
+                <i class="pi pi-times"></i>
+              </button>
+
+            } @else if(purchaseLine.quantityYetToBeDelivered > 0) {
+              <button pButton
+                      text
+                      rounded
+                      pInitEditableRow
+                      (keydown.enter)="initializeEditingLine(purchaseLine)"
+                      (click)="initializeEditingLine(purchaseLine)">
+                <i class="pi pi-pencil"></i>
+              </button>
+            }
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template #emptymessage>
+      <tr esr-empty-row [colspan]="isDraftOrNew() ? 7 : 9" [message]="emptyPurchaseLinesMessage()"></tr>
+    </ng-template>
+  </p-table>
+</div>

@@ -1,7 +1,7 @@
 import {inject, Injectable, signal} from '@angular/core'
 import {Router} from '@angular/router'
 import {LOGGED_OUT_ROUTE} from '@global/app.routes'
-import {Location} from '../../api/organization-level/location/location.model'
+import {Location} from '../../api/organization-level/core/location/location.model'
 import {Organization} from '../../api/platform-level/organization/organization.model'
 import {NavigationScope} from '../../components/welcome/top-navigation/navigation-scope.model'
 import {LocalStorageKey} from '../types/local-storage-key.enum'

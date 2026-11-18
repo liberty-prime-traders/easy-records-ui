@@ -1,0 +1,99 @@
+<div class="flex flex-column gap-4 flex-grow-1">
+  @if (addingIsActive()) {
+    <button pButton (click)="addingIsActive.set(false)" severity="info" class="align-self-end"><i class="pi pi-times"></i> Cancel</button>
+    <esr-unit-value-form [unitGroupId]="unitGroupId()"
+                         (unitValueCreated)="addingIsActive.set(false)"
+                         [baseUnitOptions]="unitValues()">
+    </esr-unit-value-form>
+
+  } @else {
+
+    <p-table [loading]="loading() && !addingIsActive()"
+             rowExpandMode="single"
+             dataKey="id"
+             sortField="unitsOfBasePerUnit"
+             #unitValuesTable
+             [globalFilterFields]="['name', 'code', 'description', 'baseUnitName']"
+             (onRowExpand)="rowIsExpanded.set(true)"
+             (onRowCollapse)="rowIsExpanded.set(false)"
+             [value]="unitValues()">
+
+      <ng-template #caption>
+        <div class="flex justify-content-between align-items-center">
+          <esr-grid-filter [dataTable]="unitValuesTable"/>
+
+          <button pButton (click)="addingIsActive.set(true)"
+                  [disabled]="loading()"
+                  rounded
+                  severity="secondary">
+            {{ '+ Add Unit Value (' + unitGroup().name + ')' }}
+          </button>
+        </div>
+      </ng-template>
+
+      <ng-template #header>
+        <tr>
+          <th pSortableColumn="name">
+            Name
+            <p-sort-icon field="name"></p-sort-icon>
+          </th>
+          <th pSortableColumn="code">
+            Code
+            <p-sort-icon field="code"></p-sort-icon>
+          </th>
+          <th pSortableColumn="baseUnitName">
+            Base Unit
+            <p-sort-icon field="baseUnitName"></p-sort-icon>
+          </th>
+          <th pSortableColumn="unitsOfBasePerUnit">
+            Multiplier
+            <p-sort-icon field="unitsOfBasePerUnit"></p-sort-icon>
+          </th>
+          <th pSortableColumn="description">
+            Description
+            <p-sort-icon field="description"></p-sort-icon>
+          </th>
+          <th style="width: 5rem;"></th>
+      </ng-template>
+
+      <ng-template #body let-unitvalue let-expanded="expanded">
+        <tr [ngClass]="{ 'expanded-row': expanded }">
+          <td>{{unitvalue?.name | nullSafe}}</td>
+          <td>{{unitvalue?.code | nullSafe}}</td>
+          <td>{{unitvalue?.baseUnitName | nullSafe}}</td>
+          <td>{{unitvalue?.unitsOfBasePerUnit | nullSafe}}</td>
+          <td>{{unitvalue?.description | nullSafe}}</td>
+          <td>
+            @if (!unitvalue.systemDefined) {
+              <button pButton
+                      rounded
+                      pRipple
+                      severity="secondary"
+                      [text]="true"
+                      [disabled]="loading() || addingIsActive()"
+                      [pRowToggler]="unitvalue">
+                <i [class]="expanded ? 'pi pi-times' : 'pi pi-pen-to-square'"></i>
+              </button>
+            }
+          </td>
+        </tr>
+      </ng-template>
+
+      <ng-template #expandedrow let-unitvalue>
+        <tr>
+          <td colspan="6" class="filled-background">
+            <esr-unit-value-form [unitValue]="unitvalue"
+                                 [unitGroupId]="unitGroupId()"
+                                 [baseUnitOptions]="unitValues()">
+            </esr-unit-value-form>
+          </td>
+        </tr>
+      </ng-template>
+
+      <ng-template #emptymessage>
+        <tr esr-empty-row [colspan]="6" message="No Units Values Were Found"></tr>
+      </ng-template>
+    </p-table>
+  }
+</div>
+

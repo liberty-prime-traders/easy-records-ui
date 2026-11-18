@@ -2,7 +2,7 @@ import {inject, Injectable} from '@angular/core'
 import {ActivatedRouteSnapshot, CanActivateChild, GuardResult, Router, RouterStateSnapshot} from '@angular/router'
 import {Observable} from 'rxjs'
 import {map} from 'rxjs/operators'
-import {LibertyAccessService} from '../../lib/api/organization-level/liberty-access/liberty-access.service'
+import {LibertyAccessService} from '../../lib/api/organization-level/core/liberty-access/liberty-access.service'
 import {UserContextService} from '../../lib/utils/services/auth/user-context.service'
 
 const ORGANIZATION_DASHBOARD_URL = '/secure/manage-organization'

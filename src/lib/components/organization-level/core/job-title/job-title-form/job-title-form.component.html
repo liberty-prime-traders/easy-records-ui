@@ -1,0 +1,15 @@
+<form [formGroup]="jobTitleForm()" class="flex flex-column gap-2">
+  <esr-form-field [required]="true" label="Value" for="value">
+    <input id="value" pInputText formControlName="value">
+  </esr-form-field>
+
+  <esr-forms-buttons [disableReset]="!jobTitleForm().dirty"
+                     [disableSave]="!jobTitleForm().valid || !jobTitleForm().dirty"
+                     [hideDelete]="!jobTitle()?.id"
+                     [processingStatus]="processingStatus()"
+                     [failureMessages]="failureMessages()"
+                     (delete)="deleteJobTitle()"
+                     (save)="upsertJobTitle()"
+                     (resetAction)="resetForm()">
+  </esr-forms-buttons>
+</form>

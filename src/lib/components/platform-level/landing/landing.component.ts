@@ -16,7 +16,7 @@ import {
 } from '../../welcome/top-navigation/organization-nav-content/organization-launch.service'
 
 @Component({
-  selector: 'rts-landing',
+  selector: 'esr-landing',
   templateUrl: 'landing.component.html',
   imports: [
     CommonModule,

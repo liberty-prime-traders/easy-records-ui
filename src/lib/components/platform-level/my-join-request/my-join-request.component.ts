@@ -15,7 +15,7 @@ import {EmptyRowComponent} from '../../reusable/empty-row/empty-row.component'
 import {GridFilterComponent} from '../../reusable/grid-filter/grid-filter.component'
 
 @Component({
-  selector: 'rts-my-join-request',
+  selector: 'esr-my-join-request',
   templateUrl: 'my-join-request.component.html',
   imports: [
     DatePipe,

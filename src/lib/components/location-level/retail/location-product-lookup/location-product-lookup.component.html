@@ -1,0 +1,28 @@
+<esr-form-field label="Search Products"
+                [layout]="layout()"
+                [contentClass]="contentClass()">
+  <p-select [options]="productOptions()"
+            [loading]="dependenciesLoading()"
+            [filter]="true"
+            (onFilter)="pushToSearch($event.filter)"
+            (onClick)="emitSelectedProduct(productSelect.value); productSelect.clear()"
+            #productSelect
+            class="w-full"
+            dataKey="value">
+
+    @if (templateRef()) {
+      <ng-template let-product #item>
+        <ng-container *ngTemplateOutlet="templateRef(); context: {$implicit: productsMap().get(product.value)}"/>
+      </ng-template>
+    }
+
+    <ng-template #empty #emptyfilter>
+      @if (dependenciesLoading()) {
+        <p-skeleton width="100%" height="1.25rem"/>
+      } @else {
+        No products found.
+      }
+    </ng-template>
+
+  </p-select>
+</esr-form-field>

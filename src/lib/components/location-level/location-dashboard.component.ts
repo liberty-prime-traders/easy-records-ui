@@ -6,16 +6,16 @@ import {MenuItem} from 'primeng/api'
 import {ButtonDirective} from 'primeng/button'
 import {Card} from 'primeng/card'
 import {Menu} from 'primeng/menu'
-import {LocationMembershipUserService} from '../../api/location-level/membership/location-membership-user.service'
-import {OrgMembershipUserService} from '../../api/organization-level/membership/org-membership-user.service'
+import {LocationMembershipUserService} from '../../api/location-level/core/membership/location-membership-user.service'
+import {OrgMembershipUserService} from '../../api/organization-level/core/membership/org-membership-user.service'
 import {UserContextService} from '../../utils/services/auth/user-context.service'
 import {AutoStretchDirective} from '../reusable/auto-stretch.directive'
-import {SaleFormNavigator} from './sales/form-utils/sale-form-navigator'
-import {SaleFormVisibilityContext} from './sales/sale-form-visibility.context'
-import {SaleFormComponent} from './sales/sale-form/sale-form.component'
+import {SaleFormNavigator} from './retail/sales/form-utils/sale-form-navigator'
+import {SaleFormVisibilityContext} from './retail/sales/sale-form-visibility.context'
+import {SaleFormComponent} from './retail/sales/sale-form/sale-form.component'
 
 @Component({
-  selector: 'rts-private',
+  selector: 'esr-private',
   imports: [
     RouterOutlet,
     ButtonDirective,

@@ -1,0 +1,37 @@
+<div class="form-container flex flex-column gap-2" [ngClass]="formValue().id ? '' : 'filled-background'">
+  <esr-form-field [required]="true" label="Name" for="name">
+    <input id="name" class="flex-grow-1" pInputText [formField]="paymentOptionForm.name"/>
+  </esr-form-field>
+
+  @if (isChartOfAccountsEnabled()) {
+    <esr-loading-container [loading]="accountTreesLoading()">
+      <esr-form-field label="Linked Account" for="accountCode" [required]="true" >
+        <p-tree-select id="accountCode"
+                       [options]="paymentMethodTrees()"
+                       [loading]="accountTreesLoading()"
+                       [(ngModel)]="linkedAccount"
+                       (ngModelChange)="onAccountChange()"
+                       appendTo="body"
+                       placeholder="Select an Account"
+                       class="flex-grow-1">
+        </p-tree-select>
+      </esr-form-field>
+    </esr-loading-container>
+  }
+
+  <esr-form-field label="Description" for="description">
+    <input id="description" class="flex-grow-1" pInputText [formField]="paymentOptionForm.description"/>
+  </esr-form-field>
+
+  <esr-forms-buttons [disableReset]="!paymentOptionForm().dirty()"
+                     [disableSave]="paymentOptionForm().invalid() || !paymentOptionForm().dirty()"
+                     [hideDelete]="!originalPaymentOption()?.id"
+                     [signalForm]="paymentOptionForm()"
+                     [fieldMap]="fieldMap"
+                     [processingStatus]="processingStatus()"
+                     [failureMessages]="failureMessages()"
+                     (delete)="deletePaymentOption()"
+                     (save)="upsertPaymentOption()"
+                     (resetAction)="resetForm()">
+  </esr-forms-buttons>
+</div>

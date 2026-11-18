@@ -1,4 +1,4 @@
-<div class="flex flex-column" id="dbMigration" [rtsAutoStretch]="'dbMigration'">
+<div class="flex flex-column" id="dbMigration" [esrAutoStretch]="'dbMigration'">
   <p-table [value]="migrations()"
            [loading]="loading()"
            dataKey="id"
@@ -85,13 +85,13 @@
     <ng-template #expandedrow let-migration>
       <tr>
         <td colspan="7" class="filled-background">
-          <rts-location-migration-grid [locations]="migration.locations"/>
+          <esr-location-migration-grid [locations]="migration.locations"/>
         </td>
       </tr>
     </ng-template>
 
     <ng-template #emptymessage>
-      <tr rts-empty-row [colspan]="7" message="No DB Migrations found"></tr>
+      <tr esr-empty-row [colspan]="7" message="No DB Migrations found"></tr>
     </ng-template>
   </p-table>
 </div>

@@ -1,0 +1,40 @@
+<esr-loading-container [loading]="loading()" loadingText="Creating...">
+  <form class="flex flex-column">
+    <esr-form-field [required]="true" label="Destination" for="destinationLocationId">
+      <p-select id="destinationLocationId"
+                class="flex-grow-1"
+                [filter]="true"
+                [options]="locations()"
+                optionLabel="name"
+                optionValue="id"
+                [formField]="stockTransferCreateForm.destinationLocationId"
+                placeholder="Select a destination location">
+      </p-select>
+    </esr-form-field>
+
+    <esr-form-field label="Notes" for="notes">
+      <textarea id="notes"
+                pInputText
+                class="flex-grow-1 w-full"
+                [formField]="stockTransferCreateForm.notes"
+                rows="4"
+                placeholder="Notes">
+      </textarea>
+    </esr-form-field>
+
+
+    <div class="flex justify-content-around">
+      <esr-error-summary [signalFormErrors]="stockTransferCreateForm().errorSummary()"
+                         [fieldMap]="fieldMap">
+      </esr-error-summary>
+
+      <button pButton
+              class="h-fit"
+              type="button"
+              (click)="createTransfer()"
+              [disabled]="stockTransferCreateForm().invalid()">
+        <i class="pi pi-save"></i> Create Draft
+      </button>
+    </div>
+  </form>
+</esr-loading-container>

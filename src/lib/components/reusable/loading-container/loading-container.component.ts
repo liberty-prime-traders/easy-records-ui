@@ -1,14 +1,14 @@
 import {NgClass} from '@angular/common'
 import {Component, input} from '@angular/core'
 import {ProgressSpinner} from 'primeng/progressspinner'
-import {RtsConstants} from '../../../utils/constants'
+import {LibertyConstants} from '../../../utils/constants'
 
 @Component({
-  selector: 'rts-loading-container',
+  selector: 'esr-loading-container',
   styleUrl: 'loading-container.component.scss',
   host: {
-    '[style.--rts-loading-backdrop-z-index]': 'ZIndexes.LOADING_BACKDROP',
-    '[style.--rts-loading-overlay-z-index]': 'ZIndexes.LOADING_OVERLAY'
+    '[style.--esr-loading-backdrop-z-index]': 'ZIndexes.LOADING_BACKDROP',
+    '[style.--esr-loading-overlay-z-index]': 'ZIndexes.LOADING_OVERLAY'
   },
   template: `
     <div class="loading-wrapper" [ngClass]="{'loading': loading()}">
@@ -28,7 +28,7 @@ import {RtsConstants} from '../../../utils/constants'
   ]
 })
 export class LoadingContainerComponent {
-  readonly ZIndexes = RtsConstants.ZIndexes
+  readonly ZIndexes = LibertyConstants.ZIndexes
   readonly loading = input(false)
   readonly loadingText = input('Loading')
 }

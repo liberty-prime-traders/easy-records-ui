@@ -1,19 +1,19 @@
 import {Pipe, PipeTransform} from '@angular/core'
 import {JoinRequestStatus} from '../../api/util/join-request/join-request-status.enum'
-import {RtsSeverity} from '../types/severity'
+import {LibertySeverity} from '../types/severity'
 
 @Pipe({name: 'joinRequestStatusSeverity'})
 export class JoinRequestStatusSeverityPipe implements PipeTransform {
-  transform(status?: JoinRequestStatus): RtsSeverity {
+  transform(status?: JoinRequestStatus): LibertySeverity {
     switch (status) {
     case JoinRequestStatus.PENDING:
-      return RtsSeverity.WARN
+      return LibertySeverity.WARN
     case JoinRequestStatus.APPROVED:
-      return RtsSeverity.SUCCESS
+      return LibertySeverity.SUCCESS
     case JoinRequestStatus.DENIED:
-      return RtsSeverity.DANGER
+      return LibertySeverity.DANGER
     default:
-      return RtsSeverity.INFO
+      return LibertySeverity.INFO
     }
   }
 }

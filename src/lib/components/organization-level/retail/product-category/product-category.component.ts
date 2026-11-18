@@ -1,0 +1,34 @@
+import {NgClass} from '@angular/common'
+import {Component, inject} from '@angular/core'
+import {ReactiveFormsModule} from '@angular/forms'
+import {ButtonDirective} from 'primeng/button'
+import {TableModule} from 'primeng/table'
+import {ProductCategoryService} from '../../../../api/organization-level/retail/product-category/product-category.service'
+import {NullSafePipe} from '../../../../utils/pipes/null-safe.pipe'
+import {AutoStretchDirective} from '../../../reusable/auto-stretch.directive'
+import {EmptyRowComponent} from '../../../reusable/empty-row/empty-row.component'
+import {GridFilterComponent} from '../../../reusable/grid-filter/grid-filter.component'
+import {GridWithAddButtonComponent} from '../../../reusable/grid-with-add-button.component'
+import {ProductCategoryFormComponent} from './product-category-form/product-category-form.component'
+
+@Component({
+  selector: 'esr-product-category',
+  templateUrl: 'product-category.component.html',
+  imports: [
+    TableModule,
+    NullSafePipe,
+    ButtonDirective,
+    ProductCategoryFormComponent,
+    GridFilterComponent,
+    EmptyRowComponent,
+    ReactiveFormsModule,
+    NgClass,
+    AutoStretchDirective
+  ]
+})
+export class ProductCategoryComponent extends GridWithAddButtonComponent<ProductCategoryService> {
+  private readonly productCategoryService = inject(ProductCategoryService)
+  readonly apiService = this.productCategoryService
+
+  readonly productCategories = this.productCategoryService.selectAll
+}

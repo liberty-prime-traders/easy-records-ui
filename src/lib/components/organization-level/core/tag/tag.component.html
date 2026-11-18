@@ -1,0 +1,109 @@
+<div class="flex align-items-center justify-content-between mb-3">
+  <h3 class="font-bold">Tags</h3>
+
+  <button pButton (click)="setAddingActiveTrue()"
+          [disabled]="loading()"
+          rounded
+          severity="secondary">
+    + Add Tag
+  </button>
+</div>
+
+<p-divider/>
+
+<div class="flex gap-3">
+  <div class="col-3">
+    <div class="overflow-auto" style="max-height: 600px;">
+      @for (category of CATEGORY_TYPES; track category) {
+        <div (click)="selectCategory(category)"
+             class="p-3 cursor-pointer hover:surface-400"
+             [ngClass]="{'bg-bluegray-100': selectedCategory() === category}">
+            <span class="font-medium truncate w-12rem">{{ category | prettifyEnum }}</span>
+        </div>
+      }
+    </div>
+  </div>
+
+  <p-divider layout="vertical" />
+
+  <div class="flex flex-column gap-4 flex-grow-1">
+    @if (addingIsActive()) {
+      <button pButton (click)="setAddingActiveFalse()" severity="info" class="w-fit">
+        <i class="pi pi-times"></i> Cancel
+      </button>
+      <esr-tag-form (tagCreated)="tagCreated($event)"/>
+    } @else if (selectedCategory()) {
+      <ng-container *ngTemplateOutlet="tagGrid"/>
+    } @else {
+      <span>Select a category to see its tags</span>
+    }
+  </div>
+</div>
+
+<ng-template #tagGrid>
+  <p-table  [loading]="loading() && !addingIsActive()"
+            rowExpandMode="single"
+            dataKey="id"
+            scrollHeight="550px"
+            [scrollable]="true"
+            sortField="tagName"
+            #tagsTable
+            [globalFilterFields]="['tagName', 'description', 'createdBy']"
+            (onRowExpand)="rowIsExpanded.set(true)"
+            (onRowCollapse)="rowIsExpanded.set(false)"
+            [value]="tags()">
+
+    <ng-template #caption>
+      <div class="flex justify-content-between align-items-center">
+        <h3>{{selectedCategory() | prettifyEnum}} Tags</h3>
+        <esr-grid-filter [dataTable]="tagsTable"/>
+      </div>
+    </ng-template>
+
+    <ng-template #header>
+      <tr>
+        <th pSortableColumn="tagName">Tag Name
+          <p-sort-icon field="tagName"></p-sort-icon>
+        </th>
+        <th>Category</th>
+        <th pSortableColumn="description">Description
+          <p-sort-icon field="description"></p-sort-icon>
+        </th>
+        <th pSortableColumn="createdBy">Created By
+          <p-sort-icon field="createdBy"></p-sort-icon>
+        </th>
+        <th style="width: 5rem"></th>
+      </tr>
+    </ng-template>
+
+    <ng-template #body let-tag let-expanded="expanded">
+      <tr [ngClass]="{ 'expanded-row': expanded }">
+        <td>{{ tag?.tagName | nullSafe }}</td>
+        <td>{{ tag?.category | prettifyEnum | nullSafe }}</td>
+        <td>{{ tag?.description | nullSafe }}</td>
+        <td>{{ tag?.createdBy | nullSafe }}</td>
+        <td>
+          <button pButton
+                  rounded
+                  severity="secondary"
+                  [disabled]="loading() || addingIsActive()"
+                  [pRowToggler]="tag">
+            <i [class]="expanded ? 'pi pi-times' : 'pi pi-pen-to-square'"></i>
+          </button>
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template #expandedrow let-tag>
+      <tr>
+        <td colspan="5" class="filled-background">
+          <esr-tag-form [tag]="tag"></esr-tag-form>
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template #emptymessage>
+      <tr esr-empty-row [colspan]="5" message="No Tags Were Found"></tr>
+    </ng-template>
+  </p-table>
+</ng-template>
