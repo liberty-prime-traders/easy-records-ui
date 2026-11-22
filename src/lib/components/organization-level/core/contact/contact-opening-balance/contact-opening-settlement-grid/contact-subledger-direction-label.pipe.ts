@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core'
-import {ContactSubledgerDirection} from './contact-subledger-direction.enum'
+import {ContactSubledgerDirection} from '../../../../../../api/organization-level/core/contact-opening-balance/contact-subledger-direction.enum'
 
 @Pipe({
   name: 'contactSubledgerDirectionLabel',

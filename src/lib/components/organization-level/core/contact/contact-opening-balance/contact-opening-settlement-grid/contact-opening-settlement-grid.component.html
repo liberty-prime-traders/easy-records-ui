@@ -22,7 +22,7 @@
         <th style="width: 3rem"></th>
         <th>Reference #</th>
         <th>Date</th>
-        <th>Settled</th>
+        <th>Direction</th>
         <th>Account</th>
         <th>Amount</th>
         <th>Note</th>
@@ -39,7 +39,7 @@
         </td>
         <td>{{ settlement.referenceNumber }}</td>
         <td>{{ settlement.settlementDate }}</td>
-        <td>{{ settlement.subledgerDirection | contactSubledgerDirectionLabel }}</td>
+        <td>{{ settlement.subledgerDirection | contactSubledgerPaymentDirection }}</td>
         <td>{{ settlement.paymentAccountLabel }}</td>
         <td class="money">{{ settlement.amount | currency }}</td>
         <td>{{ settlement.note | nullSafe }}</td>

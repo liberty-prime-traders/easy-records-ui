@@ -1,10 +1,13 @@
-import {Component, inject, signal} from '@angular/core'
+import {Component, computed, inject, signal} from '@angular/core'
 import {ButtonDirective} from 'primeng/button'
 import {Divider} from 'primeng/divider'
+import {StockAdjustmentSearchResultService} from '../../../../api/location-level/retail/stock-adjustment/stock-adjustment-search-result.service'
 import {StockAdjustmentService} from '../../../../api/location-level/retail/stock-adjustment/stock-adjustment.service'
 import {AutoStretchDirective} from '../../../reusable/auto-stretch.directive'
 import {ErrorSummaryComponent} from '../../../reusable/error-summary/error-summary.component'
 import {HidesSaleButtonComponent} from '../../hides-sale-button.component'
+import {StockAdjustmentFilterComponent} from './stock-adjustment-filter/stock-adjustment-filter.component'
+import {StockAdjustmentFilterState} from './stock-adjustment-filter/stock-adjustment-filter.state'
 import {StockAdjustmentFormComponent} from './stock-adjustment-form/stock-adjustment-form.component'
 import {StockAdjustmentGridComponent} from './stock-adjustment-grid/stock-adjustment-grid.component'
 
@@ -16,13 +19,24 @@ import {StockAdjustmentGridComponent} from './stock-adjustment-grid/stock-adjust
     Divider,
     AutoStretchDirective,
     ErrorSummaryComponent,
+    StockAdjustmentFilterComponent,
     StockAdjustmentFormComponent,
     StockAdjustmentGridComponent
   ]
 })
 export class StockAdjustmentComponent extends HidesSaleButtonComponent {
   private readonly stockAdjustmentService = inject(StockAdjustmentService)
+  private readonly stockAdjustmentSearchResultService = inject(StockAdjustmentSearchResultService)
+  private readonly stockAdjustmentFilterState = inject(StockAdjustmentFilterState)
 
   readonly formIsVisible = signal(false)
-  readonly failureMessages = this.stockAdjustmentService.selectFailureMessages
+  readonly failureMessages = computed(() => [
+    ...this.stockAdjustmentService.selectFailureMessages(),
+    ...this.stockAdjustmentSearchResultService.selectFailureMessages()
+  ])
+
+  onStockAdjustmentSaved() {
+    this.formIsVisible.set(false)
+    this.stockAdjustmentFilterState.refreshResults()
+  }
 }

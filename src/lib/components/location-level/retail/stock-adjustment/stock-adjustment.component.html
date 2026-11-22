@@ -13,10 +13,16 @@
 
   @if (formIsVisible()) {
     <p-divider class="m-0"/>
-    <esr-location-stock-adjustment-form (stockAdjustmentSaved)="formIsVisible.set(false)"/>
+    <esr-location-stock-adjustment-form (stockAdjustmentSaved)="onStockAdjustmentSaved()"/>
   } @else {
-    <div class="pt-3">
-      <esr-location-stock-adjustment-grid/>
+    <div class="flex pt-3 gap-3">
+      <esr-stock-adjustment-filter class="w-15rem"/>
+
+      <p-divider layout="vertical"/>
+
+      <div class="flex-grow-1">
+        <esr-location-stock-adjustment-grid/>
+      </div>
     </div>
   }
 
