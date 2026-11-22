@@ -1,9 +1,13 @@
 import {CurrencyPipe, DatePipe} from '@angular/common'
-import {Component, inject, OnInit} from '@angular/core'
-import {TableModule} from 'primeng/table'
-import {StockAdjustmentService} from '../../../../../api/location-level/retail/stock-adjustment/stock-adjustment.service'
+import {Component, effect, inject, viewChild} from '@angular/core'
+import {Skeleton} from 'primeng/skeleton'
+import {Table, TableModule} from 'primeng/table'
+import {TableLazyLoadEvent} from 'primeng/types/table'
+import {StockAdjustmentSearchResultService} from '../../../../../api/location-level/retail/stock-adjustment/stock-adjustment-search-result.service'
+import {loadNextOnLazyLoad} from '../../../../../api/util/paginated-api/paginated-lazy-load.util'
 import {NullSafePipe} from '../../../../../utils/pipes/null-safe.pipe'
 import {PrettifyEnumPipe} from '../../../../../utils/pipes/prettify-enum.pipe'
+import {resetVirtualScrollOnSearch} from '../../../../../utils/primeng-table.util'
 import {AutoStretchDirective} from '../../../../reusable/auto-stretch.directive'
 import {EmptyRowComponent} from '../../../../reusable/empty-row/empty-row.component'
 
@@ -13,6 +17,7 @@ import {EmptyRowComponent} from '../../../../reusable/empty-row/empty-row.compon
   imports: [
     AutoStretchDirective,
     TableModule,
+    Skeleton,
     EmptyRowComponent,
     CurrencyPipe,
     DatePipe,
@@ -20,13 +25,23 @@ import {EmptyRowComponent} from '../../../../reusable/empty-row/empty-row.compon
     PrettifyEnumPipe
   ]
 })
-export class StockAdjustmentGridComponent implements OnInit {
-  private readonly stockAdjustmentService = inject(StockAdjustmentService)
+export class StockAdjustmentGridComponent {
+  private readonly stockAdjustmentSearchResultService = inject(StockAdjustmentSearchResultService)
 
-  readonly stockAdjustments = this.stockAdjustmentService.selectAll
-  readonly loading = this.stockAdjustmentService.selectLoading
+  private readonly table = viewChild(Table)
 
-  ngOnInit() {
-    this.stockAdjustmentService.fetch()
+  readonly stockAdjustments = this.stockAdjustmentSearchResultService.selectAll
+  readonly loading = this.stockAdjustmentSearchResultService.selectLoading
+
+  readonly $resetScrollOnSearch = effect(() => {
+    this.stockAdjustmentSearchResultService.freshLoadCompleted()
+    const table = this.table()
+    if (table) {
+      resetVirtualScrollOnSearch(table)
+    }
+  })
+
+  onLazyLoad(lazyLoadEvent: TableLazyLoadEvent): void {
+    loadNextOnLazyLoad(this.stockAdjustmentSearchResultService, lazyLoadEvent.last)
   }
 }

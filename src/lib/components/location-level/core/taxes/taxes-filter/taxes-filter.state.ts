@@ -29,7 +29,7 @@ export class TaxesFilterState {
   })
 
   readonly taxTypeNames = computed(() => {
-    const namesById = new Map(this.taxTypes().map(taxType => [taxType.id, taxType.taxLabel]))
+    const namesById = new Map(this.taxTypes().map(taxType => [taxType.jurisdictionTaxTypeId, taxType.taxLabel]))
     return this.filterFormValue().taxTypeIds
       .map(id => namesById.get(id))
       .filter((name): name is string => !!name)

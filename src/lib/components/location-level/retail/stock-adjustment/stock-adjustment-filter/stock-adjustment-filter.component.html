@@ -1,0 +1,91 @@
+<div class="flex flex-column gap-3">
+  <p-fieldset legend="Base Filters">
+    <div class="flex flex-column gap-2">
+      <div class="flex align-items-center gap-2">
+        <span class="font-bold">&ge;</span>
+        <p-date-picker id="adjustedFrom"
+                       class="flex-grow-1"
+                       [formField]="state.filterForm.adjustedFrom"
+                       [showTime]="true"
+                       [showIcon]="true"
+                       appendTo="body">
+        </p-date-picker>
+      </div>
+
+      <div class="flex align-items-center gap-2">
+        <span class="font-bold">&lt;</span>
+        <p-date-picker id="adjustedBefore"
+                       class="flex-grow-1"
+                       [formField]="state.filterForm.adjustedBefore"
+                       [showTime]="true"
+                       [showIcon]="true"
+                       appendTo="body">
+        </p-date-picker>
+      </div>
+
+      <esr-form-field label="Adjusted By" contentClass="w-full" [layout]="FormFieldLayout.COMPACT">
+        <p-select id="adjustedByIds"
+                  class="w-full"
+                  [options]="state.users()"
+                  optionLabel="fullName"
+                  optionValue="userId"
+                  [multiple]="true"
+                  [filter]="true"
+                  [checkmark]="true"
+                  [formField]="state.filterForm.adjustedByIds"
+                  placeholder="Select users">
+
+          <ng-template #selectedItem let-selectedOption>
+            @let remainingCount = state.filterForm.adjustedByIds().value().length - 1;
+            {{ selectedOption.fullName }}
+            @if (remainingCount > 0) {
+              (+{{ remainingCount }} Others)
+            }
+          </ng-template>
+        </p-select>
+      </esr-form-field>
+    </div>
+  </p-fieldset>
+
+  <p-fieldset legend="Category" [toggleable]="true">
+    <div class="flex flex-column gap-1">
+      @for (categoryOption of (StockAdjustmentCategory | enumToDropdown); track categoryOption.value) {
+        <div class="flex align-items-center gap-2">
+          <p-checkbox [value]="categoryOption.value"
+                      [formField]="state.filterForm.categories"
+                      [inputId]="'category' + $index"
+                      name="category">
+          </p-checkbox>
+
+          <label [for]="'category' + $index">{{ categoryOption.label }}</label>
+        </div>
+      }
+    </div>
+  </p-fieldset>
+
+  <p-fieldset legend="Products" [toggleable]="true">
+    <div class="flex flex-column gap-2">
+      <esr-purchase-product-lookup [layout]="FormFieldLayout.COMPACT"
+                                   [selectedProductIds]="state.filterFormValue().locationProductIds"
+                                   (productSelected)="state.addLocationProduct($event)">
+      </esr-purchase-product-lookup>
+
+      @if (state.selectedProducts().length) {
+        <div class="flex flex-wrap gap-1">
+          @for (product of state.selectedProducts(); track product.id) {
+            <p-chip [label]="product.label"
+                    [removable]="true"
+                    (onRemove)="state.removeLocationProduct(product.id)">
+            </p-chip>
+          }
+        </div>
+      }
+    </div>
+  </p-fieldset>
+
+  <div class="flex justify-content-end">
+    <button pButton type="button" severity="secondary" (click)="state.resetFilters()">
+      <i class="pi pi-filter-slash"></i> Reset Filters
+    </button>
+  </div>
+</div>

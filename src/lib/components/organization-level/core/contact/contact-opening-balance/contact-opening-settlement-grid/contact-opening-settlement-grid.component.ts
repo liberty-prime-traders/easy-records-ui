@@ -4,9 +4,6 @@ import {ButtonDirective} from 'primeng/button'
 import {Panel} from 'primeng/panel'
 import {TableModule} from 'primeng/table'
 import {
-  ContactSubledgerDirectionLabelPipe
-} from '../../../../../../api/organization-level/core/contact-opening-balance/contact-subledger-direction-label.pipe'
-import {
   ContactOpeningSettlementFigures,
   ContactOpeningSettlementService
 } from '../../../../../../api/organization-level/core/contact-opening-settlement/contact-opening-settlement.service'
@@ -14,10 +11,13 @@ import {Contact} from '../../../../../../api/organization-level/core/contact/con
 import {ContactService} from '../../../../../../api/organization-level/core/contact/contact.service'
 import {NullSafePipe} from '../../../../../../utils/pipes/null-safe.pipe'
 import {EmptyRowComponent} from '../../../../../reusable/empty-row/empty-row.component'
-import {ContactOpeningSettlementFormComponent} from '../contact-opening-settlement-form/contact-opening-settlement-form.component'
+import {
+  ContactOpeningSettlementFormComponent
+} from '../contact-opening-settlement-form/contact-opening-settlement-form.component'
 import {
   ContactOpeningSettlementVoidFormComponent
 } from '../contact-opening-settlement-void-form/contact-opening-settlement-void-form.component'
+import {ContactSubledgerPaymentDirectionPipe} from './contact-subledger-payment-direction.pipe'
 
 @Component({
   selector: 'esr-contact-opening-settlement-grid',
@@ -30,9 +30,9 @@ import {
     CurrencyPipe,
     NullSafePipe,
     EmptyRowComponent,
-    ContactSubledgerDirectionLabelPipe,
     ContactOpeningSettlementFormComponent,
-    ContactOpeningSettlementVoidFormComponent
+    ContactOpeningSettlementVoidFormComponent,
+    ContactSubledgerPaymentDirectionPipe
   ]
 })
 export class ContactOpeningSettlementGridComponent {

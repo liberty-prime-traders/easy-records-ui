@@ -7,7 +7,7 @@ import {
 } from '../../../../../../api/organization-level/core/contact-opening-balance/contact-opening-balance-revision.service'
 import {
   ContactSubledgerDirectionLabelPipe
-} from '../../../../../../api/organization-level/core/contact-opening-balance/contact-subledger-direction-label.pipe'
+} from '../contact-opening-settlement-grid/contact-subledger-direction-label.pipe'
 import {EmptyRowComponent} from '../../../../../reusable/empty-row/empty-row.component'
 import {MoneyComponent} from '../../../../../reusable/money.component'
 
